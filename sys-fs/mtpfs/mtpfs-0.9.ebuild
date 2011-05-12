@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=3
+inherit eutils
 
 DESCRIPTION="MTPFS is a Fuse filesystem based on libmtp"
 HOMEPAGE="http://adebenham.com/mtpfs"
-#SRC_URI="http://adebenham.com/mtpfs/${P}.tar.gz"
 SRC_URI="http://www.adebenham.com/debian/mtpfs_${PV}.orig.tar.gz"
 S="${WORKDIR}/mtpfs-${PV}.orig" 
 
@@ -40,5 +40,3 @@ pkg_postinst() {
    einfo "To unmount your MTP device, issue:"
    einfo " /usr/bin/fusermount -u <mountpoint>"
 } 
-
-
