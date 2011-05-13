@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+<repo quality="experimental" status="unofficial">
+        <name>vayerx</name>
+        <description>Miscellaneous ebuilds and masks/unmasks</description>
+        <homepage>http://github.com/vayerx/vayerx-gentoo</homepage>
+        <owner type="project">
+                <email>vayerx@gmail.com</email>
+                <name>Vasiliy Yeremeyev</name>
+        </owner>
+        <source type="git">https://github.com/vayerx/vayerx-gentoo.git</source>
+        <feed>https://github.com/vayerx/vayerx-gentoo/commits/master.atom</feed>
+</repo>
+</repositories>

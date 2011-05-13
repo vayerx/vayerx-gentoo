@@ -1,0 +1,33 @@
+.TH VAYERX-GENTOO 8
+.SH NAME
+vayerx-gentoo - overlay for Gentoo Linux used by Vasiliy Yeremeyev
+.SH DESCRIPTION
+This overlay is used for personal hacking of Gentoo Linux: addition of unofficial/unsupported ebuilds, masking/unmasking according to personal preferences and so on.
+.SH INSTALLATION
+Installation is rather simple: all you have to is to register new overlay in your system. Additonally, you may want to add symlinks to Documentation/package.{mask,unmask}/vayerx.
+.SS Installation via layman
+You will need \fBapp-portage/layman\fP installed.
+.br
+.B emerge -avq app-portage/layman
+.sp
+\fBvayerx-gentoo\fP isn't yet in the overlays list (repositories.xml). Just add overlay from overlays.xml in the root of \fBvayerx-gentoo\fP:
+.br
+.B layman -o https://github.com/vayerx/vayerx-gentoo/raw/master/overlays.xml -a vayerx
+.br
+.I Layman may ignore '--overlay' option. Workaround: you can add https://github.com/vayerx/vayerx-gentoo/raw/master/overlays.xml to 'overlays' section in /etc/layman/layman.cfg and refetch overlays to put them to layman's cache.
+.sp
+Don't forget to add '\fBsource /var/lib/layman/make.conf\fP' to the /etc/make.conf
+.SS Manual installation
+.sp
+Go to wherever you want to add overlay. Example:
+.br
+.B cd /var/lib/layman
+.sp
+Clone git repository.
+.br
+.B git clone https://github.com/vayerx/vayerx-gentoo.git vayerx
+.sp
+Register overlay in PORTDIR_OVERLAY in the /etc/make.conf.
+.br
+.B PORTDIR_OVERLAY="$PORTDIR_OVERLAY /var/lib/layman/vayerx
+.sp
