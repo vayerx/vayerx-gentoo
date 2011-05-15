@@ -19,7 +19,10 @@ DEPEND="app-arch/unzip"
 RDEPEND=">=sys-libs/glibc-2.4
 	>=sys-devel/gcc-4.3.0
 	x86? ( gnome-base/libglade )
-	amd64? ( app-emulation/emul-linux-x86-gtklibs )
+	amd64? (
+		app-emulation/emul-linux-x86-gtklibs
+		app-emulation/emul-linux-x86-soundlibs[pulseaudio]
+	)
 	media-sound/pulseaudio
 	alsa? ( media-plugins/alsa-plugins[pulseaudio] )"
 
