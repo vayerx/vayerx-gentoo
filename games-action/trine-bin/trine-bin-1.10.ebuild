@@ -7,11 +7,12 @@ inherit games eutils
 
 DESCRIPTION="A physics-based action game where diff characters allow diff solutions to challenges"
 HOMEPAGE="http://trine-thegame.com/"
-SRC_URI="TrineUpdate3.64.run"
+SRC_URI="x86? ( TrineUpdate3.32.run )
+	amd64? ( TrineUpdate3.64.run )"
 
 LICENSE="frozenbyte-eula"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~x86"
 IUSE=""
 RESTRICT="fetch strip"
 
@@ -31,6 +32,7 @@ RDEPEND=">=sys-libs/glibc-2.4
 	media-libs/libvorbis
 	dev-libs/boost:0
 	amd64? ( dev-libs/libx86 )"
+#	x11-libs/libtxc_dxtn"
 
 S=${WORKDIR}
 
