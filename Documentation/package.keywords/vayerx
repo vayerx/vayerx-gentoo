@@ -42,5 +42,6 @@ sys-apps/915resolution
 =sys-apps/portage-2.1.9.50
 sys-boot/os-probe
 sys-fs/mtpfs
+=www-plugins/adobe-flash-10.3.181.26
 x11-libs/fltk
 xfce-extra/xfce4-xkb-plugin
