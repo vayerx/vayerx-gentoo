@@ -21,10 +21,14 @@ gnome-extra/gsmartcontrol
 gnome-extra/nm-applet
 =kde-base/kdelibs-3.5.10-r10
 kde-misc/kdnssd-avahi
+media-fonts/takao-fonts
 media-gfx/lprof
 media-libs/libechonest
+media-libs/libwebp
+media-libs/vo-amrwbenc
 media-sound/clementine
 media-sound/mp3unicode
+media-video/ffmpeg
 net-dialup/ppp
 net-im/psi
 net-libs/opal
@@ -42,6 +46,9 @@ sys-apps/915resolution
 =sys-apps/portage-2.1.9.50
 sys-boot/os-probe
 sys-fs/mtpfs
+virtual/ffmpeg
+www-client/chromium
 =www-plugins/adobe-flash-10.3.181.26
 x11-libs/fltk
+x11-libs/libva
 xfce-extra/xfce4-xkb-plugin
