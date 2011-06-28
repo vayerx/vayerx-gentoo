@@ -48,6 +48,7 @@ sys-boot/os-probe
 sys-fs/mtpfs
 virtual/ffmpeg
 www-client/chromium
+=www-client/firefox-bin-3.6.18
 =www-plugins/adobe-flash-10.3.181.26
 x11-libs/fltk
 x11-libs/libva
