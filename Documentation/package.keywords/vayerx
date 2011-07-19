@@ -24,8 +24,11 @@ kde-misc/kdnssd-avahi
 media-fonts/takao-fonts
 media-gfx/lprof
 media-libs/libechonest
+media-libs/libpng
 media-libs/libwebp
 media-libs/vo-amrwbenc
+media-libs/x264
+media-plugins/gst-plugins-ofa
 media-sound/clementine
 media-sound/mp3unicode
 media-video/ffmpeg
@@ -48,6 +51,7 @@ sys-boot/os-probe
 sys-fs/mtpfs
 virtual/ffmpeg
 www-client/chromium
+www-client/firefox
 =www-client/firefox-bin-3.6.18
 =www-plugins/adobe-flash-10.3.181.26
 x11-libs/fltk
