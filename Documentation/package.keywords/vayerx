@@ -23,6 +23,8 @@ gnome-extra/nm-applet
 kde-misc/kdnssd-avahi
 media-fonts/takao-fonts
 media-gfx/lprof
+>=media-libs/gst-plugins-base-0.10.35 ~amd64
+>=media-libs/gstreamer-0.10.35 ~amd64
 media-libs/libechonest
 media-libs/libpng
 media-libs/libwebp
