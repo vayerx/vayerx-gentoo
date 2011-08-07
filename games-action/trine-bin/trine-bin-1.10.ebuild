@@ -30,7 +30,6 @@ RDEPEND=">=sys-libs/glibc-2.4
 	=media-libs/openal-1*
 	media-libs/libpng:1.2
 	media-libs/libvorbis
-	dev-libs/boost:0
 	amd64? ( dev-libs/libx86 )"
 #	x11-libs/libtxc_dxtn"
 
@@ -68,19 +67,10 @@ src_unpack() {
 	rm "${S}/lib${bits}/libswscale.so.0"
 	rm "${S}/lib${bits}/libvorbis.so.0"
 	rm "${S}/lib${bits}/libvorbisfile.so.3"
-	rm "${S}/lib${bits}/libboost_filesystem.so.1.35.0"
-	rm "${S}/lib${bits}/libboost_regex.so.1.35.0"
-	rm "${S}/lib${bits}/libboost_system.so.1.35.0"
-	rm "${S}/lib${bits}/libboost_thread-mt.so.1.35.0"
 }
 
 src_install() {
 	local b bb
-
-	# the game binary expects different library file naming for boost
-	for boost_lib in filesystem regex system thread-mt ; do
-	dosym "/usr/$(get_libdir)/libboost_${boost_lib}-1_35.so.1.35.0" "${d}/lib${bits}/libboost_${boost_lib}.so.1.35.0" || die
-	done
 
 	doicon Trine.xpm || die
 	for b in bin launcher ; do
