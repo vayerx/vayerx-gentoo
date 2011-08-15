@@ -29,7 +29,6 @@ RDEPEND="
 	x11-libs/gtk+
 	sys-libs/zlib
 	media-libs/openal
-	games-action/shadowgrounds-data
 "
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
@@ -40,6 +39,7 @@ src_configure() {
 		"-DCMAKE_INSTALL_PREFIX=${GAMES_PREFIX}"
 		"-DCMAKE_DATA_PATH=${GAMES_DATADIR}"
 		"-DCMAKE_CONF_PATH=${GAMES_SYSCONFDIR}"
+		"-DINSTALLONLY=${PN}"
 	)
 
 	cmake-utils_src_configure
@@ -56,4 +56,11 @@ src_install() {
 	make_desktop_entry shadowgrounds "Shadowgrounds"
 
 	prepgamesdirs
+}
+
+pkg_postinst() {
+	games_pkg_postinst
+	ewarn "You will need data files to run the game."
+	ewarn "Consider installing games-action/shadowgrounds-data"
+	ewarn "or copying files manually to /usr/share/games/${PN}"
 }
