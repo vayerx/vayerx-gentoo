@@ -1,0 +1,6 @@
+11-proto/dri2proto
+app-admin/eselect-opengl
+media-libs/mesa
+sys-devel/llvm
+x11-libs/libdrm
+x11-proto/glproto
