@@ -25,7 +25,7 @@ SLOT="0"
 IUSE=""
 
 RDEPEND="
-	>=dev-libs/boost-1.37
+	>=dev-libs/boost-1.42
 	media-libs/libsdl[audio,video,joystick,X,opengl]
 	media-libs/sdl-sound
 	media-libs/sdl-image
