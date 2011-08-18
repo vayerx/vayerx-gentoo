@@ -8,6 +8,12 @@ inherit games cmake-utils git-2
 EGIT_REPO_URI="git://github.com/vayerx/shadowgrounds.git"
 EGIT_BRANCH="linux"
 
+if [[ "${PV}" = 9999* ]]; then
+	KEYWORDS=""
+else
+	EGIT_COMMIT="amd64-${PV}"
+	KEYWORDS="~amd64"
+fi
 
 DESCRIPTION="Shadowgrounds is 3rd-person alien-shooter."
 HOMEPAGE="http://github.com/vayerx/shadowgrounds"
@@ -16,7 +22,6 @@ SRC_URI=""
 LICENSE="shadowgrounds"
 GAMES_CHECK_LICENSE="yes"
 SLOT="0"
-KEYWORDS=""
 IUSE=""
 
 RDEPEND="
