@@ -12,6 +12,7 @@ dev-util/cppcheck
 dev-util/kdevelop
 dev-util/kdevplatform
 dev-util/lcov
+>=dev-util/osc-9999 **
 dev-util/uncrustify
 dev-util/valgrind
 dev-vcs/kdesvn
