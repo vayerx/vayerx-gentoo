@@ -1,0 +1,12 @@
+app-admin/eselect-ruby
+app-emacs/ruby-mode
+app-vim/eruby-syntax
+dev-lang/ruby
+dev-lang/ruby-enterprise
+dev-ruby/fxruby
+dev-ruby/hoe
+dev-ruby/rake
+dev-ruby/rake-compiler
+dev-ruby/rubygems
+dev-ruby/sqlite3-ruby
+dev-ruby/zentest
