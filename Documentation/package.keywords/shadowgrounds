@@ -1,3 +1,6 @@
-games-action/shadowgrounds amd64 ~amd64
 # >=games-action/shadowgrounds-9999 **
+games-action/shadowgrounds amd64 ~amd64
 games-action/shadowgrounds-data
+# >=games-action/survivor-9999 **
+games-action/survivor amd64 ~amd64
+games-action/survivor-data
