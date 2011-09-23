@@ -20,12 +20,11 @@ games-action/shadowgrounds-survivor-bin
 games-action/trine-bin
 gnome-extra/gsmartcontrol
 gnome-extra/nm-applet
-=kde-base/kdelibs-3.5.10-r10
 kde-misc/kdnssd-avahi
 media-fonts/takao-fonts
 media-gfx/lprof
->=media-libs/gst-plugins-base-0.10.35 ~amd64
->=media-libs/gstreamer-0.10.35 ~amd64
+media-libs/gst-plugins-base
+media-libs/gstreamer
 media-libs/libechonest
 media-libs/libpng
 media-libs/libwebp
@@ -37,6 +36,7 @@ media-sound/mp3unicode
 media-video/ffmpeg
 net-dialup/ppp
 net-im/psi
+=net-im/skype-2.1.0.81
 net-libs/opal
 net-libs/ptlib
 net-misc/networkmanager
@@ -55,8 +55,7 @@ sys-fs/mtpfs
 virtual/ffmpeg
 www-client/chromium
 www-client/firefox
-=www-client/firefox-bin-3.6.18
-=www-plugins/adobe-flash-10.3.181.26
+www-plugins/adobe-flash
 x11-libs/fltk
 x11-libs/libva
 xfce-extra/xfce4-xkb-plugin
