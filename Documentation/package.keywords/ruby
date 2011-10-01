@@ -6,11 +6,15 @@ dev-lang/ruby-enterprise
 dev-ruby/fxruby
 dev-ruby/hoe
 dev-ruby/libxml
+dev-ruby/mechanize
+dev-ruby/nokogiri
 dev-ruby/pkg-config
+dev-ruby/racc
 dev-ruby/rake
 dev-ruby/rake-compiler
 dev-ruby/rcairo
 dev-ruby/rdoc
+dev-ruby/rexical
 dev-ruby/ruby-atk
 dev-ruby/ruby-gdkpixbuf2
 dev-ruby/rubygems
