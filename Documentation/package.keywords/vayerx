@@ -56,6 +56,9 @@ virtual/ffmpeg
 www-client/chromium
 www-client/firefox
 www-plugins/adobe-flash
+www-plugins/gnash
+www-plugins/lightspark
 x11-libs/fltk
 x11-libs/libva
+x11-misc/obkey
 xfce-extra/xfce4-xkb-plugin
