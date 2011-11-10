@@ -38,21 +38,8 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_configure() {
-	# we redesignate installation paths to the games prefix and 
-	# intentionally break project supplied jthread and sqlite source
-	sed -i -e "s|set(BINDIR \"bin|set(BINDIR \"games/bin|g" \
-		-e "s|set(DATADIR \"share/|set(DATADIR \"share/games/|g" \
-		-e "/^if (SQLITE/,/^endif (SQLITE/d" \
-		-e "/^if (JTHREAD/,/^endif (JTHREAD/d" \
-		CMakeLists.txt || die "games prefix paths not reset"
-
-	# we also need to redesignate the language file location since
-	# it shouldn't live in /usr/share/games/locale..
-	sed -i -e \
-	"s|GETTEXT_MO_DEST_PATH \${DATADIR}/|GETTEXT_MO_DEST_PATH \${DATADIR}/../|g" \
-		cmake/Modules/FindGettextLib.cmake || die "locale path not reset"
-
 	mycmakeargs="
+		-DCMAKE_INSTALL_PREFIX=${GAMES_PREFIX}
 		-DRUN_IN_PLACE=0
 		-DJTHREAD_INCLUDE_DIR=${EROOT}/usr/include/jthread
 		$(cmake-utils_use_build client CLIENT)

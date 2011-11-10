@@ -9,8 +9,13 @@ DESCRIPTION="An InfiniMiner/Minecraft inspired game."
 HOMEPAGE="http://celeron.55.lt/~celeron55/minetest/"
 
 EGIT_REPO_URI="git://github.com/celeron55/minetest.git"
-EGIT_COMMIT="045e32b"
-KEYWORDS="~x86 ~amd64"
+
+if [[ "${PV}" = 9999* ]]; then
+	KEYWORDS=""
+else
+	EGIT_COMMIT="${PV}"
+	KEYWORDS="~x86 ~amd64"
+fi
 
 SRC_URI=""
 S="${WORKDIR}/${PN}"
@@ -33,21 +38,8 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_configure() {
-	# we redesignate installation paths to the games prefix and 
-	# intentionally break project supplied jthread and sqlite source
-	sed -i -e "s|set(BINDIR \"bin|set(BINDIR \"games/bin|g" \
-		-e "s|set(DATADIR \"share/|set(DATADIR \"share/games/|g" \
-		-e "/^if (SQLITE/,/^endif (SQLITE/d" \
-		-e "/^if (JTHREAD/,/^endif (JTHREAD/d" \
-		CMakeLists.txt || die "games prefix paths not reset"
-
-	# we also need to redesignate the language file location since
-	# it shouldn't live in /usr/share/games/locale..
-	sed -i -e \
-	"s|GETTEXT_MO_DEST_PATH \${DATADIR}/|GETTEXT_MO_DEST_PATH \${DATADIR}/../|g" \
-		cmake/Modules/FindGettextLib.cmake || die "locale path not reset"
-
 	mycmakeargs="
+		-DCMAKE_INSTALL_PREFIX=${GAMES_PREFIX}
 		-DRUN_IN_PLACE=0
 		-DJTHREAD_INCLUDE_DIR=${EROOT}/usr/include/jthread
 		$(cmake-utils_use_build client CLIENT)
