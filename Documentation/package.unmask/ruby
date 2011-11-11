@@ -10,3 +10,4 @@ dev-ruby/rake-compiler
 dev-ruby/rubygems
 dev-ruby/sqlite3-ruby
 dev-ruby/zentest
+>=virtual/rubygems-4:ruby19

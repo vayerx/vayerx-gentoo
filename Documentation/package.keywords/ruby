@@ -1,5 +1,6 @@
 app-admin/eselect-ruby
 app-emacs/ruby-mode
+=app-text/poppler-0.18.1 ~amd64
 app-vim/eruby-syntax
 dev-lang/ruby
 dev-lang/ruby-enterprise
@@ -33,3 +34,4 @@ dev-ruby/ruby-rsvg
 dev-ruby/ruby-vte
 dev-ruby/sqlite3-ruby
 dev-ruby/zentest
+=virtual/rubygems-4:ruby19 ~amd64
