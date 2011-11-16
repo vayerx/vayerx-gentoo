@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <longdescription lang="en">
+    A collection of Git extensions to provide high-level repository
+    operations for Vincent Driessen's branching model described at
+    http://nvie.com/posts/a-successful-git-branching-model.
+  </longdescription>
+  <use>
+    <flag name="completion">A Use-Flag to install the completion for bash and zsh</flag>
+  </use>
+</pkgmetadata>
