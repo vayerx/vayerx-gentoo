@@ -2,6 +2,9 @@ app-arch/p7zip
 app-emulation/q4wine
 app-emulation/wine
 app-misc/gramps
+app-text/epdfview
+app-text/poppler
+app-text/xpdf
 app-vim/nerdtree
 app-vim/omnicppcomplete
 dev-cpp/tbb
