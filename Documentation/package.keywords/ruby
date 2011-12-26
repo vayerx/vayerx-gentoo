@@ -6,6 +6,7 @@ dev-lang/ruby
 dev-lang/ruby-enterprise
 dev-ruby/fxruby
 dev-ruby/hoe
+>=dev-ruby/json-1.6.1 ~amd64
 dev-ruby/libxml
 dev-ruby/mechanize
 dev-ruby/nokogiri

@@ -52,6 +52,7 @@ net-misc/openvpn
 net-voip/ekiga
 net-wireless/bluez-firmware
 net-wireless/broadcom-sta
+net-wireless/wpa_supplicant
 sci-mathematics/octave
 sys-apps/915resolution
 =sys-apps/portage-2.1.9.50
