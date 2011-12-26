@@ -1,0 +1,8 @@
+#!/bin/sh
+SAUER_DIR="$HOME/.%PN%/"
+if [ "$#" -ge "1" ] ; then
+	SAUER_DIR="${1}/"
+	shift
+fi
+[ -d "$SAUER_DIR" ] || mkdir -p "$SAUER_DIR"
+exec %LIBEXECDIR%/sauer_master "$SAUER_DIR" "$@"
