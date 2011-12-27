@@ -17,7 +17,7 @@ SRC_URI="mirror://sourceforge/zero-ad/${MY_P}-unix-build.tar.xz
 LICENSE="GPL-2 CCPL-Attribution-ShareAlike-3.0"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug +editor nvtt test"
+IUSE="debug +editor -nvtt test"
 
 RDEPEND="virtual/opengl
 	media-libs/openal
@@ -131,4 +131,3 @@ src_install() {
 
 	prepgamesdirs
 }
-
