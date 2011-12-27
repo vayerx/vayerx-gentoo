@@ -87,7 +87,7 @@ src_install() {
 	doicon "${DISTDIR}"/Urbanterror.svg
 	cd "${S}"/UrbanTerror/q3ut4
 	dodoc readme41.txt
-	
+
 	# fix case sensitivity (both upper and lower)
 	cp demos/tutorial.dm_68 demos/TUTORIAL.dm_68
 
