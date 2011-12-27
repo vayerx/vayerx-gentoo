@@ -4,12 +4,11 @@
 
 inherit eutils games
 
-
 DESCRIPTION="Dune Legacy is an open source clone of Dune 2."
 HOMEPAGE="http://dunelegacy.sourceforge.net"
 SRC_URI="http://www.myway.de/richieland/${PN}-0.96.2-src.tar.bz2"
 
-LICENSE="GPL-2 or later"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
@@ -22,7 +21,7 @@ DEPEND="${RDEPEND}"
 S=${WORKDIR}/${PN}-0.96.2
 
 src_install() {
-        cd "${S}/src"
+	cd "${S}/src"
 
 	dogamesbin ${PN} || die "dogamesbin failed"
 
@@ -38,24 +37,23 @@ src_install() {
 }
 
 pkg_postinst() {
-    elog "You will need to copy all Dune 2 PAK files to ${GAMES_DATADIR}/${PN} !"
-    elog ""
-    elog "At least the following files are needed:"
-    elog " - ATRE.PAK"
-    elog " - DUNE.PAK"
-    elog " - ENGLISH.PAK"
-    elog " - FINALE.PAK"
-    elog " - HARK.PAK"
-    elog " - INTRO.PAK"
-    elog " - INTROVOC.PAK"
-    elog " - MENTAT.PAK"
-    elog " - MERC.PAK"
-    elog " - ORDOS.PAK"
-    elog " - SCENARIO.PAK"
-    elog " - SOUND.PAK"
-    elog " - VOC.PAK"
-    elog ""
-    elog "For playing in german or french you need additionally GERMAN.PAK"
-    elog "or FRENCH.PAK."
+	elog "You will need to copy all Dune 2 PAK files to ${GAMES_DATADIR}/${PN} !"
+	elog ""
+	elog "At least the following files are needed:"
+	elog " - ATRE.PAK"
+	elog " - DUNE.PAK"
+	elog " - ENGLISH.PAK"
+	elog " - FINALE.PAK"
+	elog " - HARK.PAK"
+	elog " - INTRO.PAK"
+	elog " - INTROVOC.PAK"
+	elog " - MENTAT.PAK"
+	elog " - MERC.PAK"
+	elog " - ORDOS.PAK"
+	elog " - SCENARIO.PAK"
+	elog " - SOUND.PAK"
+	elog " - VOC.PAK"
+	elog ""
+	elog "For playing in german or french you need additionally GERMAN.PAK"
+	elog "or FRENCH.PAK."
 }
-
