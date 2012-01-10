@@ -1,5 +1,12 @@
+=dev-lang/spidermonkey-1.8.5-r1
+=dev-libs/nss-3.13.1-r1
+games-action/shadowgrounds ~amd64
+games-action/shadowgrounds-data
+games-action/survivor ~amd64
+games-action/survivor-data
 games-fps/sauerbraten
 games-fps/urbanterror
 games-rpg/lipsofsuna **
 games-strategy/0ad
-net-libs/enet
+games-strategy/glest
+=net-libs/enet-1.3.1
