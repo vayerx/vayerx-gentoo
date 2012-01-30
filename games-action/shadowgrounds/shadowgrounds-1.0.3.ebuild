@@ -15,7 +15,7 @@ else
 	KEYWORDS="~amd64"
 fi
 
-DESCRIPTION="Shadowgrounds Survivor is 3rd-person alien-shooter."
+DESCRIPTION="Shadowgrounds is 3rd-person alien-shooter."
 HOMEPAGE="http://github.com/vayerx/shadowgrounds"
 SRC_URI=""
 
@@ -26,6 +26,7 @@ IUSE=""
 
 RDEPEND="
 	>=dev-libs/boost-1.42
+	media-libs/glew
 	media-libs/libsdl[audio,video,joystick,X,opengl]
 	media-libs/sdl-sound
 	media-libs/sdl-image
@@ -53,7 +54,7 @@ src_configure() {
 }
 
 src_compile() {
-	cmake-utils_src_make survivor
+	cmake-utils_src_make shadowgrounds
 }
 
 src_install() {
@@ -64,6 +65,6 @@ src_install() {
 pkg_postinst() {
 	games_pkg_postinst
 	ewarn "You will need data files to run the game."
-	ewarn "Consider installing games-action/survivor-data"
+	ewarn "Consider installing games-action/shadowgrounds-data"
 	ewarn "or copying files manually to /usr/share/games/${PN}"
 }
