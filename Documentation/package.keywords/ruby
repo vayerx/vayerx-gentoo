@@ -1,12 +1,12 @@
 app-admin/eselect-ruby
 app-emacs/ruby-mode
-=app-text/poppler-0.18.1 ~amd64
+=app-text/poppler-0.18.1
 app-vim/eruby-syntax
 dev-lang/ruby
 dev-lang/ruby-enterprise
 dev-ruby/fxruby
 dev-ruby/hoe
->=dev-ruby/json-1.6.1 ~amd64
+>=dev-ruby/json-1.6.1
 dev-ruby/libxml
 dev-ruby/mechanize
 dev-ruby/nokogiri
@@ -18,7 +18,7 @@ dev-ruby/rcairo
 dev-ruby/rdoc
 dev-ruby/rexical
 dev-ruby/ruby-atk
-dev-ruby/ruby-gdkpixbuf2
+=dev-ruby/ruby-gdkpixbuf2-1.1.0
 dev-ruby/rubygems
 dev-ruby/ruby-gio2
 dev-ruby/ruby-glib2
@@ -36,4 +36,4 @@ dev-ruby/ruby-vte
 dev-ruby/sqlite3-ruby
 dev-ruby/zentest
 net-libs/nodejs
-=virtual/rubygems-4:ruby19 ~amd64
+=virtual/rubygems-4:ruby19
