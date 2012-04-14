@@ -1,3 +1,4 @@
+app-admin/eselect-qtgraphicssystem
 app-arch/p7zip
 app-emulation/q4wine
 <app-emulation/wine-1.5
@@ -16,6 +17,7 @@ dev-cpp/tbb
 =dev-libs/glib-2.32.0
 =dev-libs/nspr-4.9
 =dev-libs/nss-3.13.3
+=dev-libs/shflags-1.0.3
 dev-python/rope
 dev-python/spyder
 dev-ruby/qt4-qtruby
@@ -27,6 +29,8 @@ dev-util/lcov
 dev-util/qt-creator
 dev-util/uncrustify
 dev-util/valgrind
+dev-vcs/gitflow
+dev-vcs/git-flow-completion
 dev-vcs/kdesvn
 games-action/shadowgrounds-survivor-bin
 games-action/trine-bin
@@ -46,6 +50,7 @@ media-libs/libpng
 =media-libs/libvpx-0.9.7-r1
 media-libs/libwebp
 =media-libs/phonon-4.6.0-r1
+=media-libs/phonon-gstreamer-4.6.0
 media-libs/vo-amrwbenc
 media-libs/x264
 media-plugins/gst-plugins-ofa
