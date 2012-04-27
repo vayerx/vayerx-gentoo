@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://github.com/celeron55/minetest.git"
 if [[ "${PV}" = 9999* ]]; then
 	KEYWORDS=""
 else
-	EGIT_COMMIT="0.4.dev-20111209-1"
+	EGIT_COMMIT="0.4.dev-20120408"
 	KEYWORDS="~x86 ~amd64"
 fi
 
