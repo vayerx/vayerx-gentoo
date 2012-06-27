@@ -29,7 +29,9 @@ RDEPEND=">=dev-libs/boost-1.34.0
 		dev-java/ant
 		dev-java/ant-ivy
 		dev-java/commons-lang
-		dev-java/slf4j-api
+		>=dev-java/slf4j-api-1.5.8
+		java-virtuals/servlet-api
+		>=dev-java/commons-httpclient-4.1.2
 	)
 	erlang? ( >=dev-lang/erlang-12.0.0 )
 	python? (
