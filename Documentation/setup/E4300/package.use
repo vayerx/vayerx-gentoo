@@ -1,0 +1,118 @@
+app-antivirus/clamav clamdtop
+app-editors/vim cscope
+app-emulation/libvirt network qemu virt-network virtualbox
+app-emulation/qemu aio kqemu kvm vde
+app-emulation/virtualbox additions
+app-misc/gramps reports
+app-misc/mc edit -ncurses samba slang
+app-office/libreoffice-bin linguas_en linguas_ru
+app-text/aspell linguas_ru
+app-text/hunspell linguas_ru
+dev-cpp/gtest examples
+dev-cpp/tbb doc examples
+dev-db/sqlite extensions secure-delete unlock-notify
+dev-games/irrlicht doc
+dev-java/ibm-jre-bin alsa nsplugin
+dev-java/sun-jre-bin nsplugin
+dev-lang/ghc doc -ghcbootstrap
+dev-lang/mono minimal
+dev-lang/php cgi gd
+dev-lang/python sqlite tk
+dev-lang/ruby doc examples rubytests tk
+dev-lang/ruby-enterprise tk
+dev-lang/swig ccache doc
+dev-libs/boost doc eselect tools
+dev-libs/libgcrypt static-libs
+dev-libs/libgpg-error static-libs
+dev-libs/popt static-libs
+dev-libs/protobuf examples source static-libs
+dev-libs/thrift -ruby cpp java
+dev-python/epydoc latex
+dev-python/PyQt4 assistant webkit
+dev-python/sip doc
+dev-python/spyder -matplotlib numpy pyflakes pylint rope -scipy
+dev-util/catalyst ccache
+dev-util/cppcheck -qt4
+dev-util/qt-creator valgrind
+dev-util/scons doc
+dev-vcs/git gitk mozsha1 perl tk -webdav
+dev-vcs/mercurial gpg tk
+dev-vcs/subversion extras -dso perl -ruby -webdav
+games-fps/sauerbraten dedicated
+games-fps/urbanterror client -dedicated server
+games-roguelike/angband -gtk -sdl -sound -X
+games-roguelike/slashem -X -sdl -opengl
+games-simulation/openttd lzo openmedia timidity
+games-strategy/glest editor
+gnome-base/gvfs cdda gphoto2
+gnome-base/gvfs fuse
+gnome-extra/sensors-applet hddtemp
+kde-base/gwenview -handbook kipi
+kde-base/okular chm djvu
+mail-client/thunderbird ipc system-sqlite
+media-fonts/terminus-font ru-dv ru-g ru-i
+media-gfx/gimp -udev wmf xpm
+media-gfx/graphicsmagick -imagemagick
+media-gfx/gwenview kipi -linguas_ru
+media-gfx/hugin sift lapack
+media-gfx/pornview mplayer
+media-libs/libpng apng
+media-libs/mesa classic gallium g3dvl llvm vdpau
+media-libs/opencv examples octave
+media-libs/sdl-sound mikmod physfs
+media-plugins/alsa-plugins speex
+media-plugins/gst-plugins-meta lame taglib theora
+<media-sound/amarok-2 mtp musicbrainz
+media-sound/pulseaudio -bluetooth -gnome oss -X
+media-sound/sox amr id3tag
+media-video/ffmpeg amr dirac faac gsm rtmp network theora threads
+media-video/kino lame sox
+media-video/mjpegtools dv
+media-video/mplayer amr cdparanoia dirac dvb faac faad ftp live quicktime real theora toolame win32codecs xvmc
+media-video/vlc cdda cddb dirac dvb libv4l2 live mtp rtsp schroedinger sdl-image stream theora twolame upnp win32codecs
+net-analyzer/nagios-core lighttpd web
+net-analyzer/rrdtool rrdcgi -ruby
+net-analyzer/tcpdump -samba
+net-dialup/ppp dhcp eap-tls mppe-mppc
+net-dialup/pptpclient tk
+net-dns/avahi autoipd gtk3 mdnsresponder-compat qt3
+net-firewall/shorewall6 doc
+net-firewall/shorewall doc
+net-fs/cifs-utils ads
+net-fs/samba caps client -ldb pam server smbclient swat
+net-im/psi extras jingle linguas_ru
+net-libs/opal h224 h323 sip sipim theora
+net-libs/ptlib ftp http wav
+net-misc/networkmanager -nss
+net-print/cups slp
+net-print/gutenprint foomaticdb
+net-print/hplip hpcups scanner snmp
+net-voip/ekiga -gnome h323 shm
+sci-libs/hdf5 mpi
+sci-libs/mkl int64
+sci-mathematics/octave doc fftw sparse
+sys-apps/hal apm dell disk-partition laptop -crypt
+sys-apps/lm_sensors sensord
+=sys-apps/pciutils-3.1.7 -zlib
+sys-apps/portage doc
+sys-apps/util-linux static-libs
+sys-block/gparted fat mdadm ntfs xfs -xfce
+sys-cluster/openmpi romio
+sys-devel/gcc graphite
+sys-fs/ntfs3g ntfsprogs
+sys-libs/zlib minizip
+sys-power/pm-utils ntp
+virtual/ffmpeg theora
+www-plugins/gnash sdl-sound
+www-plugins/lightspark pulseaudio
+www-plugins/lightspark -pulseaudio sdl
+www-servers/lighttpd libev -php rrdtool webdav
+x11-base/xorg-server kdrive
+x11-libs/cairo -qt4
+x11-libs/qt-core private-headers
+x11-libs/qt-declarative accessibility private-headers
+x11-libs/qt-gui accessibility private-headers
+x11-libs/qt-qt3support accessibility kde
+x11-libs/qt-script private-headers
+x11-libs/qt-svg accessibility
+x11-libs/qt-webkit kde
