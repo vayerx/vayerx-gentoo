@@ -84,6 +84,7 @@ sci-mathematics/octave
 sys-apps/915resolution
 =sys-apps/portage-2.1.9.50
 sys-boot/os-probe
+=sys-devel/gcc-4.6.3
 sys-fs/mtpfs
 =sys-kernel/gentoo-sources-3.3.8
 =sys-libs/mtdev-1.1.2
