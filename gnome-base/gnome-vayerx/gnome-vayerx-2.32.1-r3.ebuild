@@ -54,11 +54,18 @@ RDEPEND="!<x11-libs/gtk+-3.2.4-r1:3
 
 	>=gnome-base/librsvg-2.32.1:2
 
+	app-admin/system-config-printer-gnome
 	gnome-base/gdm
 	gnome-base/gnome-applets
+	gnome-extra/fast-user-switch-applet
+	gnome-extra/gconf-editor
+	gnome-extra/gnome-media
 	gnome-extra/gnome-power-manager
 	gnome-extra/gnome-system-monitor
+	gnome-extra/gnome-utils
 	gnome-extra/nm-applet
+	net-analyzer/gnome-netstatus
+	net-analyzer/gnome-nettool
 "
 
 DEPEND=""
