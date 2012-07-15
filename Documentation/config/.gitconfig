@@ -1,0 +1,46 @@
+[alias]
+	br = branch
+	ci = commit
+	co = checkout
+	df = diff
+	d  = diff --word-diff-regex=. --word-diff=color
+#	dd = diff --color-words --word-diff-regex='[A-z_][A-z_]*'
+	lg = log --pretty=vay
+	lv = log --pretty=vaylong
+	rl = rev-list
+	st = status
+	up = remote update
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+
+[color "diff"]
+	frag = magenta bold
+	meta = yellow bold
+	new = green bold
+	old = red bold
+	whitespace = red reverse
+
+[commit]
+    status = false
+
+[core]
+	eol = native
+	excludesfile = /home/vayerx/.gitexclude
+	pager = cat
+
+[diff]
+	renames = copies
+
+[pretty]
+	vay = %h %Cred%an %Cblue%s%Creset
+	vaylong = %h %Cred%an %Cgreen%aD %Cblue%s%Creset
+
+#[svn]
+#	authorsfile = /home/vayerx/.gitauthorsfile
+
+[user]
+	email = vayerx@gmail.com 
+	name = Vasiliy Yeremeyev
