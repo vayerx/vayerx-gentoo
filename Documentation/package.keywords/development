@@ -1,0 +1,11 @@
+dev-libs/shflags
+dev-util/cppcheck
+dev-util/geany
+dev-util/kdevelop
+dev-util/kdevplatform
+dev-util/lcov
+dev-util/qt-creator
+dev-util/uncrustify
+dev-util/valgrind
+dev-vcs/git-flow-completion
+dev-vcs/gitflow

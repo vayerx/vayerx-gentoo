@@ -1,0 +1,3 @@
+<=app-portage/eix-0.25.5
+<=sys-libs/glibc-2.15-r2
+=x11-base/xorg-server-1.12.3
