@@ -16,5 +16,6 @@ lxde-base/menu-cache
 media-gfx/gpicview
 virtual/freedesktop-icon-theme
 x11-libs/libfm
+x11-misc/obconf
 x11-misc/pcmanfm
 x11-wm/openbox
