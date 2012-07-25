@@ -1,4 +1,4 @@
 <=app-portage/eix-0.25.5
 =app-shells/push-1.5
-<=sys-libs/glibc-2.15-r2
+=sys-devel/gcc-4.6.3
 =x11-base/xorg-server-1.12.3

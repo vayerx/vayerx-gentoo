@@ -1,3 +1,4 @@
-app-misc/gramps
-media-sound/clementine
 <app-emulation/wine-1.5
+app-misc/gramps
+=media-libs/liblastfm-1.0.1
+media-sound/clementine
