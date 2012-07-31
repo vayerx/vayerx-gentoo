@@ -1,0 +1,5 @@
+keymap="-u ru"
+windowkeys="YES"
+#extended_keymaps="backspace keypad euro2"
+dumpkeys_charset="koi8-r"
+fix_euro="NO"

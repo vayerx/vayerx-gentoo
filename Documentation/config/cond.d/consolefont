@@ -1,0 +1,3 @@
+consolefont="cyr-sun16"
+consoletranslation="cp1251_to_uni"
+#unicodemap="iso01"
