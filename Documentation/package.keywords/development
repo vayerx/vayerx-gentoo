@@ -1,5 +1,4 @@
 dev-libs/shflags
-dev-python/spyder
 =dev-util/cmake-2.8.8-r3
 dev-util/cppcheck
 dev-util/geany
