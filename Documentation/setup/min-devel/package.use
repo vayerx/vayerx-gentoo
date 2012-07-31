@@ -1,0 +1,21 @@
+app-editors/vim -X cscope
+app-emulation/qemu kqemu kvm
+app-emulation/qemu-kvm vde
+app-misc/mc -ncurses slang
+dev-libs/boost doc tools
+dev-python/PyQt4 webkit
+dev-python/spyder pep8 pylint sphinx
+dev-util/kdevplatform reviewboard
+dev-vcs/git doc tk
+dev-vcs/subversion -dso perl
+kde-base/okular ebook
+media-plugins/gst-plugins-meta dv ffmpeg http lame taglib theora v4l
+media-sound/clementine lastfm mms mtp
+media-sound/picard coverart ffmpeg
+net-im/psi extras jingle -linguas_ru webkit xscreensaver
+sys-block/gparted fat ntfs xfs
+sys-devel/gcc graphite
+sys-kernel/gentoo-sources symlink
+sys-libs/zlib minizip
+www-client/firefox -jit
+x11-misc/obconf lxde
