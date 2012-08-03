@@ -2,3 +2,6 @@
 # >dev-vcs/git-1.6.4.4
 =games-fps/urbanterror-4.1.1807.251210
 >=media-libs/mesa-8
+=net-im/skype-4.0.0.7-r2
+=sys-kernel/genkernel-3.4.24_p1
+=sys-kernel/genkernel-3.4.24_p2
