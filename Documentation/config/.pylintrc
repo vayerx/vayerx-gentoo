@@ -1,13 +1,14 @@
 # See:
 # http://www.logilab.org/card/pylintfeatures
 #
+# C0103: Invalid file name
 # C0111: Missing docstring
 # C0301: Line too long
 # R0903: Too few public methods
 # W0141: Used builtin function (e.g. map, filter) instead of list comprehension
 
 [MESSAGES CONTROL]
-disable = C0111,W0141,R0903
+disable = C0103,C0111,W0141,R0903
 
 [FORMAT]
 max-line-length = 120
@@ -18,3 +19,4 @@ argument-rgx = [a-z_][a-z0-9_]{1,30}$
 function-rgx = [a-z_][a-zA-Z0-9_]{1,30}$
 method-rgx = [a-z_][a-zA-Z0-9_]{1,30}$
 variable-rgx = [a-z_][a-z0-9_]{1,30}$
+#module-rgx = ([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
