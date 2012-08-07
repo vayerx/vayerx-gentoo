@@ -68,7 +68,7 @@ PDEPEND="
 	rich? (
 		app-text/epdfview
 		media-video/vlc
-		=www-client/chromium-20.0.1132.43
+		www-client/chromium
 		www-client/links
 	)
 "
