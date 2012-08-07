@@ -23,6 +23,7 @@ PDEPEND="
 	app-portage/layman
 	app-portage/mirrorselect
 	app-portage/ufed
+	dev-util/strace
 	net-analyzer/nettop
 	net-analyzer/tcpdump
 	net-analyzer/traceroute
@@ -33,12 +34,15 @@ PDEPEND="
 	net-misc/netkit-telnetd
 	net-misc/ntp
 	net-misc/proxytunnel
+	sys-apps/dstat
 	sys-boot/grub
 	sys-kernel/genkernel
 	sys-kernel/gentoo-sources
 	sys-power/acpid
 	sys-power/cpufrequtils
 	sys-process/htop
+	sys-process/iotop
+	sys-process/vixie-cron
 
 	rich? (
 		net-analyzer/wireshark

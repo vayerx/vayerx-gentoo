@@ -46,18 +46,6 @@ PDEPEND="
 	dev-util/meld
 
 	dev-util/strace
-	sys-apps/dstat
-	sys-process/htop
-	sys-process/iotop
-
-	network? (
-		net-analyzer/nettop
-		net-analyzer/tcpdump
-		net-analyzer/traceroute
-		net-dns/bind-tools
-		net-misc/netkit-telnetd
-		rich? ( net-analyzer/wireshark )
-	)
 
 	dev-vcs/git[doc,tk]
 	dev-vcs/gitflow
