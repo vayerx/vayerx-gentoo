@@ -49,7 +49,6 @@ PDEPEND="
 
 	gnome? (
 		app-text/evince
-		gnome-base/gdm
 		gnome-extra/gnome-utils
 	)
 

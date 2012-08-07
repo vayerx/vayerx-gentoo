@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="+rich"
+IUSE="+rich gnome lxde"
 
 PDEPEND="
 	app-admin/logrotate
@@ -43,5 +43,8 @@ PDEPEND="
 	rich? (
 		net-analyzer/wireshark
 		sys-block/gparted
+
+		gnome? ( gnome-base/gdm )
+		lxde? ( lxde-base/lxdm )
 	)
 "
