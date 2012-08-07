@@ -1,3 +1,4 @@
+dev-cpp/cppstaff
 dev-libs/shflags
 =dev-util/cmake-2.8.8-r3
 dev-util/cppcheck
@@ -10,3 +11,4 @@ dev-util/uncrustify
 dev-util/valgrind
 dev-vcs/gitflow
 dev-vcs/git-flow-completion
+vayerx/develop

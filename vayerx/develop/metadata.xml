@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<use>
+	<flag name='cpp'>C++ development</flag>
+	<flag name='ruby'>Ruby development</flag>
+	<flag name='python'>Python development</flag>
+	<flag name='database'>Database-related staff</flag>
+	<flag name='math'>Math-related staff</flag>
+	<flag name='network'>Networking staff</flag>
+	<flag name='rich'>Don't mind installing excessive GUI staff</flag>
+	<flag name='exotic'>Rarely used staff</flag>
+	<flag name='testing'>Modules for testing</flag>
+</use>
+</pkgmetadata>
