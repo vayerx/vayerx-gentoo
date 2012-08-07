@@ -5,7 +5,7 @@
 EAPI=3
 
 DESCRIPTION="Miscellaneous C++ staff, vayerx edition"
-HOMEPAGE="http://github.com/vayerx"
+HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
 SRC_URI=""
 
 LICENSE="GPL-3"

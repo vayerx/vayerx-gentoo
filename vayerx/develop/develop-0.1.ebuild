@@ -5,7 +5,7 @@
 EAPI=3
 
 DESCRIPTION="Development meta package"
-HOMEPAGE="http://github.com/vayerx"
+HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
 SRC_URI=""
 
 LICENSE="GPL-3"
