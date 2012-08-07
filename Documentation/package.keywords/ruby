@@ -35,6 +35,7 @@ dev-ruby/ruby-poppler
 dev-ruby/ruby-rsvg
 dev-ruby/ruby-vte
 dev-ruby/sqlite3-ruby
+dev-ruby/staff-rb
 dev-ruby/zentest
 net-libs/nodejs
 =virtual/rubygems-4:ruby19

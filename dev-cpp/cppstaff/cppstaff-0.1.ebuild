@@ -18,8 +18,8 @@ PDEPEND="
 	dev-util/ccache
 	dev-util/cmake
 	dev-util/kdevelop[cxx]
-	rich? ( dev-util/qt-creator[cmake,git,valgrind] )
 	dev-util/valgrind
+	kde-base/kcachegrind
 
 	testing? (
 		dev-cpp/gmock
@@ -27,5 +27,11 @@ PDEPEND="
 		dev-util/cppunit
 		dev-util/flawfinder
 		dev-util/lcov
+	)
+
+	rich? (
+		dev-cpp/tbb
+		dev-libs/oniguruma
+		dev-util/qt-creator[cmake,git,valgrind]
 	)
 "

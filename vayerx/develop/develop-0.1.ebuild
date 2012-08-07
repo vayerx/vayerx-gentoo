@@ -11,9 +11,23 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="+cpp ruby +python database postgres exotic math +network +rich +testing"
+IUSE="+cpp ruby +python database postgres sqlite exotic math +network +rich +testing"
 
 PDEPEND="
+	app-doc/doxygen
+	app-editors/hexedit
+	dev-util/geany
+	dev-util/meld
+	dev-util/strace
+	dev-util/uncrustify
+	dev-vcs/gitflow
+	dev-vcs/gitg
+	dev-vcs/git[tk]
+	kde-base/kompare
+	kde-base/umbrello
+	sci-calculators/galculator
+	sci-visualization/gnuplot
+
 	cpp? (
 		dev-cpp/cppstaff[rich?,exotic?,testing?]
 		sys-devel/gcc[cxx]
@@ -30,24 +44,23 @@ PDEPEND="
 		dev-python/spyder[pylint,sphinx]
 	)
 
-	postgres? (
-		dev-db/pgadmin3
-		dev-db/postgresql-server
+	database? (
+		postgres? (
+			dev-db/pgadmin3
+			dev-db/postgresql-server
+		)
+
+		sqlite? (
+			dev-db/sqlite
+			dev-db/sqliteman
+		)
 	)
 
 	math? (
 		sci-mathematics/qtoctave
 	)
 
-	sci-calculators/galculator
-	sci-visualization/gnuplot
-
-	dev-util/geany
-	dev-util/meld
-
-	dev-util/strace
-
-	dev-vcs/git[doc,tk]
-	dev-vcs/gitflow
-	dev-vcs/gitg
+	rich? (
+		dev-util/argouml
+	)
 "

@@ -15,6 +15,7 @@ IUSE="+gnome +lxde +rich"
 
 PDEPEND="
 	app-admin/keepassx
+	app-editors/gedit
 	kde-base/okular
 	media-fonts/arphicfonts
 	media-fonts/bitstream-cyberbit
@@ -23,6 +24,8 @@ PDEPEND="
 	media-fonts/dejavu
 	media-fonts/droid
 	media-fonts/freefonts
+	media-fonts/intlfonts
+	media-fonts/ipamonafont
 	media-fonts/ja-ipafonts
 	media-fonts/takao-fonts
 	media-fonts/terminus-font
@@ -33,6 +36,7 @@ PDEPEND="
 	media-sound/clementine
 	media-sound/mpg123
 	media-sound/picard
+	media-video/mplayer
 	net-im/psi
 	net-misc/x11-ssh-askpass
 	net-print/cups-pdf
@@ -62,6 +66,8 @@ PDEPEND="
 	)
 
 	rich? (
+		app-text/epdfview
+		media-video/vlc
 		=www-client/chromium-20.0.1132.43
 		www-client/links
 	)
