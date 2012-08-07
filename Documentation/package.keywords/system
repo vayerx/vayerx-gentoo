@@ -1,7 +1,8 @@
 <=app-portage/eix-0.25.5
 =app-shells/push-1.5
+net-misc/proxytunnel
 =sys-devel/gcc-4.6.3
 =sys-kernel/genkernel-3.4.23.1
-=sys-kernel/gentoo-sources-3.4.4
+=sys-kernel/gentoo-sources-3.4.7
 vayerx/system
 =x11-base/xorg-server-1.12.3
