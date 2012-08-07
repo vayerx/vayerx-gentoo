@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="+cpp ruby +python database postgres exotic math +network rich +testing"
+IUSE="+cpp ruby +python database postgres exotic math +network +rich +testing"
 
 PDEPEND="
 	cpp? (
@@ -52,12 +52,11 @@ PDEPEND="
 
 	network? (
 		net-analyzer/nettop
-		net-analyzer/wireshark
 		net-analyzer/tcpdump
 		net-analyzer/traceroute
-		rich? ( net-analyzer/wireshark )
 		net-dns/bind-tools
 		net-misc/netkit-telnetd
+		rich? ( net-analyzer/wireshark )
 	)
 
 	dev-vcs/git[doc,tk]
