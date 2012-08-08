@@ -11,11 +11,13 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="+cpp ruby +python database postgres sqlite exotic math +network +rich +testing"
+IUSE="+cpp ruby +python database postgres sqlite exotic +kde math +network +rich +testing"
 
 PDEPEND="
 	app-doc/doxygen
 	app-editors/hexedit
+	app-i18n/enca
+	dev-libs/libxml2
 	dev-util/geany
 	dev-util/meld
 	dev-util/strace
@@ -23,10 +25,14 @@ PDEPEND="
 	dev-vcs/gitflow
 	dev-vcs/gitg
 	dev-vcs/git[tk]
-	kde-base/kompare
-	kde-base/umbrello
 	sci-calculators/galculator
 	sci-visualization/gnuplot
+
+	kde? (
+		kde-base/kompare
+		kde-base/umbrello
+		kde-misc/kdiff3
+	)
 
 	cpp? (
 		dev-cpp/cppstaff[rich?,exotic?,testing?]
@@ -62,5 +68,6 @@ PDEPEND="
 
 	rich? (
 		dev-util/argouml
+		dev-util/mutrace
 	)
 "

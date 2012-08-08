@@ -17,6 +17,7 @@ PDEPEND="
 	app-admin/logrotate
 	app-admin/pwgen
 	app-admin/syslog-ng
+	app-editors/vim
 	app-misc/mc
 	app-misc/screen
 	app-portage/eix
@@ -52,7 +53,6 @@ PDEPEND="
 		app-portage/g-cpan
 		net-analyzer/nettop
 		net-analyzer/nmap
-		net-analyzer/ntop
 		net-analyzer/wireshark
 		net-misc/proxytunnel
 		sys-apps/hdparm

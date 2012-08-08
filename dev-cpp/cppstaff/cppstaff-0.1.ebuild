@@ -11,15 +11,21 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="database exotic +rich +testing"
+IUSE="database exotic +rich +testing +kde"
 
 PDEPEND="
 	dev-libs/boost[doc,tools]
 	dev-util/ccache
 	dev-util/cmake
-	dev-util/kdevelop[cxx]
 	dev-util/valgrind
-	kde-base/kcachegrind
+
+	kde? (
+		dev-util/kdevelop[cxx]
+		kde-base/kcachegrind
+	)
+	!kde? (
+		dev-util/qt-creator[cmake,git,valgrind]
+	)
 
 	testing? (
 		dev-cpp/gmock
@@ -33,5 +39,6 @@ PDEPEND="
 		dev-cpp/tbb
 		dev-libs/oniguruma
 		dev-util/qt-creator[cmake,git,valgrind]
+		dev-util/re2c
 	)
 "
