@@ -6,6 +6,7 @@ dev-util/geany
 dev-util/kdevelop
 dev-util/kdevplatform
 dev-util/lcov
+dev-util/mutrace
 dev-util/qt-creator
 dev-util/uncrustify
 dev-util/valgrind

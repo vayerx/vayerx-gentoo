@@ -25,6 +25,7 @@ PDEPEND="
 	app-portage/layman
 	app-portage/mirrorselect
 	app-portage/ufed
+	dev-util/lafilefixer
 	dev-util/strace
 	net-analyzer/netcat
 	net-analyzer/tcpdump
@@ -35,6 +36,7 @@ PDEPEND="
 	net-misc/dhcpcd
 	net-misc/netkit-telnetd
 	net-misc/ntp
+	sys-apps/attr
 	sys-apps/dstat
 	sys-apps/ethtool
 	sys-apps/smartmontools
@@ -55,8 +57,10 @@ PDEPEND="
 		net-analyzer/nmap
 		net-analyzer/wireshark
 		net-misc/proxytunnel
+		sys-apps/dmidecode
 		sys-apps/hdparm
 		sys-block/gparted
+		sys-boot/unetbootin
 
 		gnome? ( gnome-base/gdm )
 		lxde? ( lxde-base/lxdm )

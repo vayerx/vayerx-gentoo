@@ -11,12 +11,15 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="+gnome +kde +lxde +rich"
+IUSE="burn +gnome +kde +lxde +rich"
 
 PDEPEND="
 	app-admin/keepassx
-	app-editors/gedit
+	app-arch/unrar
+	app-crypt/gpa
+	app-crypt/gpgme
 	app-office/libreoffice-bin
+	app-text/aspell
 	media-fonts/arphicfonts
 	media-fonts/bitstream-cyberbit
 	media-fonts/corefonts
@@ -34,17 +37,32 @@ PDEPEND="
 	media-gfx/imagemagick
 	media-sound/clementine
 	media-sound/mpg123
-	media-sound/picard
 	media-video/mplayer
 	net-im/psi
 	net-misc/x11-ssh-askpass
 	net-print/cups
 	net-print/cups-pdf
 	www-plugins/adobe-flash
+	www-plugins/nspluginwrapper
 	x11-apps/mesa-progs
 	x11-base/xorg-x11
 	x11-misc/xscreensaver
 	x11-terms/terminal
+	x11-themes/gentoo-artwork
+	x11-themes/tango-icon-theme
+
+	burn? (
+		app-cdr/cdw
+		app-cdr/xfburn
+
+		rich? (
+			app-cdr/bin2iso
+			app-cdr/burn-cd
+			app-cdr/cuetools
+			app-cdr/iat
+			app-cdr/nrg2iso
+		)
+	)
 
 	kde? (
 		kde-base/okular
@@ -53,6 +71,10 @@ PDEPEND="
 	gnome? (
 		app-text/evince
 		gnome-extra/gnome-utils
+		app-editors/gedit
+	)
+	!gnome? (
+		app-editors/leafpad
 	)
 
 	rich? (
@@ -65,9 +87,17 @@ PDEPEND="
 	)
 
 	rich? (
+		app-text/chm2pdf
+		app-text/djview
 		app-text/epdfview
+		app-office/dia
+		media-gfx/exif
+		media-gfx/exiftags
+		media-sound/picard
 		media-video/vlc
 		www-client/chromium
 		www-client/links
+		www-plugins/gnash
+		www-plugins/lightspark
 	)
 "

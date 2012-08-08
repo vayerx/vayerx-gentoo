@@ -14,6 +14,8 @@ SLOT="0"
 IUSE="+cpp ruby +python database postgres sqlite exotic +kde math +network +rich +testing"
 
 PDEPEND="
+	app-arch/makeself
+	app-arch/unmakeself
 	app-doc/doxygen
 	app-editors/hexedit
 	app-i18n/enca
@@ -35,7 +37,7 @@ PDEPEND="
 	)
 
 	cpp? (
-		dev-cpp/cppstaff[rich?,exotic?,testing?]
+		dev-cpp/cppstaff[rich?,exotic?,testing?,kde?]
 		sys-devel/gcc[cxx]
 	)
 
