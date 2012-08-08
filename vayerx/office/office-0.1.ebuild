@@ -11,12 +11,12 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="+gnome +lxde +rich"
+IUSE="+gnome +kde +lxde +rich"
 
 PDEPEND="
 	app-admin/keepassx
 	app-editors/gedit
-	kde-base/okular
+	app-office/libreoffice-bin
 	media-fonts/arphicfonts
 	media-fonts/bitstream-cyberbit
 	media-fonts/corefonts
@@ -25,7 +25,6 @@ PDEPEND="
 	media-fonts/droid
 	media-fonts/freefonts
 	media-fonts/intlfonts
-	media-fonts/ipamonafont
 	media-fonts/ja-ipafonts
 	media-fonts/takao-fonts
 	media-fonts/terminus-font
@@ -39,6 +38,7 @@ PDEPEND="
 	media-video/mplayer
 	net-im/psi
 	net-misc/x11-ssh-askpass
+	net-print/cups
 	net-print/cups-pdf
 	www-plugins/adobe-flash
 	x11-apps/mesa-progs
@@ -46,9 +46,8 @@ PDEPEND="
 	x11-misc/xscreensaver
 	x11-terms/terminal
 
-	lxde? (
-		x11-misc/obkey
-		x11-misc/obmenu
+	kde? (
+		kde-base/okular
 	)
 
 	gnome? (
