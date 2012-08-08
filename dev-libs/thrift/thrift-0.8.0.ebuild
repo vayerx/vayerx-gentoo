@@ -3,8 +3,7 @@
 # $Header: $
 
 EAPI="3"
-WANT_AUTOCONF="latest"
-inherit autotools flag-o-matic
+inherit flag-o-matic
 
 DESCRIPTION="Data serialization and communication toolwork"
 HOMEPAGE="http://thrift.apache.org/about/"
@@ -12,7 +11,7 @@ SRC_URI="mirror://apache/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="amd64 ~arm x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="+pic cpp c_glib csharp java erlang python perl php php_extension ruby haskell go"
 
 RDEPEND=">=dev-libs/boost-1.34.0

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<use>
+	<flag name='c_glib'>c_glib</flag>
+	<flag name='cpp'>cpp</flag>
+	<flag name='csharp'>csharp</flag>
+	<flag name='csharp'>csharp</flag>
+	<flag name='erlang'>erlang</flag>
+	<flag name='go'>go</flag>
+	<flag name='haskell'>haskell</flag>
+	<flag name='php_extension'>php_extension</flag>
+	<flag name='pic'>php_extension</flag>
+</use>
+</pkgmetadata>
