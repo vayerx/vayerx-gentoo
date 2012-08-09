@@ -4,14 +4,14 @@
 
 EAPI=3
 
-DESCRIPTION="System staff meta"
+DESCRIPTION="Office staff meta"
 HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
 SRC_URI=""
 
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="burn +gnome +kde +lxde +rich"
+IUSE="burn +gnome +kde +lxde +rich 32on64"
 
 PDEPEND="
 	app-admin/keepassx
@@ -43,13 +43,14 @@ PDEPEND="
 	net-print/cups
 	net-print/cups-pdf
 	www-plugins/adobe-flash
-	www-plugins/nspluginwrapper
 	x11-apps/mesa-progs
 	x11-base/xorg-x11
 	x11-misc/xscreensaver
 	x11-terms/terminal
 	x11-themes/gentoo-artwork
 	x11-themes/tango-icon-theme
+
+	amd64? ( 32on64? ( www-plugins/nspluginwrapper ) )
 
 	burn? (
 		app-cdr/cdw
@@ -95,6 +96,7 @@ PDEPEND="
 		media-gfx/exiftags
 		media-sound/picard
 		media-video/vlc
+		x11-themes/gnome-icon-theme
 		www-client/chromium
 		www-client/links
 		www-plugins/gnash

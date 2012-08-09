@@ -5,5 +5,6 @@
 <use>
 	<flag name='burn'>Install CD/DVD/BR-burning tools</flag>
 	<flag name='rich'>Don't mind installing excessive GUI staff</flag>
+	<flag name='32on64'>Install nspluginwrapper</flag>
 </use>
 </pkgmetadata>
