@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+rich gnome"
 
 PDEPEND="
-	x11-misc/obconf
+	x11-misc/obconf[lxde]
 	x11-misc/obkey
 
 	rich? (
@@ -29,7 +29,6 @@ PDEPEND="
 		)
 	)
 	!rich? (
-		x11-misc/pcmanfm
 		lxde-base/lxtask
 		lxde-base/lxterminal
 	)
@@ -47,6 +46,7 @@ RDEPEND="
 	lxde-base/lxsession-edit
 	lxde-base/lxshortcut
 	x11-misc/obmenu
+	x11-misc/pcmanfm
 	x11-wm/openbox
 "
 
