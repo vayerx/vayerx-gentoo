@@ -14,18 +14,22 @@ SLOT="0"
 IUSE="database exotic +testing"
 
 PDEPEND="
-	dev-python/coverage
+	dev-python/httplib2
+	dev-python/lxml
+	dev-python/setuptools
+
 	exotic? (
 		dev-python/git-python
 		dev-python/paramiko
 		>=dev-python/ipython-0.11
 	)
-	dev-python/lxml
-	dev-python/setuptools
+
 	testing? (
+		dev-python/coverage
 		dev-python/mock
 		dev-python/mox
 	)
+
 	database? (
 		dev-python/sqlalchemy
 	)
