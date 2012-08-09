@@ -33,12 +33,6 @@ PDEPEND="
 		lxde-base/lxtask
 		lxde-base/lxterminal
 	)
-
-	|| (
-		lxde-base/lxdm
-		gnome? ( gnome-base/gdm )
-		x11-misc/slim
-	)
 "
 
 RDEPEND="

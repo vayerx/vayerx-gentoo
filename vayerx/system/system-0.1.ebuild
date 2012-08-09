@@ -61,8 +61,11 @@ PDEPEND="
 		sys-apps/hdparm
 		sys-block/gparted
 		sys-boot/unetbootin
+	)
 
+	|| (
 		gnome? ( gnome-base/gdm )
 		lxde? ( lxde-base/lxdm )
+		x11-misc/slim
 	)
 "
