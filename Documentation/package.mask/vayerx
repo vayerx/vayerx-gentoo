@@ -1,5 +1,5 @@
 >dev-java/sun-jre-bin-1.6.0.26
 =games-fps/urbanterror-4.1.1807.251210
-=net-im/skype-4.0.0.7-r2
+>=net-im/skype-3
 =sys-kernel/genkernel-3.4.24_p1
 =sys-kernel/genkernel-3.4.24_p2
