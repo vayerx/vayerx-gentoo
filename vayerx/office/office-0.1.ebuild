@@ -15,7 +15,9 @@ IUSE="burn +gnome +kde +lxde +rich 32on64"
 
 PDEPEND="
 	app-admin/keepassx
+	app-arch/p7zip
 	app-arch/unrar
+	app-arch/zip
 	app-crypt/gpa
 	app-crypt/gpgme
 	app-office/libreoffice-bin
@@ -90,7 +92,7 @@ PDEPEND="
 	rich? (
 		app-text/chm2pdf
 		app-text/djview
-		app-text/epdfview
+		app-text/mupdf
 		app-office/dia
 		media-gfx/exif
 		media-gfx/exiftags
