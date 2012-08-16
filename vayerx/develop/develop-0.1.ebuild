@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="+cpp ruby +python database postgres sqlite exotic +kde math +network +rich +testing"
+IUSE="+cpp java ruby +python database postgres sqlite exotic +kde math +network +rich +testing"
 
 PDEPEND="
 	app-arch/makeself
@@ -39,6 +39,10 @@ PDEPEND="
 	cpp? (
 		dev-cpp/cppstaff[rich?,exotic?,testing?,kde?]
 		sys-devel/gcc[cxx]
+	)
+
+	java? (
+		dev-util/idea-community
 	)
 
 	ruby? (
