@@ -17,6 +17,6 @@ PDEPEND="
 	development? ( vayerx/develop )
 	lxde? ( vayerx/lxde )
 
-	vayerx/system[gnome?,lxde?]
+	vayerx/systaff[gnome?,lxde?]
 	vayerx/office
 "
