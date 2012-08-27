@@ -20,6 +20,7 @@ PDEPEND="
 	app-editors/vim
 	app-misc/mc
 	app-misc/screen
+	app-misc/vlock
 	app-portage/eix
 	app-portage/gentoolkit
 	app-portage/layman
