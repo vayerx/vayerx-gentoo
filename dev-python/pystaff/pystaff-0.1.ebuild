@@ -11,17 +11,17 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="database exotic +testing"
+IUSE="database rich +testing"
 
 PDEPEND="
 	dev-python/httplib2
+	>=dev-python/ipython-0.11
 	dev-python/lxml
 	dev-python/setuptools
 
-	exotic? (
+	rich? (
 		dev-python/git-python
 		dev-python/paramiko
-		>=dev-python/ipython-0.11
 	)
 
 	testing? (

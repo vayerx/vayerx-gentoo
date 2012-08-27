@@ -42,6 +42,7 @@ PDEPEND="
 	)
 
 	java? (
+		dev-java/javacc
 		dev-util/idea-community
 	)
 
@@ -52,7 +53,7 @@ PDEPEND="
 
 	python? (
 		dev-lang/python
-		dev-python/pystaff[database?,exotic?,testing?]
+		dev-python/pystaff[database?,rich?,testing?]
 		dev-python/spyder[pylint,sphinx]
 	)
 
