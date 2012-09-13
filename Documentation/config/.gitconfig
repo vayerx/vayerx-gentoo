@@ -43,8 +43,8 @@
 	date = iso
 
 [pretty]
-	vay = %h %Cred%an %Cblue%s%Creset
-	vaylong = %h %Cred%an %Cgreen%aD %Cblue%s%Creset
+	vay = %Cgreen%h %Creset%s%Creset
+	vaylong = %Cgreen%h %Cred%an %Cgreen%aD %Creset%s
 
 [push]
 	default = tracking
@@ -53,5 +53,5 @@
 	color = auto
 
 [user]
-	email = vayerx@gmail.com
 	name = Vasiliy Yeremeyev
+
