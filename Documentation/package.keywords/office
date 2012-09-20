@@ -1,5 +1,6 @@
 <app-emulation/wine-1.5
 app-misc/gramps
+mail-client/thunderbird
 =media-libs/liblastfm-1.0.1
 media-sound/clementine
 vayerx/office
