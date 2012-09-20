@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/valgrind/valgrind-3.6.1-r1.ebuild,v 1.1 2011/06/09 20:38:30 blueness Exp $
+# $Header: $
 
-EAPI=2
+EAPI="4"
 inherit autotools eutils flag-o-matic toolchain-funcs multilib pax-utils
 
 DESCRIPTION="An open-source memory debugger for GNU/Linux"
@@ -11,41 +11,31 @@ SRC_URI="http://www.valgrind.org/downloads/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
-IUSE="mpi qt4"
+KEYWORDS="-* ~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~x86-macos ~x64-macos"
+IUSE="mpi"
 
 DEPEND="mpi? ( virtual/mpi )"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
+	# Correct hard coded doc location
+	sed -i -e "s:doc/valgrind:doc/${PF}:" docs/Makefile.am || die
+
+	# Don't force multiarch stuff on OSX, bug #306467
+	sed -i -e 's:-arch \(i386\|x86_64\)::g' Makefile.all.am || die
+
 	# Respect CFLAGS, LDFLAGS
-	sed -i -e '/^CPPFLAGS =/d' -e '/^CFLAGS =/d' -e '/^LDFLAGS =/d' \
-		mpi/Makefile.am || die
+	epatch "${FILESDIR}"/${PN}-3.7.0-respect-flags.patch
 
 	# Changing Makefile.all.am to disable SSP
-	sed -i -e 's:^AM_CFLAGS_BASE = :AM_CFLAGS_BASE = -fno-stack-protector :' \
-		Makefile.all.am || die
-
-	# Correct hard coded doc location
-	sed -i -e "s:doc/valgrind:doc/${PF}:" \
-		docs/Makefile.am || die
+	epatch "${FILESDIR}"/${PN}-3.7.0-fno-stack-protector.patch
 
 	# Yet more local labels, this time for ppc32 & ppc64
 	epatch "${FILESDIR}"/${PN}-3.6.0-local-labels.patch
 
 	# Don't build in empty assembly files for other platforms or we'll get a QA
 	# warning about executable stacks.
-	epatch "${FILESDIR}"/${PN}-3.6.0-non-exec-stack.patch
-
-	# Fix up some suppressions that were not general enough for glibc versions
-	# with more than just a major and minor number.
-	epatch "${FILESDIR}"/${PN}-3.4.1-glibc-2.10.1.patch
-
-	# Remove automagic dependency on qt4
-	epatch "${FILESDIR}"/${PN}-3.6.1-user-enable-qt4.patch
-
-	# Allow valgrind to build against linux-3, bug #370857
-	epatch "${FILESDIR}"/${PN}-3.6.1-linux-3.patch
+	epatch "${FILESDIR}"/${PN}-3.8.0-non-exec-stack.patch
 
 	# Increase VG_* (VG_N_SEGMENTS,..)
 	epatch "${FILESDIR}"/vg_n.patch
@@ -63,41 +53,51 @@ src_configure() {
 	#                       amd64 (bug #102157)
 	# -fstack-protector     more undefined references to __guard and __stack_smash_handler
 	#                       because valgrind doesn't link to glibc (bug #114347)
+	# -m64 -mx32			for multilib-portage, bug #398825
 	# -ggdb3                segmentation fault on startup
 	filter-flags -fomit-frame-pointer
 	filter-flags -fpie
 	filter-flags -fstack-protector
+	filter-flags -m64 -mx32
 	replace-flags -ggdb3 -ggdb2
 
 	if use amd64 || use ppc64; then
 		! has_multilib_profile && myconf="${myconf} --enable-only64bit"
 	fi
 
+	# Force bitness on darwin, bug #306467
+	use x86-macos && myconf="${myconf} --enable-only32bit"
+	use x64-macos && myconf="${myconf} --enable-only64bit"
+
 	# Don't use mpicc unless the user asked for it (bug #258832)
 	if ! use mpi; then
 		myconf="${myconf} --without-mpicc"
-	fi
-
-	if ! use qt4; then
-		myconf="${myconf} --disable-qtcore"
 	fi
 
 	econf ${myconf}
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install
 	dodoc AUTHORS FAQ.txt NEWS README*
 
-	pax-mark m "${D}"/usr/$(get_libdir)/valgrind/*-*-linux
+	pax-mark m "${ED}"/usr/$(get_libdir)/valgrind/*-*-linux
+
+	if [[ ${CHOST} == *-darwin* ]] ; then
+		# fix install_names on shared libraries, can't turn them into bundles,
+		# as dyld won't load them any more then, bug #306467
+		local l
+		for l in "${ED}"/usr/lib/valgrind/*.so ; do
+			install_name_tool -id "${EPREFIX}"/usr/lib/valgrind/${l##*/} "${l}"
+		done
+	fi
 }
 
 pkg_postinst() {
-	if use ppc || use ppc64 || use amd64 ; then
-		ewarn "Valgrind will not work on ppc, ppc64 or amd64 if glibc does not have"
-		ewarn "debug symbols (see https://bugs.gentoo.org/show_bug.cgi?id=214065"
-		ewarn "and http://bugs.gentoo.org/show_bug.cgi?id=274771)."
-		ewarn "To fix this you can add splitdebug to FEATURES in make.conf and"
-		ewarn "remerge glibc."
-	fi
+	ewarn "Valgrind will not work if glibc does not have debug symbols."
+	ewarn "To fix this you can add splitdebug to FEATURES in make.conf"
+	ewarn "and remerge glibc.  See:"
+	ewarn "https://bugs.gentoo.org/show_bug.cgi?id=214065"
+	ewarn "https://bugs.gentoo.org/show_bug.cgi?id=274771"
+	ewarn "https://bugs.gentoo.org/show_bug.cgi?id=388703"
 }
