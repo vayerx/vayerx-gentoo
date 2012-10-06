@@ -1,5 +1,6 @@
 <=app-portage/eix-0.25.5
 =app-shells/push-1.5
+>=dev-java/oracle-jre-bin-1.7.0.7
 net-misc/proxytunnel
 =sys-devel/gcc-4.6.3
 =sys-kernel/genkernel-3.4.23.1

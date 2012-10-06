@@ -1,5 +1,7 @@
 <app-emulation/wine-1.5
 app-misc/gramps
+=dev-libs/nspr-4.9.2
+=dev-libs/nss-3.13.6
 mail-client/thunderbird
 =media-libs/liblastfm-1.0.1
 media-sound/clementine
