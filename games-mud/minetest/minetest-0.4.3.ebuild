@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,13 +9,9 @@ DESCRIPTION="An InfiniMiner/Minecraft inspired game."
 HOMEPAGE="http://celeron.55.lt/~celeron55/minetest/"
 
 EGIT_REPO_URI="git://github.com/celeron55/minetest.git"
+EGIT_COMMIT="9696ed31a41b5e3ca85bad4a29c190a0d25c7752"
 
-if [[ "${PV}" = 9999* ]]; then
-	KEYWORDS=""
-else
-	EGIT_COMMIT="0.4.dev-20120408"
-	KEYWORDS="~x86 ~amd64"
-fi
+KEYWORDS="~x86 ~amd64"
 
 SRC_URI=""
 S="${WORKDIR}/${PN}"
@@ -41,7 +37,7 @@ src_configure() {
 	mycmakeargs="
 		-DCMAKE_INSTALL_PREFIX=${GAMES_PREFIX}
 		-DRUN_IN_PLACE=0
-		-DJTHREAD_INCLUDE_DIR=${EROOT}/usr/include/jthread
+		-DJTHREAD_INCLUDE_DIR="${EROOT}/usr/include/jthread"
 		$(cmake-utils_use_build client CLIENT)
 		$(cmake-utils_use_build server SERVER)
 		$(cmake-utils_use_use nls GETTEXT)"

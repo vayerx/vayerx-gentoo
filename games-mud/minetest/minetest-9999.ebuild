@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -41,7 +41,7 @@ src_configure() {
 	mycmakeargs="
 		-DCMAKE_INSTALL_PREFIX=${GAMES_PREFIX}
 		-DRUN_IN_PLACE=0
-		-DJTHREAD_INCLUDE_DIR=${EROOT}/usr/include/jthread
+		-DJTHREAD_INCLUDE_DIR="${EROOT}/usr/include/jthread"
 		$(cmake-utils_use_build client CLIENT)
 		$(cmake-utils_use_build server SERVER)
 		$(cmake-utils_use_use nls GETTEXT)"
