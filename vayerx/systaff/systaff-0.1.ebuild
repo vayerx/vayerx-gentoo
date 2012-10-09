@@ -40,6 +40,7 @@ PDEPEND="
 	sys-apps/attr
 	sys-apps/dstat
 	sys-apps/ethtool
+	sys-apps/lm_sensors
 	sys-apps/smartmontools
 	sys-boot/grub
 	sys-kernel/genkernel

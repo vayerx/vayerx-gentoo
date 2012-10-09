@@ -31,11 +31,13 @@ PDEPEND="
 	media-fonts/freefonts
 	media-fonts/intlfonts
 	media-fonts/ja-ipafonts
+	media-fonts/source-sans-pro
 	media-fonts/takao-fonts
 	media-fonts/terminus-font
 	media-fonts/wqy-microhei
 	media-fonts/wqy-zenhei
 	media-gfx/geeqie
+	media-gfx/gimp
 	media-gfx/imagemagick
 	media-sound/clementine
 	media-sound/mpg123
