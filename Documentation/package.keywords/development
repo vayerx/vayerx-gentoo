@@ -12,6 +12,7 @@ dev-util/mutrace
 dev-util/qt-creator
 dev-util/uncrustify
 dev-util/valgrind
+=dev-vcs/git-1.7.12-r2
 dev-vcs/gitflow
 dev-vcs/git-flow-completion
 vayerx/develop
