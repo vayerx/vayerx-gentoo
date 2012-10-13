@@ -1,6 +1,9 @@
 app-admin/eselect-opengl
+media-libs/freeglut
+media-libs/glu
 media-libs/mesa
 sys-devel/llvm
+virtual/glu
 x11-libs/libdrm
 x11-proto/dri2proto
 x11-proto/glproto
