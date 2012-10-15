@@ -7,7 +7,6 @@ dev-games/physfs
 =dev-libs/nss-3.13.1-r1
 games-action/bzflag
 games-action/extreme-tuxracer
-games-action/shadowgrounds
 games-action/shadowgrounds ~amd64
 games-action/shadowgrounds-data
 games-action/supertuxkart
