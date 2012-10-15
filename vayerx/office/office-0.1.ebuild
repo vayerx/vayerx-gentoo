@@ -31,7 +31,7 @@ PDEPEND="
 	media-fonts/freefonts
 	media-fonts/intlfonts
 	media-fonts/ja-ipafonts
-	media-fonts/source-sans-pro
+	media-fonts/source-pro
 	media-fonts/takao-fonts
 	media-fonts/terminus-font
 	media-fonts/wqy-microhei

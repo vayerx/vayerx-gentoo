@@ -1,4 +1,6 @@
+>=dev-java/oracle-jre-bin-1.7.0.5-r2 Oracle-BCLA-JavaSE
 dev-java/sun-jdk Oracle-BCLA-JavaSE
+dev-java/sun-jre-bin Oracle-BCLA-JavaSE
 >=net-im/skype-4.0.0.7-r2 skype-4.0.0.7-copyright
 net-im/skype skype-eula
 www-plugins/adobe-flash AdobeFlash-10.3

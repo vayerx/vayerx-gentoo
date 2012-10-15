@@ -1,21 +1,43 @@
 app-editors/vim -X cscope
 app-emulation/qemu kqemu kvm
-app-emulation/qemu-kvm vde
+app-emulation/qemu vde
 app-misc/mc -ncurses slang
+dev-cpp/cppstaff database
+dev-java/commons-logging log4j
+dev-java/sun-jdk -nsplugin
+dev-java/sun-jre-bin -nsplugin
+dev-lang/python sqlite
 dev-libs/boost doc tools
+dev-python/nose coverage
 dev-python/PyQt4 webkit
+dev-python/pystaff database rich 
 dev-python/spyder pep8 pylint sphinx
+dev-python/sqlalchemy postgres
 dev-util/kdevplatform reviewboard
 dev-vcs/git doc tk
 dev-vcs/subversion -dso perl
+games-board/cockatrice server
 kde-base/okular ebook
+media-gfx/gimp wmf
+media-libs/chromaprint tools
+media-libs/gegl graphviz raw
 media-plugins/gst-plugins-meta dv ffmpeg http lame taglib theora v4l
-media-sound/clementine lastfm mms mtp
+media-sound/clementine lastfm mms -mtp
 media-sound/picard coverart ffmpeg
+net-analyzer/rrdtool ruby
+net-analyzer/tcpdump -samba
+net-firewall/shorewall6 doc
+net-firewall/shorewall doc
 net-im/psi extras jingle -linguas_ru webkit xscreensaver
+sys-apps/lm_sensors sensord
 sys-block/gparted fat ntfs xfs
-sys-devel/gcc graphite
+sys-devel/gcc gcj graphite
 sys-kernel/gentoo-sources symlink
 sys-libs/zlib minizip
+vayerx/develop database java postgres rich
+vayerx/office gnome
+vayerx/system gnome
 www-client/firefox -jit
+x11-libs/qt-declarative webkit
+x11-libs/qt-sql postgres
 x11-misc/obconf lxde
