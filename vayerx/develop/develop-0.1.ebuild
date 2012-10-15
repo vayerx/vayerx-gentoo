@@ -31,6 +31,7 @@ PDEPEND="
 	sci-visualization/gnuplot
 
 	kde? (
+		kde-base/kdebase-runtime-meta
 		kde-base/kompare
 		kde-base/umbrello
 		kde-misc/kdiff3

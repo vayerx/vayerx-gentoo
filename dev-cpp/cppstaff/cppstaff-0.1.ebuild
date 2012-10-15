@@ -22,6 +22,7 @@ PDEPEND="
 	kde? (
 		dev-util/kdevelop[cxx]
 		kde-base/kcachegrind
+		kde-base/kdebase-runtime-meta
 	)
 	!kde? (
 		dev-util/qt-creator[cmake,git,valgrind]
