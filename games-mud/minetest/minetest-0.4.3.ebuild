@@ -21,15 +21,16 @@ SLOT="0"
 IUSE="+client nls +server"
 
 RDEPEND="
-	sys-libs/zlib
-	nls? ( sys-devel/gettext )
-	>=dev-games/irrlicht-1.7
-	x11-libs/libX11
-	virtual/opengl
 	app-arch/bzip2
-	media-libs/libpng
 	dev-db/sqlite:3
+	>=dev-games/irrlicht-1.7
 	>=dev-libs/jthread-1.2
+	media-libs/glu
+	media-libs/libpng
+	nls? ( sys-devel/gettext )
+	sys-libs/zlib
+	virtual/opengl
+	x11-libs/libX11
 "
 DEPEND="${RDEPEND}"
 
