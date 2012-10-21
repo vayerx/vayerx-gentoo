@@ -1,10 +1,14 @@
 <app-emulation/wine-1.5
 app-emulation/winetricks
 app-misc/gramps
+app-text/cuneiform
 =dev-libs/nspr-4.9.2
 =dev-libs/nss-3.13.6
 mail-client/thunderbird
 media-fonts/source-pro
+media-fonts/takao-fonts
 =media-libs/liblastfm-1.0.1
+=media-libs/liblastfm-1.0.2
 media-sound/clementine
 vayerx/office
+=www-plugins/lightspark-0.6.0.1
