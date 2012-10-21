@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+rich gnome"
 
 PDEPEND="
-	x11-misc/obconf[lxde]
+	>=x11-misc/obconf-2.0.3_p20111019
 	x11-misc/obkey
 
 	rich? (
