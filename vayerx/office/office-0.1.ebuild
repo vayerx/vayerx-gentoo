@@ -70,6 +70,8 @@ PDEPEND="
 	)
 
 	kde? (
+		kde-base/gwenview
+		kde-base/kolourpaint
 		kde-base/okular
 	)
 
@@ -92,6 +94,8 @@ PDEPEND="
 	)
 
 	rich? (
+		app-emulation/q4wine
+		app-emulation/winetricks
 		app-text/chm2pdf
 		app-text/djview
 		app-text/mupdf
