@@ -12,6 +12,7 @@ games-action/shadowgrounds-data
 games-action/supertuxkart
 games-action/survivor ~amd64
 games-action/survivor-data
+games-board/cockatrice
 games-fps/alienarena
 games-fps/doomsday **
 games-fps/quake3

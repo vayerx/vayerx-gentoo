@@ -1,4 +1,5 @@
 <app-emulation/wine-1.5
+app-emulation/winetricks
 app-misc/gramps
 =dev-libs/nspr-4.9.2
 =dev-libs/nss-3.13.6
