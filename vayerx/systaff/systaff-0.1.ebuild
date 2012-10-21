@@ -18,6 +18,7 @@ PDEPEND="
 	app-admin/pwgen
 	app-admin/syslog-ng
 	app-editors/vim
+	app-forensics/magicrescue
 	app-misc/mc
 	app-misc/screen
 	app-misc/vlock
@@ -63,6 +64,7 @@ PDEPEND="
 		sys-apps/hdparm
 		sys-block/gparted
 		sys-boot/unetbootin
+		sys-fs/fuseiso
 	)
 
 	|| (
