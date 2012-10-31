@@ -22,6 +22,7 @@ PDEPEND="
 	app-misc/mc
 	app-misc/screen
 	app-misc/vlock
+	app-portage/eclass-manpages
 	app-portage/eix
 	app-portage/gentoolkit
 	app-portage/layman

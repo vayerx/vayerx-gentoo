@@ -4,7 +4,7 @@
 net-misc/proxytunnel
 =sys-devel/gcc-4.6.3
 =sys-kernel/genkernel-3.4.24
-=sys-kernel/gentoo-sources-3.6.2
+=sys-kernel/gentoo-sources-3.6.4
 =sys-kernel/linux-headers-3.6
 vayerx/314zdato
 vayerx/lxde
