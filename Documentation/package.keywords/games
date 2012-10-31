@@ -23,6 +23,7 @@ games-misc/opengfx
 games-misc/openmsx
 games-misc/opensfx
 games-mud/minetest
+games-mud/minetest-data
 games-roguelike/adom
 games-roguelike/angband
 games-roguelike/wrogue

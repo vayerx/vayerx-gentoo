@@ -16,21 +16,23 @@ KEYWORDS="~x86 ~amd64"
 SRC_URI=""
 S="${WORKDIR}/${PN}"
 
-LICENSE="GPL-2"
+LICENSE="LGPL-2.1+"
 SLOT="0"
-IUSE="+client nls +server"
+IUSE="+client +game nls +server +sound"
 
 RDEPEND="
 	app-arch/bzip2
 	dev-db/sqlite:3
 	>=dev-games/irrlicht-1.7
 	>=dev-libs/jthread-1.2
-	media-libs/glu
 	media-libs/libpng
 	nls? ( sys-devel/gettext )
+	sound? ( media-libs/openal )
 	sys-libs/zlib
+	virtual/glu
 	virtual/opengl
 	x11-libs/libX11
+	game? ( games-mud/minetest-data )
 "
 DEPEND="${RDEPEND}"
 
@@ -41,6 +43,7 @@ src_configure() {
 		-DJTHREAD_INCLUDE_DIR="${EROOT}/usr/include/jthread"
 		$(cmake-utils_use_build client CLIENT)
 		$(cmake-utils_use_build server SERVER)
+		$(cmake-utils_use_enable sound SOUND)
 		$(cmake-utils_use_use nls GETTEXT)"
 
 	cmake-utils_src_configure
