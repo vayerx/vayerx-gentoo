@@ -19,7 +19,7 @@ dev-ruby/rcairo
 dev-ruby/rdoc
 dev-ruby/rexical
 dev-ruby/ruby-atk
-=dev-ruby/ruby-gdkpixbuf2-1.1.4
+=dev-ruby/ruby-gdkpixbuf2-1.1.5
 dev-ruby/rubygems
 dev-ruby/ruby-gio2
 dev-ruby/ruby-glib2
