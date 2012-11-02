@@ -3,8 +3,6 @@
 <pkgmetadata>
 <herd>games</herd>
 <use>
-    <flag name="game">install main game data</flag>
-    <flag name="client">build mimetest client</flag>
     <flag name="server">build mimetest server</flag>
     <flag name="sound">enable sound support</flag>
 </use>

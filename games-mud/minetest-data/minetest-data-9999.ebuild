@@ -30,5 +30,8 @@ src_install() {
 	DEST="${GAMES_PREFIX}/share/minetest/games/main"
 	einfo "Installing to ${DEST}"
 	insinto "${DEST}"
-	doins -r "${S}/game.conf" "${S}/mods"
+	doins "${S}/game.conf"
+	doins -r "${S}/mods"
+
+	prepgamesdirs
 }
