@@ -28,6 +28,7 @@ PDEPEND="
 	app-portage/layman
 	app-portage/mirrorselect
 	app-portage/ufed
+	dev-util/ccache
 	dev-util/lafilefixer
 	dev-util/strace
 	net-analyzer/netcat
@@ -42,8 +43,10 @@ PDEPEND="
 	sys-apps/attr
 	sys-apps/dstat
 	sys-apps/ethtool
+	sys-apps/hdparm
 	sys-apps/lm_sensors
 	sys-apps/smartmontools
+	sys-block/gparted
 	sys-boot/grub
 	sys-kernel/genkernel
 	sys-kernel/gentoo-sources
@@ -62,9 +65,7 @@ PDEPEND="
 		net-analyzer/wireshark
 		net-misc/proxytunnel
 		sys-apps/dmidecode
-		sys-apps/hdparm
-		sys-block/gparted
-		sys-boot/unetbootin
+		sys-apps/memtest86+
 		sys-fs/fuseiso
 	)
 
