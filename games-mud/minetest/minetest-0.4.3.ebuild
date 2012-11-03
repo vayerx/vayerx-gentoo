@@ -89,6 +89,6 @@ pkg_postinst() {
 
 	if ! use dedicated ; then
 		elog "optional dependencies:"
-		elog "	games-action/minetest-game (official main mod)"
+		elog "	games-mud/minetest-game (official main mod)"
 	fi
 }

@@ -27,9 +27,7 @@ RDEPEND=""
 DEPEND="${RDEPEND}"
 
 src_install() {
-	DEST="${GAMES_PREFIX}/share/minetest/games/main"
-	einfo "Installing to ${DEST}"
-	insinto "${DEST}"
+	insinto "${GAMES_DATADIR}/minetest/games/main"
 	doins "${S}/game.conf"
 	doins -r "${S}/mods"
 
