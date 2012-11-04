@@ -7,6 +7,7 @@ virtual/glu
 x11-base/xorg-drivers
 x11-base/xorg-server
 x11-base/xorg-x11
+x11-drivers/ati-drivers
 x11-drivers/xf86-video-ati
 x11-drivers/xf86-video-vesa
 x11-libs/libdrm
