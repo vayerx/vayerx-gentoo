@@ -1,16 +1,15 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=3
-
-EGIT_REPO_URI="git://lipsofsuna.git.sourceforge.net/gitroot/lipsofsuna/lipsofsuna"
-EGIT_PROJECT="lipsofsuna"
 inherit eutils games waf-utils git-2
 
 DESCRIPTION="Tongue-in-cheek dungeon crawl game. Client and Server"
 HOMEPAGE="http://lipsofsuna.org/"
 SRC_URI=""
+EGIT_REPO_URI="git://lipsofsuna.git.sourceforge.net/gitroot/lipsofsuna/lipsofsuna"
+EGIT_PROJECT="lipsofsuna"
 
 LICENSE="LGPL-3"
 SLOT="0"
@@ -18,7 +17,9 @@ KEYWORDS=""
 IUSE=""
 
 DEPEND="dev-db/sqlite:3
-	>=dev-lang/lua-5.1.0
+	>=dev-lang/lua-5.1
+	>=dev-games/ogre-1.7
+	>=dev-games/ois-1.3
 	media-libs/flac
 	>=media-libs/glew-1.5
 	>=media-libs/libsdl-1.2
@@ -27,9 +28,11 @@ DEPEND="dev-db/sqlite:3
 	media-libs/mesa
 	media-libs/openal
 	>=media-libs/sdl-ttf-2.0
-	>=net-libs/enet-1
+	>=net-libs/enet-1.2
 	>=net-misc/curl-3
-	sci-physics/bullet"
+	sci-physics/bullet
+	sys-fs/inotify-tools
+"
 RDEPEND="${DEPEND}"
 
 src_configure() {
