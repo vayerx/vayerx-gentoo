@@ -1,0 +1,23 @@
+commit 9963f6a903f3c83e3b9deac89d525f3dc77e197d
+Author: Aleix Pol <aleixpol@kde.org>
+Date:   Tue Nov 13 01:37:53 2012 +0100
+
+    Fix initialization in foreach IN LISTS tag
+    
+    It was skipping over the first argument.
+    
+    BUG: 309257
+
+diff --git a/projectmanagers/cmake/parser/cmakeast.cpp b/projectmanagers/cmake/parser/cmakeast.cpp
+index b60fd6e..7fc68de 100644
+--- a/projectmanagers/cmake/parser/cmakeast.cpp
++++ b/projectmanagers/cmake/parser/cmakeast.cpp
+@@ -1643,7 +1643,7 @@ bool ForeachAst::parseFunctionInfo( const CMakeFunctionDesc& func )
+                 m_type = InItems;
+             } else
+                 return false;
+-            incr=4;
++            incr=3;
+         } else {
+             m_type=InItems;
+             incr=1;

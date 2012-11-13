@@ -7,7 +7,6 @@ EAPI=4
 KDE_LINGUAS="bs ca ca@valencia da de el en_GB es et fi fr gl it nb nds nl pl pt
 pt_BR ru sl sv th uk zh_CN zh_TW"
 VIRTUALX_REQUIRED=test
-SRC_URI="http://download.kde.org/stable/kdevelop/${PV}/src/${PN}.tar.bz2"
 
 inherit kde4-base
 
@@ -15,26 +14,27 @@ DESCRIPTION="Integrated Development Environment for Unix, supporting KDE/Qt, C/C
 LICENSE="GPL-2 LGPL-2"
 IUSE="+cmake +cxx debug okteta qthelp"
 
-
 if [[ $PV == *9999* ]]; then
 	KEYWORDS=""
 else
-	KEYWORDS="amd64 ppc ~ppc64 x86"
+	KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 fi
 
 DEPEND="
 	$(add_kdebase_dep ksysguard)
 	$(add_kdebase_dep libkworkspace)
 	okteta? ( $(add_kdebase_dep okteta) )
-	qthelp? ( >=x11-libs/qt-assistant-4.4:4 )
+	qthelp? ( x11-libs/qt-assistant:4 )
 "
 RDEPEND="${DEPEND}
 	$(add_kdebase_dep kapptemplate)
+	x11-libs/qt-declarative:4[webkit]
 	cxx? ( >=sys-devel/gdb-7.0[python] )
-	>=dev-util/kdevplatform-1.4
 "
 RESTRICT="test"
 # see bug 366471
+
+PATCHES=( "${FILESDIR}/${P}_fix_foreach.patch" )
 
 src_configure() {
 	mycmakeargs=(
