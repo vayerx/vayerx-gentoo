@@ -14,21 +14,7 @@ SLOT="0"
 IUSE="+cpp java ruby +python database postgres sqlite exotic +kde math +network +rich +testing"
 
 PDEPEND="
-	app-arch/makeself
-	app-arch/unmakeself
-	app-doc/doxygen
-	app-editors/hexedit
-	app-i18n/enca
-	dev-libs/libxml2
-	dev-util/geany
 	dev-util/meld
-	dev-util/strace
-	dev-util/uncrustify
-	dev-vcs/gitflow
-	dev-vcs/gitg
-	dev-vcs/git[tk]
-	sci-calculators/galculator
-	sci-visualization/gnuplot
 
 	kde? (
 		kde-base/kdebase-runtime-meta

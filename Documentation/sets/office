@@ -16,6 +16,7 @@ net-im/psi
 net-misc/x11-ssh-askpass
 net-print/cups
 net-print/cups-pdf
+vayerx/office
 www-plugins/adobe-flash
 x11-apps/mesa-progs
 x11-base/xorg-x11
