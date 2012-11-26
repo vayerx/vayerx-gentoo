@@ -12,6 +12,7 @@ games-action/shadowgrounds-data
 games-action/supertuxkart
 games-action/survivor ~amd64
 games-action/survivor-data
+games-action/teeworlds
 games-board/cockatrice
 games-fps/alienarena
 games-fps/doomsday **
@@ -27,7 +28,7 @@ games-mud/minetest-data
 games-roguelike/adom
 games-roguelike/angband
 games-roguelike/wrogue
-games-rpg/lipsofsuna **
+games-rpg/lipsofsuna
 games-simulation/gl117
 games-simulation/lincity-ng
 games-simulation/openttd
@@ -47,5 +48,6 @@ games-strategy/warzone2100
 games-strategy/wesnoth
 games-util/catcodec
 games-util/grfcodec
+=media-libs/pnglite-0.1.17
 =net-libs/enet-1.3.3
 =net-libs/libircclient-1.6-r1

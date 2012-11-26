@@ -15,6 +15,7 @@ app-portage/ufed
 dev-util/ccache
 dev-util/lafilefixer
 dev-util/strace
+dev-vcs/mercurial
 net-analyzer/netcat
 net-analyzer/tcpdump
 net-analyzer/traceroute
