@@ -1,18 +1,23 @@
 dev-cpp/cppstaff
 dev-libs/shflags
 =dev-libs/thrift-0.8.0
+dev-util/android-ndk
+=dev-util/android-sdk-update-manager-21
 =dev-util/cmake-2.8.8-r3
 dev-util/cppcheck
 dev-util/geany
+dev-util/gource
 dev-util/kdevelop
 =dev-util/kdevelop-python-1.3.9999 **
 dev-util/kdevplatform
 dev-util/lcov
 dev-util/mutrace
+dev-util/patchelf
 dev-util/qt-creator
 dev-util/uncrustify
 dev-util/valgrind
 =dev-vcs/git-1.7.12-r2
 dev-vcs/gitflow
 dev-vcs/git-flow-completion
+=media-libs/glm-0.9.3.2
 vayerx/develop

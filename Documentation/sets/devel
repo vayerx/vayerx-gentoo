@@ -4,6 +4,7 @@ app-doc/doxygen
 app-i18n/enca
 dev-libs/libxml2
 dev-util/geany
+dev-util/ragel
 dev-util/strace
 dev-util/uncrustify
 dev-vcs/gitflow

@@ -24,6 +24,8 @@ net-firewall/shorewall6
 net-misc/dhcpcd
 net-misc/netkit-telnetd
 net-misc/ntp
+net-misc/proxychains
+net-misc/whois
 sys-apps/attr
 sys-apps/dstat
 sys-apps/ethtool
