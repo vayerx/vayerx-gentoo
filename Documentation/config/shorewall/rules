@@ -1,0 +1,33 @@
+#
+# Shorewall version 4 - Rules File
+#
+# For information on the settings in this file, type "man shorewall-rules"
+#
+# The manpage is also online at
+# http://www.shorewall.net/manpages/shorewall-rules.html
+#
+####################################################################################################################################################################
+#ACTION		SOURCE		DEST		PROTO	DEST	SOURCE		ORIGINAL	RATE		USER/	MARK	CONNLIMIT	TIME         HEADERS
+#							PORT	PORT(S)		DEST		LIMIT		GROUP
+#SECTION ALL
+#SECTION ESTABLISHED
+#SECTION RELATED
+SECTION NEW
+
+Ping(DROP)	net		fw
+AllowICMPs	net		fw
+
+#SSH(ACCEPT)	net		fw
+ACCEPT		net		fw		tcp	22	-		-		s:ssh:6/min:5
+
+# Psi
+ACCEPT		net		fw		tcp	8010	-		-		s:psi:10/min:5
+
+# Gerrit
+ACCEPT		net		fw		tcp	29418,8080
+
+# OpenArena
+ACCEPT		net		fw		udp	27960
+
+# AlienArena
+ACCEPT		net		fw		udp	27910,37279
