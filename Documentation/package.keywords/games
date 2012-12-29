@@ -14,6 +14,7 @@ games-action/survivor ~amd64
 games-action/survivor-data
 games-action/teeworlds
 games-board/cockatrice
+games-emulation/gens
 games-fps/alienarena
 games-fps/doomsday **
 games-fps/quake3
