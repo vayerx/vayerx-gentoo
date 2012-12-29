@@ -5,9 +5,9 @@
 	co = checkout
 	df = diff
 	d  = diff --word-diff-regex=. --word-diff=color
-	dd = diff --color-words --word-diff-regex='[A-z_][A-z_]*'
-	lg = log --pretty=vay
-	lv = log --pretty=vaylong
+	fe = fetch --prune
+	lg = log --pretty=vay --first-parent
+	lv = log --pretty=vaylong --first-parent
 	rb = rebase
 	rl = rev-list
 	st = status
