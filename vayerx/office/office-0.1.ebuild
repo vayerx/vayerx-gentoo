@@ -24,7 +24,6 @@ PDEPEND="
 	www-plugins/adobe-flash
 	x11-base/xorg-x11
 	x11-misc/xscreensaver
-	x11-terms/terminal
 	x11-themes/tango-icon-theme
 
 	amd64? ( 32on64? ( www-plugins/nspluginwrapper ) )
