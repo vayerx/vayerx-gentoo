@@ -8,10 +8,11 @@
 	fe = fetch --prune
 	lg = log --pretty=vay --first-parent
 	lv = log --pretty=vaylong --first-parent
+	pu = pull --ff-only
 	rb = rebase
 	rl = rev-list
 	st = status
-	up = pull --ff-only
+	rup = remote update
 
 [branch]
 	autosetuprebase = remote
@@ -32,6 +33,8 @@
 	status = false
 
 [core]
+	eol = native
+	excludesfile = /home/vayerx/.gitexclude
 	excludesfile = ~/.gitexclude
 	pager = cat
 	whitespace = trailing-space,space-before-tab
@@ -54,4 +57,3 @@
 
 [user]
 	name = Vasiliy Yeremeyev
-
