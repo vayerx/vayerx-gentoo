@@ -16,6 +16,7 @@ games-action/teeworlds
 games-board/cockatrice
 games-emulation/gens
 games-fps/alienarena
+games-fps/alienarena-ng
 games-fps/doomsday **
 games-fps/quake3
 games-fps/quake3-data
