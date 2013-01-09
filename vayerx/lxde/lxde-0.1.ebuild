@@ -25,7 +25,7 @@ PDEPEND="
 		!gnome? (
 			xfce-base/thunar
 			xfce-extra/xfce4-taskmanager
-			x11-terms/terminal
+			x11-terms/xfce4-terminal
 		)
 	)
 	!rich? (
