@@ -68,7 +68,7 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die
 	if ! use dedicated ; then
-		make_desktop_entry ${PN} "Alien Arena"
+		make_desktop_entry alienarena "Alien Arena" alienarena
 	fi
 	dodoc docs/README.txt README
 	prepgamesdirs
