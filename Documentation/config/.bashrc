@@ -45,13 +45,19 @@ function ghead() {
 }
 
 function gbr() {
-	git co -b "${1}" "origin/${2:-$1}"
+	git co -b "${1:?no branch name}" "origin/${2:-$1}"
 }
 
-backtrace() {
-	local exe="$1"
-	local core="$2"
+function backtrace() {
+	local exe="${1:?no exe file}"
+	local core="${2:?no core file}"
 	gdb ${exe} --core ${core} --batch --quiet \
 		-ex "thread apply all bt full" \
 		-ex "quit"
+}
+
+function sortit() {
+	local src="${1:?no file}"
+	local dest="$(mktemp)"
+	LC_COLLATE="C" sort -u $src > $dest && mv $dest $src || rm $dest
 }
