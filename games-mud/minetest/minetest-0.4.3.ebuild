@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,9 +9,13 @@ DESCRIPTION="An InfiniMiner/Minecraft inspired game."
 HOMEPAGE="http://celeron.55.lt/~celeron55/minetest/"
 
 EGIT_REPO_URI="git://github.com/celeron55/minetest.git"
-EGIT_COMMIT="9696ed31a41b5e3ca85bad4a29c190a0d25c7752"
 
-KEYWORDS="~x86 ~amd64"
+if [[ "${PV}" = 9999* ]]; then
+	KEYWORDS=""
+else
+	EGIT_COMMIT="9696ed31a41b5e3ca85bad4a29c190a0d25c7752"
+	KEYWORDS="~x86 ~amd64"
+fi
 
 SRC_URI=""
 S="${WORKDIR}/${PN}"
@@ -24,6 +28,7 @@ RDEPEND="
 	dev-db/sqlite:3
 	dev-lang/lua
 	>=dev-libs/jthread-1.2
+	<dev-libs/jthread-1.3
 	sys-libs/zlib
 	!dedicated? (
 		app-arch/bzip2

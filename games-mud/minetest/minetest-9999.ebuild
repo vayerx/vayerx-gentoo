@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -28,6 +28,7 @@ RDEPEND="
 	dev-db/sqlite:3
 	dev-lang/lua
 	>=dev-libs/jthread-1.2
+	<dev-libs/jthread-1.3
 	sys-libs/zlib
 	!dedicated? (
 		app-arch/bzip2
