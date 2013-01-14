@@ -1,6 +1,6 @@
 <app-emulation/wine-1.5
-=dev-libs/nspr-4.9.2
-=dev-libs/nss-3.13.6
+=dev-libs/nspr-4.9.4
+=dev-libs/nss-3.14.1
 =media-libs/liblastfm-1.0.2
 =www-plugins/lightspark-0.6.0.1
 app-emulation/winetricks
