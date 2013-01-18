@@ -48,9 +48,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-nodocs.patch
-	if use rockethell; then
-		epatch "${FILESDIR}"/rocket_hell-${PV}.patch
-	fi
 	eautoreconf
 }
 
