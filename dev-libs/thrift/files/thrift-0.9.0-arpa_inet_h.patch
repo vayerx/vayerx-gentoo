@@ -1,0 +1,12 @@
+diff --git a/lib/cpp/src/thrift/protocol/TBinaryProtocol.tcc b/lib/cpp/src/thrift/protocol/TBinaryProtocol.tcc
+index 294c831..5534dcc 100644
+--- a/lib/cpp/src/thrift/protocol/TBinaryProtocol.tcc
++++ b/lib/cpp/src/thrift/protocol/TBinaryProtocol.tcc
+@@ -23,6 +23,7 @@
+ #include "TBinaryProtocol.h"
+ 
+ #include <limits>
++#include <arpa/inet.h>
+ 
+ 
+ namespace apache { namespace thrift { namespace protocol {

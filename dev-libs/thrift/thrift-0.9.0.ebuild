@@ -8,6 +8,7 @@ inherit flag-o-matic
 DESCRIPTION="Data serialization and communication toolwork"
 HOMEPAGE="http://thrift.apache.org/about/"
 SRC_URI="mirror://apache/${PN}/${PV}/${P}.tar.gz"
+RESTRICT="primaryuri"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -54,6 +55,10 @@ DEPEND="${RDEPEND}
 	"
 
 S="${WORKDIR}/${P/_beta[0-9]/}"
+
+src_prepare() {
+	epatch ${FILESDIR}/${P}-arpa_inet_h.patch
+}
 
 src_configure() {
 	local myconf
