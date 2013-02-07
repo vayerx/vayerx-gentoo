@@ -15,7 +15,6 @@ IUSE="burn +gnome +kde +lxde +rich 32on64"
 
 PDEPEND="
 	app-admin/keepassx
-	app-office/libreoffice-bin
 	app-text/aspell
 	media-gfx/geeqie
 	net-im/psi
@@ -59,10 +58,12 @@ PDEPEND="
 	)
 
 	rich? (
+		app-office/libreoffice
 		mail-client/thunderbird
 		www-client/firefox
 	)
 	!rich? (
+		app-office/libreoffice-bin
 		mail-client/thunderbird-bin
 		www-client/firefox-bin
 	)

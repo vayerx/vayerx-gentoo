@@ -4,7 +4,6 @@ app-arch/unrar
 app-arch/zip
 app-crypt/gpa
 app-crypt/gpgme
-app-office/libreoffice-bin
 app-text/aspell
 media-gfx/geeqie
 media-gfx/gimp
