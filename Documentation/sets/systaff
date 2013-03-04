@@ -36,6 +36,7 @@ sys-apps/memtest86+
 sys-apps/smartmontools
 sys-block/gparted
 sys-boot/grub
+sys-fs/inotify-tools
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
 sys-power/acpid

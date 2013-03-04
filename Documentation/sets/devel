@@ -4,11 +4,13 @@ app-doc/doxygen
 app-i18n/enca
 dev-libs/libxml2
 dev-util/geany
+dev-util/google-perftools
 dev-util/ragel
 dev-util/strace
 dev-util/uncrustify
-dev-vcs/gitflow
 dev-vcs/git[tk]
+dev-vcs/gitflow
 sci-calculators/galculator
 sci-visualization/gnuplot
+sys-fs/inotify-tools
 vayerx/develop
