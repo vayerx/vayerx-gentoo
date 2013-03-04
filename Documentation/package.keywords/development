@@ -6,6 +6,7 @@
 =media-libs/glm-0.9.3.2
 dev-cpp/cppstaff
 dev-libs/shflags
+dev-qt/qt-creator
 dev-util/android-ndk
 dev-util/cppcheck
 dev-util/geany
@@ -15,7 +16,6 @@ dev-util/kdevplatform
 dev-util/lcov
 dev-util/mutrace
 dev-util/patchelf
-dev-util/qt-creator
 dev-util/uncrustify
 dev-util/valgrind
 dev-vcs/git-flow-completion

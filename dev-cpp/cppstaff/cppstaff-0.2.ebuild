@@ -25,7 +25,7 @@ PDEPEND="
 		kde-base/kdebase-runtime-meta
 	)
 	!kde? (
-		dev-util/qt-creator[cmake,git,valgrind]
+		dev-qt/qt-creator[cmake,git,valgrind]
 	)
 
 	testing? (
