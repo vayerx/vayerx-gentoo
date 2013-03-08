@@ -1,5 +1,9 @@
 <app-emulation/wine-1.5
+=app-office/libreoffice-4.0*
+=app-office/libreoffice-l10n-4.0*
+=app-text/libmspub-0.0.4
 =dev-cpp/libcmis-0.3.1
+=dev-libs/liborcus-0.3.0
 =dev-libs/nspr-4.9.4
 =dev-libs/nss-3.14.1
 =media-libs/liblastfm-1.0.2
@@ -13,5 +17,6 @@ media-fonts/takao-fonts
 media-gfx/darktable
 media-gfx/rawtherapee
 media-sound/clementine
+media-sound/mp3unicode
 vayerx/office
 www-client/firefox
