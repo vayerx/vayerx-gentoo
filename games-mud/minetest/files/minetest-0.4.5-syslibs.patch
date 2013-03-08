@@ -1,0 +1,74 @@
+diff --git a/cmake/Modules/FindJson.cmake b/cmake/Modules/FindJson.cmake
+index bc4e71a..ad028a8 100644
+--- a/cmake/Modules/FindJson.cmake
++++ b/cmake/Modules/FindJson.cmake
+@@ -1,18 +1,11 @@
+ # Look for json, use our own if not found
+ 
+-#FIND_PATH(JSON_INCLUDE_DIR json.h)
++FIND_PATH(JSON_INCLUDE_DIR json/json.h PATHS /usr/include/jsoncpp)
+ 
+-#FIND_LIBRARY(JSON_LIBRARY NAMES json)
++FIND_LIBRARY(JSON_LIBRARY NAMES jsoncpp json)
+ 
+-#IF(JSON_LIBRARY AND JSON_INCLUDE_DIR)
+-#	SET( JSON_FOUND TRUE )
+-#ENDIF(JSON_LIBRARY AND JSON_INCLUDE_DIR)
+-
+-#IF(JSON_FOUND)
+-#	MESSAGE(STATUS "Found system json header file in ${JSON_INCLUDE_DIR}")
+-#	MESSAGE(STATUS "Found system json library ${JSON_LIBRARY}")
+-#ELSE(JSON_FOUND)
+-	SET(JSON_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/json)
+-	SET(JSON_LIBRARY json)
+-	MESSAGE(STATUS "Using project json library")
+-#ENDIF(JSON_FOUND)
++IF(JSON_LIBRARY AND JSON_INCLUDE_DIR)
++	SET( JSON_FOUND TRUE )
++ELSE()
++	MESSAGE(FATAL_ERROR "json library not found")
++ENDIF()
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index d2f080c..c91c1d6 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -181,8 +181,8 @@ endif(USE_FREETYPE)
+ 
+ # Do not use system-wide installation of Lua, because it'll likely be a
+ # different version and/or has different build options.
+-set(LUA_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/lua/src")
+-set(LUA_LIBRARY "lua")
++find_package(Lua51 REQUIRED)
++set(LUA_LIBRARY ${LUA_LIBRARIES})
+ 
+ configure_file(
+ 	"${PROJECT_SOURCE_DIR}/cmake_config.h.in"
+@@ -566,28 +566,8 @@ endif(USE_GETTEXT)
+ 
+ # Subdirectories
+ 
+-if (JTHREAD_FOUND)
+-else (JTHREAD_FOUND)
+-	add_subdirectory(jthread)
+-endif (JTHREAD_FOUND)
+-
+-if (SQLITE3_FOUND)
+-else (SQLITE3_FOUND)
+-	add_subdirectory(sqlite)
+-endif (SQLITE3_FOUND)
+-
+ if (BUILD_CLIENT AND USE_FREETYPE)
+ 	add_subdirectory(cguittfont)
+ endif (BUILD_CLIENT AND USE_FREETYPE)
+ 
+-if (LUA_FOUND)
+-else (LUA_FOUND)
+-	add_subdirectory(lua)
+-endif (LUA_FOUND)
+-
+-if (JSON_FOUND)
+-else (JSON_FOUND)
+-	add_subdirectory(json)
+-endif (JSON_FOUND)
+-
+ #end

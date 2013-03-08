@@ -1,4 +1,5 @@
 =dev-lang/spidermonkey-1.8.5-r1
+=dev-libs/jsoncpp-0.6.0_rc2
 =dev-libs/nss-3.13.1-r1
 =games-util/nml-0.2.4
 =media-libs/pnglite-0.1.17

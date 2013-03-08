@@ -5,10 +5,10 @@
 EAPI=4
 inherit eutils games cmake-utils git-2
 
-DESCRIPTION="An InfiniMiner/Minecraft inspired game."
-HOMEPAGE="http://celeron.55.lt/~celeron55/minetest/"
+DESCRIPTION="An infinite-world block sandbox game and a game engine, inspired by InfiniMiner, Minecraft and the like."
+HOMEPAGE="http://minetest.net"
 
-EGIT_REPO_URI="git://github.com/celeron55/minetest.git"
+EGIT_REPO_URI="git://github.com/minetest/minetest.git"
 
 if [[ "${PV}" = 9999* ]]; then
 	KEYWORDS=""
@@ -27,8 +27,8 @@ IUSE="dedicated nls +server +sound"
 RDEPEND="
 	dev-db/sqlite:3
 	dev-lang/lua
-	>=dev-libs/jthread-1.2
-	<dev-libs/jthread-1.3
+	=dev-libs/jthread-1.2.1*
+	>=dev-libs/jsoncpp-0.6.0_rc2
 	sys-libs/zlib
 	!dedicated? (
 		app-arch/bzip2
@@ -51,11 +51,11 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch \
-		"${FILESDIR}"/${P}-jthread.patch \
-		"${FILESDIR}"/${P}-lua.patch
+		"${FILESDIR}"/${P}-syslibs.patch \
+		"${FILESDIR}"/${P}-event.patch
 
 	# these should not be used during building anyway so we delete them
-	rm -r src/{jthread,lua,sqlite} || die
+	rm -r src/{jthread,lua,sqlite,json} || die
 }
 
 src_configure() {
@@ -94,6 +94,6 @@ pkg_postinst() {
 
 	if ! use dedicated ; then
 		elog "optional dependencies:"
-		elog "	games-action/minetest-game (official main mod)"
+		elog "	games-mud/minetest-game (official main mod)"
 	fi
 }
