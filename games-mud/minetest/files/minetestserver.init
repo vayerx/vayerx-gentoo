@@ -12,9 +12,11 @@ start() {
 		--group minetest \
 		--make-pidfile \
 		--background \
-		--stdout /var/lib/minetest/server.log \
+		--stdout /var/log/minetest-server.log \
+		--stderr /var/log/minetest-server.log \
 		--exec /usr/games/bin/minetestserver \
-		--pidfile /var/run/minetest.pid
+		--pidfile /var/run/minetest.pid \
+		-- --port "$PORT" --world "$WORLD" $ARGS
 }
 
 stop() {
