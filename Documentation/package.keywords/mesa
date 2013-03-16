@@ -1,11 +1,11 @@
 app-admin/eselect-opengl
 media-libs/freeglut
 media-libs/glu
-media-libs/mesa
+<media-libs/mesa-9.1
 sys-devel/llvm
 virtual/glu
 x11-base/xorg-drivers
-x11-base/xorg-server
+<=x11-base/xorg-server-1.13.49
 x11-base/xorg-x11
 x11-drivers/ati-drivers
 x11-drivers/xf86-video-ati
@@ -15,3 +15,4 @@ x11-misc/xorg-cf-files
 x11-proto/dri2proto
 x11-proto/glproto
 x11-proto/randrproto
+=x11-proto/inputproto-2.3
