@@ -4,5 +4,6 @@
 <herd>no-herd</herd>
 <use>
 	<flag name='rich'>Don't mind installing excessive GUI staff</flag>
+	<flag name='lxde'>Use LXDE staff</flag>
 </use>
 </pkgmetadata>
