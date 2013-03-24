@@ -1,0 +1,9 @@
+app-emulation/virtualbox-additions PUEL
+dev-java/ibm-jre-bin IBM-J1.6
+=dev-java/sun-jdk-1.6.0.32 Oracle-BCLA-JavaSE
+dev-java/sun-jre-bin dlj-1.1
+games-fps/urbanterror Q3AEULA
+games-strategy/defcon-demo Introversion
+net-im/skype skype-eula
+net-wireless/broadcom-sta Broadcom
+www-plugins/adobe-flash AdobeFlash-10.3

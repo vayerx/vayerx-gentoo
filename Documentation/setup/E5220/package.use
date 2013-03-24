@@ -1,0 +1,91 @@
+# dev-python/epydoc latex
+app-cdr/brasero cdr css -nautilus -totem
+app-editors/vim -ruby
+app-emulation/q4wine icoutils winetriks
+app-emulation/wine threads openal win32
+app-misc/gramps reports
+app-misc/mc edit -ncurses samba slang
+app-office/abiword math plugins
+app-office/libreoffice-bin linguas_en linguas_ru
+app-text/aspell linguas_ru
+app-text/hunspell linguas_ru
+app-text/yagf scanner
+dev-cpp/gtest examples
+dev-db/sqlite extensions
+dev-games/ode double-precision
+dev-java/sun-jre-bin nsplugin
+dev-lang/python sqlite threads tk
+dev-lang/swig ccache
+dev-libs/boost doc eselect tools
+dev-libs/libgcrypt static-libs
+dev-libs/libgpg-error static-libs
+dev-libs/popt static-libs
+dev-libs/protobuf examples source static-libs
+dev-python/PyQt4 -assistant webkit
+dev-python/matplotlib -qt4
+dev-python/spyder -matplotlib numpy pyflakes pylint rope -scipy
+dev-qt/qt-creator autotools valgrind
+dev-qt/qt3support accessibility kde
+dev-qt/qtcore private-headers kde
+dev-qt/qtdeclarative accessibility private-headers kde webkit
+dev-qt/qtgui accessibility private-headers kde
+dev-qt/qtscript private-headers kde
+dev-qt/qtsvg accessibility kde
+dev-qt/qtwebkit kde
+dev-util/cppcheck -qt4
+dev-vcs/git -gtk mozsha1 perl tk -webdav
+dev-vcs/subversion -dso extras perl -ruby -webdav
+games-roguelike/angband -gtk -sdl -sound -X
+games-simulation/openttd lzo openmedia timidity
+kde-base/okular chm djvu
+mail-client/claws-mail smime
+media-fonts/terminus-font ru-dv ru-g ru-i
+media-gfx/exiv2 xmp
+media-gfx/geeqie xmp
+media-gfx/gimp -lcms -pdf
+media-gfx/graphicsmagick -imagemagick
+media-gfx/gwenview kipi linguas_ru
+media-gfx/hugin sift lapack
+media-gfx/pornview mplayer
+media-libs/chromaprint tools
+media-libs/gst-plugins-base theora
+media-libs/libpng apng
+media-libs/mesa classic g3dvl gallium llvm vdpau
+media-libs/opencv examples octave
+media-libs/sdl-sound physfs
+media-plugins/alsa-plugins speex
+media-plugins/gst-plugins-meta lame taglib theora
+media-sound/pulseaudio -bluetooth -gnome oss -X
+media-video/ffmpeg amr dirac faac gsm rtmp network theora
+media-video/mplayer amr cdparanoia dirac dvb faac faad ftp live quicktime real theora toolame win32codecs -xinerama xvmc
+media-video/vlc cdda cddb dirac dvb live mtp rtsp stream theora twolame win32codecs
+net-analyzer/nagios-core lighttpd web
+net-analyzer/nmap -gtk
+net-analyzer/rrdtool rrdcgi -ruby
+net-analyzer/tcpdump -samba
+net-dialup/ppp dhcp eap-tls mppe-mppc
+net-dialup/pptpclient tk
+net-dns/avahi mdnsresponder-compat
+net-fs/samba -acl caps -cups client -fam -ldap -ldb -netapi -pam server smbclient syslog
+net-im/psi extras jingle linguas_ru
+net-libs/opal h224 h323 sip sipim theora
+net-libs/ptlib ftp http wav
+net-print/cups slp
+net-print/gutenprint foomaticdb
+net-print/hplip hpcups -qt4 scanner snmp
+net-voip/ekiga -gnome h323 shm
+sci-geosciences/gpsbabel -qt4
+sci-mathematics/octave fftw sparse
+sys-apps/lm_sensors -sensord
+sys-block/gparted fat ntfs -xfce
+sys-cluster/openmpi romio
+sys-libs/glibc glibc-omitfp
+sys-libs/zlib minizip
+sys-power/pm-utils ntp
+virtual/ffmpeg theora
+www-client/midori idn
+www-servers/lighttpd libev php rrdtool webdav
+x11-base/xorg-server kdrive
+x11-libs/cairo -qt4
+x11-misc/obconf lxde
+x11-wm/enlightenment xrandr
