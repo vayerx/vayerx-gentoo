@@ -40,6 +40,7 @@ games-simulation/gl117
 games-simulation/lincity-ng
 games-simulation/openttd
 games-strategy/0ad
+games-strategy/0ad-data
 games-strategy/boswars
 games-strategy/freeciv
 games-strategy/hedgewars
