@@ -17,8 +17,8 @@ ESVN_REPO_URI="https://boost-log.svn.sourceforge.net/svnroot/boost-log/trunk/boo
 ESVN_PROJECT="boost-log"
 
 LICENSE="Boost-1.0"
-SLOT=0
 MAJOR_V="$(get_version_component_range 1-2)"
+SLOT="0/${MAJOR_V}"
 KEYWORDS="~amd64"
 IUSE="debug doc icu +nls mpi python static-libs +threads tools"
 
@@ -109,8 +109,7 @@ src_configure() {
 		[[ $(gcc-version) > 4.3 ]] && append-flags -mno-altivec
 	fi
 
-	# Do _not_ use C++11 yet, make sure to force GNU C++ 98 standard.
-	# append-cxxflags -std=gnu++98
+	append-cxxflags -std=gnu++11
 
 	use icu && OPTIONS+=" -sICU_PATH=/usr"
 	use icu || OPTIONS+=" --disable-icu boost.locale.icu=off"
@@ -118,7 +117,7 @@ src_configure() {
 	use python || OPTIONS+=" --without-python"
 	use nls || OPTIONS+=" --without-locale"
 
-	OPTIONS+=" pch=off --boost-build=/usr/share/boost-build --prefix=\"${D}usr\" --layout=system threading=$(usex threads multi single) link=$(usex static-libs shared,static shared) --without-context"
+	OPTIONS+=" pch=off --boost-build=/usr/share/boost-build --prefix=\"${D}usr\" --layout=system threading=$(usex threads multi single) link=$(use static-libs && echo static,)shared --without-context"
 }
 
 src_compile() {
