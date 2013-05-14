@@ -1,0 +1,19 @@
+Segmentation fault hotfix:
+    #0  KDevelop::AbstractType::makeDynamic (this=this@entry=0x0) at language/duchain/types/abstracttype.cpp:35
+    #1  0x00007ffff1e3fa59 in d_func_dynamic (this=0x0) at language/duchain/types/abstracttype.h:284
+    #2  KDevelop::AbstractType::setModifiers (this=0x0, modifiers=1) at language/duchain/types/abstracttype.cpp:57
+    #3  0x00007ffeef742de0 in TypeBuilder::createIntegralTypeForExpression (this=0x7ffeee447bb0, expression=0x7ffee7adc3a8) at languages/cpp/cppduchain/typebuilder.cpp:469
+
+diff --git a/languages/cpp/cppduchain/typebuilder.cpp b/languages/cpp/cppduchain/typebuilder.cpp
+--- a/languages/cpp/cppduchain/typebuilder.cpp
++++ b/languages/cpp/cppduchain/typebuilder.cpp
+@@ -466,7 +466,8 @@ void TypeBuilder::createIntegralTypeForExpression(ExpressionAST* expression)
+         // Turn "5" into "int"
+         type = TypeUtils::removeConstants( type, topContext() );
+         // ensure proper const modifier is set
+-        type->setModifiers( integral->modifiers() );
++        if (type)
++            type->setModifiers( integral->modifiers() );
+         if (ReferenceType::Ptr ref = lastType().cast<ReferenceType>()) {
+           ref->setBaseType( type );
+           type = ref.cast<AbstractType>();

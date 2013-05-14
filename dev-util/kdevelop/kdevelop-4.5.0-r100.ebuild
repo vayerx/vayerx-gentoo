@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 KDE_LINGUAS="bs ca ca@valencia da de el en_GB es et fi fr gl it nb nds nl pl pt
 pt_BR ru sl sv th uk zh_CN zh_TW"
@@ -17,14 +17,14 @@ IUSE="+cmake +cxx debug okteta qthelp"
 if [[ $PV == *9999* ]]; then
 	KEYWORDS=""
 else
-	KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+	KEYWORDS="~amd64 ~ppc ~x86"
 fi
 
 DEPEND="
 	$(add_kdebase_dep ksysguard)
 	$(add_kdebase_dep libkworkspace)
 	okteta? ( $(add_kdebase_dep okteta) )
-	qthelp? ( x11-libs/qt-assistant:4 )
+	qthelp? ( dev-qt/qthelp:4 )
 "
 RDEPEND="${DEPEND}
 	$(add_kdebase_dep kapptemplate)
@@ -34,7 +34,7 @@ RDEPEND="${DEPEND}
 RESTRICT="test"
 # see bug 366471
 
-PATCHES=( "${FILESDIR}/${P}_fix_foreach.patch" )
+PATCHES=( "${FILESDIR}/${P}_fix_typebuilder.patch" )
 
 src_configure() {
 	mycmakeargs=(
