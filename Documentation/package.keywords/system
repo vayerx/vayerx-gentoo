@@ -2,6 +2,7 @@
 =app-shells/push-1.5
 =sys-devel/gcc-4.6.3
 =sys-kernel/genkernel-3.4.24_p2
+=sys-kernel/gentoo-sources-3.8.10
 =sys-kernel/linux-headers-3.6
 >=dev-java/oracle-jre-bin-1.7.0.7
 net-misc/openconnect
