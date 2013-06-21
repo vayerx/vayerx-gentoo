@@ -1,0 +1,14 @@
+https://svn.boost.org/trac/boost/ticket/8411
+https://svn.boost.org/trac/boost/changeset/83799
+
+--- boost/graph/distributed/mpi_process_group.hpp
++++ boost/graph/distributed/mpi_process_group.hpp
+@@ -416,7 +416,7 @@
+ 
+   void synchronize() const;
+ 
+-  operator bool() { return impl_; }
++  operator bool() { return bool(impl_); }
+ 
+   mpi_process_group base() const;
+ 

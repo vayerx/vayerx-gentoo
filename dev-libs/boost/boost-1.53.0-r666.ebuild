@@ -76,11 +76,15 @@ src_prepare() {
 		"${FILESDIR}/${PN}-1.48.0-python_linking.patch" \
 		"${FILESDIR}/${PN}-1.51.0-respect_python-buildid.patch" \
 		"${FILESDIR}/${PN}-1.51.0-support_dots_in_python-buildid.patch" \
+		"${FILESDIR}/${PN}-1.53.0-graph_parallel_c++11.patch" \
+		"${FILESDIR}/${PN}-1.53.0-library_status_c++98.patch" \
+		"${FILESDIR}/${PN}-1.53.0-wave_c++11.patch" \
+		"${FILESDIR}/${PN}-1.51.0-mpi_c++11.patch" \
 		"${FILESDIR}/remove-toolset-1.48.0.patch"
 
 	# Avoid a patch for now
 	for file in libs/context/src/asm/*.S; do
-		cat - >> $file <<EOF
+		cat - >> "$file" <<EOF
 
 #if defined(__linux__) && defined(__ELF__)
 .section .note.GNU-stack,"",%progbits
@@ -108,8 +112,7 @@ src_configure() {
 		[[ $(gcc-version) > 4.3 ]] && append-flags -mno-altivec
 	fi
 
-	# TODO C++11 Std.
-	# append-cxxflags -std=gnu++11
+	append-cxxflags -std=gnu++11
 
 	use icu && OPTIONS+=" -sICU_PATH=/usr"
 	use icu || OPTIONS+=" --disable-icu boost.locale.icu=off"
@@ -117,7 +120,7 @@ src_configure() {
 	use python || OPTIONS+=" --without-python"
 	use nls || OPTIONS+=" --without-locale"
 
-	OPTIONS+=" pch=off --boost-build=/usr/share/boost-build --prefix=\"${D}usr\" --layout=system threading=$(usex threads multi single) link=$(use static-libs && echo static,)shared"
+	OPTIONS+=" pch=off --boost-build=/usr/share/boost-build --prefix=\"${D}usr\" --layout=system threading=$(usex threads multi single) link=$(usex static-libs shared,static shared)"
 }
 
 src_compile() {
