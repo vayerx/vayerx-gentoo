@@ -6,7 +6,7 @@ EAPI=3
 inherit autotools games git-2
 
 EGIT_REPO_URI="https://github.com/vayerx/alienarena.git"
-EGIT_BRANCH="devel"
+EGIT_MASTER="devel"
 EGIT_HAS_SUBMODULES="yes"
 
 if [[ "${PV}" = 9999* ]]; then
@@ -47,7 +47,9 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-nodocs.patch
+	epatch \
+		"${FILESDIR}"/${P}-nodocs.patch \
+		"${FILESDIR}"/${P}-slugs_base.patch
 	eautoreconf
 }
 
