@@ -34,7 +34,11 @@ RDEPEND="${DEPEND}
 RESTRICT="test"
 # see bug 366471
 
-PATCHES=( "${FILESDIR}/${P}_fix_typebuilder.patch" )
+PATCHES=(
+	"${FILESDIR}/${P}_fix_typebuilder.patch"
+	"${FILESDIR}/${P}_typebuilder-cpp.patch"
+	"${FILESDIR}/${P}_typebuilder-h.patch"
+)
 
 src_configure() {
 	mycmakeargs=(
