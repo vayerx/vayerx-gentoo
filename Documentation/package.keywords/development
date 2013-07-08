@@ -16,9 +16,9 @@ dev-util/android-ndk
 dev-util/cppcheck
 dev-util/geany
 dev-util/gource
-dev-util/kdevelop
+dev-util/kdevelop **
 dev-util/kdevelop-python
-dev-util/kdevplatform
+dev-util/kdevplatform **
 dev-util/lcov
 dev-util/mutrace
 dev-util/patchelf
