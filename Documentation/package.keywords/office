@@ -4,8 +4,8 @@
 =app-text/libmspub-0.0.5
 =dev-cpp/libcmis-0.3.1
 =dev-libs/liborcus-0.3.0
-=dev-libs/nspr-4.9.6
-=dev-libs/nss-3.14.1
+=dev-libs/nspr-4.10
+=dev-libs/nss-3.15
 =media-libs/liblastfm-1.0.2
 =www-plugins/lightspark-0.6.0.1
 app-emulation/winetricks
