@@ -1,43 +1,62 @@
+>=virtual/python-qt-4 webkit
 app-editors/vim -X cscope
-app-emulation/qemu kqemu kvm
-app-emulation/qemu vde
+app-emulation/qemu kqemu kvm vde
 app-misc/mc -ncurses slang
+app-office/lyx dia dot -subversion html
 dev-cpp/cppstaff database
+dev-db/libdbi-drivers postgres
 dev-java/commons-logging log4j
 dev-java/sun-jdk -nsplugin
 dev-java/sun-jre-bin -nsplugin
-dev-lang/python sqlite
-dev-libs/boost doc tools
+dev-lang/php cgi -crypt gd
+dev-lang/python sqlite tk
+dev-libs/boost doc date_time tools
+dev-libs/libgcrypt static-libs
+dev-libs/libgpg-error static-libs
+dev-libs/popt static-libs
+dev-python/PyQt4 help sql webkit
 dev-python/nose coverage
-dev-python/PyQt4 webkit
 dev-python/pystaff database rich 
 dev-python/spyder pep8 pylint sphinx
 dev-python/sqlalchemy postgres
+dev-qt/qtdeclarative webkit
+dev-qt/qtsql postgres
 dev-util/kdevplatform reviewboard
 dev-vcs/git doc tk
 dev-vcs/subversion -dso perl
 games-board/cockatrice server
+games-fps/alienarena rockethell
+games-fps/alienarena-ng rockethell
+games-strategy/wesnoth server
 kde-base/okular ebook
 media-gfx/gimp wmf
 media-libs/chromaprint tools
 media-libs/gegl graphviz raw
+media-libs/mesa gles2
 media-plugins/gst-plugins-meta dv ffmpeg http lame taglib theora v4l
+media-sound/audacity id3tag midi vamp
 media-sound/clementine lastfm mms -mtp
 media-sound/picard coverart ffmpeg
+media-video/ffmpeg amr mmxext rtmp opus -theora vpx
+media-video/libav amr mmxext rtmp -theora vpx
+net-analyzer/icinga -apache2 idoutils -mysql lighttpd postgres
+net-analyzer/nagios-plugins nagios-ping nagios-ssh postgres
 net-analyzer/rrdtool ruby
 net-analyzer/tcpdump -samba
-net-firewall/shorewall6 doc
 net-firewall/shorewall doc
+net-firewall/shorewall6 doc
 net-im/psi extras jingle -linguas_ru webkit xscreensaver
+sci-libs/hdf5 -threads
 sys-apps/lm_sensors sensord
+sys-apps/util-linux static-libs
 sys-block/gparted fat ntfs xfs
 sys-devel/gcc gcj graphite
 sys-kernel/gentoo-sources symlink
 sys-libs/zlib minizip
 vayerx/develop database java postgres rich
-vayerx/office gnome
+vayerx/office excessive gnome
 vayerx/system gnome
+virtual/python-sqlite external
 www-client/firefox -jit
-x11-libs/qt-declarative webkit
-x11-libs/qt-sql postgres
+www-servers/lighttpd doc php rrdtool webdav
 x11-misc/obconf lxde
