@@ -110,7 +110,6 @@ dev-util/geany
 dev-util/glade
 dev-util/google-perftools
 dev-util/kdevelop
-dev-util/lafilefixer
 dev-util/lcov
 dev-util/meld
 dev-util/osc

@@ -13,7 +13,6 @@ app-portage/layman
 app-portage/mirrorselect
 app-portage/ufed
 dev-util/ccache
-dev-util/lafilefixer
 dev-util/strace
 dev-vcs/mercurial
 net-analyzer/netcat

@@ -58,7 +58,6 @@ dev-util/cppunit
 dev-util/flawfinder
 dev-util/geany
 dev-util/kdevelop
-dev-util/lafilefixer
 dev-util/lcov
 dev-util/meld
 dev-util/qt-creator
