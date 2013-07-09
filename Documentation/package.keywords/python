@@ -12,3 +12,4 @@ dev-python/astng
 dev-python/pyopencl
 dev-python/pystaff
 dev-python/spyder
+dev-util/ninja-ide
