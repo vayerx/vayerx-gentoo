@@ -25,6 +25,7 @@ dev-games/cegui devil expat
 dev-games/ode double-precision
 dev-games/ogre cegui devil lua threads
 dev-games/openscenegraph glut xrandr
+dev-java/oracle-jre-bin fontconfig
 dev-lang/python sqlite tk
 dev-libs/boost doc eselect python tools
 dev-libs/glib xattr
@@ -33,7 +34,7 @@ dev-libs/libgpg-error static-libs
 dev-libs/lzo static-libs
 dev-libs/popt static-libs
 dev-libs/protobuf python
-dev-python/PyQt4 webkit
+dev-python/PyQt4 declarative webkit
 dev-python/pystaff rich
 dev-python/spyder pylint sphinx
 dev-qt/qt-creator autotools bookmarks cmake debugger designer -linguas_ru qtscript valgrind
@@ -87,7 +88,7 @@ media-sound/pulseaudio avahi
 media-sound/rhythmbox -cdr musicbrainz
 media-sound/sonata -trayicon
 media-video/avidemux aac aften dts mp3 vorbis x264 xv xvid
-media-video/ffmpeg amr faac gsm hardcoded-tables theora vorbis x264 xvid zlib
+media-video/ffmpeg amr faac gsm hardcoded-tables opus theora vorbis x264 xvid zlib
 media-video/kino gstreamer lame quicktime
 media-video/vlc cdda ffmpeg flac id3tag -samba stream
 net-analyzer/rrdtool -ruby
@@ -105,7 +106,9 @@ net-misc/vinagre applet
 net-print/cups -avahi ldap samba slp ssl
 net-print/cupsddk fltk
 sci-geosciences/gpsd garmin python usb
+sci-geosciences/qlandkartegt gps
 sci-geosciences/tangogps gps
+sci-libs/hdf5 -threads
 sys-apps/gnome-disk-utility fat nautilus
 sys-apps/lm_sensors sensord
 sys-apps/util-linux static-libs
