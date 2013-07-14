@@ -56,8 +56,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch \
-		"${FILESDIR}"/${PN}-0.4.7-syslibs.patch \
-		"${FILESDIR}"/${PN}-0.4.7-event.patch
+		"${FILESDIR}"/${P}-syslibs.patch \
+		"${FILESDIR}"/${P}-event.patch
 
 	# these should not be used during building anyway so we delete them
 	rm -r src/{jthread,lua,sqlite,json} || die
