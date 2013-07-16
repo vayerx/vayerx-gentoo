@@ -14,7 +14,7 @@ dev-libs/boost doc date_time tools
 dev-libs/libgcrypt static-libs
 dev-libs/libgpg-error static-libs
 dev-libs/popt static-libs
-dev-python/PyQt4 help sql webkit
+dev-python/PyQt4 declarative help sql webkit
 dev-python/nose coverage
 dev-python/pystaff database rich 
 dev-python/spyder pep8 pylint sphinx
@@ -51,12 +51,17 @@ sys-apps/lm_sensors sensord
 sys-apps/util-linux static-libs
 sys-block/gparted fat ntfs xfs
 sys-devel/gcc gcj graphite
+sys-fs/cryptsetup static
+sys-fs/lvm2 static-libs
+sys-fs/udev static-libs
 sys-kernel/gentoo-sources symlink
+sys-libs/e2fsprogs-libs static-libs
 sys-libs/zlib minizip
 vayerx/develop database java postgres rich
 vayerx/office excessive gnome
 vayerx/system gnome
 virtual/python-sqlite external
+virtual/udev static-libs
 www-client/firefox -jit
 www-servers/lighttpd doc php rrdtool webdav
 x11-misc/obconf lxde
