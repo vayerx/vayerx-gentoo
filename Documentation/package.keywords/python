@@ -9,7 +9,11 @@
 =dev-python/smmap-0.8.2
 =dev-python/sqlalchemy-0.7.8
 dev-python/astng
+dev-python/pep8
+dev-python/pyflakes
+dev-python/pylint
 dev-python/pyopencl
 dev-python/pystaff
+dev-python/rope
 dev-python/spyder
 dev-util/ninja-ide
