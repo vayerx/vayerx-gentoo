@@ -8,11 +8,16 @@ app-emacs/ruby-mode
 app-vim/eruby-syntax
 dev-lang/ruby
 dev-lang/ruby-enterprise
+dev-ruby/addressable
+dev-ruby/domain_name
 dev-ruby/fxruby
 dev-ruby/hoe
 dev-ruby/libxml
 dev-ruby/mechanize
+dev-ruby/net-http-digest_auth
+dev-ruby/net-http-persistent
 dev-ruby/nokogiri
+dev-ruby/ntlm-http
 dev-ruby/pkg-config
 dev-ruby/racc
 dev-ruby/rake
@@ -37,5 +42,8 @@ dev-ruby/ruby-vte
 dev-ruby/rubygems
 dev-ruby/sqlite3-ruby
 dev-ruby/staff-rb
+dev-ruby/unf
+dev-ruby/unf_ext
+dev-ruby/webrobots
 dev-ruby/zentest
 net-libs/nodejs
