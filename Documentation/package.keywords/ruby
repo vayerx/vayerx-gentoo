@@ -1,7 +1,19 @@
 =app-text/poppler-0.18.1
 =dev-lang/v8-3.11.10.12
+=dev-ruby/ruby-cairo-gobject-1.2.6
+=dev-ruby/ruby-clutter-1.2.6
+=dev-ruby/ruby-clutter-gtk-1.2.6
+=dev-ruby/ruby-gdk3-1.2.6
 =dev-ruby/ruby-gdkpixbuf2-1.1.8
+=dev-ruby/ruby-gdkpixbuf2-1.2.6
+=dev-ruby/ruby-gobject-introspection-1.2.6
+=dev-ruby/ruby-gtk3-1.2.6
+=dev-ruby/ruby-gtksourceview3-1.2.6
+=dev-ruby/ruby-vte3-1.2.6
+=dev-ruby/ruby-webkit-gtk-1.2.6
+=dev-ruby/ruby-webkit-gtk2-1.2.6
 =virtual/rubygems-4:ruby19
+=virtual/rubygems-6 ~amd64
 >=dev-ruby/json-1.6.1
 app-admin/eselect-ruby
 app-emacs/ruby-mode

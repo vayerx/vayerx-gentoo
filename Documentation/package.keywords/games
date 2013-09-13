@@ -11,14 +11,16 @@ dev-games/irrlicht
 dev-games/ode
 dev-games/ois
 dev-games/physfs
+dev-lang/luajit
 games-action/bzflag
 games-action/extreme-tuxracer
-games-action/shadowgrounds ~amd64
+games-action/shadowgrounds **
 games-action/shadowgrounds-data
 games-action/supertuxkart
-games-action/survivor ~amd64
+games-action/survivor **
 games-action/survivor-data
 games-action/teeworlds
+games-action/torchlight
 games-board/cockatrice
 games-emulation/gens
 games-fps/alienarena

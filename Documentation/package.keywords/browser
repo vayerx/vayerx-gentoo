@@ -1,6 +1,7 @@
-=dev-lang/v8-3.18.5.9
+=app-accessibility/speech-dispatcher-0.8-r2
+=dev-lang/v8-3.19.18.9
 =sys-devel/llvm-3.1-r1
-=www-client/chromium-28.0.1500.89
+=www-client/chromium-29.0.1547.15
 media-fonts/takao-fonts
 www-client/firefox
 www-plugins/adobe-flash
