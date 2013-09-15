@@ -23,5 +23,6 @@ dev-util/patchelf
 dev-util/uncrustify
 dev-util/valgrind
 dev-vcs/git-flow-completion
+dev-vcs/git-review
 dev-vcs/gitflow
 vayerx/develop
