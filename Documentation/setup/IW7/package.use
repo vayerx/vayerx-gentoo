@@ -10,7 +10,7 @@ dev-java/sun-jdk -nsplugin
 dev-java/sun-jre-bin -nsplugin
 dev-lang/php cgi -crypt gd
 dev-lang/python sqlite tk
-dev-libs/boost doc date_time tools
+dev-libs/boost doc date_time static-libs tools
 dev-libs/libgcrypt static-libs
 dev-libs/libgpg-error static-libs
 dev-libs/popt static-libs
@@ -43,6 +43,7 @@ net-analyzer/icinga -apache2 idoutils -mysql lighttpd postgres
 net-analyzer/nagios-plugins nagios-ping nagios-ssh postgres
 net-analyzer/rrdtool ruby
 net-analyzer/tcpdump -samba
+net-analyzer/wireshark geoip -gtk2 -gtk3 qt4
 net-firewall/shorewall doc
 net-firewall/shorewall6 doc
 net-im/psi extras jingle -linguas_ru webkit xscreensaver
