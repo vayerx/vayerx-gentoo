@@ -60,7 +60,6 @@ PDEPEND="
 	rich? (
 		excessive? (
 			app-office/libreoffice
-			www-client/chromium
 		)
 		!excessive? (
 			app-office/libreoffice-bin
