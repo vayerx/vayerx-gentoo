@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="5"
-PYTHON_COMPAT=( python{2_5,2_6,2_7,3_1,3_2,3_3} )
+PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3} )
 
 inherit eutils flag-o-matic multilib multiprocessing python-r1 toolchain-funcs versionator
 
@@ -15,9 +15,10 @@ SRC_URI="mirror://sourceforge/boost/${MY_P}.tar.bz2"
 
 LICENSE="Boost-1.0"
 MAJOR_V="$(get_version_component_range 1-2)"
-SLOT="0/${MAJOR_V}"
-KEYWORDS="~amd64"
-IUSE="debug doc icu +nls mpi python static-libs +threads tools"
+MAJOR_PV=$(replace_all_version_separators _ ${MAJOR_V})
+SLOT="${MAJOR_V}"
+KEYWORDS="~x86 ~amd64"
+IUSE="debug doc +eselect icu +nls mpi python static-libs +threads tools"
 
 RDEPEND="icu? ( >=dev-libs/icu-3.6:= )
 	!icu? ( virtual/libiconv )
@@ -25,12 +26,33 @@ RDEPEND="icu? ( >=dev-libs/icu-3.6:= )
 	python? ( ${PYTHON_DEPS} )
 	app-arch/bzip2
 	sys-libs/zlib
-	!app-admin/eselect-boost"
+	eselect? ( app-admin/eselect-boost )
+	!eselect? ( !app-admin/eselect-boost )"
 DEPEND="${RDEPEND}
-	=dev-util/boost-build-${MAJOR_V}*"
+	dev-util/boost-build:${MAJOR_V}"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 S=${WORKDIR}/${MY_P}
+
+BJAM="b2-${MAJOR_PV}"
+
+# Usage:
+# _add_line <line-to-add> <profile>
+# ... to add to specific profile
+# or
+# _add_line <line-to-add>
+# ... to add to all profiles for which the use flag set
+
+_add_line() {
+	if [[ -z "$2" ]]; then
+		echo "${1}" >> "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/default"
+		if use debug; then
+			echo "${1}" >> "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/debug"
+		fi
+	else
+		echo "${1}" >> "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/${2}"
+	fi
+}
 
 create_user-config.jam() {
 	local compiler compiler_version compiler_executable
@@ -70,6 +92,7 @@ src_prepare() {
 		"${FILESDIR}/${PN}-1.48.0-disable_libboost_python3.patch" \
 		"${FILESDIR}/${PN}-1.48.0-python_linking.patch" \
 		"${FILESDIR}/${PN}-1.48.0-disable_icu_rpath.patch" \
+		"${FILESDIR}/${PN}-1.53.0-library_status.patch" \
 		"${FILESDIR}/${PN}-1.54.0-coroutine.patch" \
 		"${FILESDIR}/${PN}-1.54.0-date-time.patch"  \
 		"${FILESDIR}/${PN}-1.54.0-log.patch" \
@@ -87,8 +110,8 @@ EOF
 }
 
 ejam() {
-	echo b2 "$@"
-	b2 "$@"
+	echo ${BJAM} "$@"
+	${BJAM} "$@"
 }
 
 src_configure() {
@@ -122,7 +145,15 @@ src_configure() {
 	use python || OPTIONS+=" --without-python"
 	use nls || OPTIONS+=" --without-locale"
 
-	OPTIONS+=" pch=off --boost-build=${EPREFIX}/usr/share/boost-build --prefix=\"${ED}usr\" --layout=system threading=$(usex threads multi single) link=$(usex static-libs shared,static shared) --without-context"
+	OPTIONS+=" pch=off --boost-build=\"${EPREFIX}/usr/share/boost-build-${MAJOR_PV}\" --prefix=\"${ED}usr\" --layout=versioned"
+	OPTIONS+=" threading=$(usex threads multi single) link=$(usex static-libs shared,static shared)"
+
+	if use static-libs; then
+		LIBRARY_TARGETS="*.a *$(get_libname)"
+	else
+		# There is no dynamically linked version of libboost_test_exec_monitor and libboost_exception.
+		LIBRARY_TARGETS="libboost_test_exec_monitor*.a libboost_exception*.a *$(get_libname)"
+	fi
 
 	[[ ${CHOST} == *-winnt* ]] && OPTIONS+=" -sNO_BZIP2=1"
 }
@@ -214,10 +245,10 @@ src_install () {
 		if use python; then
 			rm -r ${PYTHON_DIRS} || die
 
-			# Move mpi.so Python module to Python site-packages directory.
+			# Move mpi.so Python module to Python site-packages directory and make sure it is slotted.
 			# https://svn.boost.org/trac/boost/ticket/2838
 			if use mpi; then
-				local moddir=$(python_get_sitedir)/boost
+				local moddir=$(python_get_sitedir)/boost_${MAJOR_PV}
 				# moddir already includes eprefix
 				mkdir -p "${D}${moddir}" || die
 				mv "${ED}usr/$(get_libdir)/mpi.so" "${D}${moddir}" || die
@@ -234,26 +265,36 @@ else:
 	from . import mpi
 del sys
 EOF
+				_add_line "$(python_get_sitedir)/mpi.py:boost_${MAJOR_PV}.mpi"
 			fi
 
 			python_optimize
 		fi
 	}
+
+	dodir /usr/share/boost-eselect/profiles/${MAJOR_V}
+	touch "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/default" || die
+	if use debug; then
+		touch "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/debug" || die
+	fi
+
 	if use python; then
 		python_foreach_impl installation
 	else
 		installation
 	fi
 
+	if use mpi && use python; then
+		_add_line "\""
+	fi
+
 	if ! use python; then
-		rm -r "${ED}"/usr/include/boost/python* || die
+		rm -rf "${ED}usr/include/boost-${MAJOR_PV}/boost"/python* || die
 	fi
 
 	if ! use nls; then
-		rm -r "${ED}"/usr/include/boost/locale || die
+		rm -r "${ED}"/usr/include/boost-${MAJOR_PV}/locale || die
 	fi
-
-	rm -r "${ED}"/usr/include/boost/context || die
 
 	if use doc; then
 		find libs/*/* -iname "test" -or -iname "src" | xargs rm -rf
@@ -270,10 +311,22 @@ EOF
 		insinto /usr/share/doc/${PF}/html
 		doins LICENSE_1_0.txt
 
-		dosym /usr/include/boost /usr/share/doc/${PF}/html/boost
+		dosym /usr/include/boost-${MAJOR_PV}/boost /usr/share/doc/${PF}/html/boost
 	fi
 
 	pushd "${ED}usr/$(get_libdir)" > /dev/null || die
+
+	# Remove (unversioned) symlinks
+	# And check for what we remove to catch bugs
+	# got a better idea how to do it? tell me!
+	local f
+	for f in $(ls -1 ${LIBRARY_TARGETS} | grep -v "${MAJOR_PV}"); do
+		if [[ ! -h "${f}" ]]; then
+			eerror "Tried to remove '${f}' which is a regular file instead of a symlink"
+			die "Slotting/naming of the libraries broken!"
+		fi
+		rm "${f}" || die
+	done
 
 	local ext=$(get_libname)
 	if use threads; then
@@ -283,13 +336,94 @@ EOF
 		done
 	fi
 
+	# The same goes for the mpi libs
+	if use mpi; then
+		if use static-libs; then
+			MPI_LIBS="libboost_mpi-mt-${MAJOR_PV}.a libboost_mpi-mt-${MAJOR_PV}$(get_libname)"
+		else
+			MPI_LIBS="libboost_mpi-mt-${MAJOR_PV}$(get_libname)"
+		fi
+		local lib
+		for lib in ${MPI_LIBS}; do
+			dosym ${lib} "/usr/$(get_libdir)/${lib/-mt/}"
+		done
+	fi
+
+	if use debug; then
+		if use static-libs; then
+			THREAD_DEBUG_LIBS="libboost_thread-mt-${MAJOR_PV}-debug$(get_libname) libboost_thread-mt-${MAJOR_PV}-debug.a"
+		else
+			THREAD_DEBUG_LIBS="libboost_thread-mt-${MAJOR_PV}-debug$(get_libname)"
+		fi
+
+		local lib
+		for lib in ${THREAD_DEBUG_LIBS}; do
+			dosym ${lib} "/usr/$(get_libdir)/${lib/-mt/}"
+		done
+
+		if use mpi; then
+			if use static-libs; then
+				MPI_DEBUG_LIBS="libboost_mpi-mt-${MAJOR_PV}-debug.a libboost_mpi-mt-${MAJOR_PV}-debug$(get_libname)"
+			else
+				MPI_DEBUG_LIBS="libboost_mpi-mt-${MAJOR_PV}-debug$(get_libname)"
+			fi
+
+			local lib
+			for lib in ${MPI_DEBUG_LIBS}; do
+				dosym ${lib} "/usr/$(get_libdir)/${lib/-mt/}"
+			done
+		fi
+	fi
+
+	# Create a subdirectory with completely unversioned symlinks
+	# and store the names in the profiles-file for eselect
+	dodir /usr/$(get_libdir)/boost-${MAJOR_PV}
+
+	_add_line "libs=\"" default
+	local f
+	for f in $(ls -1 ${LIBRARY_TARGETS} | grep -v "debug\|-mt.*-mt"); do
+		dosym ../${f} /usr/$(get_libdir)/boost-${MAJOR_PV}/${f/-${MAJOR_PV}}
+		_add_line "/usr/$(get_libdir)/${f}" default
+	done
+	_add_line "\"" default
+
+	if use debug; then
+		_add_line "libs=\"" debug
+		dodir /usr/$(get_libdir)/boost-${MAJOR_PV}-debug
+		local f
+		for f in $(ls -1 ${LIBRARY_TARGETS} | grep debug); do
+			dosym ../${f} /usr/$(get_libdir)/boost-${MAJOR_PV}-debug/${f/-${MAJOR_PV}-debug}
+			_add_line "/usr/$(get_libdir)/${f}" debug
+		done
+		_add_line "\"" debug
+
+		_add_line "includes=\"/usr/include/boost-${MAJOR_PV}/boost\"" debug
+		_add_line "suffix=\"-debug\"" debug
+	fi
+
+	_add_line "includes=\"/usr/include/boost-${MAJOR_PV}/boost\"" default
+
 	popd > /dev/null || die
 
 	if use tools; then
-		dobin dist/bin/*
+		pushd dist/bin > /dev/null || die
+		# Append version postfix to binaries for slotting
+		_add_line "bins=\""
+		local b
+		for b in *; do
+			newbin "${b}" "${b}-${MAJOR_PV}"
+			_add_line "/usr/bin/${b}-${MAJOR_PV}"
+		done
+		_add_line "\""
+		popd > /dev/null || die
 
+		pushd dist > /dev/null || die
 		insinto /usr/share
-		doins -r dist/share/boostbook
+		doins -r share/boostbook
+		# Append version postfix for slotting
+		mv "${D}usr/share/boostbook" "${D}usr/share/boostbook-${MAJOR_PV}" || die
+		_add_line "dirs=\"/usr/share/boostbook-${MAJOR_PV}\""
+		popd > /dev/null || die
 	fi
 
 	# boost's build system truely sucks for not having a destdir.  Because for
@@ -341,3 +475,14 @@ pkg_preinst() {
 # (failing for no good reason) or completely useless (never failing)
 # there is no point in having them in the ebuild to begin with.
 src_test() { :; }
+
+pkg_postinst() {
+	if use eselect; then
+		eselect boost update || ewarn "eselect boost update failed."
+	fi
+
+	if [[ ! -h "${ROOT}etc/eselect/boost/active" ]]; then
+		elog "No active boost version found. Calling eselect to select one..."
+		eselect boost update || ewarn "eselect boost update failed."
+	fi
+}
