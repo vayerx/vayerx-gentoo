@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,12 +7,11 @@ EAPI="4"
 S=${WORKDIR}
 DESCRIPTION="Meta package for the GNOME desktop, merge this package to install"
 HOMEPAGE="http://www.gnome.org/"
-LICENSE="as-is"
+LICENSE="HPND"
 SLOT="2.0"
 IUSE="+automount"
 
 KEYWORDS="amd64 x86"
-
 
 RDEPEND="!<x11-libs/gtk+-3.2.4-r1:3
 	!gnome-base/gnome
@@ -50,7 +49,7 @@ RDEPEND="!<x11-libs/gtk+-3.2.4-r1:3
 	>=x11-themes/gnome-themes-2.32.1-r1
 	>=x11-themes/gnome-themes-standard-3.0.2
 
-	x11-terms/terminal
+	x11-terms/xfce4-terminal
 
 	>=gnome-base/librsvg-2.32.1:2
 

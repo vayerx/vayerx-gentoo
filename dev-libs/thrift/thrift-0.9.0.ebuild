@@ -57,7 +57,7 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${P/_beta[0-9]/}"
 
 src_prepare() {
-	epatch ${FILESDIR}/${P}-arpa_inet_h.patch
+	epatch "${FILESDIR}/${P}-arpa_inet_h.patch"
 }
 
 src_configure() {

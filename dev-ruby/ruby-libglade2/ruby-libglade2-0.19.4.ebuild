@@ -15,7 +15,7 @@ RDEPEND="${RDEPEND}
 	>=gnome-base/libglade-2"
 DEPEND="${DEPEND}
 	>=gnome-base/libglade-2
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 ruby_add_rdepend ">=dev-ruby/ruby-gtk2-${PV}
 	>=dev-ruby/ruby-glib2-${PV}

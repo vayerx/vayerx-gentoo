@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -34,7 +34,7 @@ COMMON_DEPEND="
 DEPEND="${COMMON_DEPEND}
 	app-arch/p7zip
 	app-arch/unzip
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	media-libs/netpbm"
 RDEPEND="${COMMON_DEPEND}"
 

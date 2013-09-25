@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/ati-drivers-12.11_beta.ebuild,v 1.1 2012/10/26 14:24:29 chithanh Exp $
 
@@ -14,7 +14,7 @@ SRC_URI="http://www2.ati.com/drivers/beta/amd-driver-installer-catalyst-12.11-be
 FOLDER_PREFIX="common/"
 IUSE="debug +modules multilib qt4 static-libs disable-watermark"
 
-LICENSE="AMD GPL-2 QPL-1.0 as-is"
+LICENSE="AMD GPL-2 QPL-1.0 HPND"
 KEYWORDS="-* ~amd64 ~x86"
 SLOT="1"
 
@@ -41,8 +41,8 @@ RDEPEND="
 			x11-libs/libXcursor
 			x11-libs/libXfixes
 			x11-libs/libXxf86vm
-			x11-libs/qt-core:4
-			x11-libs/qt-gui:4
+			dev-qt/qtcore:4
+			dev-qt/qtgui:4
 	)
 "
 
