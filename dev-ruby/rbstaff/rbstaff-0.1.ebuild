@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,23 +11,16 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="database exotic +testing"
+IUSE="database datamining gui"
 
 PDEPEND="
-	dev-ruby/libxml
-	dev-ruby/nokogiri
-	dev-ruby/rake
-	dev-ruby/ruby-libglade2
-	dev-ruby/rubygems
-
 	database? (
-		dev-ruby/sqlite3-ruby
+		dev-ruby/sqlite-ruby
 	)
-	testing? (
-		dev-ruby/zentest
+	gui? (
+		dev-ruby/ruby-libglade2
 	)
-
-	exotic? (
+	datamining? (
 		dev-ruby/mechanize
 	)
 "

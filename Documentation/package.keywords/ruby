@@ -53,7 +53,7 @@ dev-ruby/ruby-rsvg
 dev-ruby/ruby-vte
 dev-ruby/rubygems
 dev-ruby/sqlite3-ruby
-dev-ruby/staff-rb
+dev-ruby/rbstaff
 dev-ruby/unf
 dev-ruby/unf_ext
 dev-ruby/webrobots

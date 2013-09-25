@@ -4,7 +4,7 @@
 <herd>ruby</herd>
 <use>
 	<flag name='database'>Database-related staff</flag>
-	<flag name='exotic'>Rarely used staff</flag>
-	<flag name='testing'>Modules for testing</flag>
+	<flag name='datamining'>Packages for datamining</flag>
+	<flag name='gui'>GUI development staff</flag>
 </use>
 </pkgmetadata>

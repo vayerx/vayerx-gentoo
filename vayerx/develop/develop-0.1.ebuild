@@ -35,7 +35,7 @@ PDEPEND="
 
 	ruby? (
 		dev-lang/ruby
-		dev-ruby/staff-rb[database?,exotic?,testing?]
+		dev-ruby/rbstaff[database?,exotic?,testing?]
 	)
 
 	python? (
