@@ -93,22 +93,20 @@ set_installation() {
 	local profile="${target/*\/}"
 	local version="${target/\/${profile}}"
 	version="${version/boost-}"
-	version="${version/./_}"
 
 	cd "${ROOT}/etc/eselect/boost"
 	ln -s "${ROOT}/usr/share/boost-eselect/profiles/${target//boost-}" active || die -q "Couldn't create symlink active -> /usr/share/boost-eselect/profiles/${target//boost-}/${profile}"
 
 	. "${ROOT}/usr/share/boost-eselect/profiles/${target//boost-}"
 
-	for t in ${dirs} ${bins} ${libs} ; do
-		[[ -e "${ROOT}${t}" ]] || die -q "\"${t}\" listed as target does not exist"
+	for src in ${dirs} ${bins} ${libs} ; do
+		[[ -e "${ROOT}${src}" ]] || die -q "\"${src}\" listed as target does not exist"
 
-		pushd "$(dirname ${ROOT}${t})" 1>/dev/null
-		local ts=$(basename "${t}")
-		local tt="${ts//-${version}}"
-		tt="${tt//${suffix}}"
-		ln -s ${ts} ${tt} || die -q "Couldn't create symlink \"$(pwd)/${tt}\""
-		popd 1>/dev/null
+		local destination="${src//.${version}}"
+		if [[ -e "${destination}" && ! -L "${destination}" ]]; then
+			die -q "Couldn't create symlink \"${destination}\" -- file already exists and not a link (version: ${version})"
+		fi
+		ln -fs "${ROOT}${src}" "${destination}" || die -q "Couldn't create symlink \"${destination}\" to \"${src}\""
 	done
 
 	[[ -d "${ROOT}${includes}" ]] || die -q "\"${includes}\" does not exist"
@@ -127,7 +125,6 @@ set_installation() {
 	for t in ${python} ; do
 		pushd "$(dirname ${ROOT}${t})/.." 1>/dev/null
 		local ts="$(basename $(dirname ${ROOT}${t}))/${t//*\/}"
-		ts="${ts//${suffix}}"
 		local tt=${t//*\/}
 		ln -s "${ts}" "${tt}" || die -q "Couldn't create symlink \"$(pwd)/${tt}\""
 		popd 1>/dev/null

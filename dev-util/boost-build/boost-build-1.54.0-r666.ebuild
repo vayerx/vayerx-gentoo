@@ -27,8 +27,6 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/boost_${MY_PV}/tools/build/v2"
 
-MAJOR_PV="$(replace_all_version_separators _ ${SLOT})"
-
 pkg_setup() {
 	if use python; then
 		python_set_active_version 2
@@ -90,24 +88,24 @@ src_compile() {
 
 	# For slotting
 	sed -i \
-		-e "s|/usr/share/boost-build|/usr/share/boost-build-${MAJOR_PV}|" \
+		-e "s|/usr/share/boost-build|/usr/share/boost-build-${SLOT}|" \
 		Jambase || die "sed failed"
 
 	CC=$(tc-getCC) ./build.sh ${toolset} -d+2 $(use_with python python "${EROOT}"/usr) || die "building bjam failed"
 }
 
 src_install() {
-	newbin engine/bin.*/bjam bjam-${MAJOR_PV}
-	newbin engine/bin.*/b2 b2-${MAJOR_PV}
+	newbin engine/bin.*/bjam bjam-${SLOT}
+	newbin engine/bin.*/b2 b2-${SLOT}
 
-	insinto /usr/share/boost-build-${MAJOR_PV}
+	insinto /usr/share/boost-build-${SLOT}
 	doins -r "${FILESDIR}/site-config.jam" \
 		boost-build.jam bootstrap.jam build-system.jam user-config.jam *.py \
 		build kernel options tools util
 
-	rm "${ED}/usr/share/boost-build-${MAJOR_PV}/build/project.ann.py" || die "removing faulty python file failed"
+	rm "${ED}/usr/share/boost-build-${SLOT}/build/project.ann.py" || die "removing faulty python file failed"
 	if ! use python; then
-		find "${ED}/usr/share/boost-build-${MAJOR_PV}" -iname "*.py" -delete || die "removing experimental python files failed"
+		find "${ED}/usr/share/boost-build-${SLOT}" -iname "*.py" -delete || die "removing experimental python files failed"
 	fi
 
 	dodoc changes.txt hacking.txt release_procedure.txt \
@@ -133,9 +131,9 @@ src_test() {
 }
 
 pkg_postinst() {
-	use python && python_mod_optimize /usr/share/boost-build-${MAJOR_PV}
+	use python && python_mod_optimize /usr/share/boost-build-${SLOT}
 }
 
 pkg_postrm() {
-	use python && python_mod_cleanup /usr/share/boost-build-${MAJOR_PV}
+	use python && python_mod_cleanup /usr/share/boost-build-${SLOT}
 }

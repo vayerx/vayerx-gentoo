@@ -26,7 +26,7 @@ RDEPEND="icu? ( >=dev-libs/icu-3.6:= )
 	python? ( ${PYTHON_DEPS} )
 	app-arch/bzip2
 	sys-libs/zlib
-	eselect? ( app-admin/eselect-boost )
+	eselect? ( >=app-admin/eselect-boost-0.4-r1 )
 	!eselect? ( !app-admin/eselect-boost )"
 DEPEND="${RDEPEND}
 	dev-util/boost-build:${MAJOR_V}"
@@ -34,7 +34,8 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 S=${WORKDIR}/${MY_P}
 
-BJAM="b2-${MAJOR_PV}"
+BJAM="b2-${MAJOR_V}"
+LIBDIR="/usr/$(get_libdir)"
 
 # Usage:
 # _add_line <line-to-add> <profile>
@@ -145,14 +146,14 @@ src_configure() {
 	use python || OPTIONS+=" --without-python"
 	use nls || OPTIONS+=" --without-locale"
 
-	OPTIONS+=" pch=off --boost-build=\"${EPREFIX}/usr/share/boost-build-${MAJOR_PV}\" --prefix=\"${ED}usr\" --layout=versioned"
+	OPTIONS+=" pch=off --boost-build=\"${EPREFIX}/usr/share/boost-build-${MAJOR_V}\" --prefix=\"${ED}usr\" --layout=system"
 	OPTIONS+=" threading=$(usex threads multi single) link=$(usex static-libs shared,static shared)"
 
 	if use static-libs; then
-		LIBRARY_TARGETS="*.a *$(get_libname)"
+		LIBRARY_TARGETS="*.a.${PV} *$(get_libname).${PV}"
 	else
 		# There is no dynamically linked version of libboost_test_exec_monitor and libboost_exception.
-		LIBRARY_TARGETS="libboost_test_exec_monitor*.a libboost_exception*.a *$(get_libname)"
+		LIBRARY_TARGETS="libboost_test_exec_monitor.a.${PV} libboost_exception.a.${PV} *$(get_libname).${PV}"
 	fi
 
 	[[ ${CHOST} == *-winnt* ]] && OPTIONS+=" -sNO_BZIP2=1"
@@ -237,7 +238,7 @@ src_install () {
 		fi
 
 		ejam ${OPTIONS} \
-			--includedir="${ED}usr/include" \
+			--includedir="${ED}usr/include/boost-${MAJOR_V}" \
 			--libdir="${ED}usr/$(get_libdir)" \
 			$(use python && echo --python-buildid=${EPYTHON#python}) \
 			install || die "Installation of Boost libraries failed"
@@ -248,7 +249,7 @@ src_install () {
 			# Move mpi.so Python module to Python site-packages directory and make sure it is slotted.
 			# https://svn.boost.org/trac/boost/ticket/2838
 			if use mpi; then
-				local moddir=$(python_get_sitedir)/boost_${MAJOR_PV}
+				local moddir=$(python_get_sitedir)/boost_${MAJOR_V}
 				# moddir already includes eprefix
 				mkdir -p "${D}${moddir}" || die
 				mv "${ED}usr/$(get_libdir)/mpi.so" "${D}${moddir}" || die
@@ -265,7 +266,7 @@ else:
 	from . import mpi
 del sys
 EOF
-				_add_line "$(python_get_sitedir)/mpi.py:boost_${MAJOR_PV}.mpi"
+				_add_line "$(python_get_sitedir)/mpi.py:boost_${MAJOR_V}.mpi"
 			fi
 
 			python_optimize
@@ -289,11 +290,11 @@ EOF
 	fi
 
 	if ! use python; then
-		rm -rf "${ED}usr/include/boost-${MAJOR_PV}/boost"/python* || die
+		rm -rf "${ED}"usr/include/boost-${MAJOR_V}/boost/python* || die
 	fi
 
 	if ! use nls; then
-		rm -r "${ED}"/usr/include/boost-${MAJOR_PV}/locale || die
+		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/locale || die
 	fi
 
 	if use doc; then
@@ -311,97 +312,96 @@ EOF
 		insinto /usr/share/doc/${PF}/html
 		doins LICENSE_1_0.txt
 
-		dosym /usr/include/boost-${MAJOR_PV}/boost /usr/share/doc/${PF}/html/boost
+		dosym /usr/include/boost-${MAJOR_V}/boost /usr/share/doc/${PF}/html/boost
 	fi
 
-	pushd "${ED}usr/$(get_libdir)" > /dev/null || die
+	pushd "${ED}"usr/$(get_libdir) > /dev/null || die
 
 	# Remove (unversioned) symlinks
 	# And check for what we remove to catch bugs
 	# got a better idea how to do it? tell me!
 	local f
-	for f in $(ls -1 ${LIBRARY_TARGETS} | grep -v "${MAJOR_PV}"); do
-		if [[ ! -h "${f}" ]]; then
-			eerror "Tried to remove '${f}' which is a regular file instead of a symlink"
-			die "Slotting/naming of the libraries broken!"
-		fi
-		rm "${f}" || die
+	for f in $(ls -1 ${LIBRARY_TARGETS} | grep -v "${MAJOR_V}"); do
+		[[ -L "${f}" ]] && rm "${f}"
 	done
 
-	local ext=$(get_libname)
-	if use threads; then
-		local f
-		for f in *${ext}; do
-			dosym ${f} /usr/$(get_libdir)/${f/${ext}/-mt${ext}}
-		done
-	fi
-
-	# The same goes for the mpi libs
-	if use mpi; then
-		if use static-libs; then
-			MPI_LIBS="libboost_mpi-mt-${MAJOR_PV}.a libboost_mpi-mt-${MAJOR_PV}$(get_libname)"
-		else
-			MPI_LIBS="libboost_mpi-mt-${MAJOR_PV}$(get_libname)"
-		fi
-		local lib
-		for lib in ${MPI_LIBS}; do
-			dosym ${lib} "/usr/$(get_libdir)/${lib/-mt/}"
-		done
-	fi
-
-	if use debug; then
-		if use static-libs; then
-			THREAD_DEBUG_LIBS="libboost_thread-mt-${MAJOR_PV}-debug$(get_libname) libboost_thread-mt-${MAJOR_PV}-debug.a"
-		else
-			THREAD_DEBUG_LIBS="libboost_thread-mt-${MAJOR_PV}-debug$(get_libname)"
-		fi
-
-		local lib
-		for lib in ${THREAD_DEBUG_LIBS}; do
-			dosym ${lib} "/usr/$(get_libdir)/${lib/-mt/}"
-		done
-
-		if use mpi; then
-			if use static-libs; then
-				MPI_DEBUG_LIBS="libboost_mpi-mt-${MAJOR_PV}-debug.a libboost_mpi-mt-${MAJOR_PV}-debug$(get_libname)"
-			else
-				MPI_DEBUG_LIBS="libboost_mpi-mt-${MAJOR_PV}-debug$(get_libname)"
-			fi
-
-			local lib
-			for lib in ${MPI_DEBUG_LIBS}; do
-				dosym ${lib} "/usr/$(get_libdir)/${lib/-mt/}"
-			done
-		fi
-	fi
-
-	# Create a subdirectory with completely unversioned symlinks
-	# and store the names in the profiles-file for eselect
-	dodir /usr/$(get_libdir)/boost-${MAJOR_PV}
+	local ext
+	# Fix static libraries naming -- add version
+	ext=".a"
+	for f in *${ext}; do
+		[[ -e "${f}" ]] || die  "Can not add version to ${f} -- file does not exist"
+		mv "${f}" "${f}.${PV}"
+	done
 
 	_add_line "libs=\"" default
 	local f
-	for f in $(ls -1 ${LIBRARY_TARGETS} | grep -v "debug\|-mt.*-mt"); do
-		dosym ../${f} /usr/$(get_libdir)/boost-${MAJOR_PV}/${f/-${MAJOR_PV}}
-		_add_line "/usr/$(get_libdir)/${f}" default
+	for f in $(ls -1 ${LIBRARY_TARGETS} | grep -v debug); do
+		if [[ -e "${f}" ]]; then
+			local slot_target="${f%.${PV}}"
+			local slot_source="${slot_target}.${MAJOR_V}"
+			dosym "${LIBDIR}/${f}" "${LIBDIR}/${slot_source}"	# install major-version
+			dosym "${LIBDIR}/${f}" "${LIBDIR}/${slot_target}"	# install final target (versionless)
+			eerror "file=${f} target=${slot_target} source=${slot_source}"
+			_add_line "${LIBDIR}/${slot_source}" default
+		else
+			ewarn "Missing or invalid library name: ${f}"
+		fi
 	done
 	_add_line "\"" default
 
 	if use debug; then
 		_add_line "libs=\"" debug
-		dodir /usr/$(get_libdir)/boost-${MAJOR_PV}-debug
 		local f
 		for f in $(ls -1 ${LIBRARY_TARGETS} | grep debug); do
-			dosym ../${f} /usr/$(get_libdir)/boost-${MAJOR_PV}-debug/${f/-${MAJOR_PV}-debug}
-			_add_line "/usr/$(get_libdir)/${f}" debug
+			dosym ../${f} ${LIBDIR}-debug/${f/-${MAJOR_V}-debug}
+			_add_line "${LIBDIR}/${f}" debug
 		done
 		_add_line "\"" debug
 
-		_add_line "includes=\"/usr/include/boost-${MAJOR_PV}/boost\"" debug
+		_add_line "includes=\"/usr/include/boost-${MAJOR_V}/boost\"" debug
 		_add_line "suffix=\"-debug\"" debug
 	fi
 
-	_add_line "includes=\"/usr/include/boost-${MAJOR_PV}/boost\"" default
+	# The same goes for the mpi libs
+	if use mpi; then
+		if use static-libs; then
+			MPI_LIBS="libboost_mpi-mt-${MAJOR_V}.a libboost_mpi-mt-${MAJOR_V}$(get_libname)"
+		else
+			MPI_LIBS="libboost_mpi-mt-${MAJOR_V}$(get_libname)"
+		fi
+		local lib
+		for lib in ${MPI_LIBS}; do
+			dosym ${lib} "${LIBDIR}/${lib/-mt/}"
+		done
+	fi
+
+	if use debug; then
+		if use static-libs; then
+			THREAD_DEBUG_LIBS="libboost_thread-mt-${MAJOR_V}-debug$(get_libname) libboost_thread-mt-${MAJOR_V}-debug.a"
+		else
+			THREAD_DEBUG_LIBS="libboost_thread-mt-${MAJOR_V}-debug$(get_libname)"
+		fi
+
+		local lib
+		for lib in ${THREAD_DEBUG_LIBS}; do
+			dosym ${lib} "${LIBDIR}/${lib/-mt/}"
+		done
+
+		if use mpi; then
+			if use static-libs; then
+				MPI_DEBUG_LIBS="libboost_mpi-mt-${MAJOR_V}-debug.a libboost_mpi-mt-${MAJOR_V}-debug$(get_libname)"
+			else
+				MPI_DEBUG_LIBS="libboost_mpi-mt-${MAJOR_V}-debug$(get_libname)"
+			fi
+
+			local lib
+			for lib in ${MPI_DEBUG_LIBS}; do
+				dosym ${lib} "${LIBDIR}/${lib/-mt/}"
+			done
+		fi
+	fi
+
+	_add_line "includes=\"/usr/include/boost-${MAJOR_V}/boost\"" default
 
 	popd > /dev/null || die
 
@@ -411,8 +411,8 @@ EOF
 		_add_line "bins=\""
 		local b
 		for b in *; do
-			newbin "${b}" "${b}-${MAJOR_PV}"
-			_add_line "/usr/bin/${b}-${MAJOR_PV}"
+			newbin "${b}" "${b}-${MAJOR_V}"
+			_add_line "/usr/bin/${b}-${MAJOR_V}"
 		done
 		_add_line "\""
 		popd > /dev/null || die
@@ -421,8 +421,8 @@ EOF
 		insinto /usr/share
 		doins -r share/boostbook
 		# Append version postfix for slotting
-		mv "${D}usr/share/boostbook" "${D}usr/share/boostbook-${MAJOR_PV}" || die
-		_add_line "dirs=\"/usr/share/boostbook-${MAJOR_PV}\""
+		mv "${D}usr/share/boostbook" "${D}usr/share/boostbook-${MAJOR_V}" || die
+		_add_line "dirs=\"/usr/share/boostbook-${MAJOR_V}\""
 		popd > /dev/null || die
 	fi
 
