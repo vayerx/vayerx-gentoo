@@ -30,5 +30,8 @@
       Install the full API documentation documentation. This takes
       over 200MB of extra disk space.
     </flag>
+    <flag name='eselect'>
+      Enable eselect support -- multi-slot installation.
+    </flag>
   </use>
 </pkgmetadata>
