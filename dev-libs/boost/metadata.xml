@@ -33,5 +33,8 @@
     <flag name='eselect'>
       Enable eselect support -- multi-slot installation.
     </flag>
+    <flag name='std-cxx11'>
+      Enable C++11 standard. GNU dialect of C++98 standard is used otherwise.
+    </flag>
   </use>
 </pkgmetadata>

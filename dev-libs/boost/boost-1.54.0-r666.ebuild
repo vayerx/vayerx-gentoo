@@ -18,7 +18,7 @@ MAJOR_V="$(get_version_component_range 1-2)"
 MAJOR_PV=$(replace_all_version_separators _ ${MAJOR_V})
 SLOT="${MAJOR_V}"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug doc +eselect icu +nls mpi python static-libs +threads tools"
+IUSE="debug doc +eselect icu +nls mpi python static-libs std-cxx11 +threads tools"
 
 RDEPEND="icu? ( >=dev-libs/icu-3.6:= )
 	!icu? ( virtual/libiconv )
@@ -139,7 +139,11 @@ src_configure() {
 		[[ $(gcc-version) > 4.3 ]] && append-flags -mno-altivec
 	fi
 
-	append-cxxflags -std=c++11
+	if use std-cxx11; then
+		append-cxxflags -std=c++11
+	else
+		append-cxxflags -std=gnu++98
+	fi
 
 	use icu && OPTIONS+=" -sICU_PATH=${EPREFIX}/usr"
 	use icu || OPTIONS+=" --disable-icu boost.locale.icu=off"
