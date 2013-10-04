@@ -6,7 +6,7 @@ EAPI=3
 inherit autotools games git-2
 
 EGIT_REPO_URI="https://github.com/vayerx/alienarena.git"
-EGIT_MASTER="devel"
+EGIT_BRANCH="devel"
 EGIT_HAS_SUBMODULES="yes"
 
 if [[ "${PV}" = 9999* ]]; then
