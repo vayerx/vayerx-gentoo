@@ -87,6 +87,5 @@ PDEPEND="
 		x11-themes/gnome-icon-theme
 		www-client/links
 		www-plugins/gnash
-		www-plugins/lightspark
 	)
 "
