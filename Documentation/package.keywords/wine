@@ -1,2 +1,4 @@
 =app-emulation/q4wine-1.0*
 =app-emulation/wine-1.5.25
+=dev-qt/qtlockedfile-2.4.1
+=dev-qt/qtsingleapplication-2.6.1

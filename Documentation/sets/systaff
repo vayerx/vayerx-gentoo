@@ -36,7 +36,7 @@ sys-apps/pciutils
 sys-apps/smartmontools
 sys-apps/usbutils
 sys-block/gparted
-sys-boot/grub
+sys-boot/grub:0
 sys-fs/inotify-tools
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
