@@ -4,6 +4,7 @@
 =sys-apps/pciutils-3.1.7 -zlib
 =sys-fs/cryptsetup-1.1.3-r3 dynamic
 >=media-plugins/kipi-plugins-1.2 -cdr -crypt
+>=x11-drivers/xf86-video-ati-7.2.0 glamor
 app-admin/conky iostats portmon
 app-antivirus/clamav clamdtop
 app-arch/rpm doc
@@ -43,6 +44,7 @@ dev-qt/qtdeclarative accessibility webkit
 dev-qt/qtgui accessibility dbus
 dev-qt/qtsvg accessibility
 dev-qt/qtwebkit kde
+dev-ruby/rbstaff gui datamining
 dev-util/boost-build python
 dev-util/kdevelop -ada -clearcase -cvs -fortran -haskell java -pascal -perforce perl -php python ruby sql subversion qthelp
 dev-vcs/git gtk perl subversion tk -webdav
@@ -71,6 +73,7 @@ media-gfx/gwenview kipi
 media-gfx/hugin lapack sift
 media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
+media-libs/freeimage -raw
 media-libs/gd fontconfig
 media-libs/lcms python
 media-libs/libbluray static-libs utils
@@ -93,9 +96,10 @@ media-video/kino gstreamer lame quicktime
 media-video/vlc cdda ffmpeg flac id3tag -samba stream
 net-analyzer/rrdtool -ruby
 net-analyzer/tcpdump chroot -samba
-net-analyzer/wireshark caps gcrypt geoip gnutls pcap
+net-analyzer/wireshark caps gcrypt geoip gnutls -gtk2 -gtk32 -gtk3 pcap
 net-dns/avahi autoipd dbus gtk gtk3 mdnsresponder-compat qt3
 net-firewall/shorewall doc
+net-fs/cifs-utils ads
 net-fs/samba addns client -ldb netapi server smbclient
 net-im/psi extras -jingle linguas_ru spell xscreensaver
 net-libs/libsoup gnome
