@@ -26,6 +26,9 @@ games-emulation/gens
 games-fps/alienarena
 games-fps/alienarena-ng **
 games-fps/doomsday **
+games-fps/ezquake-bin
+games-fps/quake2-icculus
+games-fps/quake2-textures
 games-fps/quake3
 games-fps/quake3-data
 games-fps/sauerbraten

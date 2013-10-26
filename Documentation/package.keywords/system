@@ -3,8 +3,10 @@
 =dev-libs/cloog-0.18.0
 =dev-libs/isl-0.11.1
 =dev-libs/libclc-0.0.1_pre20130819
+=net-misc/netifrc-0.1
 =sys-apps/hwids-20130915.1
 =sys-apps/kmod-15
+=sys-apps/openrc-0.12.2
 =sys-devel/gcc-4.7.3
 =sys-fs/udev-208
 =sys-kernel/genkernel-3.4.24_p2
