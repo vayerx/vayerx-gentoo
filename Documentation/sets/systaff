@@ -18,6 +18,9 @@ dev-vcs/mercurial
 net-analyzer/netcat
 net-analyzer/tcpdump
 net-analyzer/traceroute
+net-dialup/ppp
+net-dialup/pppconfig
+net-dialup/rp-pppoe
 net-dns/bind-tools
 net-firewall/shorewall
 net-firewall/shorewall6
