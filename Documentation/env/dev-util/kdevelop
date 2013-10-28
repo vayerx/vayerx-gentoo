@@ -1,0 +1,3 @@
+FEATURES="$FEATURES compressdebug installsources splitdebug"
+CXXFLAGS="$CXXFLAGS -ggdb"
+
