@@ -48,8 +48,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch \
-		"${FILESDIR}"/${P}-nodocs.patch \
-		"${FILESDIR}"/${P}-slugs_base.patch
+		"${FILESDIR}"/${P}-nodocs.patch
 	eautoreconf
 }
 
