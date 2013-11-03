@@ -3,6 +3,7 @@ app-arch/unmakeself
 app-doc/doxygen
 app-i18n/enca
 dev-libs/libxml2
+dev-util/debugedit
 dev-util/geany
 dev-util/google-perftools
 dev-util/ragel
