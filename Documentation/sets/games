@@ -1,4 +1,8 @@
 games-action/bzflag
+games-action/minetest
+games-action/minetest_build
+games-action/minetest_game
+games-action/minetest_survival
 games-action/shadowgrounds
 games-action/shadowgrounds-data
 games-action/survivor
@@ -11,8 +15,6 @@ games-fps/openarena
 games-fps/quake3
 games-fps/quake3-data
 games-fps/sauerbraten
-games-mud/minetest
-games-mud/minetest-data
 games-roguelike/adom
 games-rpg/lipsofsuna
 games-simulation/gl117

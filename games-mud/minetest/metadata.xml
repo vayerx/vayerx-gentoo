@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-<herd>games</herd>
-<use>
-    <flag name="server">build mimetest server</flag>
-    <flag name="sound">enable sound support</flag>
-</use>
-</pkgmetadata>
