@@ -1,12 +1,10 @@
 games-action/bzflag
-games-action/extreme-tuxracer
 games-action/shadowgrounds
 games-action/shadowgrounds-data
 games-action/survivor
 games-action/survivor-data
 games-action/teeworlds
 games-board/cockatrice
-games-board/domination
 games-fps/alienarena-ng
 games-fps/nexuiz
 games-fps/openarena
@@ -27,7 +25,6 @@ games-strategy/hedgewars
 games-strategy/megaglest
 games-strategy/megaglest-data
 games-strategy/naev
-games-strategy/scorched3d
 games-strategy/ufo-ai
 games-strategy/warmux
 games-strategy/warzone2100
