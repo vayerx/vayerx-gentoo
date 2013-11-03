@@ -1,140 +1,57 @@
-# gnome-base/gvfs gnome
-# media-gfx/sane-backends gphoto2
-=net-dns/avahi-0.6.30-r1 gtk3
-=sys-apps/pciutils-3.1.7 -zlib
-=sys-fs/cryptsetup-1.1.3-r3 dynamic
->=media-plugins/kipi-plugins-1.2 -cdr -crypt
->=x11-drivers/xf86-video-ati-7.2.0 glamor
 app-admin/conky iostats portmon
+app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
-app-arch/rpm doc
-app-cdr/brasero cdr css libburn -nautilus -totem
-app-cdr/xfburn dbus gstreamer thunar
-app-emulation/q4wine icoutils winetriks
-app-misc/mc edit -ncurses samba slang
-app-office/libreoffice-bin  -gnome
-app-office/openoffice-bin linguas_en linguas_ru
+app-emulation/q4wine icoutils
+app-misc/mc edit samba slang
 app-text/gocr tk
-app-text/poppler cairo utils png xpdf-headers
 app-text/yagf scanner
 dev-cpp/cppstaff kde
-dev-cpp/tbb doc examples
-dev-db/mysql -berkdb -big-tables -cluster community -extraengine -minimal -perl profiling ssl
-dev-db/mysql-gui-tools administrator query-browser
-dev-db/sqlite extensions
-dev-games/cegui devil expat
-dev-games/ode double-precision
-dev-games/ogre cegui devil lua threads
-dev-games/openscenegraph glut xrandr
-dev-java/oracle-jre-bin fontconfig
-dev-lang/python sqlite tk
-dev-libs/boost doc eselect python tools
+dev-lang/python sqlite
+dev-libs/boost doc eselect tools
 dev-libs/glib xattr
-dev-libs/libgcrypt static-libs
-dev-libs/libgpg-error static-libs
-dev-libs/lzo static-libs
-dev-libs/popt static-libs
-dev-libs/protobuf python
-dev-python/PyQt4 declarative webkit
+dev-python/PyQt4 webkit declarative
 dev-python/pystaff rich
 dev-python/spyder pylint sphinx
-dev-qt/qt-creator autotools bookmarks cmake debugger designer -linguas_ru qtscript valgrind
+dev-qt/qt-creator android autotools cmake -linguas_ru qtscript valgrind
 dev-qt/qt3support accessibility kde
 dev-qt/qtdeclarative accessibility webkit
 dev-qt/qtgui accessibility dbus
 dev-qt/qtsvg accessibility
-dev-qt/qtwebkit kde
 dev-ruby/rbstaff gui datamining
-dev-util/boost-build python
-dev-util/kdevelop -ada -clearcase -cvs -fortran -haskell java -pascal -perforce perl -php python ruby sql subversion qthelp
-dev-vcs/git gtk perl subversion tk -webdav
-dev-vcs/mercurial gpg tk
-dev-vcs/subversion -berkdb -dso extras perl -python -ruby webdav-neon -webdav-serf
-games-board/cockatrice server
+dev-ruby/rubygems ruby_targets_ruby18
+dev-vcs/git -gtk tk
+dev-vcs/subversion -dso perl
 games-fps/nexuiz maps
-games-fps/urbanterror openal server
 games-simulation/openttd -timidity
 games-strategy/warzone2100 videos
-games-strategy/wesnoth server
 gnome-base/gdm -tcpd -remote
-gnome-base/gnome-applets networkmanager
-kde-base/gwenview kipi
-kde-base/kdelibs avahi
-kde-base/kdelibsavahi
-mail-client/thunderbird-bin linguas_en linguas_ru
-media-fonts/terminus-font X pcf psf
-media-gfx/blender ffmpeg ogg openal -openmp -verse
-media-gfx/exiv2 xmp
-media-gfx/gimageview wmf
-media-gfx/gimp exif jpeg pdf png python svg tiff -udev wmf
+kde-base/gwenview -handbook kipi
+kde-base/okular chm
+media-gfx/blender -openmp
 media-gfx/graphicsmagick -imagemagick
-media-gfx/gthumb -cdr raw slideshow
-media-gfx/gwenview kipi
-media-gfx/hugin lapack sift
+media-gfx/hugin sift
 media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
-media-libs/freeimage -raw
-media-libs/gd fontconfig
-media-libs/lcms python
-media-libs/libbluray static-libs utils
-media-libs/mesa d3d g3dvl gallium gbm gles1 gles2 llvm nptl openvg osmesa vdpau xa xorg xvmc
-media-libs/mlt kde melt
-media-libs/sdl-mixer mikmod mod
-media-libs/sdl-sound mikmod
-media-plugins/audacious-plugins cue scrobbler
-media-plugins/gst-plugins-meta dvd ffmpeg flac mad mpeg ogg theora -v4l vorbis xv
-media-sound/amarok -amazon linguas_ru musicbrainz -python
-media-sound/audacity ffmpeg flac id3tag midi mp3 twolame vorbis
-media-sound/clementine gstreamer vlc xine
-media-sound/picard cdda ffmpeg
-media-sound/pulseaudio avahi
-media-sound/rhythmbox -cdr musicbrainz
-media-sound/sonata -trayicon
-media-video/avidemux aac aften dts mp3 vorbis x264 xv xvid
-media-video/ffmpeg amr faac gsm hardcoded-tables opus theora vorbis x264 xvid zlib
-media-video/kino gstreamer lame quicktime
-media-video/vlc cdda ffmpeg flac id3tag -samba stream
-net-analyzer/rrdtool -ruby
-net-analyzer/tcpdump chroot -samba
-net-analyzer/wireshark caps gcrypt geoip gnutls -gtk2 -gtk32 -gtk3 pcap
-net-dns/avahi autoipd dbus gtk gtk3 mdnsresponder-compat qt3
-net-firewall/shorewall doc
-net-fs/cifs-utils ads
-net-fs/samba addns client -ldb netapi server smbclient
-net-im/psi extras -jingle linguas_ru spell xscreensaver
-net-libs/libsoup gnome
-net-libs/xulrunner java
-net-misc/networkmanager gnutls -nss
-net-misc/openconnect -openssl
-net-misc/vinagre applet
-net-print/cups -avahi ldap samba slp ssl
-net-print/cupsddk fltk
-sci-geosciences/gpsd garmin python usb
+media-libs/mesa gbm gles1 gles2 openvg osmesa xa xorg xvmc
+media-libs/sdl-mixer mod modplug
+media-plugins/audacious-plugins cue
+media-sound/audacity id3tag twolame
+media-sound/clementine mtp
+net-dns/avahi -gtk gtk3 mdnsresponder-compat
+net-fs/cifs-utils -acl
+net-fs/samba winbind
+net-im/psi extras -jingle spell xscreensaver
+net-print/cups -zeroconf
+sci-geosciences/gpsd garmin usb
 sci-geosciences/qlandkartegt gps
-sci-geosciences/tangogps gps
-sci-libs/hdf5 -threads
-sys-apps/gnome-disk-utility fat nautilus
-sys-apps/lm_sensors sensord
-sys-apps/util-linux static-libs
+sci-libs/hdf5 -cxx -fortran
 sys-block/gparted fat ntfs reiserfs xfs -xfce
-sys-devel/gcc graphite
-sys-fs/ntfs3g ntfsprogs
-sys-fs/udev extras
-sys-libs/talloc python
-sys-libs/tdb python
+sys-devel/gcc gcj graphite
 sys-libs/zlib minizip
-sys-power/suspend -crypt
 vayerx/develop kde math
 vayerx/office burn kde
-www-client/firefox -crashreporter java methodjit -pgo webm
-www-client/opera qt-static
-www-plugins/gnash sdl-sound
-x11-base/xorg-drivers video_cards_radeon
-x11-base/xorg-server kdrive nptl xvfb
-x11-drivers/ati-drivers disable-watermark
-x11-libs/libdrm libkms video_cards_radeon
+vayerx/systaff -rich
+x11-base/xorg-server xvfb
+x11-drivers/xf86-video-ati glamor
+x11-libs/libdrm libkms
 x11-misc/xscreensaver new-login
-x11-themes/gentoo-artwork offensive
-xfce-base/exo hal
-xfce-base/thunar exif pcre -trash-plugin
-xfce-base/xfdesktop linguas_ru menu-plagin

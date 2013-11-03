@@ -1,0 +1,16 @@
+Section "Device"
+    Identifier "Card0"
+    VendorName "Advanced Micro Devices"
+    BoardName  "Cape Verde [Radeon HD 7700 Series]"
+
+    Driver     "fglrx"
+    Option     "Capabilities" "0x00000800"
+    #Option     "UseFastTLS" "off"
+    #Option     "KernelModuleParm" "locked-userpages=0"
+    BusID      "PCI:1:0:0"
+EndSection
+
+Section "dri"
+    Group      "video"
+    Mode       0660
+EndSection

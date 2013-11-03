@@ -1,0 +1,13 @@
+Section "Device"
+    Identifier "Card0"
+    VendorName "Advanced Micro Devices"
+    BoardName  "Cape Verde [Radeon HD 7700 Series]"
+
+    Driver     "radeonsi"
+    BusID      "PCI:1:0:0"
+EndSection
+
+Section "dri"
+    Group      "video"
+    Mode       0660
+EndSection

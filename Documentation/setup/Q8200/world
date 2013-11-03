@@ -1,7 +1,5 @@
 app-misc/gramps
 app-office/gnucash
-dev-libs/libev
-games-fps/alienarena-ng
 media-libs/libtxc_dxtn
 media-sound/audacity
 media-sound/mp3unicode
@@ -9,13 +7,5 @@ net-im/skype
 net-misc/openconnect
 net-misc/tor
 net-print/splix
-sci-geosciences/gpx-viewer
-sys-power/upsmon-usb
-vayerx/develop
 vayerx/lxde
-vayerx/office
-vayerx/systaff
-x11-drivers/ati-drivers
 x11-drivers/radeon-ucode
-x11-misc/openbox-menu
-xfce-base/thunar
