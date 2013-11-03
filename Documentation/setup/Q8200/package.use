@@ -8,6 +8,7 @@ app-text/yagf scanner
 dev-cpp/cppstaff kde
 dev-lang/python sqlite
 dev-libs/boost doc eselect tools
+dev-libs/botan -python
 dev-libs/glib xattr
 dev-python/PyQt4 webkit declarative
 dev-python/pystaff rich
@@ -32,6 +33,7 @@ media-gfx/graphicsmagick -imagemagick
 media-gfx/hugin sift
 media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
+media-libs/freeimage -raw
 media-libs/mesa gbm gles1 gles2 openvg osmesa xa xorg xvmc
 media-libs/sdl-mixer mod modplug
 media-plugins/audacious-plugins cue
