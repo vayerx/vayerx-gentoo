@@ -1,0 +1,22 @@
+# /etc/fstab: static file system information.
+#
+# <fs>						<mountpoint>	<type>	<opts>				<dump/pass>
+
+UUID=cafe62db-0675-4c9d-86c8-c97950c02770	/boot		ext2	noauto,noatime			1 2
+UUID=27d05551-f2f6-4d48-ac8c-97b9a9913136	/		ext4	noatime,nodiratime		0 1
+UUID=62d3a0ae-c5e2-4fa6-a7e1-8102bdd128fc	/home		xfs	noatime,nodiratime,nosuid	0 0
+UUID=827b0033-352b-4ed5-9155-eafb9eb7bc22	/mnt/data	xfs	noatime,nodiratime,nosuid	0 0
+UUID=aac30575-25fe-416b-b10a-7873115ffe9b	/mnt/systemp	ext4	noatime,nodiratime,nobarrier	0 0
+UUID=f0b133b6-efa3-4cfd-abd5-c105dfdf0cab	/usr/portage	ext4	noatime,nodiratime		0 0
+
+/mnt/systemp/var	/var/tmp		none	bind	0 0
+/mnt/systemp/tmp	/tmp			none	bind	0 0
+/mnt/systemp/distfiles	/usr/portage/distfiles	none	bind	0 0
+
+# glibc 2.2 and above expects tmpfs to be mounted at /dev/shm for
+# POSIX shared memory (shm_open, shm_unlink).
+# (tmpfs is a dynamically expandable/shrinkable ramdisk, and will
+#  use almost no memory if not populated with files)
+shm		/dev/shm	tmpfs	nodev,nosuid,noexec	0 0
+
+#/dev/bus/usb	/proc/bus/usb	none	bind			0 0
