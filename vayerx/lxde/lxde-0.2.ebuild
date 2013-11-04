@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
+EAPI="5"
 
 DESCRIPTION="Meta ebuild for LXDE, the Lightweight X11 Desktop Environment"
 HOMEPAGE="http://lxde.sf.net/"
@@ -10,27 +10,32 @@ HOMEPAGE="http://lxde.sf.net/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+rich gnome"
+IUSE="+xfce gnome"
 
 PDEPEND="
 	>=x11-misc/obconf-2.0.3_p20111019
 	x11-misc/obkey
 
-	rich? (
-		gnome? (
-			gnome-base/nautilus
-			gnome-extra/gnome-system-monitor
-			x11-terms/gnome-terminal
-		)
+	gnome? (
+		gnome-base/nautilus
+		gnome-extra/gnome-system-monitor
+		x11-terms/gnome-terminal
+	)
+
+	xfce? (
+		xfce-base/thunar
+		x11-terms/xfce4-terminal
+
 		!gnome? (
-			xfce-base/thunar
 			xfce-extra/xfce4-taskmanager
-			x11-terms/xfce4-terminal
 		)
 	)
-	!rich? (
-		lxde-base/lxtask
-		lxde-base/lxterminal
+
+	!gnome? (
+		!xfce? (
+			lxde-base/lxtask
+			lxde-base/lxterminal
+		)
 	)
 "
 

@@ -3,6 +3,6 @@
 <pkgmetadata>
 <herd>lxde</herd>
 <use>
-	<flag name='rich'>Don't mind installing excessive GUI staff</flag>
+	<flag name='xfce'>Use terminal, task manager and other staff from XFCE</flag>
 </use>
 </pkgmetadata>
