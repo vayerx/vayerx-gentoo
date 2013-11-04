@@ -1,0 +1,33 @@
+Client Software License Agreement of Cisco Systems
+
+THE SOFTWARE TO WHICH YOU ARE REQUESTING ACCESS IS
+THE PROPERTY OF CISCO SYSTEMS. THE USE OF THIS SOFTWARE IS GOVERNED BY THE TERMS AND CONDITIONS OF THE AGREEMENT SET FORTH BELOW.  YOU (ON BEHALF OF YOURSELF AND THE BUSINESS ENTITY YOU REPRESENT) MUST AGREE TO THE FOLLOWING TERMS AND CONDITIONS IN ORDER TO USE THE SOFTWARE. IF YOU DO NOT AGREE TO THE FOLLOWING TERMS AND CONDITIONS THEN YOU ARE NOT ENTITLED TO USE THE SOFTWARE.
+
+Ownership of the Software
+
+1. The software contained in the Cisco AnyConnect VPN Client, Cisco SSL VPN Client, Cisco VPN Client, Cisco Secure Desktop, Smart Tunnels, Port Forwarding and other SSL VPN delivered applets ("the Software"), to which you are requesting access, is owned or licensed by Cisco Systems and is protected by the United States copyright laws, laws of other nations, and/or international treaties.
+
+Grant of License
+
+2. Cisco Systems hereby grants you ("you" as used herein means you and the business entity you represent) the right to install and use any of the Software listed above on an unlimited number of computers, provided that each of those computers must use the Software only to connect to Cisco Systems products, and subject to export restrictions in Paragraph 4 hereof. You may make one copy of the Software for each such computer for the purpose of installing the Software on that computer. The Software is licensed for use only with Cisco Systems products, and for no other use.
+
+Restrictions on Use and Transfer
+
+3. You may also make one copy of the Software solely for backup and archival purposes. To this end, you may transfer the Software to a single set of disks provided you keep the disks solely for backup or archival purposes. You may not use the backup or archival copy of the Software except in conjunction with Cisco Systems products.
+
+4. You may copy and distribute the Software to your third party business partners and customers solely and exclusively for the purposes of accessing your Cisco VPN appliances and thereby gaining remote access to your secure network. Each such distribution of the Software to a third party must be accompanied by a copy of this Client Software License Agreement. You may not copy or transfer the Software for any purpose, other than as specified in this Agreement, without the express written consent of Cisco. Without intending to limit the foregoing, you shall not post or otherwise make publicly available the Software to any external web site, file server, or other location to which there is unrestricted access, excluding delivery from your Cisco VPN appliance.
+
+5. Cisco Systems will not provide end-user support (including Technical Assistance or TAC support) to any third party that receives the Software in accordance with Section 4 hereof. You shall be responsible for providing all support to each such third party. For permitted transfers, you may not export the Software to any country for which the United States requires any export license or other governmental approval at the time of export without first obtaining the requisite license and/or approval. Furthermore, you may not export the Software in violation of any export control laws of the United States or any other country. (For reference purpose only, see the Cisco Encryption Tool Quick Reference Guide currently located at http://www.cisco.com/wwl/export/crypto/tool/stqrg.html.) 
+
+
+6. You may not modify, translate, decompile, disassemble, use for any competitive analysis, reverse engineer, distribute, or create derivative works from, the Software or any accompanying documentation or copy thereof, in whole or in part.
+
+7. The subject license will terminate immediately if you do not comply with any and all of the terms and conditions set forth herein. Upon termination for any reason, you (the licensee) must immediately destroy the Software, any accompanying documentation, and all copies thereof in your possession. You must also use commercially reasonable efforts to notify the third parties to whom you have distributed the Software that their rights of access and use of the Software have also ceased. Cisco Systems is not liable to you for damages in any form solely by reason of termination of this license.
+
+8. You may not remove or alter any copyright, trade secret, patent, trademark, trade name, logo, product designation or other proprietary and/or other legal notices contained in or on the Software and any accompanying documentation. These legal notices must be retained on any copies of the Software and accompanying documentation made pursuant to paragraphs 2 through 4 hereof.
+
+9. You shall acquire no rights of any kind to any copyright, trade secret, patent, trademark, trade name, logo, or product designation contained in, or relating to, the Software or accompanying documentation and shall not make use thereof except as expressly authorized herein or otherwise authorized in writing by Cisco Systems.
+
+Limitation of Liabilities
+
+10. INSTALLATION AND USE OF THE SOFTWARE IS ALSO GOVERNED BY A SEPARATE LICENSE AGREEMENT BETWEEN CISCO SYSTEMS AND THE PURCHASER OF THE PRODUCT (THE "END USER LICENSE"). THAT SEPARATE END USER LICENSE CONTAINS A DESCRIPTION OF ALL WARRANTIES PROVIDED BY CISCO SYSTEMS FOR THE SOFTWARE. CISCO SYSTEMS PROVIDES NO WARRANTIES FOR THE SOFTWARE OTHER THAN THOSE SET FORTH IN THAT AGREEMENT, AND ASSUMES NO LIABILITIES WITH RESPECT TO USE OF THE SOFTWARE BY YOU OR ANY THIRD PARTY.
