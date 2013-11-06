@@ -21,6 +21,8 @@ SRC_URI="
 "
 RESTRICT="fetch strip"
 
+RDEPEND="!<dev-libs/openssl-1.0"
+
 INSTPREFIX="/opt/cisco/vpn"
 BINDIR=${INSTPREFIX}/bin
 PROFILEDIR=${INSTPREFIX}/profile
@@ -34,12 +36,12 @@ pkg_nofetch() {
 
 src_unpack() {
 	if use unpacked; then
-		unpack "${A}"
+		unpack ${A}
 	else
 		TARFILE=${T}/${UNPACKED_NAME}
 
 		MARKER=$((`grep -an "[B]EGIN\ ARCHIVE" ${DISTDIR}/${A} | cut -d ":" -f 1` + 1))
-		tail -n +${MARKER} ${DISTDIR}/${A} > ${TARFILE} || die "tail failed"
+		tail -n +${MARKER} "${DISTDIR}/${A}" > "${TARFILE}" || die "tail failed"
 
 		tar -xzf "${TARFILE}" -C "${WORKDIR}" || die "tar failed"
 	fi
@@ -47,87 +49,87 @@ src_unpack() {
 
 src_install() {
 	# Make sure destination directories exist
-	dodir ${BINDIR}
-	exeinto ${BINDIR}
-	dodir ${PROFILEDIR}
-	dodir ${SCRIPTDIR}
+	dodir "${BINDIR}"
+	exeinto "${BINDIR}"
+	dodir "${PROFILEDIR}"
+	dodir "${SCRIPTDIR}"
 
-	insinto ${INSTPREFIX}
+	insinto "${INSTPREFIX}"
 	insopts -m444
 
 	# Copy files to their home
-	doexe ${S}/vpn_uninstall.sh
+	#doexe "${S}/vpn_uninstall.sh"
 
-	doexe ${S}/vpnagentd
-	fperms 4755 ${BINDIR}/vpnagentd
+	doexe "${S}/vpnagentd"
+	fperms 4755 "${BINDIR}/vpnagentd"
 
-	dolib ${S}/libssl.so.0.9.8
-	dolib ${S}/libcrypto.so.0.9.8
+	dolib "${S}/libssl.so.0.9.8"
+	dolib "${S}/libcrypto.so.0.9.8"
 
 	if [ -f "${S}/vpnui" ]; then
-		doexe ${S}/vpnui
+		doexe "${S}/vpnui"
+		dosym "${BINDIR}/vpnui" /usr/bin/
 	else
 		ewarn "vpnui does not exist. It will not be installed."
-	fi 
+	fi
 
-	doexe ${S}/vpn
+	doexe "${S}/vpn"
 
 	if [ -d "${S}/pixmaps" ]; then
-		cp -R ${S}/pixmaps ${D}/${INSTPREFIX} || die "can't copy pixmaps"
+		cp -R "${S}/pixmaps" "${D}/${INSTPREFIX}" || die "can't copy pixmaps"
 	else
 		ewarn "pixmaps not found... Continuing with the install."
 	fi
 
 	if [ -f "${S}/anyconnect.desktop" ]; then
-		domenu ${S}/anyconnect.desktop
+		domenu "${S}/anyconnect.desktop"
 	else
 		ewarn "anyconnect.desktop does not exist. It will not be installed."
 	fi
 
 	if [ -f "${S}/VPNManifestClient.xml" ]; then
-		doins ${S}/VPNManifestClient.xml
+		doins "${S}/VPNManifestClient.xml"
 	else
 		ewarn "VPNManifestClient.xml does not exist. It will not be installed."
 	fi
 
 	if [ -f "${S}/manifesttool" ]; then
-		doexe ${S}/manifesttool
+		doexe "${S}/manifesttool"
 	else
 		ewarn "manifesttool does not exist. It will not be installed."
 	fi
 
 	if [ -f "${S}/update.txt" ]; then
-		doins ${S}/update.txt
+		doins "${S}/update.txt"
 	else
 		ewarn "update.txt does not exist. It will not be installed."
 	fi
 
 	if [ -f "${S}/vpndownloader" ]; then
-		# cached downloader
-		doexe ${S}/vpndownloader
+		doexe "${S}/vpndownloader"
 
 		# create a fake vpndonloader.sh that just launches the cached downloader
 		# instead of self extracting the downloader like the one on the headend.
 		# This method is used because of backwards compatibilty with anyconnect
 		# versions before this change since they will try to invoke vpndownloader.sh
 		# during weblaunch.
-		echo "ERRVAL=0" > ${D}${BINDIR}/vpndownloader.sh
-		echo ${BINDIR}/"vpndownloader \"\$*\" || ERRVAL=\$?" >> ${D}${BINDIR}/vpndownloader.sh
-		echo "exit \${ERRVAL}" >> ${D}${BINDIR}/vpndownloader.sh
-		chmod 444 ${D}${BINDIR}/vpndownloader.sh
+		echo "ERRVAL=0" > "${D}${BINDIR}/vpndownloader.sh"
+		echo ${BINDIR}/"vpndownloader \"\$*\" || ERRVAL=\$?" >> "${D}${BINDIR}/vpndownloader.sh"
+		echo "exit \${ERRVAL}" >> "${D}${BINDIR}/vpndownloader.sh"
+		chmod 444 "${D}${BINDIR}/vpndownloader.sh"
 	else
 		ewarn "vpndownloader does not exist. It will not be installed."
 	fi
 
 	# Profile schema and example template
-	doins ${S}/AnyConnectLocalPolicy.xsd
+	doins "${S}/AnyConnectLocalPolicy.xsd"
 
-	insinto ${PROFILEDIR}
-	doins ${S}/AnyConnectProfile.xsd
-	doins ${S}/AnyConnectProfile.tmpl
+	insinto "${PROFILEDIR}"
+	doins "${S}/AnyConnectProfile.xsd"
+	doins "${S}/AnyConnectProfile.tmpl"
 
 	# Attempt to install the init script in the proper place
-	newinitd ${S}/vpnagentd_init vpnagentd
+	newinitd "${S}/vpnagentd_init" vpnagentd
 }
 
 pkg_postinst() {
