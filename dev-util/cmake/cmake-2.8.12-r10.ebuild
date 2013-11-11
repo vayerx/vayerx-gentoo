@@ -58,7 +58,6 @@ CMAKE_BINARY="${S}/Bootstrap.cmk/cmake"
 PATCHES=(
 	"${FILESDIR}"/${PN}-2.6.3-fix_broken_lfs_on_aix.patch
 	"${FILESDIR}"/${PN}-2.6.3-no-duplicates-in-rpath.patch
-	"${FILESDIR}"/${PN}-2.8.0-darwin-default-install_name.patch
 	"${FILESDIR}"/${PN}-2.8.7-FindLAPACK.patch
 	"${FILESDIR}"/${PN}-2.8.8-FindPkgConfig.patch
 	"${FILESDIR}"/${PN}-2.8.10-darwin-bundle.patch
@@ -70,7 +69,6 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-2.8.11-FindBLAS.patch
 	"${FILESDIR}"/${PN}-2.8.11-FindBoost-python.patch
 	"${FILESDIR}"/${PN}-2.8.11-FindBoost-python-major.patch
-	"${FILESDIR}"/${PN}-2.8.11-FindImageMagick.patch
 	"${FILESDIR}"/${PN}-2.8.11-more-no_host_paths.patch
 )
 
@@ -83,6 +81,11 @@ cmake_src_bootstrap() {
 		par_arg="--parallel=${par_arg}"
 	else
 		par_arg="--parallel=1"
+	fi
+
+	# execinfo.h on Solaris isn't quite what it is on Darwin
+	if [[ ${CHOST} == *-solaris* ]] ; then
+		sed -i -e 's/execinfo\.h/blablabla.h/' Source/kwsys/CMakeLists.txt || die
 	fi
 
 	tc-export CC CXX LD
@@ -101,7 +104,7 @@ cmake_src_test() {
 		"${S}"/Tests/{OutDir,CMakeOnly/SelectLibraryConfigurations}/CMakeLists.txt \
 		|| die
 
-	pushd "${CMAKE_BUILD_DIR}" > /dev/null
+	pushd "${BUILD_DIR}" > /dev/null
 
 	local ctestargs
 	[[ -n ${TEST_VERBOSE} ]] && ctestargs="--extra-verbose --output-on-failure"
@@ -111,7 +114,7 @@ cmake_src_test() {
 	#    CTest.updatecvs, which fails to commit as root
 	#    Qt4Deploy, which tries to break sandbox and ignores prefix
 	#    TestUpload, which requires network access
-	"${CMAKE_BUILD_DIR}"/bin/ctest ${ctestargs} \
+	"${BUILD_DIR}"/bin/ctest ${ctestargs} \
 		-E "(BootstrapTest|CTest.UpdateCVS|Qt4Deploy|TestUpload)" \
 		|| die "Tests failed"
 
