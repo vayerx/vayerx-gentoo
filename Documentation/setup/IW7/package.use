@@ -11,6 +11,7 @@ dev-java/sun-jre-bin -nsplugin
 dev-lang/php cgi -crypt gd
 dev-lang/python sqlite tk
 dev-libs/boost doc date_time static-libs tools
+dev-libs/boost:1.54 std-cxx11
 dev-libs/libgcrypt static-libs
 dev-libs/libgpg-error static-libs
 dev-libs/popt static-libs
