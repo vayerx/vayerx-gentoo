@@ -70,6 +70,7 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-2.8.11-FindBoost-python.patch
 	"${FILESDIR}"/${PN}-2.8.11-FindBoost-python-major.patch
 	"${FILESDIR}"/${PN}-2.8.11-more-no_host_paths.patch
+	"${FILESDIR}"/${PN}-2.8.12.1-FindImageMagick.patch
 )
 
 cmake_src_bootstrap() {
