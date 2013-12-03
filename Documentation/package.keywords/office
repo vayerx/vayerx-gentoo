@@ -1,10 +1,10 @@
 <app-emulation/wine-1.5
-=app-office/libreoffice-4.0*
-=app-office/libreoffice-l10n-4.0*
+=app-office/libreoffice-bin-4.1.3.2-r666
+=app-office/libreoffice-l10n-4.1.3.2
 =app-text/libmspub-0.0.5
 =dev-cpp/libcmis-0.3.1
 =dev-libs/liborcus-0.3.0
-=dev-libs/nspr-4.10
+=dev-libs/nspr-4.10.2
 =dev-libs/nss-3.15
 =media-libs/liblastfm-1.0.2
 =media-libs/libmygpo-qt-1.0.7
