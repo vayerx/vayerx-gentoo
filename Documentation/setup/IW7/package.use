@@ -1,5 +1,5 @@
 >=virtual/python-qt-4 webkit
-app-editors/vim -X cscope
+app-editors/vim -X cscope ruby
 app-emulation/qemu kqemu kvm vde
 app-misc/mc -ncurses slang
 app-office/lyx dia dot -subversion html
@@ -53,6 +53,7 @@ sys-apps/lm_sensors sensord
 sys-apps/util-linux static-libs
 sys-block/gparted fat ntfs xfs
 sys-devel/gcc gcj graphite
+sys-devel/gdb -server
 sys-fs/cryptsetup static
 sys-fs/lvm2 static-libs
 sys-fs/udev static-libs
@@ -60,7 +61,7 @@ sys-kernel/gentoo-sources symlink
 sys-libs/e2fsprogs-libs static-libs
 sys-libs/zlib minizip
 vayerx/develop database java postgres rich
-vayerx/office excessive gnome
+vayerx/office excessive -gnome
 vayerx/system gnome
 virtual/python-sqlite external
 virtual/udev static-libs
