@@ -1,9 +1,10 @@
+>=app-crypt/gcr-3.8
 >=app-editors/gedit-3
 >=app-text/evince-3
 >=gnome-base/dconf-3
 >=gnome-base/gconf-3
 >=gnome-base/gdm-3
->=gnome-base/gnome-common-3
+>=gnome-base/gnome-common-3.8
 >=gnome-base/gnome-desktop-3
 >=gnome-base/gnome-keyring-3
 >=gnome-base/gnome-mime-data-3
@@ -13,6 +14,7 @@
 >=gnome-base/gvfs-3
 >=gnome-base/libbonobo-3
 >=gnome-base/libbonoboui-3
+>=gnome-base/libgdu-3.8
 >=gnome-base/libglade-3
 >=gnome-base/libgnome-3
 >=gnome-base/libgnome-keyring-3
@@ -27,7 +29,6 @@
 >=gnome-extra/evolution-data-server-3
 >=gnome-extra/gnome-system-monitor-3
 >=gnome-extra/gnome-utils-3
->=gnome-extra/gtkhtml-3
 >=gnome-extra/libgsf-3
 >=gnome-extra/polkit-gnome-3
 >=gnome-extra/yelp-xsl-3
