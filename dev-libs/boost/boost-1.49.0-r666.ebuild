@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/boost/${MY_P}.tar.bz2"
 LICENSE="Boost-1.0"
 MAJOR_V="$(get_version_component_range 1-2)"
 MAJOR_PV=$(replace_all_version_separators _ ${MAJOR_V})
-SLOT="${MAJOR_V}"
+SLOT="${MAJOR_V}/0"
 KEYWORDS="~x86 ~amd64"
 IUSE="debug doc +eselect icu mpi python static-libs tools"
 
