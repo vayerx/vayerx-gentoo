@@ -6,6 +6,7 @@
 =media-libs/pnglite-0.1.17
 =net-libs/enet-1.3.6
 =net-libs/libircclient-1.6-r1
+=sys-devel/automake-1.14
 >=dev-libs/jthread-1.2.1
 dev-games/irrlicht
 dev-games/ode
@@ -24,6 +25,7 @@ games-action/torchlight
 games-board/cockatrice
 games-emulation/gens
 games-fps/alienarena
+games-fps/alienarena-ng
 games-fps/alienarena-ng **
 games-fps/doomsday **
 games-fps/ezquake-bin

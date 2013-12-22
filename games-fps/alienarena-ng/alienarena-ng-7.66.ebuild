@@ -2,11 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
+EAPI="5"
+
+WANT_AUTOMAKE="1.14"
 inherit autotools games git-2
 
 EGIT_REPO_URI="https://github.com/vayerx/alienarena.git"
-EGIT_BRANCH="devel"
+EGIT_MASTER="devel"
 EGIT_HAS_SUBMODULES="yes"
 
 if [[ "${PV}" = 9999* ]]; then
@@ -47,8 +49,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch \
-		"${FILESDIR}"/${P}-nodocs.patch
+	epatch "${FILESDIR}"/alienarena-ng-7.65-nodocs.patch
 	eautoreconf
 }
 
