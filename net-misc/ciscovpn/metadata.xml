@@ -3,5 +3,6 @@
 <pkgmetadata>
 <use>
 	<flag name='unpacked'>Provide TAR archive instead of installation script</flag>
+	<flag name='openssl'>Use system openssl. Bundeled libraries are used otherwise.</flag>
 </use>
 </pkgmetadata>

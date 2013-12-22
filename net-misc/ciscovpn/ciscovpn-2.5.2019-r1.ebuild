@@ -11,7 +11,7 @@ HOMEPAGE="http://www.cisco.com"
 LICENSE="cisco"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="unpacked"
+IUSE="unpacked openssl"
 
 UNPACKED_NAME="anyconnect-Linux_64-${PV}.tar.gz"
 
@@ -21,7 +21,10 @@ SRC_URI="
 "
 RESTRICT="fetch strip"
 
-RDEPEND="!<dev-libs/openssl-1.0"
+RDEPEND="
+	openssl? ( =dev-libs/openssl-0.9.8* )
+	!openssl? ( !=dev-libs/openssl-0.9.8* )
+"
 
 INSTPREFIX="/opt/cisco/vpn"
 BINDIR=${INSTPREFIX}/bin
@@ -63,8 +66,10 @@ src_install() {
 	doexe "${S}/vpnagentd"
 	fperms 4755 "${BINDIR}/vpnagentd"
 
-	dolib "${S}/libssl.so.0.9.8"
-	dolib "${S}/libcrypto.so.0.9.8"
+	if ! use openssl; then
+		dolib "${S}/libssl.so.0.9.8"
+		dolib "${S}/libcrypto.so.0.9.8"
+	fi
 
 	if [ -f "${S}/vpnui" ]; then
 		doexe "${S}/vpnui"
