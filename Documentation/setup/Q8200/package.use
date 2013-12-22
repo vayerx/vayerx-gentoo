@@ -2,7 +2,9 @@ app-admin/conky iostats portmon
 app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
 app-emulation/q4wine icoutils
+app-emulation/virtualbox extensions
 app-misc/mc edit samba slang
+app-office/akonadi-server sqlite
 app-text/gocr tk
 app-text/yagf scanner
 dev-cpp/cppstaff kde
@@ -27,6 +29,7 @@ games-simulation/openttd -timidity
 games-strategy/warzone2100 videos
 gnome-base/gdm -tcpd -remote
 kde-base/gwenview -handbook kipi
+kde-base/kdelibs semantic-desktop
 kde-base/okular chm
 media-gfx/blender -openmp
 media-gfx/graphicsmagick -imagemagick
@@ -51,7 +54,7 @@ sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-devel/gcc gcj graphite
 sys-libs/zlib minizip
 vayerx/develop kde math
-vayerx/office burn kde
+vayerx/office burn -gnome kde
 vayerx/systaff -rich
 x11-base/xorg-server xvfb
 x11-drivers/xf86-video-ati glamor
