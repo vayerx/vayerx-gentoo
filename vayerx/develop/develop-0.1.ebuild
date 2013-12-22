@@ -66,7 +66,6 @@ PDEPEND="
 	)
 
 	rich? (
-		dev-util/argouml
 		dev-util/mutrace
 	)
 "
