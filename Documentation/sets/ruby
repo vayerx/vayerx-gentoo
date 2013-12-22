@@ -3,5 +3,6 @@ dev-ruby/libxml
 dev-ruby/mechanize
 dev-ruby/nokogiri
 dev-ruby/rake
+dev-ruby/ruby-progressbar
 dev-ruby/rubygems
 dev-ruby/zentest
