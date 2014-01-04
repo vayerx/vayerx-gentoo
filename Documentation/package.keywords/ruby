@@ -13,8 +13,7 @@
 =dev-ruby/ruby-vte3-2.0.2
 =dev-ruby/ruby-webkit-gtk-2.0.2
 =dev-ruby/ruby-webkit-gtk2-2.0.2
-=virtual/rubygems-4:ruby19
-=virtual/rubygems-6
+=virtual/rubygems-7
 >=dev-ruby/json-1.6.1
 app-admin/eselect-ruby
 app-emacs/ruby-mode

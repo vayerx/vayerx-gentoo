@@ -29,5 +29,6 @@ dev-util/valgrind
 dev-vcs/git-flow-completion
 dev-vcs/git-review
 dev-vcs/gitflow
+sys-devel/gcc:4.8
 sys-devel/gdb
 vayerx/develop

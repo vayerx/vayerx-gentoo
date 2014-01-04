@@ -40,9 +40,11 @@ sys-apps/smartmontools
 sys-apps/usbutils
 sys-block/gparted
 sys-boot/grub:0
+sys-devel/gcc:4.7
 sys-fs/inotify-tools
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
+sys-kernel/module-rebuild
 sys-power/acpid
 sys-power/cpufrequtils
 sys-power/pm-utils

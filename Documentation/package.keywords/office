@@ -22,6 +22,8 @@ media-gfx/rawtherapee
 media-gfx/swftools
 media-sound/clementine
 media-sound/mp3unicode
+net-print/cups
 net-print/cups-filters
+net-print/foomatic-filters
 vayerx/office
 www-client/firefox

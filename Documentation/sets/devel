@@ -13,5 +13,6 @@ dev-vcs/git[tk]
 dev-vcs/gitflow
 sci-calculators/galculator
 sci-visualization/gnuplot
+sys-devel/gcc:4.8
 sys-fs/inotify-tools
 vayerx/develop

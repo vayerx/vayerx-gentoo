@@ -20,6 +20,8 @@ net-misc/proxychains
 net-misc/proxytunnel
 sys-devel/clang
 sys-devel/gcc:4.7
+sys-kernel/gentoo-sources:3.12.6
+sys-kernel/module-rebuild
 vayerx/314zdato
 vayerx/lxde
 vayerx/systaff
