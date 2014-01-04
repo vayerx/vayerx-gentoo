@@ -5,6 +5,7 @@ app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions
 app-misc/mc edit samba slang
 app-office/akonadi-server sqlite
+app-office/libreoffice -gnome -gtk gtk3 -vba -webdav
 app-text/gocr tk
 app-text/yagf scanner
 dev-cpp/cppstaff kde
@@ -38,6 +39,7 @@ media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
 media-libs/freeimage -raw
 media-libs/mesa gbm gles1 gles2 openvg osmesa xa xorg xvmc
+media-libs/opencv doc -openmp
 media-libs/sdl-mixer mod modplug
 media-plugins/audacious-plugins cue
 media-sound/audacity id3tag twolame
@@ -54,7 +56,7 @@ sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-devel/gcc gcj graphite
 sys-libs/zlib minizip
 vayerx/develop kde math
-vayerx/office burn -gnome kde
+vayerx/office burn excessive -gnome kde rich
 vayerx/systaff -rich
 x11-base/xorg-server xvfb
 x11-drivers/xf86-video-ati glamor
