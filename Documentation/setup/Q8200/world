@@ -11,4 +11,5 @@ net-misc/openconnect
 net-misc/tor
 net-print/splix
 vayerx/lxde
+www-plugins/lightspark
 x11-drivers/radeon-ucode

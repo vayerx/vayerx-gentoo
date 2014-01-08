@@ -1,3 +1,4 @@
+=media-libs/mesa-10* -opencl llvm -r600-llvm-compiler
 app-admin/conky iostats portmon
 app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
@@ -14,6 +15,7 @@ dev-libs/boost doc eselect tools
 dev-libs/botan -python
 dev-libs/glib xattr
 dev-python/PyQt4 webkit declarative
+dev-python/pycairo -xcb
 dev-python/pystaff rich
 dev-python/spyder pylint sphinx
 dev-qt/qt-creator android autotools cmake -linguas_ru qtscript valgrind
@@ -38,7 +40,7 @@ media-gfx/hugin sift
 media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
 media-libs/freeimage -raw
-media-libs/mesa gbm gles1 gles2 openvg osmesa xa xorg xvmc
+media-libs/mesa gbm xa xorg xvmc
 media-libs/opencv doc -openmp
 media-libs/sdl-mixer mod modplug
 media-plugins/audacious-plugins cue
@@ -48,6 +50,8 @@ net-dns/avahi -gtk gtk3 mdnsresponder-compat
 net-fs/cifs-utils -acl
 net-fs/samba winbind
 net-im/psi extras -jingle spell xscreensaver
+net-misc/batman-adv bla dat
+net-misc/tor nat-pmp stats transparent-proxy upnp web
 net-print/cups -zeroconf
 sci-geosciences/gpsd garmin usb
 sci-geosciences/qlandkartegt gps
@@ -56,8 +60,10 @@ sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-devel/gcc gcj graphite
 sys-libs/zlib minizip
 vayerx/develop kde math
-vayerx/office burn excessive -gnome kde rich
+vayerx/office burn excessive gnome kde rich
 vayerx/systaff -rich
+www-plugins/gnash -nsplugin
+www-plugins/lightspark -ffmpeg -nsplugin
 x11-base/xorg-server xvfb
 x11-drivers/xf86-video-ati glamor
 x11-libs/libdrm libkms
