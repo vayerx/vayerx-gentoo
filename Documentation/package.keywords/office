@@ -1,4 +1,3 @@
-<app-emulation/wine-1.5
 =app-office/libreoffice-bin-4.1.3.2-r666
 =app-office/libreoffice-l10n-4.1.3.2
 =app-text/ghostscript-gpl-9.10
@@ -10,8 +9,6 @@
 =media-libs/liblastfm-1.0.2
 =media-libs/libmygpo-qt-1.0.7
 =media-libs/libpng-1.6.6
-=www-plugins/lightspark-0.6.0.1
-app-emulation/winetricks
 app-misc/gramps
 app-text/cuneiform
 mail-client/thunderbird
@@ -27,3 +24,4 @@ net-print/cups-filters
 net-print/foomatic-filters
 vayerx/office
 www-client/firefox
+www-plugins/lightspark

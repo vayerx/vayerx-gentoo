@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,22 +11,9 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="burn gnome kde +lxde +rich excessive 32on64"
+IUSE="burn gnome kde +lxde +rich excessive"
 
 PDEPEND="
-	app-admin/keepassx
-	app-text/aspell
-	media-gfx/geeqie
-	net-im/psi
-	net-misc/x11-ssh-askpass
-	net-print/cups-pdf
-	www-plugins/adobe-flash
-	x11-base/xorg-x11
-	x11-misc/xscreensaver
-	x11-themes/tango-icon-theme
-
-	amd64? ( 32on64? ( www-plugins/nspluginwrapper ) )
-
 	burn? (
 		app-cdr/bin2iso
 		app-cdr/cdw
@@ -49,9 +36,15 @@ PDEPEND="
 	)
 
 	gnome? (
-		app-text/evince
-		gnome-extra/gnome-utils
-		app-editors/gedit
+		!kde? (
+			app-text/evince
+		)
+		media-gfx/gnome-screenshot
+		|| (
+			dev-util/geany
+			app-editors/leafpad
+			app-editors/gedit
+		)
 	)
 	!gnome? (
 		app-editors/leafpad
