@@ -1,0 +1,22 @@
+Section "Device"
+    Identifier "Card0"
+    VendorName "Advanced Micro Devices"
+    BoardName  "Cape Verde XT [Radeon HD 7770 GHz Edition]"
+
+    BusID      "PCI:1:0:0"
+    Driver     "radeon"
+
+    Option     "SWcursor"        "false"
+    Option     "EnablePageFlip"  "true"
+    Option     "ColorTiling"     "true"
+    Option     "ColorTiling2D"   "true"
+    Option     "RenderAccel"     "true"
+    Option     "AccelMethod"     "glamor"
+    Option     "SwapbuffersWait" "false"
+EndSection
+
+Section "dri"
+    Group      "video"
+    Mode       0660
+EndSection
+

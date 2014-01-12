@@ -66,5 +66,6 @@ www-plugins/gnash -nsplugin
 www-plugins/lightspark -ffmpeg -nsplugin
 x11-base/xorg-server xvfb
 x11-drivers/xf86-video-ati glamor
+x11-libs/glamor -gles
 x11-libs/libdrm libkms
 x11-misc/xscreensaver new-login
