@@ -52,7 +52,7 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf
+	local myconf="--without-java"
 	for USEFLAG in ${IUSE}; do
 		myconf+=" $(use_with ${USEFLAG/+/})"
 	done
