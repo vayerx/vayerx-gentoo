@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/boost/${MY_P}.tar.bz2"
 LICENSE="Boost-1.0"
 MAJOR_V="$(get_version_component_range 1-2)"
 MAJOR_PV=$(replace_all_version_separators _ ${MAJOR_V})
-SLOT="${MAJOR_V}/0"
+SLOT="${MAJOR_V}/${MAJOR_V}"
 KEYWORDS="~x86 ~amd64"
 IUSE="debug doc +eselect icu +nls mpi python static-libs std-cxx11 +threads tools"
 
@@ -139,11 +139,7 @@ src_configure() {
 		[[ $(gcc-version) > 4.3 ]] && append-flags -mno-altivec
 	fi
 
-	if use std-cxx11; then
-		append-cxxflags -std=c++11
-	else
-		append-cxxflags -std=gnu++98
-	fi
+	append-cxxflags -std=$(usex std-cxx11 c++11 gnu++98)
 
 	use icu && OPTIONS+=" -sICU_PATH=${EPREFIX}/usr"
 	use icu || OPTIONS+=" --disable-icu boost.locale.icu=off"
@@ -172,9 +168,9 @@ src_compile() {
 	building() {
 		create_user-config.jam
 
-		ejam ${OPTIONS} \
-			$(use python && echo --python-buildid=${EPYTHON#python}) \
-			|| die "Building of Boost libraries failed"
+		local python_options="$(use python && echo --python-buildid=${EPYTHON#python})"
+
+		ejam ${OPTIONS} ${python_options} || die "Building of Boost libraries failed"
 
 		if use python; then
 			if [[ -z "${PYTHON_DIRS}" ]]; then
@@ -349,7 +345,7 @@ EOF
 				local slot_target="${f/${ext}/-mt${LIBEXT}}"
 				local slot_source="${slot_target}.${MAJOR_V}"
 				[[ -e "${slot_source}" ]] || dosym "${LIBDIR}/${f}" "${LIBDIR}/${slot_source}"	# install major-version
-				# [[ -e "${slot_target}" ]] || dosym "${LIBDIR}/${f}" "${LIBDIR}/${slot_target}"	# install final target (versionless)
+				[[ -L "${slot_target}" ]] && rm "${slot_target}"
 				_add_line "${LIBDIR}/${slot_source}" default
 			else
 				eerror "Missing or invalid library name: ${f} -- can not add '-mt' suffix"
@@ -363,7 +359,7 @@ EOF
 			local slot_target="${f//.${PV}}"
 			local slot_source="${slot_target}.${MAJOR_V}"
 			[[ -e "${slot_source}" ]] || dosym "${LIBDIR}/${f}" "${LIBDIR}/${slot_source}"	# install major-version
-			# [[ -e "${slot_target}" ]] || dosym "${LIBDIR}/${f}" "${LIBDIR}/${slot_target}"	# install final target (versionless)
+			[[ -L "${slot_target}" ]] && rm "${slot_target}"
 			_add_line "${LIBDIR}/${slot_source}" default
 		else
 			ewarn "Missing or invalid library name: ${f}"

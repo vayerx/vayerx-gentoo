@@ -18,7 +18,7 @@ MAJOR_V="$(get_version_component_range 1-2)"
 MAJOR_PV=$(replace_all_version_separators _ ${MAJOR_V})
 SLOT="${MAJOR_V}/${MAJOR_V}"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug doc +eselect icu +nls mpi python static-libs std-cxx11 +threads tools"
+IUSE="+context debug doc +eselect icu +nls mpi python static-libs +std-cxx11 +threads tools"
 
 RDEPEND="icu? ( >=dev-libs/icu-3.6:= )
 	!icu? ( virtual/libiconv )
@@ -33,6 +33,13 @@ DEPEND="${RDEPEND}
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 S=${WORKDIR}/${MY_P}
+
+# the tests will never fail because these are not intended as sanity
+# tests at all. They are more a way for upstream to check their own code
+# on new compilers. Since they would either be completely unreliable
+# (failing for no good reason) or completely useless (never failing)
+# there is no point in having them in the ebuild to begin with.
+RESTRICT="test"
 
 BJAM="b2-${MAJOR_PV}"
 LIBDIR="/usr/$(get_libdir)"
@@ -87,26 +94,13 @@ __EOF__
 
 src_prepare() {
 	epatch \
-		"${FILESDIR}/${PN}-1.48.0-mpi_python3.patch" \
 		"${FILESDIR}/${PN}-1.51.0-respect_python-buildid.patch" \
 		"${FILESDIR}/${PN}-1.51.0-support_dots_in_python-buildid.patch" \
 		"${FILESDIR}/${PN}-1.48.0-no_strict_aliasing_python2.patch" \
 		"${FILESDIR}/${PN}-1.48.0-disable_libboost_python3.patch" \
 		"${FILESDIR}/${PN}-1.48.0-python_linking.patch" \
 		"${FILESDIR}/${PN}-1.48.0-disable_icu_rpath.patch" \
-		"${FILESDIR}/remove-toolset-1.48.0.patch" \
-		"${FILESDIR}/${PN}-1.52.0-tuple.patch" \
-		"${FILESDIR}/${P}-locale-utf.patch"
-
-	# Avoid a patch for now
-	for file in libs/context/src/asm/*.S; do
-		cat - >> "$file" <<EOF
-
-#if defined(__linux__) && defined(__ELF__)
-.section .note.GNU-stack,"",%progbits
-#endif
-EOF
-	done
+		"${FILESDIR}/${PN}-1.55.0-context-x32.patch"
 }
 
 ejam() {
@@ -121,6 +115,15 @@ src_configure() {
 		# We need to add the prefix, and in two cases this exceeds, so prepare
 		# for the largest possible space allocation.
 		append-ldflags -Wl,-headerpad_max_install_names
+	elif [[ ${CHOST} == *-winnt* ]]; then
+		compiler=parity
+		if [[ $($(tc-getCXX) -v) == *trunk* ]]; then
+			compilerVersion=trunk
+		else
+			compilerVersion=$($(tc-getCXX) -v | sed '1q' \
+				| sed -e 's,\([a-z]*\) \([0-9]\.[0-9]\.[0-9][^ \t]*\) .*,\2,')
+		fi
+		compilerExecutable=$(tc-getCXX)
 	fi
 
 	# bug 298489
@@ -135,6 +138,7 @@ src_configure() {
 	use mpi || OPTIONS+=" --without-mpi"
 	use python || OPTIONS+=" --without-python"
 	use nls || OPTIONS+=" --without-locale"
+	use context || OPTIONS+=" --without-context --without-coroutine"
 
 	OPTIONS+=" pch=off --boost-build=\"${EPREFIX}/usr/share/boost-build-${MAJOR_V}\" --prefix=\"${ED}usr\" --layout=system"
 	OPTIONS+=" threading=$(usex threads multi single) link=$(usex static-libs shared,static shared)"
@@ -256,19 +260,11 @@ else:
 	from . import mpi
 del sys
 EOF
-				_add_line "$(python_get_sitedir)/mpi.py:boost_${MAJOR_V}.mpi"
 			fi
 
 			python_optimize
 		fi
 	}
-
-	dodir /usr/share/boost-eselect/profiles/${MAJOR_V}
-	touch "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/default" || die
-	if use debug; then
-		touch "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/debug" || die
-	fi
-
 	if use python; then
 		python_foreach_impl installation
 	else
@@ -284,7 +280,12 @@ EOF
 	fi
 
 	if ! use nls; then
-		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/locale || die
+		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/boost/locale || die
+	fi
+
+	if ! use context; then
+		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/boost/context || die
+		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/boost/coroutine || die
 	fi
 
 	if use doc; then
