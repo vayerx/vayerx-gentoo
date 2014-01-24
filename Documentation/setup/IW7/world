@@ -15,6 +15,7 @@ dev-vcs/git-review
 gnome-base/nautilus
 kde-misc/kdirstat
 net-misc/neatx
+net-misc/nxserver-freenx
 net-misc/tor
 sys-boot/unetbootin
 sys-devel/crossdev

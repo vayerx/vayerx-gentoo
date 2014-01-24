@@ -3,7 +3,13 @@ app-arch/lzop
 app-arch/rpm
 dev-db/oracle-instantclient-basic
 dev-db/oracle-instantclient-sqlplus
+dev-libs/boost:1.54
+dev-libs/boost:1.55
+dev-libs/libffi
 dev-libs/libgit2
+dev-libs/libxml2
+dev-libs/libxslt
+dev-libs/libzip
 dev-libs/newt
 dev-libs/thrift
 dev-libs/xmlsec
@@ -11,6 +17,7 @@ dev-python/jsonpath
 dev-python/pymongo
 dev-tcltk/expect
 dev-util/kelbt
+gnustep-base/gnustep-base
 media-libs/giflib
 media-libs/jasper
 net-dns/libidn

@@ -12,8 +12,11 @@ dev-lang/php cgi -crypt gd
 dev-lang/python sqlite tk
 dev-libs/boost doc date_time static-libs tools
 dev-libs/boost:1.54 std-cxx11
+dev-libs/libffi static-libs
 dev-libs/libgcrypt static-libs
 dev-libs/libgpg-error static-libs
+dev-libs/libxml2 static-libs
+dev-libs/libxslt static-libs
 dev-libs/popt static-libs
 dev-python/PyQt4 declarative help sql webkit
 dev-python/nose coverage
@@ -29,6 +32,8 @@ games-board/cockatrice server
 games-fps/alienarena rockethell
 games-fps/alienarena-ng rockethell
 games-strategy/wesnoth server
+gnustep-base/gnustep-base static-libs
+gnustep-base/gnustep-make native-exceptions
 kde-base/okular ebook
 media-gfx/gimp wmf
 media-libs/chromaprint tools
@@ -52,7 +57,8 @@ sci-libs/hdf5 -threads
 sys-apps/lm_sensors sensord
 sys-apps/util-linux static-libs
 sys-block/gparted fat ntfs xfs
-sys-devel/gcc gcj graphite
+sys-devel/gcc awt gcj graphite
+sys-devel/gcc:4.8 objc
 sys-devel/gdb -server
 sys-fs/cryptsetup static
 sys-fs/lvm2 static-libs
