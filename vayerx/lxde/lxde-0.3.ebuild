@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,7 +7,7 @@ EAPI="5"
 DESCRIPTION="Meta ebuild for LXDE, the Lightweight X11 Desktop Environment"
 HOMEPAGE="http://lxde.sf.net/"
 
-LICENSE="GPL-2"
+LICENSE="metapackage"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+xfce gnome"
@@ -45,11 +45,13 @@ RDEPEND="
 	lxde-base/lxde-icon-theme
 	lxde-base/lxinput
 	lxde-base/lxmenu-data
-	lxde-base/lxpanel
+	>=lxde-base/lxpanel-0.5.10
 	lxde-base/lxrandr
-	lxde-base/lxsession
-	lxde-base/lxsession-edit
+	|| ( ( <=lxde-base/lxsession-0.4.6.1
+		=lxde-base/lxsession-edit-0.2* )
+		>lxde-base/lxsession-0.4.6.1 )
 	lxde-base/lxshortcut
+	>=lxde-base/menu-cache-0.3.3
 	x11-misc/obmenu
 	x11-misc/pcmanfm
 	x11-wm/openbox
