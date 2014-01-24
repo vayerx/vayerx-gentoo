@@ -13,7 +13,7 @@ RESTRICT="primaryuri"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="+pic cpp c_glib csharp java erlang python perl php php_extension ruby haskell go"
+IUSE="+pic cpp c_glib csharp erlang python perl php php_extension ruby haskell go"
 
 RDEPEND=">=dev-libs/boost-1.34.0
 	virtual/yacc
@@ -24,15 +24,6 @@ RDEPEND=">=dev-libs/boost-1.34.0
 		dev-libs/libevent
 	)
 	csharp? ( >=dev-lang/mono-1.2.4 )
-	java? (
-		>=virtual/jdk-1.5
-		dev-java/ant
-		dev-java/ant-ivy
-		dev-java/commons-lang
-		>=dev-java/slf4j-api-1.5.8
-		java-virtuals/servlet-api
-		>=dev-java/commons-httpclient-4.1.2
-	)
 	erlang? ( >=dev-lang/erlang-12.0.0 )
 	python? (
 		>=dev-lang/python-2.4.0
