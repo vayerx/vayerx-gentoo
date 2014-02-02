@@ -17,6 +17,7 @@ dev-python/jsonpath
 dev-python/pymongo
 dev-tcltk/expect
 dev-util/kelbt
+dev-util/patchelf
 gnustep-base/gnustep-base
 media-libs/giflib
 media-libs/jasper
