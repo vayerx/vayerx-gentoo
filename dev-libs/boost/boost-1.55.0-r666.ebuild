@@ -260,11 +260,19 @@ else:
 	from . import mpi
 del sys
 EOF
+				_add_line "$(python_get_sitedir)/mpi.py:boost_${MAJOR_V}.mpi"
 			fi
 
 			python_optimize
 		fi
 	}
+
+	dodir /usr/share/boost-eselect/profiles/${MAJOR_V}
+	touch "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/default" || die
+	if use debug; then
+		touch "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/debug" || die
+	fi
+
 	if use python; then
 		python_foreach_impl installation
 	else
