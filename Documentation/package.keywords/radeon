@@ -12,5 +12,6 @@ media-libs/mesa
 x11-base/xorg-drivers
 x11-base/xorg-server
 x11-drivers/xf86-video-ati
+x11-libs/glamor
 x11-libs/libdrm
 x11-libs/libvdpau
