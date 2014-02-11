@@ -1,76 +1,40 @@
->=virtual/python-qt-4 webkit
+app-admin/sudo offensive -sendmail
 app-editors/vim -X cscope ruby
 app-emulation/qemu kqemu kvm vde
-app-misc/mc -ncurses slang
-app-office/lyx dia dot -subversion html
+app-emulation/wine -cups -ldap -ncurses -nls -odbc -scanner -ssl -xml
 dev-cpp/cppstaff database
-dev-db/libdbi-drivers postgres
 dev-java/commons-logging log4j
 dev-java/sun-jdk -nsplugin
 dev-java/sun-jre-bin -nsplugin
 dev-lang/php cgi -crypt gd
 dev-lang/python sqlite tk
-dev-libs/boost doc date_time static-libs tools
-dev-libs/boost:1.54 std-cxx11
-dev-libs/libffi static-libs
-dev-libs/libgcrypt static-libs
-dev-libs/libgpg-error static-libs
-dev-libs/libxml2 static-libs
-dev-libs/libxslt static-libs
-dev-libs/popt static-libs
-dev-python/PyQt4 declarative help sql webkit
-dev-python/nose coverage
-dev-python/pystaff database rich 
+dev-libs/boost doc std-cxx11 tools
+dev-libs/elfutils static-libs
+dev-python/PyQt4 declarative webkit
+dev-python/pystaff database rich
+dev-python/pystaff rich
 dev-python/spyder pep8 pylint sphinx
+dev-python/spyder sphinx pylint
 dev-python/sqlalchemy postgres
 dev-qt/qtdeclarative webkit
-dev-qt/qtsql postgres
-dev-util/kdevplatform reviewboard
-dev-vcs/git doc tk
+dev-vcs/git tk
 dev-vcs/subversion -dso perl
-games-board/cockatrice server
-games-fps/alienarena rockethell
-games-fps/alienarena-ng rockethell
-games-strategy/wesnoth server
-gnustep-base/gnustep-base static-libs
-gnustep-base/gnustep-make native-exceptions
-kde-base/okular ebook
-media-gfx/gimp wmf
 media-libs/chromaprint tools
-media-libs/gegl graphviz raw
-media-libs/mesa gles2
-media-plugins/gst-plugins-meta dv ffmpeg http lame taglib theora v4l
-media-sound/audacity id3tag midi vamp
+media-plugins/alsa-plugins pulseaudio
 media-sound/clementine lastfm mms -mtp
 media-sound/picard coverart ffmpeg
-media-video/ffmpeg amr mmxext rtmp opus -theora vpx
-media-video/libav amr mmxext rtmp -theora vpx
-net-analyzer/icinga -apache2 idoutils -mysql lighttpd postgres
-net-analyzer/nagios-plugins nagios-ping nagios-ssh postgres
 net-analyzer/rrdtool ruby
 net-analyzer/tcpdump -samba
-net-analyzer/wireshark geoip -gtk2 -gtk3 qt4
-net-firewall/shorewall doc
-net-firewall/shorewall6 doc
-net-im/psi extras jingle -linguas_ru webkit xscreensaver
+net-analyzer/wireshark -gtk2 gtk3 -qt4 crypt
 sci-libs/hdf5 -threads
 sys-apps/lm_sensors sensord
 sys-apps/util-linux static-libs
 sys-block/gparted fat ntfs xfs
+sys-boot/grub -ncurses
 sys-devel/gcc awt gcj graphite
 sys-devel/gcc:4.8 objc
-sys-devel/gdb -server
-sys-fs/cryptsetup static
-sys-fs/lvm2 static-libs
-sys-fs/udev static-libs
-sys-kernel/gentoo-sources symlink
-sys-libs/e2fsprogs-libs static-libs
+sys-devel/llvm -ncurses
 sys-libs/zlib minizip
-vayerx/develop database java postgres rich
-vayerx/office excessive -gnome
-vayerx/system gnome
-virtual/python-sqlite external
-virtual/udev static-libs
-www-client/firefox -jit
+vayerx/office excessive gnome kde rich
 www-servers/lighttpd doc php rrdtool webdav
-x11-misc/obconf lxde
+x11-libs/libSM -uuid
