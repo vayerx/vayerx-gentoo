@@ -96,6 +96,7 @@ src_prepare() {
 		"${FILESDIR}/${PN}-1.48.0-disable_icu_rpath.patch" \
 		"${FILESDIR}/${PN}-1.53.0-library_status.patch" \
 		"${FILESDIR}/${PN}-1.54.0-coroutine.patch" \
+		"${FILESDIR}/${PN}-1.54.0-cstdint.patch" \
 		"${FILESDIR}/${PN}-1.54.0-date-time.patch"  \
 		"${FILESDIR}/${PN}-1.54.0-log.patch" \
 		"${FILESDIR}/${PN}-1.54.0-thread.patch"
