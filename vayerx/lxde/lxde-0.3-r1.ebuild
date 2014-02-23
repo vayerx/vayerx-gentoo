@@ -24,6 +24,7 @@ PDEPEND="
 
 	xfce? (
 		xfce-base/thunar
+		xfce-extra/thunar-volman
 		x11-terms/xfce4-terminal
 
 		!gnome? (
