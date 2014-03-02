@@ -24,7 +24,7 @@ fi
 
 GV="2.24"
 MV="4.5.2"
-PULSE_PATCHES="winepulse-patches-1.7.10"
+PULSE_PATCHES="winepulse-patches-1.7.12"
 WINE_GENTOO="wine-gentoo-2013.06.24"
 DESCRIPTION="Free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"
@@ -267,6 +267,7 @@ src_prepare() {
 	local PATCHES=(
 		"${FILESDIR}"/${PN}-1.5.26-winegcc.patch #260726
 		"${FILESDIR}"/${PN}-1.4_rc2-multilib-portage.patch #395615
+		"${FILESDIR}"/${PN}-1.7.12-osmesa-check.patch #429386
 		"${FILESDIR}"/${PN}-1.6-memset-O3.patch #480508
 		"${FILESDIR}"/crypt32-Skip-unknown-item-when-decoding-a-CMS-certif.patch
 	)
