@@ -1,5 +1,6 @@
-=dev-qt/qtlockedfile-2.4.1
-=dev-qt/qtsingleapplication-2.6.1
 app-emulation/q4wine
 app-emulation/wine
 app-emulation/winetricks
+dev-qt/qtlockedfile
+dev-qt/qtsingleapplication
+media-sound/pulseaudio

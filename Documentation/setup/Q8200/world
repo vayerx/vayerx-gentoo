@@ -1,5 +1,3 @@
-app-emulation/aqemu
-app-emulation/virtualbox
 app-misc/gramps
 app-office/gnucash
 media-libs/libtxc_dxtn

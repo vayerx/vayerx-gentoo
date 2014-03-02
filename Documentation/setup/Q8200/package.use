@@ -4,16 +4,21 @@ app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions
+app-emulation/wine -cups -ldap -ncurses -nls -odbc -scanner -ssl -xml
 app-misc/mc edit samba slang
 app-office/akonadi-server sqlite
+app-office/libreoffice -abi_x86_32
 app-office/libreoffice -gnome -gtk gtk3 -vba -webdav
 app-text/gocr tk
 app-text/yagf scanner
 dev-cpp/cppstaff kde
 dev-lang/python sqlite
 dev-libs/boost doc eselect tools
+dev-libs/boost:1.54 std-cxx11
 dev-libs/botan -python
+dev-libs/elfutils static-libs
 dev-libs/glib xattr
+dev-libs/xmlsec gcrypt
 dev-python/PyQt4 webkit declarative
 dev-python/pycairo -xcb
 dev-python/pystaff rich
@@ -27,6 +32,7 @@ dev-ruby/rbstaff gui datamining
 dev-ruby/rubygems ruby_targets_ruby18
 dev-vcs/git -gtk tk
 dev-vcs/subversion -dso perl
+games-fps/alienarena-ng -dga
 games-fps/nexuiz maps
 games-simulation/openttd -timidity
 games-strategy/warzone2100 videos
@@ -44,6 +50,7 @@ media-libs/mesa gbm xa xorg xvmc
 media-libs/mlt melt kdenlive -python
 media-libs/opencv doc -openmp
 media-libs/sdl-mixer mod modplug
+media-plugins/alsa-plugins pulseaudio
 media-plugins/audacious-plugins cue
 media-sound/audacity id3tag twolame
 media-sound/clementine mtp
@@ -57,8 +64,11 @@ net-print/cups -zeroconf
 sci-geosciences/gpsd garmin usb
 sci-geosciences/qlandkartegt gps
 sci-libs/hdf5 -cxx -fortran
+sys-apps/util-linux static-libs
 sys-block/gparted fat ntfs reiserfs xfs -xfce
+sys-boot/grub -ncurses
 sys-devel/gcc gcj graphite
+sys-libs/ncurses -gpm
 sys-libs/zlib minizip
 vayerx/develop kde math
 vayerx/office burn excessive gnome kde rich
@@ -68,5 +78,6 @@ www-plugins/lightspark -ffmpeg -nsplugin
 x11-base/xorg-server xvfb
 x11-drivers/xf86-video-ati glamor
 x11-libs/glamor -gles
+x11-libs/libSM -uuid
 x11-libs/libdrm libkms
 x11-misc/xscreensaver new-login
