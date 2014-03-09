@@ -2,6 +2,7 @@ dev-ruby/addressable
 dev-ruby/libxml
 dev-ruby/mechanize
 dev-ruby/nokogiri
+dev-ruby/parseconfig
 dev-ruby/rake
 dev-ruby/ruby-progressbar
 dev-ruby/rubygems
