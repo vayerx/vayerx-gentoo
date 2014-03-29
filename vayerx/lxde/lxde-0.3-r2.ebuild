@@ -51,7 +51,7 @@ RDEPEND="
 	|| ( ( <=lxde-base/lxsession-0.4.6.1
 		=lxde-base/lxsession-edit-0.2* )
 		>lxde-base/lxsession-0.4.6.1 )
-	lxde-base/lxshortcut
+	|| ( >=x11-libs/libfm-1.2.0 =lxde-base/lxshortcut-0.1* )
 	>=lxde-base/menu-cache-0.3.3
 	x11-misc/obmenu
 	x11-misc/pcmanfm
