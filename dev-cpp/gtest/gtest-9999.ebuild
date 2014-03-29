@@ -17,6 +17,7 @@ if [[ "${PV}" = 9999* ]]; then
 	KEYWORDS=""
 else
 	SRC_URI="http://googletest.googlecode.com/files/${P}.zip"
+	KEYWORDS="~amd64"
 fi
 
 LICENSE="BSD"
