@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,13 +14,14 @@ if [[ "${PV}" = 9999* ]]; then
 	GMOCK_REV="410"
 	ESVN_REPO_URI="http://googlemock.googlecode.com/svn/trunk@${GMOCK_REV}"
 	ESVN_PROJECT="gmock"
+	KEYWORDS=""
 else
 	SRC_URI="http://googlemock.googlecode.com/files/${P}.zip"
+	KEYWORDS="~amd64 ~arm ~mips ppc ~ppc64 x86"
 fi
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~mips ppc ~ppc64 x86"
 IUSE="static-libs"
 
 RDEPEND="=dev-cpp/gtest-${PV}*"

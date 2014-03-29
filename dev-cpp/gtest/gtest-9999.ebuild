@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,13 +14,13 @@ if [[ "${PV}" = 9999* ]]; then
 	GTEST_REV="629"
 	ESVN_REPO_URI="http://googletest.googlecode.com/svn/trunk@${GTEST_REV}"
 	ESVN_PROJECT="gtest"
+	KEYWORDS=""
 else
 	SRC_URI="http://googletest.googlecode.com/files/${P}.zip"
 fi
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
 IUSE="examples threads static-libs"
 
 DEPEND="app-arch/unzip"
