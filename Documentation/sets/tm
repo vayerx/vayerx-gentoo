@@ -23,5 +23,6 @@ media-libs/giflib
 media-libs/jasper
 net-dns/libidn
 net-libs/libpcap
+sys-cluster/gearmand
 sys-devel/autogen
 sys-devel/gcc:4.8

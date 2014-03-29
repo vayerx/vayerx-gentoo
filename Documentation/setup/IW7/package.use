@@ -19,6 +19,7 @@ dev-python/sqlalchemy postgres
 dev-qt/qtdeclarative webkit
 dev-vcs/git tk
 dev-vcs/subversion -dso perl
+media-gfx/imagemagick openexr webp wmf
 media-libs/chromaprint tools
 media-plugins/alsa-plugins pulseaudio
 media-sound/clementine lastfm mms -mtp
@@ -31,10 +32,13 @@ sys-apps/lm_sensors sensord
 sys-apps/util-linux static-libs
 sys-block/gparted fat ntfs xfs
 sys-boot/grub -ncurses
+sys-cluster/gearmand -memcache
 sys-devel/gcc awt gcj graphite
 sys-devel/gcc:4.8 objc
 sys-devel/llvm -ncurses
 sys-libs/zlib minizip
+vayerx/lxde gnome
 vayerx/office excessive gnome kde rich
+www-client/firefox -linguas_ru
 www-servers/lighttpd doc php rrdtool webdav
 x11-libs/libSM -uuid
