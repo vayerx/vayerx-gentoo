@@ -1,11 +1,12 @@
 app-misc/gramps
 app-office/gnucash
+media-gfx/bconv
+media-gfx/imgsrc
 media-libs/libtxc_dxtn
 media-sound/audacity
 media-sound/mp3unicode
 net-im/skype
 net-misc/ciscovpn
-net-misc/openconnect
 net-misc/tor
 net-print/splix
 vayerx/lxde

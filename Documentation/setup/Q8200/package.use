@@ -4,7 +4,6 @@ app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions
-app-emulation/wine -cups -ldap -ncurses -nls -odbc -scanner -ssl -xml
 app-misc/mc edit samba slang
 app-office/akonadi-server sqlite
 app-office/libreoffice -abi_x86_32
@@ -50,7 +49,6 @@ media-libs/mesa gbm xa xorg xvmc
 media-libs/mlt melt kdenlive -python
 media-libs/opencv doc -openmp
 media-libs/sdl-mixer mod modplug
-media-plugins/alsa-plugins pulseaudio
 media-plugins/audacious-plugins cue
 media-sound/audacity id3tag twolame
 media-sound/clementine mtp
@@ -58,6 +56,7 @@ net-dns/avahi -gtk gtk3 mdnsresponder-compat
 net-fs/cifs-utils -acl
 net-fs/samba winbind
 net-im/psi extras -jingle spell xscreensaver
+net-libs/webkit-gtk -opengl
 net-misc/batman-adv bla dat
 net-misc/tor nat-pmp stats transparent-proxy upnp web
 net-print/cups -zeroconf
