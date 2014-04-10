@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc">
   <resistance>
     <strength>10</strength>
@@ -28,11 +27,11 @@
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
-    <monitor>Active</monitor>
+    <monitor>Any</monitor>
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is -->
-    <primaryMonitor>Mouse</primaryMonitor>
+    <primaryMonitor/>
   </placement>
   <theme>
     <name>Clearlooks</name>
@@ -162,24 +161,14 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <keybind key="W-Left">
-      <action name="Execute">
-        <command>amixer set Master 2dB-</command>
-      </action>
-    </keybind>
-    <keybind key="W-Right">
-      <action name="DesktopRight">
-        <wrap>no</wrap>
-      </action>
-    </keybind>
     <keybind key="W-Up">
       <action name="Execute">
-        <command>amixer set Master 2dB+</command>
+        <command>amixer set -c 0 Master 2dB+</command>
       </action>
     </keybind>
     <keybind key="W-Down">
       <action name="Execute">
-        <command>amixer set Master 2dB-</command>
+        <command>amixer set -c 0 Master 2dB-</command>
       </action>
     </keybind>
     <keybind key="S-W-Left">

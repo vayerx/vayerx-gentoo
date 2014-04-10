@@ -59,5 +59,14 @@ function backtrace() {
 function sortit() {
 	local src="${1:?no file}"
 	local dest="$(mktemp)"
-	LC_COLLATE="C" sort -u $src > $dest && mv $dest $src || rm $dest
+	LC_COLLATE="POSIX" sort -u $src > $dest && mv $dest $src || rm $dest
 }
+
+function autofuck() {
+    autoconf
+    autoheader
+    aclocal
+    automake
+}
+
+umask 0002
