@@ -11,7 +11,7 @@ HOMEPAGE="http://code.google.com/p/googlemock/"
 
 if [[ "${PV}" = 9999* ]]; then
 	inherit autotools subversion
-	GMOCK_REV="410"
+	GMOCK_REV="474"
 	ESVN_REPO_URI="http://googlemock.googlecode.com/svn/trunk@${GMOCK_REV}"
 	ESVN_PROJECT="gmock"
 	KEYWORDS=""

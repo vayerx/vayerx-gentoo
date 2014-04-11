@@ -12,6 +12,8 @@
 app-vim/command-t
 app-vim/project **
 dev-cpp/cppstaff
+dev-cpp/gmock **
+dev-cpp/gtest **
 dev-libs/shflags
 dev-qt/qt-creator
 dev-util/android-ndk

@@ -11,7 +11,7 @@ DESCRIPTION="Google C++ Testing Framework"
 HOMEPAGE="http://code.google.com/p/googletest/"
 if [[ "${PV}" = 9999* ]]; then
 	inherit autotools subversion
-	GTEST_REV="629"
+	GTEST_REV="682"
 	ESVN_REPO_URI="http://googletest.googlecode.com/svn/trunk@${GTEST_REV}"
 	ESVN_PROJECT="gtest"
 	KEYWORDS=""
