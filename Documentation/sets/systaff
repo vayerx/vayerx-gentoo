@@ -44,7 +44,6 @@ sys-devel/gcc:4.7
 sys-fs/inotify-tools
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
-sys-kernel/module-rebuild
 sys-power/acpid
 sys-power/cpufrequtils
 sys-power/pm-utils
