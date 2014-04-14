@@ -3,6 +3,8 @@ app-editors/vim -X cscope ruby
 app-emulation/qemu kqemu kvm vde
 app-emulation/wine -cups -ldap -ncurses -nls -odbc -scanner -ssl -xml
 dev-cpp/cppstaff database
+dev-db/oracle-instantclient-basic -abi_x86_32
+dev-db/oracle-instantclient-sqlplus -abi_x86_32
 dev-java/commons-logging log4j
 dev-java/sun-jdk -nsplugin
 dev-java/sun-jre-bin -nsplugin
@@ -22,6 +24,7 @@ dev-vcs/subversion -dso perl
 media-gfx/imagemagick openexr webp wmf
 media-libs/chromaprint tools
 media-plugins/alsa-plugins pulseaudio
+media-sound/audacity id3tag twolame
 media-sound/clementine lastfm mms -mtp
 media-sound/picard coverart ffmpeg
 net-analyzer/rrdtool ruby
