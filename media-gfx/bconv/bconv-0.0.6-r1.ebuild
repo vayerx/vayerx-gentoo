@@ -17,6 +17,7 @@ IUSE=""
 
 RDEPEND="
 	>=dev-ruby/parseconfig-1.0.4
+	>=dev-ruby/ruby-libglade2-0.19.4
 "
 
 RUBY_FAKEGEM_EXTRAINSTALL="data"
