@@ -9,6 +9,7 @@ net-im/skype
 net-misc/ciscovpn
 net-misc/tor
 net-print/splix
+sys-boot/unetbootin
 vayerx/lxde
 www-plugins/lightspark
 x11-drivers/radeon-ucode

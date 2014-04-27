@@ -1,4 +1,5 @@
 app-admin/chrpath
+app-arch/createrepo
 app-arch/lzop
 app-arch/rpm
 dev-db/oracle-instantclient-basic
