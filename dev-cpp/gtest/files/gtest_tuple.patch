@@ -1,0 +1,22 @@
+diff --git a/include/gtest/internal/gtest-port.h b/include/gtest/internal/gtest-port.h
+index 7ac4a5d..843219a 100644
+--- a/include/gtest/internal/gtest-port.h
++++ b/include/gtest/internal/gtest-port.h
+@@ -643,7 +643,7 @@ struct _RTL_CRITICAL_SECTION;
+ // tuple.
+ // TODO(sbenza): Enable this block to start using std::tuple instead of
+ //               std::tr1::tuple.
+-#if 0 && GTEST_HAS_STD_TUPLE_
++#if GTEST_HAS_STD_TUPLE_
+ # include <tuple>
+ # define GTEST_TUPLE_NAMESPACE_ ::std
+ #endif
+@@ -781,7 +781,7 @@ using ::std::tuple_size;
+ // value-parameterized tests are enabled.  The implementation doesn't
+ // work on Sun Studio since it doesn't understand templated conversion
+ // operators.
+-#if GTEST_HAS_PARAM_TEST && GTEST_HAS_TR1_TUPLE && !defined(__SUNPRO_CC)
++#if GTEST_HAS_PARAM_TEST && (GTEST_HAS_TR1_TUPLE || GTEST_HAS_STD_TUPLE_) && !defined(__SUNPRO_CC)
+ # define GTEST_HAS_COMBINE 1
+ #endif
+ 

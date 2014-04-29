@@ -33,6 +33,8 @@ pkg_setup() {
 }
 
 src_prepare() {
+	epatch "${FILESDIR}/${PN}_tuple.patch"
+
 	# Oh, Dear God, You can't imagine how much do I hate autotools
 	eautoreconf
 
