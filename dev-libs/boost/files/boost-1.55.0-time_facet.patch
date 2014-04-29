@@ -1,0 +1,41 @@
+diff --git a/boost-1.54.0/boost/date_time/time_facet.hpp b/boost-1.54.0/boost/date_time/time_facet.hpp
+index 8346ca3..90e8967 100644
+--- a/boost/date_time/time_facet.hpp
++++ b/boost/date_time/time_facet.hpp
+@@ -807,6 +807,7 @@ namespace date_time {
+         typedef typename time_duration_type::min_type min_type;
+         typedef typename time_duration_type::sec_type sec_type;
+ 
++        bool sign_is_negative = false;
+         hour_type hour = 0;
+         min_type min = 0;
+         sec_type sec = 0;
+@@ -836,6 +837,19 @@ namespace date_time {
+                   }
+                   break;
+                 }
++              case '+':
++                {
++                    if (*sitr == '-') {
++                        ++sitr;
++                        sign_is_negative = true;
++                    } else if (*sitr == '+') {
++                        ++sitr;
++                        sign_is_negative = false;
++                    } else {
++                        return check_special_value(sitr, stream_end, td, c);
++                    }
++                    break;
++                }
+               case 'H':
+                 {
+                   match_results mr;
+@@ -920,7 +934,7 @@ namespace date_time {
+           }
+         }
+ 
+-        td = time_duration_type(hour, min, sec, frac);
++        td = time_duration_type(sign_is_negative ? - hour : hour, min, sec, frac);
+         return sitr;
+       }
+ 
