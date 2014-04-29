@@ -102,6 +102,7 @@ src_prepare() {
 		"${FILESDIR}/${PN}-1.48.0-disable_icu_rpath.patch" \
 		"${FILESDIR}/${PN}-1.55.0-log_fix_dump_avx2.patch" \
 		"${FILESDIR}/${PN}-1.55.0-time_facet.patch" \
+		"${FILESDIR}/${PN}-1.55.0-fusion_map_move.patch" \
 		"${FILESDIR}/${PN}-1.55.0-context-x32.patch"
 }
 
