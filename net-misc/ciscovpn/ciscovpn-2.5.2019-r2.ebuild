@@ -24,6 +24,7 @@ RESTRICT="fetch strip"
 RDEPEND="
 	openssl? ( =dev-libs/openssl-0.9.8* )
 	!openssl? ( !=dev-libs/openssl-0.9.8* )
+	x11-libs/pangox-compat
 "
 
 INSTPREFIX="/opt/cisco/vpn"
