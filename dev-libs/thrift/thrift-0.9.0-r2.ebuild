@@ -2,7 +2,7 @@
 # Distributed under the terms of the OSI Reciprocal Public License
 # $Header: $
 
-EAPI="3"
+EAPI="5"
 inherit flag-o-matic
 
 DESCRIPTION="Data serialization and communication toolwork"
@@ -13,7 +13,7 @@ RESTRICT="primaryuri"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="+pic cpp c_glib csharp erlang python perl php php_extension ruby haskell go"
+IUSE="+exception_message +pic cpp c_glib csharp erlang python perl php php_extension ruby haskell go"
 
 RDEPEND=">=dev-libs/boost-1.34.0
 	virtual/yacc
@@ -41,14 +41,17 @@ RDEPEND=">=dev-libs/boost-1.34.0
 	go? ( sys-devel/gcc[go] )
 	"
 DEPEND="${RDEPEND}
-	>=sys-devel/gcc-3.3.5
+	>=sys-devel/gcc-4.8
 	c_glib? ( dev-libs/glib )
 	"
 
 S="${WORKDIR}/${P/_beta[0-9]/}"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-arpa_inet_h.patch"
+	epatch \
+		"${FILESDIR}/${P}-arpa_inet_h.patch" \
+		"${FILESDIR}/${P}-sysparam-header.patch"
+	[ use exception_message ] && epatch "${FILESDIR}/${P}-exception.patch"
 }
 
 src_configure() {
