@@ -13,7 +13,7 @@ RESTRICT="primaryuri"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="+exception_message +pic cpp c_glib csharp erlang python perl php php_extension ruby haskell go"
+IUSE="xmsg_patch +pic cpp c_glib csharp erlang python perl php php_extension ruby haskell go"
 
 RDEPEND=">=dev-libs/boost-1.34.0
 	virtual/yacc
@@ -51,7 +51,7 @@ src_prepare() {
 	epatch \
 		"${FILESDIR}/${P}-arpa_inet_h.patch" \
 		"${FILESDIR}/${P}-sysparam-header.patch"
-	[ use exception_message ] && epatch "${FILESDIR}/${P}-exception.patch"
+	use xmsg_patch && epatch "${FILESDIR}/${P}-exception.patch"
 }
 
 src_configure() {

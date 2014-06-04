@@ -11,6 +11,6 @@
 	<flag name='haskell'>haskell</flag>
 	<flag name='php_extension'>php_extension</flag>
 	<flag name='pic'>php_extension</flag>
-	<flag name='exception_message'>apply 'exception' patch -- add message to what()</flag>
+	<flag name='xmsg_patch'>apply 'exception' patch -- add message to what()</flag>
 </use>
 </pkgmetadata>
