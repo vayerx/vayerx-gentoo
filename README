@@ -1,4 +1,4 @@
-VAYERX-GENTOO(8)                                              VAYERX-GENTOO(8)
+VAYERX-GENTOO(8)            System Manager's Manual           VAYERX-GENTOO(8)
 
 
 
@@ -16,20 +16,16 @@ INSTALLATION
        Documentation/package.{keywords,mask,unmask}/*.
 
    Installation via layman
-       You will need app-portage/layman installed:
+       You will need app-portage/layman:
        emerge -avq app-portage/layman
 
-       vayerx-gentoo  isn't  in  the  official  overlays list - just add over-
-       lays.xml from the root of vayerx-gentoo:
-       layman   -o    https://github.com/vayerx/vayerx-gentoo/raw/master/over-
-       lays.xml -a vayerx
-       Layman   may   ignore  '--overlay'  option.  Workaround:  you  can  add
-       https://github.com/vayerx/vayerx-gentoo/raw/master/overlays.xml      to
-       'overlays'  section  in  /etc/layman/layman.cfg and refetch overlays to
-       put them to layman's cache.
+       Install overlay in layman:
+       layman -a vayerx
 
-       Don't  forget  to  add  'source   /var/lib/layman/make.conf'   to   the
+       Don't   forget   to   add  'source  /var/lib/layman/make.conf'  to  the
        /etc/make.conf
+
+       That's all!
 
    Manual installation
        Go to wherever you want to place overlays:

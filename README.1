@@ -6,17 +6,18 @@ This overlay is used for personal hacking of Gentoo Linux: addition of unofficia
 .SH INSTALLATION
 Installation is rather simple: all you have to do is to register new overlay in your system. Additonally, you may want to add symlinks to Documentation/package.{keywords,mask,unmask}/*.
 .SS Installation via layman
-You will need \fBapp-portage/layman\fP installed:
+You will need \fBapp-portage/layman\fP:
 .br
 .B emerge -avq app-portage/layman
 .sp
-\fBvayerx-gentoo\fP isn't in the official overlays list - just add overlays.xml from the root of \fBvayerx-gentoo\fP:
+Install overlay in layman:
 .br
-.B layman -o https://github.com/vayerx/vayerx-gentoo/raw/master/overlays.xml -a vayerx
+.B layman -a vayerx
 .br
-.I Layman may ignore '--overlay' option. Workaround: you can add https://github.com/vayerx/vayerx-gentoo/raw/master/overlays.xml to 'overlays' section in /etc/layman/layman.cfg and refetch overlays to put them to layman's cache.
 .sp
 Don't forget to add '\fBsource /var/lib/layman/make.conf\fP' to the /etc/make.conf
+.sp
+That's all!
 .SS Manual installation
 .sp
 Go to wherever you want to place overlays:
