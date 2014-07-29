@@ -2,16 +2,19 @@ app-admin/sudo offensive -sendmail
 app-editors/vim -X cscope ruby
 app-emulation/qemu kqemu kvm vde
 app-emulation/wine -cups -ldap -ncurses -nls -odbc -scanner -ssl -xml
+app-office/akonadi-server -mysql sqlite
 dev-cpp/cppstaff database
 dev-db/oracle-instantclient-basic -abi_x86_32
 dev-db/oracle-instantclient-sqlplus -abi_x86_32
 dev-java/commons-logging log4j
 dev-java/sun-jdk -nsplugin
 dev-java/sun-jre-bin -nsplugin
+dev-lang/perl ithreads
 dev-lang/php cgi -crypt gd
 dev-lang/python sqlite tk
 dev-libs/boost doc std-cxx11 tools
 dev-libs/elfutils static-libs
+dev-libs/thrift xmsg_patch
 dev-python/PyQt4 declarative webkit
 dev-python/pystaff database rich
 dev-python/pystaff rich
@@ -23,10 +26,10 @@ dev-vcs/git tk
 dev-vcs/subversion -dso perl
 media-gfx/imagemagick openexr webp wmf
 media-libs/chromaprint tools
-media-plugins/alsa-plugins pulseaudio
 media-sound/audacity id3tag twolame
 media-sound/clementine lastfm mms -mtp
 media-sound/picard coverart ffmpeg
+media-video/vlc dvd ffmpeg mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live lua
 net-analyzer/rrdtool ruby
 net-analyzer/tcpdump -samba
 net-analyzer/wireshark -gtk2 gtk3 -qt4 crypt
