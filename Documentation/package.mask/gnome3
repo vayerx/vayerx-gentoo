@@ -2,7 +2,6 @@
 >=app-editors/gedit-3
 >=app-text/evince-3
 >=gnome-base/dconf-3
->=gnome-base/gconf-3
 >=gnome-base/gdm-3
 >=gnome-base/gnome-common-3.8
 >=gnome-base/gnome-desktop-3
@@ -10,7 +9,6 @@
 >=gnome-base/gnome-mime-data-3
 >=gnome-base/gnome-vfs-3
 >=gnome-base/gsettings-desktop-schemas-3.8
->=gnome-base/gvfs-1.16
 >=gnome-base/gvfs-3
 >=gnome-base/libbonobo-3
 >=gnome-base/libbonoboui-3
