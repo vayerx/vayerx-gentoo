@@ -2,6 +2,7 @@ app-admin/sudo offensive -sendmail
 app-editors/vim -X cscope ruby
 app-emulation/qemu kqemu kvm vde
 app-emulation/wine -cups -ldap -ncurses -nls -odbc -scanner -ssl -xml
+app-misc/sphinx id64 odbc postgres stemmer syslog
 app-office/akonadi-server -mysql sqlite
 dev-cpp/cppstaff database
 dev-db/oracle-instantclient-basic -abi_x86_32

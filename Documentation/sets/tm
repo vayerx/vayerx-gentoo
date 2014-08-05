@@ -27,3 +27,6 @@ net-libs/libpcap
 sys-cluster/gearmand
 sys-devel/autogen
 sys-devel/gcc:4.8
+www-apache/mod_perl
+www-client/chromium
+www-plugins/chrome-binary-plugins
