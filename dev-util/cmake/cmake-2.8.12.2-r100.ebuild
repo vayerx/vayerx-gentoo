@@ -5,7 +5,7 @@
 EAPI=5
 
 CMAKE_REMOVE_MODULES="no"
-inherit elisp-common toolchain-funcs eutils versionator cmake-utils virtualx
+inherit bash-completion-r1 elisp-common toolchain-funcs eutils versionator cmake-utils virtualx
 
 MY_PV=${PV/_/-}
 MY_P=${PN}-${MY_PV}
@@ -17,7 +17,7 @@ SRC_URI="http://www.cmake.org/files/v$(get_version_component_range 1-2)/${MY_P}.
 LICENSE="CMake"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 SLOT="0"
-IUSE="emacs ncurses qt4 qt5 vim-syntax"
+IUSE="emacs ncurses qt4 qt5"
 
 REQUIRED_USE="?? ( qt4 qt5 )"
 
@@ -40,18 +40,11 @@ DEPEND="
 "
 RDEPEND="${DEPEND}
 	emacs? ( virtual/emacs )
-	vim-syntax? (
-		|| (
-			app-editors/vim
-			app-editors/gvim
-		)
-	)
 "
 
 S="${WORKDIR}/${MY_P}"
 
 SITEFILE="50${PN}-gentoo.el"
-VIMFILE="${PN}.vim"
 
 CMAKE_BINARY="${S}/Bootstrap.cmk/cmake"
 
@@ -71,7 +64,11 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-2.8.11-FindBoost-python-major.patch
 	"${FILESDIR}"/${PN}-2.8.11-more-no_host_paths.patch
 	"${FILESDIR}"/${PN}-2.8.12.1-FindImageMagick.patch
-	"${FILESDIR}"/${PN}-2.8.12.2-FindFreetype.patch
+	"${FILESDIR}"/${PN}-2.8.12.1-FindFreetype.patch
+	"${FILESDIR}"/${PN}-2.8.12.2-hppa-bootstrap.patch
+	"${FILESDIR}"/${PN}-2.8.12.2-FindCurses.patch
+	"${FILESDIR}"/${PN}-2.8.12.2-fbsd.patch
+	"${FILESDIR}"/${PN}-2.8.12.2-python34.patch
 )
 
 cmake_src_bootstrap() {
@@ -184,16 +181,18 @@ src_install() {
 		elisp-install ${PN} Docs/cmake-mode.el Docs/cmake-mode.elc
 		elisp-site-file-install "${FILESDIR}/${SITEFILE}"
 	fi
-	if use vim-syntax; then
-		insinto /usr/share/vim/vimfiles/syntax
-		doins Docs/cmake-syntax.vim
 
-		insinto /usr/share/vim/vimfiles/indent
-		doins Docs/cmake-indent.vim
+	insinto /usr/share/vim/vimfiles/syntax
+	doins Docs/cmake-syntax.vim
 
-		insinto /usr/share/vim/vimfiles/ftdetect
-		doins "${FILESDIR}/${VIMFILE}"
-	fi
+	insinto /usr/share/vim/vimfiles/indent
+	doins Docs/cmake-indent.vim
+
+	insinto /usr/share/vim/vimfiles/ftdetect
+	doins "${FILESDIR}/${PN}.vim"
+
+	dobashcomp Docs/bash-completion/{${PN},ctest,cpack}
+	rm -rf "${D}/usr/share/cmake/completions" || die
 }
 
 pkg_postinst() {
