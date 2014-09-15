@@ -7,9 +7,9 @@ PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
 
 inherit eutils flag-o-matic multilib multiprocessing python-r1 toolchain-funcs versionator multilib-minimal
 
-MY_P=${PN}_$(replace_all_version_separators _)
+MY_P="${PN}_$(replace_all_version_separators _)"
 MAJOR_V="$(get_version_component_range 1-2)"
-MAJOR_PV=$(replace_all_version_separators _ ${MAJOR_V})
+MAJOR_PV="$(replace_all_version_separators _ ${MAJOR_V})"
 
 DESCRIPTION="Boost Libraries for C++"
 HOMEPAGE="http://www.boost.org/"
@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 	dev-util/boost-build:${MAJOR_V}"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 # the tests will never fail because these are not intended as sanity
 # tests at all. They are more a way for upstream to check their own code
@@ -56,7 +56,6 @@ mpi_needed() {
 }
 
 BJAM="b2-${MAJOR_PV}"
-LIBDIR="/usr/$(get_libdir)"
 LIBEXT="$(get_libname)"
 
 # Usage:
@@ -67,14 +66,20 @@ LIBEXT="$(get_libname)"
 # ... to add to all profiles for which the use flag set
 
 _add_line() {
+	# TODO multilib support
+	if ! multilib_is_native_abi; then
+		return
+	fi
+
+	local profile="default"
 	if [[ -z "$2" ]]; then
-		echo "${1}" >> "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/default"
 		if use debug; then
-			echo "${1}" >> "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/debug"
+			profile="debug"
 		fi
 	else
-		echo "${1}" >> "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/${2}"
+		profile="${2}"
 	fi
+    echo "${1}" >> "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/${profile}"
 }
 
 create_user-config.jam() {
@@ -131,7 +136,9 @@ src_prepare() {
 		"${FILESDIR}/${PN}-1.55.0-tools-c98-compat.patch" \
 		"${FILESDIR}/${PN}-1.55.0-time_facet.patch" \
 		"${FILESDIR}/${PN}-1.55.0-context-x32.patch" \
-		"${FILESDIR}/${PN}-1.56.0-python_wrap.patch"
+		"${FILESDIR}/${PN}-1.56.0-shared_ptr_helper.patch"
+
+	use tools && epatch "${FILESDIR}/${PN}-1.56.0-tools_wave.patch"
 
 	epatch_user
 
@@ -175,7 +182,6 @@ src_configure() {
 	use icu && OPTIONS+=" -sICU_PATH=${EPREFIX}/usr"
 	use icu || OPTIONS+=" --disable-icu boost.locale.icu=off"
 	mpi_needed || OPTIONS+=" --without-mpi"
-	python_bindings_needed || OPTIONS+=" --without-python"
 	use nls || OPTIONS+=" --without-locale"
 	use context || OPTIONS+=" --without-context --without-coroutine"
 
@@ -197,16 +203,24 @@ src_configure() {
 }
 
 multilib_src_compile() {
-	export BOOST_ROOT="${S}"
+	local -x BOOST_ROOT="${BUILD_DIR}"
 	PYTHON_DIRS=""
 	MPI_PYTHON_MODULE=""
 
 	building() {
 		create_user-config.jam
 
-		local python_options="$(python_bindings_needed && echo --python-buildid=${EPYTHON#python})"
+		local PYTHON_OPTIONS
+		if python_bindings_needed; then
+			PYTHON_OPTIONS=" --python-buildid=${EPYTHON#python}"
+		else
+			PYTHON_OPTIONS=" --without-python"
+		fi
 
-		ejam ${OPTIONS} ${python_options} || die "Building of Boost libraries failed"
+		ejam \
+			${OPTIONS} \
+			${PYTHON_OPTIONS} \
+			|| die "Building of Boost libraries failed"
 
 		if python_bindings_needed; then
 			if [[ -z "${PYTHON_DIRS}" ]]; then
@@ -249,7 +263,9 @@ multilib_src_compile() {
 	if tools_needed; then
 		pushd tools > /dev/null || die
 
-		ejam ${OPTIONS} \
+		ejam \
+			${OPTIONS} \
+			${PYTHON_OPTIONS} \
 			|| die "Building of Boost tools failed"
 		popd > /dev/null || die
 	fi
@@ -289,9 +305,11 @@ multilib_src_install_all() {
 }
 
 multilib_src_install() {
+	local -x BOOST_ROOT="${BUILD_DIR}"
 	installation() {
 		create_user-config.jam
 
+		local PYTHON_OPTIONS
 		if python_bindings_needed; then
 			local dir
 			for dir in ${PYTHON_DIRS}; do
@@ -305,12 +323,16 @@ multilib_src_install() {
 				cp -p stage/lib/mpi.so-${EPYTHON} stage/lib/mpi.so \
 					|| die "Copying of 'stage/lib/mpi.so-${EPYTHON}' to 'stage/lib/mpi.so' failed"
 			fi
+			PYTHON_OPTIONS=" --python-buildid=${EPYTHON#python}"
+		else
+			PYTHON_OPTIONS=" --without-python"
 		fi
 
-		ejam ${OPTIONS} \
+		ejam \
+			${OPTIONS} \
+			${PYTHON_OPTIONS} \
 			--includedir="${ED}usr/include/boost-${MAJOR_V}" \
 			--libdir="${ED}usr/$(get_libdir)" \
-			$(python_bindings_needed && echo --python-buildid=${EPYTHON#python}) \
 			install || die "Installation of Boost libraries failed"
 
 		if python_bindings_needed; then
@@ -359,19 +381,6 @@ EOF
 		_add_line "\""
 	fi
 
-	if ! python_bindings_needed; then
-		rm -rf "${ED}"usr/include/boost-${MAJOR_V}/boost/python* || die
-	fi
-
-	if ! use nls; then
-		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/boost/locale || die
-	fi
-
-	if ! use context; then
-		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/boost/context || die
-		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/boost/coroutine || die
-	fi
-
 	if use doc; then
 		find libs/*/* -iname "test" -or -iname "src" | xargs rm -rf
 		dohtml \
@@ -408,6 +417,7 @@ EOF
 		mv "${f}" "${f}.${PV}"
 	done
 
+	local -x LIBDIR="/usr/$(get_libdir)"
 	_add_line "libs=\"" default
 
 	# Add "-mt" suffix if threads are enabled

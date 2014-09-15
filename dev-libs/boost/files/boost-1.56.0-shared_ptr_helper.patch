@@ -1,0 +1,34 @@
+From f633ba08eeb147da8295b8c8e2b4d68c7d1c2920 Mon Sep 17 00:00:00 2001
+From: Robert Ramey <ramey@rrsd.com>
+Date: 2014-08-12 09:05:54 -0700
+Subject: [PATCH] added missing headers to shared_ptr_helper
+
+---
+ boost/serialization/shared_ptr_helper.hpp | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/boost/serialization/shared_ptr_helper.hpp b/boost/serialization/shared_ptr_helper.hpp
+index 9dace87..f4784ec 100644
+--- a/boost/serialization/shared_ptr_helper.hpp
++++ b/boost/serialization/shared_ptr_helper.hpp
+@@ -26,6 +26,8 @@
+ #include <boost/type_traits/is_polymorphic.hpp>
+ #include <boost/mpl/if.hpp>
+ 
++#include <boost/serialization/singleton.hpp>
++#include <boost/serialization/extended_type_info.hpp>
+ #include <boost/serialization/type_info_implementation.hpp>
+ #include <boost/serialization/throw_exception.hpp>
+ #include <boost/archive/archive_exception.hpp>
+@@ -39,8 +41,6 @@ namespace boost_132 {
+ namespace boost {
+ namespace serialization {
+ 
+-class extended_type_info;
+-
+ #ifndef BOOST_NO_MEMBER_TEMPLATE_FRIENDS
+ template<class Archive, template<class U> class SPT >
+ void load(
+-- 
+2.1.0
+
