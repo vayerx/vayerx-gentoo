@@ -1,5 +1,6 @@
 app-misc/gramps
 app-office/gnucash
+games-util/qjoypad
 media-gfx/bconv
 media-gfx/imgsrc
 media-libs/libtxc_dxtn
@@ -9,6 +10,7 @@ net-im/skype
 net-misc/ciscovpn
 net-misc/tor
 net-print/splix
+sys-apps/usb_modeswitch
 sys-boot/unetbootin
 vayerx/lxde
 www-plugins/lightspark
