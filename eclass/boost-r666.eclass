@@ -125,7 +125,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	for patch in ${BOOST_PATCHES}; do
+	for patch in "${BOOST_PATCHES[@]}"; do
 		epatch "${FILESDIR}/${PN}-${patch}"
 	done
 
