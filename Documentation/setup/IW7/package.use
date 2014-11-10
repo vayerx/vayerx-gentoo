@@ -2,31 +2,19 @@ app-admin/sudo offensive -sendmail
 app-editors/vim -X cscope ruby
 app-emulation/qemu kqemu kvm vde
 app-emulation/wine -cups -ldap -ncurses -nls -odbc -scanner -ssl -xml
-app-misc/sphinx id64 odbc postgres stemmer syslog
 app-office/akonadi-server -mysql sqlite
-dev-cpp/cppstaff database
-dev-db/oracle-instantclient-basic -abi_x86_32
-dev-db/oracle-instantclient-sqlplus -abi_x86_32
 dev-java/commons-logging log4j
 dev-java/sun-jdk -nsplugin
 dev-java/sun-jre-bin -nsplugin
 dev-lang/perl ithreads
 dev-lang/php cgi -crypt gd
 dev-lang/python sqlite tk
-dev-libs/boost doc std-cxx11 tools
-dev-libs/elfutils static-libs
-dev-libs/thrift xmsg_patch
 dev-python/PyQt4 declarative webkit
 dev-python/pystaff database rich
-dev-python/pystaff rich
 dev-python/spyder pep8 pylint sphinx
-dev-python/spyder sphinx pylint
-dev-python/sqlalchemy postgres
 dev-qt/qtdeclarative webkit
 dev-vcs/git tk
-dev-vcs/subversion -dso perl
 games-strategy/freeciv aimodules modpack sqlite
-media-gfx/imagemagick openexr webp wmf
 media-libs/chromaprint tools
 media-sound/audacity id3tag twolame
 media-sound/clementine lastfm mms -mtp
@@ -40,12 +28,7 @@ sys-apps/lm_sensors sensord
 sys-apps/util-linux static-libs
 sys-block/gparted fat ntfs xfs
 sys-boot/grub -ncurses
-sys-cluster/gearmand -memcache
-sys-devel/gcc awt gcj graphite
-sys-devel/gcc:4.8 objc
-sys-devel/gcc:4.9 objc
 sys-devel/llvm -ncurses
-sys-libs/zlib minizip
 vayerx/lxde gnome
 vayerx/office excessive gnome kde rich
 www-client/firefox -linguas_ru

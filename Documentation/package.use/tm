@@ -1,0 +1,15 @@
+app-misc/sphinx id64 odbc postgres stemmer syslog
+dev-cpp/cppstaff database
+dev-db/oracle-instantclient-basic -abi_x86_32
+dev-db/oracle-instantclient-sqlplus -abi_x86_32
+dev-libs/boost std-cxx11 tools
+dev-libs/elfutils static-libs
+dev-libs/thrift xmsg_patch
+dev-python/sqlalchemy postgres
+dev-vcs/subversion -dso perl
+media-gfx/imagemagick openexr webp wmf
+sys-cluster/gearmand -memcache
+sys-devel/gcc awt gcj graphite
+sys-devel/gcc:4.8 objc
+sys-devel/gcc:4.9 objc
+sys-libs/zlib minizip
