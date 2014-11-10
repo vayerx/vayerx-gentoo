@@ -8,7 +8,6 @@
 =sys-apps/hwids-20130915.1
 =sys-apps/kmod-15
 =sys-apps/openrc-0.12.2
-=sys-devel/gcc-4.7.3
 =sys-fs/udev-208
 =sys-kernel/genkernel-3.4.24_p2
 =sys-kernel/linux-headers-3.6
@@ -21,9 +20,7 @@ net-misc/openconnect
 net-misc/proxychains
 net-misc/proxytunnel
 sys-devel/clang
-sys-devel/gcc:4.7
-sys-kernel/gentoo-sources:3.14.1
-sys-kernel/module-rebuild
+sys-power/acpi_call **
 vayerx/314zdato
 vayerx/lxde
 vayerx/systaff
