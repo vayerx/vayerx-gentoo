@@ -26,7 +26,7 @@ dev-util/geany
 dev-util/gource
 dev-util/kdevelop:4 **
 dev-util/kdevelop-python
-dev-util/kdevplatform **
+dev-util/kdevplatform:4 **
 dev-util/lcov
 dev-util/mutrace
 dev-util/patchelf

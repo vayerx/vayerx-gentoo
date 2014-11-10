@@ -25,13 +25,14 @@ dev-python/sqlalchemy postgres
 dev-qt/qtdeclarative webkit
 dev-vcs/git tk
 dev-vcs/subversion -dso perl
+games-strategy/freeciv aimodules modpack sqlite
 media-gfx/imagemagick openexr webp wmf
 media-libs/chromaprint tools
 media-sound/audacity id3tag twolame
 media-sound/clementine lastfm mms -mtp
 media-sound/picard coverart ffmpeg
 media-video/vlc dvd ffmpeg mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live lua
-net-analyzer/rrdtool ruby
+net-analyzer/rrdtool -graph ruby
 net-analyzer/tcpdump -samba
 net-analyzer/wireshark -gtk2 gtk3 -qt4 crypt
 sci-libs/hdf5 -threads
@@ -42,10 +43,12 @@ sys-boot/grub -ncurses
 sys-cluster/gearmand -memcache
 sys-devel/gcc awt gcj graphite
 sys-devel/gcc:4.8 objc
+sys-devel/gcc:4.9 objc
 sys-devel/llvm -ncurses
 sys-libs/zlib minizip
 vayerx/lxde gnome
 vayerx/office excessive gnome kde rich
 www-client/firefox -linguas_ru
 www-servers/lighttpd doc php rrdtool webdav
+x11-libs/cairo -lto xlib-xcb
 x11-libs/libSM -uuid

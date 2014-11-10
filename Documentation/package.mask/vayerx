@@ -1,5 +1,4 @@
 <sys-kernel/gentoo-sources-3.8.9
 =games-fps/urbanterror-4.1.1807.251210
 =sys-kernel/genkernel-3.4.24_p1
->=net-im/skype-3
 >=www-client/firefox-25
