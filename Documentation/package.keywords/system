@@ -1,19 +1,7 @@
-=app-portage/eix-0.28*
-=app-shells/push-1.5
-=dev-libs/cloog-0.18.0
-=dev-libs/isl-0.11.1
-=dev-libs/libclc-0.0.1_pre20130819
-=net-misc/netifrc-0.1
-=net-misc/tor-0.2.4.20
-=sys-apps/hwids-20130915.1
-=sys-apps/kmod-15
-=sys-apps/openrc-0.12.2
-=sys-fs/udev-208
-=sys-kernel/genkernel-3.4.24_p2
-=sys-kernel/linux-headers-3.6
-=virtual/udev-206-r3
-=x11-base/xorg-server-1.14.2
->=dev-java/oracle-jre-bin-1.7.0.7
+media-libs/libmtp **
+app-antivirus/clamav
+dev-libs/openssl
+media-plugins/alsa-plugins
 net-analyzer/ntop
 net-misc/batman-adv
 net-misc/openconnect

@@ -16,11 +16,13 @@ games-fps/openarena
 games-fps/quake3
 games-fps/quake3-data
 games-fps/sauerbraten
+games-fps/tremulous
 games-roguelike/adom
 games-rpg/lipsofsuna
 games-simulation/gl117
 games-simulation/lincity-ng
 games-simulation/openttd
+games-simulation/simutrans
 games-strategy/0ad
 games-strategy/boswars
 games-strategy/freeciv

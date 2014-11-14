@@ -1,6 +1,7 @@
 app-admin/logrotate
 app-admin/pwgen
 app-admin/syslog-ng
+app-antivirus/clamav
 app-editors/vim
 app-forensics/magicrescue
 app-misc/mc
@@ -16,6 +17,7 @@ dev-util/ccache
 dev-util/strace
 dev-vcs/mercurial
 net-analyzer/netcat
+net-analyzer/nmap
 net-analyzer/tcpdump
 net-analyzer/traceroute
 net-dialup/ppp
@@ -40,7 +42,7 @@ sys-apps/smartmontools
 sys-apps/usbutils
 sys-block/gparted
 sys-boot/grub:0
-sys-devel/gcc:4.7
+sys-devel/gcc:4.8
 sys-fs/inotify-tools
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
@@ -53,3 +55,4 @@ sys-process/iotop
 sys-process/lsof
 sys-process/vixie-cron
 vayerx/systaff
+x11-misc/xsensors
