@@ -11,7 +11,7 @@ HOMEPAGE="http://www.cisco.com"
 LICENSE="cisco"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="unpacked openssl"
+IUSE="unpacked"
 
 UNPACKED_NAME="anyconnect-Linux_64-${PV}.tar.gz"
 
@@ -22,8 +22,6 @@ SRC_URI="
 RESTRICT="fetch strip"
 
 RDEPEND="
-	openssl? ( =dev-libs/openssl-0.9.8* )
-	!openssl? ( !=dev-libs/openssl-0.9.8* )
 	x11-libs/pangox-compat
 "
 
@@ -66,11 +64,6 @@ src_install() {
 
 	doexe "${S}/vpnagentd"
 	fperms 4755 "${BINDIR}/vpnagentd"
-
-	if ! use openssl; then
-		dolib "${S}/libssl.so.0.9.8"
-		dolib "${S}/libcrypto.so.0.9.8"
-	fi
 
 	if [ -f "${S}/vpnui" ]; then
 		doexe "${S}/vpnui"
@@ -126,6 +119,11 @@ src_install() {
 	else
 		ewarn "vpndownloader does not exist. It will not be installed."
 	fi
+
+	dodir "${INSTPREFIX}/lib"
+	exeinto "${INSTPREFIX}/lib"     # rpath is '/opt/cisco/vpn/lib' (but not lib64)
+	doexe "${S}/libssl.so.0.9.8"
+	doexe "${S}/libcrypto.so.0.9.8"
 
 	# Profile schema and example template
 	doins "${S}/AnyConnectLocalPolicy.xsd"
