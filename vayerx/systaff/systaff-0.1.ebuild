@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="+rich gnome lxde"
+IUSE="+rich gnome lxde kde"
 
 PDEPEND="
 	app-shells/bash-completion
@@ -21,7 +21,6 @@ PDEPEND="
 		net-analyzer/nettop
 		net-analyzer/nmap
 		net-analyzer/wireshark
-		net-misc/proxytunnel
 		sys-apps/dmidecode
 		sys-fs/fuseiso
 	)
@@ -29,6 +28,7 @@ PDEPEND="
 	|| (
 		gnome? ( gnome-base/gdm )
 		lxde? ( lxde-base/lxdm )
+		kde? ( kde-base/kdm )
 		x11-misc/slim
 	)
 "
