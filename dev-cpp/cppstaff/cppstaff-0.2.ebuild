@@ -14,7 +14,7 @@ SLOT="0"
 IUSE="database exotic +rich +testing +kde"
 
 PDEPEND="
-	dev-libs/boost[doc,tools]
+	dev-libs/boost
 	dev-util/ccache
 	dev-util/cmake
 	dev-util/valgrind
