@@ -17,6 +17,8 @@ dev-libs/newt
 dev-libs/thrift
 dev-libs/xmlsec
 dev-python/jsonpath
+dev-python/lxml
+dev-python/paramiko
 dev-python/pymongo
 dev-python/python-ldap
 dev-tcltk/expect
