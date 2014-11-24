@@ -5,7 +5,7 @@
 EAPI=5
 inherit eutils autotools toolchain-funcs versionator
 
-MY_P="${PN}-$(replace_version_separator 3 '-')"
+MY_P="${PN}-$(replace_version_separator 3 '-')-release"
 
 DESCRIPTION="Full-text search engine with support for MySQL and PostgreSQL"
 HOMEPAGE="http://www.sphinxsearch.com/"
