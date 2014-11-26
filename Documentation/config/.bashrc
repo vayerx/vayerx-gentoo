@@ -50,6 +50,15 @@ function ghead() {
     git lv ${1:-} | head -n ${2:-5}
 }
 
+function gcherry() {
+    local upstream="${1:?no upstream}" # isn't used -- "$@"
+    git cherry "$@" | while read act rev; do echo -n "$act "; git lv $rev | head -n 1; done
+}
+
+function gchr() {
+    gcherry $(git rev-parse --abbrev-ref --symbolic-full-name @{u}) "$@"
+}
+
 function gbr() {
     git co -b "${1:?no branch name}" "origin/${2:-$1}"
 }
@@ -88,4 +97,7 @@ function xme() {
     binary="$(which ${bin})"
     xinit "${binary}" -- :1
 }
+
+alias blya="xrandr --fb 3360x1080 --output VGA-1 --mode 1920x1080 --pos 0x0 --output DVI-I-1 --mode 1440x900 --pos 1920x156"
+
 umask 0002
