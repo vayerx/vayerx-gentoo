@@ -294,7 +294,7 @@ sys-fs/sysfsutils
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
 sys-power/acpid
-sys-power/cpufrequtils
+sys-power/cpupower
 sys-power/hibernate-script
 sys-power/pm-utils
 sys-power/powertop
