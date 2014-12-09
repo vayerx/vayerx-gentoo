@@ -16,8 +16,6 @@ IUSE="database exotic +rich +testing +kde"
 PDEPEND="
 	dev-libs/boost
 	dev-util/ccache
-	dev-util/cmake
-	dev-util/valgrind
 
 	kde? (
 		dev-util/kdevelop[cxx]
@@ -40,6 +38,5 @@ PDEPEND="
 		dev-cpp/tbb
 		dev-libs/oniguruma
 		dev-qt/qt-creator[cmake,git,valgrind]
-		dev-util/re2c
 	)
 "

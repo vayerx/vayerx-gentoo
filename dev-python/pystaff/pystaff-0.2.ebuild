@@ -15,17 +15,12 @@ IUSE="database rich +testing"
 
 PDEPEND="
 	dev-python/httplib2
-	>=dev-python/ipython-0.11
-	dev-python/lxml
-	dev-python/setuptools
-
 	rich? (
 		dev-python/git-python
 		dev-python/paramiko
 	)
 
 	testing? (
-		dev-python/coverage
 		dev-python/mock
 		dev-python/mox
 	)
@@ -36,11 +31,8 @@ PDEPEND="
 "
 
 # coverage - Code coverage measurement for Python
-# ipython - Advanced interactive shell for Python
 # dev-python/git-python - Python API for Git
-# lxml - Pythonic XML processing library
 # mock - Python Mocking and Patching Library
 # mox -  A mock object framework for Python
 # paramiko - SSH2 protocol library
-# setuptools - Extensions to Distutils
 # sqlalchemy - Python SQL toolkit and ORM

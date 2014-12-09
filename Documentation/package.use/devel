@@ -1,0 +1,7 @@
+app-editors/vim -X
+dev-libs/boost std-cxx11 tools
+dev-qt/qt-creator cmake valgrind
+dev-vcs/git perl tk webdav -xinetd
+dev-vcs/subversion -dso perl
+sys-devel/gcc awt graphite
+sys-libs/zlib minizip
