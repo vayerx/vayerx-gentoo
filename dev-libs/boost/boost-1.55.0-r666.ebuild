@@ -13,8 +13,10 @@ BOOST_PATCHES=(
 	"1.48.0-disable_libboost_python3.patch"
 	"1.48.0-python_linking.patch"
 	"1.48.0-disable_icu_rpath.patch"
+	"1.52.0-threads.patch"
 	"1.55.0-log_fix_dump_avx2.patch"
 	"1.55.0-time_facet.patch"
 	"1.55.0-fusion_map_move.patch"
 	"1.55.0-context-x32.patch"
+	"1.55.0-tools-c98-compat.patch"
 )
