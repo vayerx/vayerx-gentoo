@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="burn gnome kde +lxde +rich excessive"
+IUSE="burn kde +lxde mate +rich excessive"
 
 PDEPEND="
 	burn? (
@@ -35,18 +35,14 @@ PDEPEND="
 		kde-base/okular
 	)
 
-	gnome? (
-		!kde? (
-			app-text/evince
-		)
-		media-gfx/gnome-screenshot
+	mate? (
+		x11-themes/mate-icon-theme
 		|| (
 			dev-util/geany
 			app-editors/leafpad
-			app-editors/gedit
 		)
 	)
-	!gnome? (
+	!mate? (
 		app-editors/leafpad
 	)
 
@@ -77,7 +73,6 @@ PDEPEND="
 		media-gfx/exiftags
 		media-sound/picard
 		media-video/vlc
-		x11-themes/gnome-icon-theme
 		www-client/links
 		www-plugins/gnash
 	)

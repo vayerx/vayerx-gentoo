@@ -10,16 +10,16 @@ HOMEPAGE="http://lxde.sf.net/"
 LICENSE="metapackage"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+xfce gnome"
+IUSE="mate +xfce"
 
 PDEPEND="
 	>=x11-misc/obconf-2.0.3_p20111019
 	x11-misc/obkey
 
-	gnome? (
-		gnome-base/nautilus
-		gnome-extra/gnome-system-monitor
-		x11-terms/gnome-terminal
+	mate? (
+		mate-base/caja
+		mate-extra/mate-system-monitor
+		x11-terms/mate-terminal
 	)
 
 	xfce? (
@@ -27,12 +27,12 @@ PDEPEND="
 		xfce-extra/thunar-volman
 		x11-terms/xfce4-terminal
 
-		!gnome? (
+		!mate? (
 			xfce-extra/xfce4-taskmanager
 		)
 	)
 
-	!gnome? (
+	!mate? (
 		!xfce? (
 			lxde-base/lxtask
 			lxde-base/lxterminal

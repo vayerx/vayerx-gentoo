@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI="5"
 
 DESCRIPTION="System staff meta"
 HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="+rich gnome lxde kde"
+IUSE="lxde kde +rich"
 
 PDEPEND="
 	app-shells/bash-completion
@@ -26,7 +26,7 @@ PDEPEND="
 	)
 
 	|| (
-		gnome? ( gnome-base/gdm )
+		kde? ( kde-base/kdm )
 		lxde? ( lxde-base/lxdm )
 		kde? ( kde-base/kdm )
 		x11-misc/slim

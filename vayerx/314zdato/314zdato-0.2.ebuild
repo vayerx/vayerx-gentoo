@@ -11,12 +11,12 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="gnome +lxde +development"
+IUSE="+lxde mate +development"
 
 PDEPEND="
 	development? ( vayerx/develop )
 	lxde? ( vayerx/lxde )
 
-	vayerx/systaff[gnome?,lxde?]
+	vayerx/systaff[lxde?,mate?]
 	vayerx/office
 "
