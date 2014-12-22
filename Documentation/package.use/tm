@@ -2,7 +2,7 @@ app-misc/sphinx id64 odbc postgres stemmer syslog
 dev-cpp/cppstaff database
 dev-db/oracle-instantclient-basic -abi_x86_32
 dev-db/oracle-instantclient-sqlplus -abi_x86_32
-dev-libs/boost std-cxx11 tools
+dev-libs/boost:1.56 std-cxx11 tools
 dev-libs/elfutils static-libs
 dev-libs/thrift xmsg_patch
 dev-python/sqlalchemy postgres

@@ -1,9 +1,6 @@
 games-action/bzflag
 games-action/minetest
-games-action/minetest_build
-games-action/minetest_common
 games-action/minetest_game
-games-action/minetest_survival
 games-action/shadowgrounds
 games-action/shadowgrounds-data
 games-action/survivor

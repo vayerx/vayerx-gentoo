@@ -13,6 +13,7 @@ app-portage/gentoolkit
 app-portage/layman
 app-portage/mirrorselect
 app-portage/ufed
+app-shells/gentoo-bashcomp
 dev-util/ccache
 dev-util/strace
 dev-vcs/mercurial

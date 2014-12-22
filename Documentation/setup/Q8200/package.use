@@ -4,16 +4,15 @@ app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions
+app-emulation/wine -gstreamer
 app-misc/mc edit samba slang
 app-office/akonadi-server sqlite
-app-office/libreoffice -abi_x86_32
-app-office/libreoffice -gnome -gtk gtk3 -vba -webdav
+app-office/libreoffice -abi_x86_32 -gnome -gtk gtk3 -vba -webdav
 app-text/gocr tk
 app-text/yagf scanner
 dev-cpp/cppstaff kde
 dev-lang/python sqlite
 dev-libs/boost doc eselect tools
-dev-libs/boost:1.54 std-cxx11
 dev-libs/botan -python
 dev-libs/elfutils static-libs
 dev-libs/glib xattr
@@ -35,10 +34,13 @@ games-fps/alienarena-ng -dga
 games-fps/nexuiz maps
 games-simulation/openttd -timidity
 games-strategy/warzone2100 videos
-gnome-base/gdm -tcpd -remote
+kde-base/ark lzma
 kde-base/gwenview -handbook kipi
 kde-base/kdelibs semantic-desktop
 kde-base/okular chm
+mate-base/mate-applets networkmanager
+mate-base/mate-panel networkmanager
+mate-extra/mate-utils applet
 media-gfx/blender -openmp
 media-gfx/graphicsmagick -imagemagick
 media-gfx/hugin sift
@@ -52,12 +54,17 @@ media-libs/sdl-mixer mod modplug
 media-plugins/audacious-plugins cue
 media-sound/audacity id3tag twolame
 media-sound/clementine mtp
+net-analyzer/rrdtool -graph
 net-dns/avahi -gtk gtk3 mdnsresponder-compat
+net-dns/avahi autoipd
 net-fs/cifs-utils -acl
 net-fs/samba winbind
 net-im/psi extras -jingle spell xscreensaver
+net-im/skype apulse
 net-libs/webkit-gtk -opengl
 net-misc/batman-adv bla dat
+net-misc/ciscovpn openssl
+net-misc/networkmanager -wext -zeroconf
 net-misc/tor nat-pmp stats transparent-proxy upnp web
 net-print/cups -zeroconf
 sci-geosciences/gpsd garmin usb
@@ -70,8 +77,9 @@ sys-devel/gcc gcj graphite
 sys-libs/ncurses -gpm
 sys-libs/zlib minizip
 vayerx/develop kde math
-vayerx/office burn excessive gnome kde rich
+vayerx/office burn excessive mate kde rich
 vayerx/systaff -rich
+www-client/firefox system-cairo system-icu system-jpeg system-sqlite
 www-plugins/gnash -nsplugin
 www-plugins/lightspark -ffmpeg -nsplugin
 x11-base/xorg-server xvfb
