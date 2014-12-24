@@ -1,8 +1,7 @@
-=app-admin/eselect-boost-0.4-r1
-=app-office/libreoffice-bin-4.1.2.3-r666
-=dev-libs/boost-1.49.0-r666
-=dev-libs/boost-1.52.0-r666
-=dev-libs/boost-1.54.0-r666
-=dev-libs/boost-1.55.0-r666
-=dev-util/boost-build-1.54.0-r666
-=dev-util/boost-build-1.55.0-r666
+app-admin/eselect-boost
+dev-libs/boost:1.55
+dev-libs/boost:1.56
+dev-libs/boost:1.57
+dev-util/boost-build:1.55
+dev-util/boost-build:1.56
+dev-util/boost-build:1.57
