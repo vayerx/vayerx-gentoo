@@ -1,4 +1,5 @@
 app-admin/logrotate
+app-admin/mcelog
 app-admin/pwgen
 app-admin/syslog-ng
 app-antivirus/clamav

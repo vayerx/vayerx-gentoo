@@ -55,8 +55,12 @@ function gcherry() {
     git cherry "$@" | while read act rev; do echo -n "$act "; git lv $rev | head -n 1; done
 }
 
+function gremote() {
+    git rev-parse --abbrev-ref --symbolic-full-name @{u}
+}
+
 function gchr() {
-    gcherry $(git rev-parse --abbrev-ref --symbolic-full-name @{u}) "$@"
+    gcherry $(gremote) "$@"
 }
 
 function gbr() {
@@ -84,6 +88,12 @@ function sortit() {
     LC_COLLATE="POSIX" sort -u $src > $dest && mv $dest $src || rm $dest
 }
 
+function sortitru() {
+    local src="${1:?no file}"
+    local dest="$(mktemp)"
+    LC_COLLATE="ru_RU.utf8" sort -u $src > $dest && mv $dest $src || rm $dest
+}
+
 # Oh, Dear God, You can't imagine how much do I hate autotools (c) gtest.ebuild
 function autofuck() {
     autoconf
@@ -99,5 +109,9 @@ function xme() {
 }
 
 alias blya="xrandr --fb 3360x1080 --output VGA-1 --mode 1920x1080 --pos 0x0 --output DVI-I-1 --mode 1440x900 --pos 1920x156"
+
+alias emerge-preserved="emerge -q --keep-going @preserved-rebuild"
+alias emerge-modules="emerge -q --keep-going @module-rebuild"
+alias emerge-x11-modules="emerge -q --keep-going @x11-module-rebuild"
 
 umask 0002
