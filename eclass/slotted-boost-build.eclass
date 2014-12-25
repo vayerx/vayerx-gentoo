@@ -26,12 +26,12 @@ DEPEND="${RDEPEND}
 
 REQUIRED_USE="test? ( python )"
 
-S="${WORKDIR}/boost_${MY_PV}/tools/build/src"
+S="${WORKDIR}/boost_${MY_PV}/tools/build/v2"
 
 MAJOR_PV="$(replace_all_version_separators _ ${SLOT})"
 
 src_unpack() {
-	tar xjpf "${DISTDIR}/${A}" boost_${MY_PV}/tools/build || die "unpacking tar failed"
+	tar xjpf "${DISTDIR}/${A}" boost_${MY_PV}/tools/build/v2 || die "unpacking tar failed"
 }
 
 src_prepare() {
@@ -59,8 +59,6 @@ src_prepare() {
 		-e 's/\(off speed space\)/\1 none/' \
 		-e 's/\(debug-symbols      : on off\)/\1 none/' \
 		tools/builtin.jam || die "sed failed"
-
-	epatch_user
 }
 
 src_configure() {
@@ -68,7 +66,7 @@ src_configure() {
 		# replace versions by user-selected one (TODO: fix this when slot-op
 		# deps are available to always match the best version available)
 		sed -i \
-			-e "s|2.7 2.6 2.5 2.4 2.3 2.2|${EPYTHON##python}|" \
+			-e "s|2.7 2.6 2.5 2.4 2.3 2.2|${EPYTHON#python}|" \
 			engine/build.jam || die "sed failed"
 	fi
 }
@@ -99,7 +97,7 @@ src_install() {
 
 	insinto /usr/share/boost-build-${MAJOR_PV}
 	doins -r "${FILESDIR}/site-config.jam" \
-		../boost-build.jam bootstrap.jam build-system.jam ../example/user-config.jam *.py \
+		boost-build.jam bootstrap.jam build-system.jam user-config.jam *.py \
 		build kernel options tools util
 
 	rm "${ED}/usr/share/boost-build-${MAJOR_PV}/build/project.ann.py" || die "removing faulty python file failed"
@@ -107,16 +105,16 @@ src_install() {
 		find "${ED}/usr/share/boost-build-${MAJOR_PV}" -iname "*.py" -delete || die "removing experimental python files failed"
 	fi
 
-	dodoc ../notes/{changes,hacking,release_procedure,build_dir_option,relative_source_paths}.txt
+	dodoc {changes,hacking,release_procedure,notes/build_dir_option,notes/relative_source_paths}.txt
 
 	if use examples; then
-		dodoc -r ../example
+		dodoc -r example
 		docompress -x "/usr/share/doc/${PF}/example"
 	fi
 }
 
 src_test() {
-	cd ../test || die
+	cd test || die
 
 	export TMP="${T}"
 

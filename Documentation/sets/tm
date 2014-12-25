@@ -5,7 +5,6 @@ app-arch/rpm
 dev-cpp/gtest
 dev-db/oracle-instantclient-basic
 dev-db/oracle-instantclient-sqlplus
-dev-libs/boost:1.55
 dev-libs/boost:1.56
 dev-libs/libffi
 dev-libs/libgit2

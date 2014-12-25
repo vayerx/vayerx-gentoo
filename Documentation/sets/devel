@@ -2,6 +2,7 @@ app-arch/makeself
 app-arch/unmakeself
 app-doc/doxygen
 app-i18n/enca
+dev-libs/boost:1.55
 dev-libs/boost:1.56
 dev-libs/libxml2
 dev-util/cmake

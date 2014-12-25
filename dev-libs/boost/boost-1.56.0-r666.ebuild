@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-inherit boost-r666
+inherit slotted-boost
 
 BOOST_PATCHES=(
 	"1.51.0-respect_python-buildid.patch"
@@ -19,4 +19,5 @@ BOOST_PATCHES=(
 	"1.55.0-context-x32.patch"
 	"1.56.0-shared_ptr_helper.patch"
 	"1.56.0-tools_wave.patch"
+	"1.56.0-build-auto_index-tool.patch"
 )

@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-inherit boost-r666
+inherit slotted-boost
 
 BOOST_PATCHES=(
 	"1.51.0-respect_python-buildid.patch"

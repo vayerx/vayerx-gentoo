@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-inherit boost-build-r666
+inherit slotted-boost-build-r1
 
 BOOST_BUILD_PATCHES=(
 	1.48.0-disable_python_rpath.patch
