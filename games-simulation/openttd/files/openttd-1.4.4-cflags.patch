@@ -1,0 +1,56 @@
+diff --git a/config.lib b/config.lib
+index 3ffd0c5..4b52b62 100644
+--- a/config.lib
++++ b/config.lib
+@@ -1450,30 +1450,8 @@ make_cflags_and_ldflags() {
+ 			CFLAGS="-I/gg/os-include -noixemul -fstrict-aliasing -fexpensive-optimizations -mcpu=604 -fno-inline -mstring -mmultiple $CFLAGS"
+ 			LDFLAGS="$LDFLAGS -noixemul"
+ 		fi
+-
+-		if [ "$enable_profiling" = "0" ]; then
+-			# -fomit-frame-pointer and -pg do not go well together (gcc errors they are incompatible)
+-			CFLAGS="-fomit-frame-pointer $CFLAGS"
+-		fi
+-		CFLAGS="-O2 $CFLAGS"
+ 	else
+ 		OBJS_SUBDIR="debug"
+-
+-		# Each debug level reduces the optimization by a bit
+-		if [ $enable_debug -ge 1 ]; then
+-			CFLAGS="$CFLAGS -g -D_DEBUG"
+-			if [ "$os" = "PSP" ]; then
+-				CFLAGS="$CFLAGS -G0"
+-			fi
+-		fi
+-		if [ $enable_debug -ge 2 ]; then
+-			CFLAGS="$CFLAGS -fno-inline"
+-		fi
+-		if [ $enable_debug -ge 3 ]; then
+-			CFLAGS="$CFLAGS -O0"
+-		else
+-			CFLAGS="$CFLAGS -O2"
+-		fi
+ 	fi
+ 
+ 	if [ $enable_debug -le 2 ]; then
+@@ -1488,7 +1466,7 @@ make_cflags_and_ldflags() {
+ 		cc_build_is_gcc=`basename "$cc_build" | grep "gcc" &>/dev/null`
+ 		if [ -n "$cc_build_is_gcc" ]; then
+ 			# Just add -O1 to the tools needed for building.
+-			CFLAGS_BUILD="$CFLAGS_BUILD -D_FORTIFY_SOURCE=2 -O1"
++			CFLAGS_BUILD="$CFLAGS_BUILD -D_FORTIFY_SOURCE=2"
+ 		fi
+ 	fi
+ 
+@@ -1498,11 +1476,6 @@ make_cflags_and_ldflags() {
+ 		CFLAGS="$CFLAGS -fno-expensive-optimizations"
+ 	fi
+ 
+-	if [ "$enable_profiling" != "0" ]; then
+-		CFLAGS="$CFLAGS -pg"
+-		LDFLAGS="$LDFLAGS -pg"
+-	fi
+-
+ 	if [ "$with_threads" = "0" ]; then
+ 		CFLAGS="$CFLAGS -DNO_THREADS"
+ 	fi

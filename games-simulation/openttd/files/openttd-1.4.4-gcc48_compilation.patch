@@ -1,0 +1,15 @@
+diff --git a/src/fontcache.cpp b/src/fontcache.cpp
+index 8b76c0d..8df2f85 100644
+--- a/src/fontcache.cpp
++++ b/src/fontcache.cpp
+@@ -527,8 +527,8 @@ const Sprite *FreeTypeFontCache::GetGlyph(GlyphID key)
+ 	aa = (slot->bitmap.pixel_mode == FT_PIXEL_MODE_GRAY);
+ 
+ 	/* Add 1 pixel for the shadow on the medium font. Our sprite must be at least 1x1 pixel */
+-	int width  = max(1, slot->bitmap.width + (this->fs == FS_NORMAL));
+-	int height = max(1, slot->bitmap.rows  + (this->fs == FS_NORMAL));
++	int width  = max<int>(1, slot->bitmap.width + (this->fs == FS_NORMAL));
++	int height = max<int>(1, slot->bitmap.rows  + (this->fs == FS_NORMAL));
+ 
+ 	/* Limit glyph size to prevent overflows later on. */
+ 	if (width > 256 || height > 256) usererror("Font glyph is too large");
