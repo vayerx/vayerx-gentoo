@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if lsmod | grep -q "^fglrx"; then
+    echo "Switching to ATI"
+    eselect opengl set ati
+    ln -fs /var/lib/layman/vayerx/Documentation/setup/Q8200/xorg.conf.d/50-video_fglrx /etc/X11/xorg.conf.d/50-video.conf
+    sed -i '#.*/usr/lib32/xorg/modules.*#d' /etc/X11/xorg.conf.d/20opengl.conf
+else
+    echo "Switching to Radeon"
+    eselect opengl set xorg-x11
+    ln -fs /var/lib/layman/vayerx/Documentation/setup/Q8200/xorg.conf.d/50-video_radeon /etc/X11/xorg.conf.d/50-video.conf
+fi
+
+if [ -z "$XDG_VTNR" ]; then
+    exec /usr/bin/X -nolisten tcp "$@"
+else
+    exec /usr/bin/X -nolisten tcp "$@" vt$XDG_VTNR
+fi
