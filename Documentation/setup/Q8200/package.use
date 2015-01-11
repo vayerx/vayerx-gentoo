@@ -1,86 +1,38 @@
 =media-libs/mesa-10* -opencl llvm -r600-llvm-compiler
-app-admin/conky iostats portmon
-app-admin/sudo -ldap -sendmail
-app-antivirus/clamav clamdtop
-app-emulation/q4wine icoutils
-app-emulation/virtualbox extensions
 app-emulation/wine -gstreamer
-app-misc/mc edit samba slang
-app-office/akonadi-server sqlite
 app-office/libreoffice -abi_x86_32 -gnome -gtk gtk3 -vba -webdav
 app-text/gocr tk
-app-text/yagf scanner
 dev-cpp/cppstaff kde
-dev-lang/python sqlite
 dev-libs/boost doc eselect tools
 dev-libs/botan -python
 dev-libs/elfutils static-libs
-dev-libs/glib xattr
-dev-libs/xmlsec gcrypt
-dev-python/PyQt4 webkit declarative
-dev-python/pycairo -xcb
 dev-python/pystaff rich
 dev-python/spyder pylint sphinx
-dev-qt/qt-creator android autotools cmake -linguas_ru qtscript valgrind
-dev-qt/qt3support accessibility kde
-dev-qt/qtdeclarative accessibility webkit
-dev-qt/qtgui accessibility dbus
-dev-qt/qtsvg accessibility
+dev-qt/qt-creator android -linguas_ru
 dev-ruby/rbstaff gui datamining
 dev-ruby/rubygems ruby_targets_ruby18
-dev-vcs/git -gtk tk
-dev-vcs/subversion -dso perl
-games-fps/alienarena-ng -dga
-games-fps/nexuiz maps
-games-simulation/openttd -timidity
-games-strategy/warzone2100 videos
-kde-base/ark lzma
-kde-base/gwenview -handbook kipi
-kde-base/kdelibs semantic-desktop
 kde-base/okular chm
-mate-base/mate-applets networkmanager
-mate-base/mate-panel networkmanager
-mate-extra/mate-utils applet
 media-gfx/blender -openmp
 media-gfx/graphicsmagick -imagemagick
 media-gfx/hugin sift
-media-gfx/ufraw contrast timezone
-media-libs/chromaprint tools
 media-libs/freeimage -raw
 media-libs/mesa gbm xa xorg xvmc
-media-libs/mlt melt kdenlive -python
 media-libs/opencv doc -openmp
-media-libs/sdl-mixer mod modplug
-media-plugins/audacious-plugins cue
-media-sound/audacity id3tag twolame
-media-sound/clementine mtp
-net-analyzer/rrdtool -graph
-net-dns/avahi -gtk gtk3 mdnsresponder-compat
-net-dns/avahi autoipd
 net-fs/cifs-utils -acl
 net-fs/samba winbind
-net-im/psi extras -jingle spell xscreensaver
-net-im/skype apulse
 net-libs/webkit-gtk -opengl
 net-misc/batman-adv bla dat
-net-misc/ciscovpn openssl
 net-misc/networkmanager -wext -zeroconf
 net-misc/tor nat-pmp stats transparent-proxy upnp web
 net-print/cups -zeroconf
-sci-geosciences/gpsd garmin usb
-sci-geosciences/qlandkartegt gps
-sci-libs/hdf5 -cxx -fortran
+sci-geosciences/gpsd garmin
 sys-apps/util-linux static-libs
-sys-block/gparted fat ntfs reiserfs xfs -xfce
-sys-boot/grub -ncurses
-sys-devel/gcc gcj graphite
-sys-libs/ncurses -gpm
-sys-libs/zlib minizip
+sys-devel/gcc gcj
 vayerx/develop kde math
 vayerx/office burn excessive mate kde rich
 vayerx/systaff -rich
 www-client/firefox system-cairo system-icu system-jpeg system-sqlite
-www-plugins/gnash -nsplugin
+www-plugins/gnash -nsplugin -vaapi
 www-plugins/lightspark -ffmpeg -nsplugin
 x11-base/xorg-server xvfb
 x11-drivers/xf86-video-ati glamor

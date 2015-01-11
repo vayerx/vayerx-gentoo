@@ -5,10 +5,11 @@ dev-libs/boost:1.55 -std-cxx11
 dev-libs/boost:1.56 std-cxx11 tools
 dev-libs/libpcre pcre16
 dev-libs/thrift cpp -ruby
-dev-qt/qt-creator cmake valgrind
+dev-lang/python sqlite tk
+dev-qt/qt-creator autotools cmake qtscript valgrind
 dev-util/kdevelop -linguas_ru
 dev-util/kdevplatform -linguas_ru
-dev-vcs/git perl tk webdav -xinetd
+dev-vcs/git -gtk perl tk webdav -xinetd
 dev-vcs/subversion -dso perl
 media-libs/mlt -ruby
 sys-devel/gcc awt graphite

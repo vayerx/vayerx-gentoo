@@ -1,0 +1,6 @@
+dev-lang/spidermonkey -icu
+games-engines/renpy development
+games-fps/alienarena-ng -dga
+games-fps/nexuiz maps
+games-simulation/openttd -timidity
+games-strategy/warzone2100 videos

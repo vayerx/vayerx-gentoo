@@ -9,6 +9,8 @@ Section "Device"
     Option     "Capabilities" "0x00000800"
     #Option     "UseFastTLS" "off"
     #Option     "KernelModuleParm" "locked-userpages=0"
+    #Option      "OpenGLOverlay" "0"
+    #Option      "XAANoOffscreenPixmaps" "false"
 EndSection
 
 Section "dri"

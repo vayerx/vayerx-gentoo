@@ -1,5 +1,7 @@
 app-misc/gramps
 app-office/gnucash
+dev-lang/ruby:2.0::vayerx
+dev-util/aptana
 games-util/qjoypad
 media-gfx/bconv
 media-gfx/imgsrc
@@ -13,5 +15,4 @@ net-print/splix
 sys-apps/usb_modeswitch
 sys-boot/unetbootin
 vayerx/lxde
-www-plugins/lightspark
 x11-drivers/radeon-ucode

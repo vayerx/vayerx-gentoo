@@ -1,0 +1,46 @@
+app-admin/conky iostats portmon
+app-admin/sudo -ldap -sendmail
+app-antivirus/clamav clamdtop
+app-emulation/q4wine icoutils
+app-emulation/virtualbox extensions
+app-misc/mc edit samba slang
+app-office/akonadi-server sqlite
+app-text/yagf scanner
+dev-db/sqlite secure-delete
+dev-libs/glib xattr
+dev-libs/openssl gmp -tls-heartbeat
+dev-libs/xmlsec gcrypt
+dev-python/PyQt4 webkit declarative
+dev-python/pycairo -xcb
+dev-qt/qt3support accessibility kde
+dev-qt/qtdeclarative accessibility webkit
+dev-qt/qtgui accessibility dbus
+dev-qt/qtsvg accessibility
+dev-ruby/rrdtool-bindings graph
+kde-base/ark lzma
+kde-base/gwenview -handbook kipi
+kde-base/kdelibs semantic-desktop
+mate-base/mate-applets networkmanager
+mate-base/mate-panel networkmanager
+mate-extra/mate-utils applet
+media-gfx/ufraw contrast timezone
+media-libs/chromaprint tools
+media-libs/mlt melt kdenlive -python
+media-libs/sdl-mixer mod modplug
+media-plugins/audacious-plugins cue
+media-sound/asunder -aac
+media-sound/audacity id3tag twolame
+media-sound/clementine mtp
+net-analyzer/rrdtool graph
+net-dns/avahi autoipd -gtk gtk3 mdnsresponder-compat
+net-im/psi extras -jingle spell xscreensaver
+net-im/skype apulse
+net-misc/ciscovpn openssl
+sci-geosciences/gpsd usb
+sci-geosciences/qlandkartegt gps
+sci-libs/hdf5 -cxx -fortran
+sci-mathematics/octave curl gnuplot
+sys-apps/lm_sensors sensord
+sys-block/gparted fat ntfs reiserfs xfs -xfce
+sys-boot/grub -ncurses
+sys-libs/ncurses -gpm
