@@ -121,6 +121,8 @@ src_install() {
 		dodoc -r ../example
 		docompress -x "/usr/share/doc/${PF}/example"
 	fi
+
+	use python && python_optimize /usr/share/boost-build-${MAJOR_PV}
 }
 
 src_test() {

@@ -111,6 +111,8 @@ src_install() {
 		dodoc -r example
 		docompress -x "/usr/share/doc/${PF}/example"
 	fi
+
+	use python && python_optimize /usr/share/boost-build-${MAJOR_PV}
 }
 
 src_test() {
@@ -124,12 +126,4 @@ src_test() {
 		eerror "At least one test failed: $(<test_results.txt)"
 		die "tests failed"
 	fi
-}
-
-pkg_postinst() {
-	use python && python_mod_optimize /usr/share/boost-build-${MAJOR_PV}
-}
-
-pkg_postrm() {
-	use python && python_mod_cleanup /usr/share/boost-build-${MAJOR_PV}
 }
