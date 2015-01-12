@@ -1,11 +1,13 @@
-app-editors/vim -X
+app-editors/vim -X cscope
+dev-java/swing-layout source
 dev-lang/perl ithreads
+dev-lang/python sqlite tk
 dev-lang/ruby tk
 dev-libs/boost:1.55 -std-cxx11
 dev-libs/boost:1.56 std-cxx11 tools
 dev-libs/libpcre pcre16
 dev-libs/thrift cpp -ruby
-dev-lang/python sqlite tk
+dev-python/spyder pep8 pylint sphinx
 dev-qt/qt-creator autotools cmake qtscript valgrind
 dev-util/kdevelop -linguas_ru
 dev-util/kdevplatform -linguas_ru

@@ -31,7 +31,9 @@ media-plugins/audacious-plugins cue
 media-sound/asunder -aac
 media-sound/audacity id3tag twolame
 media-sound/clementine mtp
+media-video/vlc dvd ffmpeg mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live lua
 net-analyzer/rrdtool graph
+net-analyzer/tcpdump -samba
 net-dns/avahi autoipd -gtk gtk3 mdnsresponder-compat
 net-im/psi extras -jingle spell xscreensaver
 net-im/skype apulse
@@ -44,3 +46,5 @@ sys-apps/lm_sensors sensord
 sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-boot/grub -ncurses
 sys-libs/ncurses -gpm
+x11-libs/cairo -lto xlib-xcb
+x11-libs/libSM -uuid

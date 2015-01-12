@@ -1,37 +1,24 @@
 app-admin/sudo offensive -sendmail
-app-editors/vim -X cscope ruby
+app-editors/vim ruby
 app-emulation/qemu kqemu kvm vde
 app-emulation/wine -cups -ldap -ncurses -nls -odbc -scanner -ssl -xml
 app-office/akonadi-server -mysql sqlite
 dev-java/commons-logging log4j
 dev-java/sun-jdk -nsplugin
 dev-java/sun-jre-bin -nsplugin
-dev-lang/perl ithreads
 dev-lang/php cgi -crypt gd
-dev-lang/python sqlite tk
 dev-python/PyQt4 declarative webkit
 dev-python/pystaff database rich
-dev-python/spyder pep8 pylint sphinx
 dev-qt/qtdeclarative webkit
-dev-vcs/git tk
 games-strategy/freeciv aimodules modpack sqlite
-media-libs/chromaprint tools
-media-sound/audacity id3tag twolame
 media-sound/clementine lastfm mms -mtp
 media-sound/picard coverart ffmpeg
-media-video/vlc dvd ffmpeg mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live lua
-net-analyzer/rrdtool -graph ruby
-net-analyzer/tcpdump -samba
+net-analyzer/rrdtool ruby
 net-analyzer/wireshark -gtk2 gtk3 -qt4 crypt
 sci-libs/hdf5 -threads
-sys-apps/lm_sensors sensord
 sys-apps/util-linux static-libs
-sys-block/gparted fat ntfs xfs
-sys-boot/grub -ncurses
 sys-devel/llvm -ncurses
 vayerx/lxde gnome
 vayerx/office excessive gnome kde rich
 www-client/firefox -linguas_ru
 www-servers/lighttpd doc php rrdtool webdav
-x11-libs/cairo -lto xlib-xcb
-x11-libs/libSM -uuid
