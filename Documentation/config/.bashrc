@@ -110,6 +110,40 @@ function xme() {
 
 alias blya="xrandr --fb 3360x1080 --output VGA-1 --mode 1920x1080 --pos 0x0 --output DVI-I-1 --mode 1440x900 --pos 1920x156"
 
+function fciv() {
+    local file="${1:+--file $1}"
+    local fcdb="${HOME}/.freeciv/fcdb.conf"
+    if [[ ! -f "$fcdb" ]]; then
+        mkdir -p $(dirname "$fcdb")
+        cat <<EOF > $fcdb
+[fcdb]
+backend="sqlite"
+database="${HOME}/.freeciv/fcdb.sqlite"
+EOF
+    fi
+
+    freeciv-server --saves ${HOME}/.freeciv/net --scenarios /usr/share/games/freeciv/scenarios --Database ${HOME}/.freeciv/fcdb.conf --auth --Newusers $file
+}
+
+function enforce_slot() {
+    local module=${1:?no module}
+    local slot=${2:?no slot}
+
+    while true; do
+        while eselect ${module} list | awk "(\$3 == \"*\" && \$1 != \"[${slot}]\") { exit 1; }"; do
+            sleep 1
+        done
+
+        date
+        eselect ${module} set ${slot}
+    done
+}
+
+function enforce_boost() {
+    local slot=${1:-1}
+    enforce_slot boost $slot
+}
+
 alias emerge-preserved="emerge -q --keep-going @preserved-rebuild"
 alias emerge-modules="emerge -q --keep-going @module-rebuild"
 alias emerge-x11-modules="emerge -q --keep-going @x11-module-rebuild"
