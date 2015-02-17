@@ -15,6 +15,7 @@ dev-libs/libzip
 dev-libs/newt
 dev-libs/thrift
 dev-libs/xmlsec
+dev-python/cx-oracle
 dev-python/jsonpath
 dev-python/lxml
 dev-python/paramiko
@@ -27,6 +28,7 @@ media-libs/giflib
 media-libs/jasper
 media-libs/opencv
 net-dns/libidn
+net-libs/gsoap
 net-libs/libpcap
 sci-libs/libsvm
 sys-cluster/gearmand
