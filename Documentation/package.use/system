@@ -25,6 +25,7 @@ mate-base/mate-panel networkmanager
 mate-extra/mate-utils applet
 media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
+media-libs/gst-plugins-bad -gles2
 media-libs/mlt melt kdenlive -python
 media-libs/sdl-mixer mod modplug
 media-plugins/audacious-plugins cue
@@ -35,11 +36,12 @@ media-video/vlc dvd ffmpeg mpeg mad wxwindows aac dts a52 ogg flac theora oggvor
 net-analyzer/rrdtool graph
 net-analyzer/tcpdump -samba
 net-dns/avahi autoipd -gtk gtk3 mdnsresponder-compat
-net-im/psi extras -jingle spell xscreensaver
+net-im/psi -crypt extras -jingle spell xscreensaver
 net-im/skype apulse
 net-misc/ciscovpn openssl
 sci-geosciences/gpsd usb
 sci-geosciences/qlandkartegt gps
+sci-libs/gdal -python
 sci-libs/hdf5 -cxx -fortran
 sci-mathematics/octave curl gnuplot
 sys-apps/lm_sensors sensord

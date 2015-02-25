@@ -45,6 +45,7 @@ sys-apps/usbutils
 sys-block/gparted
 sys-boot/grub:0
 sys-devel/gcc:4.8
+sys-fs/ddrescue
 sys-fs/inotify-tools
 sys-kernel/genkernel
 sys-kernel/gentoo-sources

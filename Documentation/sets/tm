@@ -24,6 +24,7 @@ dev-python/python-ldap
 dev-tcltk/expect
 dev-util/kelbt
 dev-util/patchelf
+dev-util/re2c
 media-libs/giflib
 media-libs/jasper
 media-libs/opencv
