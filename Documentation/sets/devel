@@ -4,6 +4,7 @@ app-doc/doxygen
 app-i18n/enca
 dev-libs/boost:1.55
 dev-libs/boost:1.56
+dev-libs/jsoncpp
 dev-libs/libxml2
 dev-util/cmake
 dev-util/debugedit

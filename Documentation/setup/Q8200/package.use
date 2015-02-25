@@ -16,7 +16,7 @@ media-gfx/blender -openmp
 media-gfx/graphicsmagick -imagemagick
 media-gfx/hugin sift
 media-libs/freeimage -raw
-media-libs/mesa gbm xa xorg xvmc
+media-libs/mesa d3d9 gbm xa xorg xvmc
 media-libs/opencv doc -openmp
 net-fs/cifs-utils -acl
 net-fs/samba winbind

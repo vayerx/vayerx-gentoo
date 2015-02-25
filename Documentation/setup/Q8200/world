@@ -2,9 +2,11 @@ app-misc/gramps
 app-office/gnucash
 dev-lang/ruby:2.0::vayerx
 dev-util/aptana
+games-engines/renpy
 games-util/qjoypad
 media-gfx/bconv
 media-gfx/imgsrc
+media-libs/hal-flash
 media-libs/libtxc_dxtn
 media-sound/audacity
 media-sound/mp3unicode
@@ -14,5 +16,6 @@ net-misc/tor
 net-print/splix
 sys-apps/usb_modeswitch
 sys-boot/unetbootin
+sys-fs/simple-mtpfs
 vayerx/lxde
 x11-drivers/radeon-ucode
