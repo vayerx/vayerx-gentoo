@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/gnash/gnash-0.8.10_p20131019.ebuild,v 1.2 2013/12/04 11:24:48 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-plugins/gnash/gnash-0.8.10_p20150316.ebuild,v 1.1 2015/03/26 14:59:41 chithanh Exp $
 
 EAPI=5
 CMAKE_REQUIRED="never"
@@ -26,7 +26,7 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="X +agg cairo cygnal dbus directfb doc dump egl fbcon +ffmpeg gconf gnome gstreamer gtk harden jemalloc kde lirc mysql +nls nsplugin opengl openvg python sdl +sdl-sound ssh ssl test vaapi"
 REQUIRED_USE="dump? ( agg ffmpeg )
 	fbcon? ( agg )
@@ -142,9 +142,6 @@ src_prepare() {
 
 	# Fix libamf includes
 	epatch "${FILESDIR}"/${PN}-0.8.10-amf-include.patch
-
-	# Allow building against npapi-sdk, bug #383071
-	epatch "${FILESDIR}"/${PN}-0.8.10-npapi-sdk.patch
 
 	eautoreconf
 }
