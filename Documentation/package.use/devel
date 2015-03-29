@@ -11,7 +11,7 @@ dev-qt/qt-creator autotools cmake qtscript valgrind
 dev-util/kdevelop -linguas_ru
 dev-util/kdevplatform -linguas_ru
 dev-vcs/git -gtk perl tk webdav -xinetd
-dev-vcs/subversion -dso perl
+dev-vcs/subversion -dso perl -ruby
 media-libs/mlt -ruby
 sys-devel/gcc awt graphite
 sys-libs/zlib minizip

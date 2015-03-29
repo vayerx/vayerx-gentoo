@@ -1,8 +1,10 @@
 app-admin/conky iostats portmon
 app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
+app-crypt/heimdal -ssl
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions
+app-emulation/wine mono odbc s3tc samba staging
 app-misc/mc edit samba slang
 app-office/akonadi-server sqlite
 app-text/yagf scanner
@@ -32,7 +34,7 @@ media-plugins/audacious-plugins cue
 media-sound/asunder -aac
 media-sound/audacity id3tag twolame
 media-sound/clementine mtp
-media-video/vlc dvd ffmpeg mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live lua
+media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska postproc freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live lua
 net-analyzer/rrdtool graph
 net-analyzer/tcpdump -samba
 net-dns/avahi autoipd -gtk gtk3 mdnsresponder-compat
@@ -50,3 +52,4 @@ sys-boot/grub -ncurses
 sys-libs/ncurses -gpm
 x11-libs/cairo -lto xlib-xcb
 x11-libs/libSM -uuid
+x11-libs/libdrm -valgrind

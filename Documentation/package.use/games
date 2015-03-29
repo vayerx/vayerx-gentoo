@@ -1,4 +1,5 @@
 dev-lang/spidermonkey -icu
+dev-ruby/ruby-sdl image
 games-engines/renpy development
 games-fps/alienarena-ng -dga
 games-fps/nexuiz maps
