@@ -1,3 +1,4 @@
+app-crypt/heimdal -ssl
 app-editors/vim -X cscope
 dev-java/swing-layout source
 dev-lang/perl ithreads
