@@ -1,11 +1,12 @@
+app-emulation/playonlinux
 app-misc/gramps
 app-office/gnucash
 dev-db/sqlitebrowser
 dev-lang/ruby:2.0::vayerx
 dev-ruby/ruby-sdl
 dev-util/aptana
-games-engines/renpy
 games-util/qjoypad
+kde-base/kdm
 mate-base/mate
 media-gfx/bconv
 media-gfx/gnome-screenshot
@@ -22,5 +23,6 @@ net-print/splix
 sys-apps/usb_modeswitch
 sys-boot/unetbootin
 sys-fs/simple-mtpfs
+sys-kernel/gentoo-sources:3.18.10
 vayerx/lxde
 x11-drivers/radeon-ucode

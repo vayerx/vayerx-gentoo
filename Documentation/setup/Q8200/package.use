@@ -1,4 +1,4 @@
-=media-libs/mesa-10* -opencl llvm -r600-llvm-compiler
+>=media-libs/mesa-10 -opencl llvm
 app-emulation/wine -gstreamer
 app-office/libreoffice -abi_x86_32 -gnome -gtk gtk3 -vba -webdav
 app-text/gocr tk
@@ -10,7 +10,6 @@ dev-python/pystaff rich
 dev-python/spyder pylint sphinx
 dev-qt/qt-creator android -linguas_ru
 dev-ruby/rbstaff gui datamining
-dev-ruby/rubygems ruby_targets_ruby18
 kde-base/okular chm
 media-gfx/blender -openmp
 media-gfx/graphicsmagick -imagemagick
@@ -20,7 +19,7 @@ media-libs/mesa d3d9 gbm xa xorg xvmc
 media-libs/opencv doc -openmp
 net-fs/cifs-utils -acl
 net-fs/samba winbind
-net-libs/webkit-gtk -opengl
+net-libs/webkit-gtk -geoloc -opengl -webgl
 net-misc/batman-adv bla dat
 net-misc/networkmanager -wext -zeroconf
 net-misc/tor nat-pmp stats transparent-proxy upnp web
