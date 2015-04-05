@@ -2,7 +2,7 @@
 =dev-lang/v8-3.11.10.12
 =virtual/rubygems-7
 >=dev-ruby/json-1.6.1
-app-admin/eselect-ruby
+app-eselect/eselect-ruby
 app-emacs/ruby-mode
 app-vim/eruby-syntax
 dev-lang/ruby
