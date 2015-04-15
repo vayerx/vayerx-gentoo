@@ -1,0 +1,12 @@
+app-arch/rpm
+app-emulation/docker
+app-emulation/virtualbox
+app-text/asciidoc
+dev-db/pgadmin3
+dev-db/pgbadger
+dev-db/pguint
+dev-db/postgresql:9.4
+dev-java/oracle-jre-bin:1.7
+gnome-base/nautilus
+net-misc/bridge-utils
+sys-devel/gcc:4.7

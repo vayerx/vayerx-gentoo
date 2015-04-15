@@ -19,6 +19,7 @@ dev-qt/qtdeclarative accessibility webkit
 dev-qt/qtgui accessibility dbus
 dev-qt/qtsvg accessibility
 dev-ruby/rrdtool-bindings graph
+gnome-base/gvfs mtp
 kde-base/ark lzma
 kde-base/gwenview -handbook kipi
 kde-base/kdelibs semantic-desktop
@@ -38,6 +39,7 @@ media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis mat
 net-analyzer/rrdtool graph
 net-analyzer/tcpdump -samba
 net-dns/avahi autoipd -gtk gtk3 mdnsresponder-compat
+net-fs/samba client
 net-im/psi -crypt extras -jingle spell xscreensaver
 net-im/skype apulse
 net-misc/ciscovpn openssl

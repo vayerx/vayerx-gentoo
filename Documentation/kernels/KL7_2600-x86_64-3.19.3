@@ -77,7 +77,7 @@ CONFIG_KERNEL_BZIP2=y
 # CONFIG_KERNEL_XZ is not set
 # CONFIG_KERNEL_LZO is not set
 # CONFIG_KERNEL_LZ4 is not set
-CONFIG_DEFAULT_HOSTNAME="vayerx7"
+CONFIG_DEFAULT_HOSTNAME="vayerx"
 CONFIG_SWAP=y
 CONFIG_SYSVIPC=y
 CONFIG_SYSVIPC_SYSCTL=y
@@ -161,13 +161,17 @@ CONFIG_ARCH_SUPPORTS_INT128=y
 # CONFIG_NUMA_BALANCING is not set
 CONFIG_CGROUPS=y
 # CONFIG_CGROUP_DEBUG is not set
-# CONFIG_CGROUP_FREEZER is not set
-# CONFIG_CGROUP_DEVICE is not set
+CONFIG_CGROUP_FREEZER=y
+CONFIG_CGROUP_DEVICE=y
 CONFIG_CPUSETS=y
 CONFIG_PROC_PID_CPUSET=y
 CONFIG_CGROUP_CPUACCT=y
-# CONFIG_MEMCG is not set
-# CONFIG_CGROUP_PERF is not set
+CONFIG_PAGE_COUNTER=y
+CONFIG_MEMCG=y
+CONFIG_MEMCG_SWAP=y
+CONFIG_MEMCG_SWAP_ENABLED=y
+# CONFIG_MEMCG_KMEM is not set
+CONFIG_CGROUP_PERF=y
 CONFIG_CGROUP_SCHED=y
 CONFIG_FAIR_GROUP_SCHED=y
 # CONFIG_CFS_BANDWIDTH is not set
@@ -175,7 +179,7 @@ CONFIG_RT_GROUP_SCHED=y
 # CONFIG_BLK_CGROUP is not set
 # CONFIG_CHECKPOINT_RESTORE is not set
 CONFIG_NAMESPACES=y
-# CONFIG_UTS_NS is not set
+CONFIG_UTS_NS=y
 CONFIG_IPC_NS=y
 # CONFIG_USER_NS is not set
 CONFIG_PID_NS=y
@@ -205,6 +209,7 @@ CONFIG_SGETMASK_SYSCALL=y
 CONFIG_SYSFS_SYSCALL=y
 # CONFIG_SYSCTL_SYSCALL is not set
 CONFIG_KALLSYMS=y
+# CONFIG_KALLSYMS_ALL is not set
 CONFIG_PRINTK=y
 CONFIG_BUG=y
 CONFIG_ELF_CORE=y
@@ -227,6 +232,7 @@ CONFIG_HAVE_PERF_EVENTS=y
 # Kernel Performance Events And Counters
 #
 CONFIG_PERF_EVENTS=y
+# CONFIG_DEBUG_PERF_USE_VMALLOC is not set
 CONFIG_VM_EVENT_COUNTERS=y
 CONFIG_COMPAT_BRK=y
 CONFIG_SLAB=y
@@ -398,6 +404,7 @@ CONFIG_GART_IOMMU=y
 # CONFIG_CALGARY_IOMMU is not set
 CONFIG_SWIOTLB=y
 CONFIG_IOMMU_HELPER=y
+# CONFIG_MAXSMP is not set
 CONFIG_NR_CPUS=8
 CONFIG_SCHED_SMT=y
 CONFIG_SCHED_MC=y
@@ -434,7 +441,7 @@ CONFIG_NUMA=y
 CONFIG_X86_64_ACPI_NUMA=y
 CONFIG_NODES_SPAN_OTHER_NODES=y
 # CONFIG_NUMA_EMU is not set
-CONFIG_NODES_SHIFT=6
+CONFIG_NODES_SHIFT=8
 CONFIG_ARCH_SPARSEMEM_ENABLE=y
 CONFIG_ARCH_SPARSEMEM_DEFAULT=y
 CONFIG_ARCH_SELECT_MEMORY_MODEL=y
@@ -469,7 +476,9 @@ CONFIG_KSM=y
 CONFIG_DEFAULT_MMAP_MIN_ADDR=4096
 CONFIG_ARCH_SUPPORTS_MEMORY_FAILURE=y
 # CONFIG_MEMORY_FAILURE is not set
-# CONFIG_TRANSPARENT_HUGEPAGE is not set
+CONFIG_TRANSPARENT_HUGEPAGE=y
+CONFIG_TRANSPARENT_HUGEPAGE_ALWAYS=y
+# CONFIG_TRANSPARENT_HUGEPAGE_MADVISE is not set
 # CONFIG_CLEANCACHE is not set
 # CONFIG_FRONTSWAP is not set
 # CONFIG_CMA is not set
@@ -628,6 +637,7 @@ CONFIG_PCIEASPM_DEFAULT=y
 # CONFIG_PCIEASPM_PERFORMANCE is not set
 CONFIG_PCIE_PME=y
 CONFIG_PCI_MSI=y
+# CONFIG_PCI_DEBUG is not set
 # CONFIG_PCI_REALLOC_ENABLE_AUTO is not set
 # CONFIG_PCI_STUB is not set
 CONFIG_HT_IRQ=y
@@ -823,6 +833,16 @@ CONFIG_NF_CONNTRACK_TFTP=m
 CONFIG_NF_CT_NETLINK=y
 # CONFIG_NF_CT_NETLINK_TIMEOUT is not set
 # CONFIG_NETFILTER_NETLINK_QUEUE_CT is not set
+CONFIG_NF_NAT=m
+CONFIG_NF_NAT_NEEDED=y
+CONFIG_NF_NAT_PROTO_UDPLITE=m
+CONFIG_NF_NAT_PROTO_SCTP=m
+CONFIG_NF_NAT_AMANDA=m
+CONFIG_NF_NAT_FTP=m
+CONFIG_NF_NAT_IRC=m
+CONFIG_NF_NAT_SIP=m
+CONFIG_NF_NAT_TFTP=m
+# CONFIG_NF_NAT_REDIRECT is not set
 # CONFIG_NF_TABLES is not set
 CONFIG_NETFILTER_XTABLES=y
 
@@ -849,10 +869,13 @@ CONFIG_NETFILTER_XT_TARGET_HL=m
 CONFIG_NETFILTER_XT_TARGET_LED=m
 CONFIG_NETFILTER_XT_TARGET_LOG=y
 CONFIG_NETFILTER_XT_TARGET_MARK=y
+CONFIG_NETFILTER_XT_NAT=m
+# CONFIG_NETFILTER_XT_TARGET_NETMAP is not set
 CONFIG_NETFILTER_XT_TARGET_NFLOG=y
 CONFIG_NETFILTER_XT_TARGET_NFQUEUE=y
 CONFIG_NETFILTER_XT_TARGET_NOTRACK=m
 # CONFIG_NETFILTER_XT_TARGET_RATEEST is not set
+# CONFIG_NETFILTER_XT_TARGET_REDIRECT is not set
 CONFIG_NETFILTER_XT_TARGET_TEE=m
 # CONFIG_NETFILTER_XT_TARGET_TPROXY is not set
 CONFIG_NETFILTER_XT_TARGET_TRACE=m
@@ -936,7 +959,12 @@ CONFIG_NF_CONNTRACK_PROC_COMPAT=y
 # CONFIG_NF_LOG_ARP is not set
 CONFIG_NF_LOG_IPV4=y
 CONFIG_NF_REJECT_IPV4=m
-# CONFIG_NF_NAT_IPV4 is not set
+CONFIG_NF_NAT_IPV4=m
+CONFIG_NF_NAT_MASQUERADE_IPV4=m
+CONFIG_NF_NAT_SNMP_BASIC=m
+CONFIG_NF_NAT_PROTO_GRE=m
+CONFIG_NF_NAT_PPTP=m
+CONFIG_NF_NAT_H323=m
 CONFIG_IP_NF_IPTABLES=m
 CONFIG_IP_NF_MATCH_AH=m
 CONFIG_IP_NF_MATCH_ECN=m
@@ -945,7 +973,10 @@ CONFIG_IP_NF_MATCH_TTL=m
 CONFIG_IP_NF_FILTER=m
 CONFIG_IP_NF_TARGET_REJECT=m
 # CONFIG_IP_NF_TARGET_SYNPROXY is not set
-# CONFIG_IP_NF_NAT is not set
+CONFIG_IP_NF_NAT=m
+CONFIG_IP_NF_TARGET_MASQUERADE=m
+# CONFIG_IP_NF_TARGET_NETMAP is not set
+# CONFIG_IP_NF_TARGET_REDIRECT is not set
 CONFIG_IP_NF_MANGLE=m
 CONFIG_IP_NF_TARGET_CLUSTERIP=m
 CONFIG_IP_NF_TARGET_ECN=m
@@ -1179,9 +1210,12 @@ CONFIG_STANDALONE=y
 CONFIG_PREVENT_FIRMWARE_BUILD=y
 CONFIG_FW_LOADER=y
 CONFIG_FIRMWARE_IN_KERNEL=y
-CONFIG_EXTRA_FIRMWARE=""
+CONFIG_EXTRA_FIRMWARE="radeon/ARUBA_me.bin radeon/ARUBA_pfp.bin radeon/ARUBA_rlc.bin radeon/BARTS_mc.bin radeon/BARTS_me.bin radeon/BARTS_pfp.bin radeon/BARTS_smc.bin radeon/BONAIRE_ce.bin radeon/BONAIRE_mc.bin radeon/BONAIRE_mc2.bin radeon/BONAIRE_me.bin radeon/BONAIRE_mec.bin radeon/BONAIRE_pfp.bin radeon/BONAIRE_rlc.bin radeon/BONAIRE_sdma.bin radeon/BONAIRE_smc.bin radeon/BONAIRE_uvd.bin radeon/BONAIRE_vce.bin radeon/BTC_rlc.bin radeon/CAICOS_mc.bin radeon/CAICOS_me.bin radeon/CAICOS_pfp.bin radeon/CAICOS_smc.bin radeon/CAYMAN_mc.bin radeon/CAYMAN_me.bin radeon/CAYMAN_pfp.bin radeon/CAYMAN_rlc.bin radeon/CAYMAN_smc.bin radeon/CEDAR_me.bin radeon/CEDAR_pfp.bin radeon/CEDAR_rlc.bin radeon/CEDAR_smc.bin radeon/CYPRESS_me.bin radeon/CYPRESS_pfp.bin radeon/CYPRESS_rlc.bin radeon/CYPRESS_smc.bin radeon/CYPRESS_uvd.bin radeon/HAINAN_ce.bin radeon/HAINAN_mc.bin radeon/HAINAN_mc2.bin radeon/HAINAN_me.bin radeon/HAINAN_pfp.bin radeon/HAINAN_rlc.bin radeon/HAINAN_smc.bin radeon/HAWAII_ce.bin radeon/HAWAII_mc.bin radeon/HAWAII_mc2.bin radeon/HAWAII_me.bin radeon/HAWAII_mec.bin radeon/HAWAII_pfp.bin radeon/HAWAII_rlc.bin radeon/HAWAII_sdma.bin radeon/HAWAII_smc.bin radeon/JUNIPER_me.bin radeon/JUNIPER_pfp.bin radeon/JUNIPER_rlc.bin radeon/JUNIPER_smc.bin radeon/KABINI_ce.bin radeon/KABINI_me.bin radeon/KABINI_mec.bin radeon/KABINI_pfp.bin radeon/KABINI_rlc.bin radeon/KABINI_sdma.bin radeon/KAVERI_ce.bin radeon/KAVERI_me.bin radeon/KAVERI_mec.bin radeon/KAVERI_pfp.bin radeon/KAVERI_rlc.bin radeon/KAVERI_sdma.bin radeon/MULLINS_ce.bin radeon/MULLINS_me.bin radeon/MULLINS_mec.bin radeon/MULLINS_pfp.bin radeon/MULLINS_rlc.bin radeon/MULLINS_sdma.bin radeon/OLAND_ce.bin radeon/OLAND_mc.bin radeon/OLAND_mc2.bin radeon/OLAND_me.bin radeon/OLAND_pfp.bin radeon/OLAND_rlc.bin radeon/OLAND_smc.bin radeon/PALM_me.bin radeon/PALM_pfp.bin radeon/PITCAIRN_ce.bin radeon/PITCAIRN_mc.bin radeon/PITCAIRN_mc2.bin radeon/PITCAIRN_me.bin radeon/PITCAIRN_pfp.bin radeon/PITCAIRN_rlc.bin radeon/PITCAIRN_smc.bin radeon/R600_rlc.bin radeon/R600_uvd.bin radeon/R700_rlc.bin radeon/REDWOOD_me.bin radeon/REDWOOD_pfp.bin radeon/REDWOOD_rlc.bin radeon/REDWOOD_smc.bin radeon/RS780_uvd.bin radeon/RV710_smc.bin radeon/RV710_uvd.bin radeon/RV730_smc.bin radeon/RV740_smc.bin radeon/RV770_smc.bin radeon/RV770_uvd.bin radeon/SUMO2_me.bin radeon/SUMO2_pfp.bin radeon/SUMO_me.bin radeon/SUMO_pfp.bin radeon/SUMO_rlc.bin radeon/SUMO_uvd.bin radeon/TAHITI_ce.bin radeon/TAHITI_mc.bin radeon/TAHITI_mc2.bin radeon/TAHITI_me.bin radeon/TAHITI_pfp.bin radeon/TAHITI_rlc.bin radeon/TAHITI_smc.bin radeon/TAHITI_uvd.bin radeon/TURKS_mc.bin radeon/TURKS_me.bin radeon/TURKS_pfp.bin radeon/TURKS_smc.bin radeon/VERDE_ce.bin radeon/VERDE_mc.bin radeon/VERDE_mc2.bin radeon/VERDE_me.bin radeon/VERDE_pfp.bin radeon/VERDE_rlc.bin radeon/VERDE_smc.bin radeon/bonaire_ce.bin radeon/bonaire_mc.bin radeon/bonaire_me.bin radeon/bonaire_mec.bin radeon/bonaire_pfp.bin radeon/bonaire_rlc.bin radeon/bonaire_sdma.bin radeon/bonaire_smc.bin radeon/hainan_ce.bin radeon/hainan_mc.bin radeon/hainan_me.bin radeon/hainan_pfp.bin radeon/hainan_rlc.bin radeon/hainan_smc.bin radeon/hawaii_ce.bin radeon/hawaii_mc.bin radeon/hawaii_me.bin radeon/hawaii_mec.bin radeon/hawaii_pfp.bin radeon/hawaii_rlc.bin radeon/hawaii_sdma.bin radeon/hawaii_smc.bin radeon/kabini_ce.bin radeon/kabini_me.bin radeon/kabini_mec.bin radeon/kabini_pfp.bin radeon/kabini_rlc.bin radeon/kabini_sdma.bin radeon/kaveri_ce.bin radeon/kaveri_me.bin radeon/kaveri_mec.bin radeon/kaveri_mec2.bin radeon/kaveri_pfp.bin radeon/kaveri_rlc.bin radeon/kaveri_sdma.bin radeon/mullins_ce.bin radeon/mullins_me.bin radeon/mullins_mec.bin radeon/mullins_pfp.bin radeon/mullins_rlc.bin radeon/mullins_sdma.bin radeon/oland_ce.bin radeon/oland_mc.bin radeon/oland_me.bin radeon/oland_pfp.bin radeon/oland_rlc.bin radeon/oland_smc.bin radeon/pitcairn_ce.bin radeon/pitcairn_mc.bin radeon/pitcairn_me.bin radeon/pitcairn_pfp.bin radeon/pitcairn_rlc.bin radeon/pitcairn_smc.bin radeon/tahiti_ce.bin radeon/tahiti_mc.bin radeon/tahiti_me.bin radeon/tahiti_pfp.bin radeon/tahiti_rlc.bin radeon/tahiti_smc.bin radeon/verde_ce.bin radeon/verde_mc.bin radeon/verde_me.bin radeon/verde_pfp.bin radeon/verde_rlc.bin radeon/verde_smc.bin"
+CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"
 # CONFIG_FW_LOADER_USER_HELPER_FALLBACK is not set
 CONFIG_ALLOW_DEV_COREDUMP=y
+# CONFIG_DEBUG_DRIVER is not set
+# CONFIG_DEBUG_DEVRES is not set
 # CONFIG_SYS_HYPERVISOR is not set
 # CONFIG_GENERIC_CPU_DEVICES is not set
 CONFIG_GENERIC_CPU_AUTOPROBE=y
@@ -1535,9 +1569,12 @@ CONFIG_BLK_DEV_DM_BUILTIN=y
 CONFIG_BLK_DEV_DM=y
 # CONFIG_DM_DEBUG is not set
 CONFIG_DM_BUFIO=m
+CONFIG_DM_BIO_PRISON=m
+CONFIG_DM_PERSISTENT_DATA=m
+# CONFIG_DM_DEBUG_BLOCK_STACK_TRACING is not set
 CONFIG_DM_CRYPT=y
 CONFIG_DM_SNAPSHOT=m
-# CONFIG_DM_THIN_PROVISIONING is not set
+CONFIG_DM_THIN_PROVISIONING=m
 # CONFIG_DM_CACHE is not set
 # CONFIG_DM_ERA is not set
 CONFIG_DM_MIRROR=y
@@ -2292,7 +2329,7 @@ CONFIG_VT_CONSOLE_SLEEP=y
 CONFIG_HW_CONSOLE=y
 CONFIG_VT_HW_CONSOLE_BINDING=y
 CONFIG_UNIX98_PTYS=y
-# CONFIG_DEVPTS_MULTIPLE_INSTANCES is not set
+CONFIG_DEVPTS_MULTIPLE_INSTANCES=y
 # CONFIG_LEGACY_PTYS is not set
 # CONFIG_SERIAL_NONSTANDARD is not set
 # CONFIG_NOZOMI is not set
@@ -2376,7 +2413,7 @@ CONFIG_I2C_MUX=y
 #
 # CONFIG_I2C_MUX_PCA9541 is not set
 CONFIG_I2C_HELPER_AUTO=y
-CONFIG_I2C_ALGOBIT=y
+CONFIG_I2C_ALGOBIT=m
 CONFIG_I2C_ALGOPCA=m
 
 #
@@ -2999,12 +3036,12 @@ CONFIG_MEDIA_TUNER_MC44S803=y
 #
 # Graphics support
 #
-CONFIG_AGP=y
-CONFIG_AGP_AMD64=y
-CONFIG_AGP_INTEL=y
-CONFIG_AGP_SIS=m
-CONFIG_AGP_VIA=m
-CONFIG_INTEL_GTT=y
+CONFIG_AGP=m
+CONFIG_AGP_AMD64=m
+CONFIG_AGP_INTEL=m
+# CONFIG_AGP_SIS is not set
+# CONFIG_AGP_VIA is not set
+CONFIG_INTEL_GTT=m
 CONFIG_VGA_ARB=y
 CONFIG_VGA_ARB_MAX_GPUS=16
 # CONFIG_VGA_SWITCHEROO is not set
@@ -3012,11 +3049,11 @@ CONFIG_VGA_ARB_MAX_GPUS=16
 #
 # Direct Rendering Manager
 #
-CONFIG_DRM=y
-CONFIG_DRM_KMS_HELPER=y
+CONFIG_DRM=m
+CONFIG_DRM_KMS_HELPER=m
 CONFIG_DRM_KMS_FB_HELPER=y
 CONFIG_DRM_LOAD_EDID_FIRMWARE=y
-CONFIG_DRM_TTM=y
+CONFIG_DRM_TTM=m
 
 #
 # I2C encoder or helper chips
@@ -3028,13 +3065,14 @@ CONFIG_DRM_TTM=y
 # CONFIG_DRM_PTN3460 is not set
 # CONFIG_DRM_TDFX is not set
 # CONFIG_DRM_R128 is not set
-# CONFIG_DRM_RADEON is not set
-CONFIG_DRM_NOUVEAU=y
-CONFIG_NOUVEAU_DEBUG=5
-CONFIG_NOUVEAU_DEBUG_DEFAULT=3
-CONFIG_DRM_NOUVEAU_BACKLIGHT=y
+CONFIG_DRM_RADEON=m
+# CONFIG_DRM_RADEON_UMS is not set
+# CONFIG_DRM_NOUVEAU is not set
 # CONFIG_DRM_I810 is not set
-# CONFIG_DRM_I915 is not set
+CONFIG_DRM_I915=m
+CONFIG_DRM_I915_KMS=y
+CONFIG_DRM_I915_FBDEV=y
+# CONFIG_DRM_I915_PRELIMINARY_HW_SUPPORT is not set
 # CONFIG_DRM_MGA is not set
 # CONFIG_DRM_SIS is not set
 # CONFIG_DRM_VIA is not set
@@ -3068,7 +3106,7 @@ CONFIG_FB_SYS_FOPS=m
 CONFIG_FB_DEFERRED_IO=y
 # CONFIG_FB_SVGALIB is not set
 # CONFIG_FB_MACMODES is not set
-CONFIG_FB_BACKLIGHT=y
+# CONFIG_FB_BACKLIGHT is not set
 CONFIG_FB_MODE_HELPERS=y
 # CONFIG_FB_TILEBLITTING is not set
 
@@ -3281,6 +3319,7 @@ CONFIG_SND_HDA_CODEC_ANALOG=m
 CONFIG_SND_HDA_CODEC_SIGMATEL=m
 CONFIG_SND_HDA_CODEC_VIA=m
 CONFIG_SND_HDA_CODEC_HDMI=m
+CONFIG_SND_HDA_I915=y
 CONFIG_SND_HDA_CODEC_CIRRUS=m
 CONFIG_SND_HDA_CODEC_CONEXANT=m
 CONFIG_SND_HDA_CODEC_CA0110=m
@@ -3590,6 +3629,7 @@ CONFIG_USB_XUSBATM=m
 # CONFIG_NOP_USB_XCEIV is not set
 # CONFIG_USB_ISP1301 is not set
 CONFIG_USB_GADGET=y
+# CONFIG_USB_GADGET_DEBUG is not set
 # CONFIG_USB_GADGET_DEBUG_FILES is not set
 # CONFIG_USB_GADGET_DEBUG_FS is not set
 CONFIG_USB_GADGET_VBUS_DRAW=2
@@ -4239,17 +4279,9 @@ CONFIG_JBD=y
 CONFIG_JBD2=y
 # CONFIG_JBD2_DEBUG is not set
 CONFIG_FS_MBCACHE=y
-CONFIG_REISERFS_FS=y
-# CONFIG_REISERFS_CHECK is not set
-# CONFIG_REISERFS_PROC_INFO is not set
-# CONFIG_REISERFS_FS_XATTR is not set
+# CONFIG_REISERFS_FS is not set
 # CONFIG_JFS_FS is not set
-CONFIG_XFS_FS=y
-# CONFIG_XFS_QUOTA is not set
-# CONFIG_XFS_POSIX_ACL is not set
-# CONFIG_XFS_RT is not set
-# CONFIG_XFS_WARN is not set
-# CONFIG_XFS_DEBUG is not set
+# CONFIG_XFS_FS is not set
 # CONFIG_GFS2_FS is not set
 # CONFIG_OCFS2_FS is not set
 # CONFIG_BTRFS_FS is not set
@@ -4452,54 +4484,100 @@ CONFIG_TRACE_IRQFLAGS_SUPPORT=y
 #
 CONFIG_PRINTK_TIME=y
 CONFIG_MESSAGE_LOGLEVEL_DEFAULT=4
+# CONFIG_BOOT_PRINTK_DELAY is not set
 # CONFIG_DYNAMIC_DEBUG is not set
 
 #
 # Compile-time checks and compiler options
 #
+# CONFIG_DEBUG_INFO is not set
 # CONFIG_ENABLE_WARN_DEPRECATED is not set
 # CONFIG_ENABLE_MUST_CHECK is not set
 CONFIG_FRAME_WARN=2048
 # CONFIG_STRIP_ASM_SYMS is not set
+# CONFIG_READABLE_ASM is not set
 CONFIG_UNUSED_SYMBOLS=y
+# CONFIG_PAGE_OWNER is not set
 CONFIG_DEBUG_FS=y
 # CONFIG_HEADERS_CHECK is not set
 # CONFIG_DEBUG_SECTION_MISMATCH is not set
 CONFIG_ARCH_WANT_FRAME_POINTERS=y
 # CONFIG_FRAME_POINTER is not set
+# CONFIG_DEBUG_FORCE_WEAK_PER_CPU is not set
 CONFIG_MAGIC_SYSRQ=y
 CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x1
-# CONFIG_DEBUG_KERNEL is not set
+CONFIG_DEBUG_KERNEL=y
 
 #
 # Memory Debugging
 #
 # CONFIG_PAGE_EXTENSION is not set
+# CONFIG_DEBUG_PAGEALLOC is not set
+# CONFIG_DEBUG_OBJECTS is not set
+# CONFIG_DEBUG_SLAB is not set
 CONFIG_HAVE_DEBUG_KMEMLEAK=y
+# CONFIG_DEBUG_KMEMLEAK is not set
+# CONFIG_DEBUG_STACK_USAGE is not set
+# CONFIG_DEBUG_VM is not set
+# CONFIG_DEBUG_VIRTUAL is not set
 CONFIG_DEBUG_MEMORY_INIT=y
+# CONFIG_DEBUG_PER_CPU_MAPS is not set
 CONFIG_HAVE_DEBUG_STACKOVERFLOW=y
+# CONFIG_DEBUG_STACKOVERFLOW is not set
 CONFIG_HAVE_ARCH_KMEMCHECK=y
+# CONFIG_KMEMCHECK is not set
+# CONFIG_DEBUG_SHIRQ is not set
 
 #
 # Debug Lockups and Hangs
 #
+# CONFIG_LOCKUP_DETECTOR is not set
+# CONFIG_DETECT_HUNG_TASK is not set
 # CONFIG_PANIC_ON_OOPS is not set
 CONFIG_PANIC_ON_OOPS_VALUE=0
 CONFIG_PANIC_TIMEOUT=0
+CONFIG_SCHED_DEBUG=y
+# CONFIG_SCHEDSTATS is not set
+# CONFIG_SCHED_STACK_END_CHECK is not set
+# CONFIG_TIMER_STATS is not set
 
 #
 # Lock Debugging (spinlocks, mutexes, etc...)
 #
+# CONFIG_DEBUG_RT_MUTEXES is not set
+# CONFIG_DEBUG_SPINLOCK is not set
+# CONFIG_DEBUG_MUTEXES is not set
+# CONFIG_DEBUG_WW_MUTEX_SLOWPATH is not set
+# CONFIG_DEBUG_LOCK_ALLOC is not set
+# CONFIG_PROVE_LOCKING is not set
+# CONFIG_LOCK_STAT is not set
+# CONFIG_DEBUG_ATOMIC_SLEEP is not set
+# CONFIG_DEBUG_LOCKING_API_SELFTESTS is not set
+# CONFIG_LOCK_TORTURE_TEST is not set
 # CONFIG_STACKTRACE is not set
+# CONFIG_DEBUG_KOBJECT is not set
 CONFIG_DEBUG_BUGVERBOSE=y
+# CONFIG_DEBUG_LIST is not set
+# CONFIG_DEBUG_PI_LIST is not set
+# CONFIG_DEBUG_SG is not set
+# CONFIG_DEBUG_NOTIFIERS is not set
+# CONFIG_DEBUG_CREDENTIALS is not set
 
 #
 # RCU Debugging
 #
 # CONFIG_SPARSE_RCU_POINTER is not set
 # CONFIG_TORTURE_TEST is not set
+# CONFIG_RCU_TORTURE_TEST is not set
 CONFIG_RCU_CPU_STALL_TIMEOUT=60
+# CONFIG_RCU_CPU_STALL_INFO is not set
+# CONFIG_RCU_TRACE is not set
+# CONFIG_DEBUG_BLOCK_EXT_DEVT is not set
+# CONFIG_NOTIFIER_ERROR_INJECTION is not set
+# CONFIG_FAULT_INJECTION is not set
+# CONFIG_LATENCYTOP is not set
 CONFIG_ARCH_HAS_DEBUG_STRICT_USER_COPY_CHECKS=y
+# CONFIG_DEBUG_STRICT_USER_COPY_CHECKS is not set
 CONFIG_USER_STACKTRACE_SUPPORT=y
 CONFIG_HAVE_FUNCTION_TRACER=y
 CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
@@ -4517,6 +4595,11 @@ CONFIG_TRACING_SUPPORT=y
 # Runtime Testing
 #
 # CONFIG_LKDTM is not set
+# CONFIG_TEST_LIST_SORT is not set
+# CONFIG_BACKTRACE_SELF_TEST is not set
+# CONFIG_RBTREE_TEST is not set
+# CONFIG_INTERVAL_TREE_TEST is not set
+# CONFIG_PERCPU_TEST is not set
 # CONFIG_ATOMIC64_SELFTEST is not set
 # CONFIG_ASYNC_RAID6_TEST is not set
 # CONFIG_TEST_STRING_HELPERS is not set
@@ -4531,12 +4614,19 @@ CONFIG_TRACING_SUPPORT=y
 # CONFIG_TEST_UDELAY is not set
 # CONFIG_SAMPLES is not set
 CONFIG_HAVE_ARCH_KGDB=y
+# CONFIG_KGDB is not set
 CONFIG_STRICT_DEVMEM=y
 CONFIG_X86_VERBOSE_BOOTUP=y
 CONFIG_EARLY_PRINTK=y
 # CONFIG_EARLY_PRINTK_DBGP is not set
+# CONFIG_X86_PTDUMP is not set
+CONFIG_DEBUG_RODATA=y
+CONFIG_DEBUG_RODATA_TEST=y
 # CONFIG_DEBUG_SET_MODULE_RONX is not set
+# CONFIG_DEBUG_NX_TEST is not set
 CONFIG_DOUBLEFAULT=y
+# CONFIG_DEBUG_TLBFLUSH is not set
+# CONFIG_IOMMU_DEBUG is not set
 # CONFIG_IOMMU_STRESS is not set
 CONFIG_HAVE_MMIOTRACE_SUPPORT=y
 CONFIG_IO_DELAY_TYPE_0X80=0
@@ -4548,7 +4638,11 @@ CONFIG_IO_DELAY_0X80=y
 # CONFIG_IO_DELAY_UDELAY is not set
 # CONFIG_IO_DELAY_NONE is not set
 CONFIG_DEFAULT_IO_DELAY_TYPE=0
+# CONFIG_DEBUG_BOOT_PARAMS is not set
+# CONFIG_CPA_DEBUG is not set
 # CONFIG_OPTIMIZE_INLINING is not set
+# CONFIG_DEBUG_NMI_SELFTEST is not set
+# CONFIG_X86_DEBUG_STATIC_CPU_HAS is not set
 
 #
 # Security options
@@ -4788,6 +4882,7 @@ CONFIG_TEXTSEARCH_KMP=y
 CONFIG_TEXTSEARCH_BM=y
 CONFIG_TEXTSEARCH_FSM=y
 CONFIG_BTREE=y
+CONFIG_INTERVAL_TREE=y
 CONFIG_ASSOCIATIVE_ARRAY=y
 CONFIG_HAS_IOMEM=y
 CONFIG_HAS_IOPORT_MAP=y
