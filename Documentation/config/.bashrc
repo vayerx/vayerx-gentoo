@@ -48,6 +48,11 @@ export UNCRUSTIFY_CONFIG=".uncrustify"
 
 function ghead() {
     git lv ${1:-} | head -n ${2:-5}
+
+function glast() {
+    local wday
+    [ $(date '+%w') -eq 1 ] && wday=3 || wday=1
+    git lvf | grep "$(git config user.name).*$(date --date "${wday} days ago" '+%a, %d %b %Y')"
 }
 
 function gcherry() {

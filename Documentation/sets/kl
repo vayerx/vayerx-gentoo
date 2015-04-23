@@ -2,6 +2,7 @@ app-arch/rpm
 app-emulation/docker
 app-emulation/virtualbox
 app-text/asciidoc
+dev-db/pg_top
 dev-db/pgadmin3
 dev-db/pgbadger
 dev-db/pguint
@@ -10,3 +11,5 @@ dev-java/oracle-jre-bin:1.7
 gnome-base/nautilus
 net-misc/bridge-utils
 sys-devel/gcc:4.7
+www-client/chromium
+www-plugins/chrome-binary-plugins

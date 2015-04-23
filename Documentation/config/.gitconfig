@@ -8,6 +8,7 @@
 	fe = fetch --prune
 	lg = log --pretty=vay --first-parent
 	lv = log --pretty=vaylong --first-parent
+	lvf = log --pretty=vaylong
 	pu = pull --ff-only
 	rb = rebase
 	rl = rev-list
@@ -48,6 +49,12 @@
 [pretty]
 	vay = %Cgreen%h %Creset%s%Creset
 	vaylong = %Cgreen%h %Cred%an %Cgreen%aD %Creset%s
+
+[merge]
+	ff = false
+
+[pull]
+	ff = only
 
 [push]
 	default = tracking
