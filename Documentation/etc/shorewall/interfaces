@@ -7,6 +7,7 @@
 # http://www.shorewall.net/manpages/shorewall-interfaces.html
 #
 ###############################################################################
-#ZONE	INTERFACE	BROADCAST	OPTIONS
-
-net	eth0		detect		dhcp
+?FORMAT 2
+###############################################################################
+#ZONE		INTERFACE		OPTIONS
+net		eth0			dhcp,nosmurfs,tcpflags
