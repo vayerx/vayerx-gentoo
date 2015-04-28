@@ -1,7 +1,0 @@
-=x11-libs/libva-1.2.1-r1
-=x11-libs/libva-vdpau-driver-0.7.4-r1
-media-libs/avidemux-core
-media-libs/avidemux-plugins
-media-libs/mlt
-media-video/avidemux
-media-video/kdenlive

@@ -1,2 +1,0 @@
-%networkers ALL=(root) NOPASSWD:/usr/sbin/NetworkManager
-%wheel ALL=(ALL) ALL

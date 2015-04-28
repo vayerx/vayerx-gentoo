@@ -1,14 +1,2 @@
 media-libs/libmtp **
-app-antivirus/clamav
-dev-libs/openssl
-media-plugins/alsa-plugins
-net-analyzer/ntop
-net-misc/batman-adv
-net-misc/openconnect
-net-misc/proxychains
-net-misc/proxytunnel
-sys-devel/clang
 sys-power/acpi_call **
-vayerx/314zdato
-vayerx/lxde
-vayerx/systaff

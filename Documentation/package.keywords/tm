@@ -1,17 +1,1 @@
-=app-arch/snappy-1.0.5
-=app-text/libmspub-0.0.3
-=dev-db/mongodb-2.4.5-r10
-=dev-libs/libgit2-0.17.0
-=dev-libs/liborcus-0.3.0
-=dev-libs/thrift-0.9.0
-=dev-python/pymongo-2.4.1
-=sys-devel/ucpp-1.3.4
-dev-cpp/gmock
-dev-cpp/gtest
-dev-java/oracle-jre-bin
-dev-libs/libaio
-dev-python/jsonpath
-dev-util/cmake
-dev-util/kelbt
-net-misc/proxytunnel
 sys-devel/gcc:4.9 **

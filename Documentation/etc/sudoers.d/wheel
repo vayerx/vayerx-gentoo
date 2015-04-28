@@ -1,0 +1,4 @@
+%networkers ALL=(root) NOPASSWD: /usr/sbin/NetworkManager, /etc/init.d/cntlm
+%wheel ALL=(ALL) ALL
+%wheel ALL=(ALL) NOPASSWD: /usr/bin/rc-config restart *
+

@@ -1,3 +1,0 @@
-%wheel ALL=(ALL) ALL
-%wheel ALL=(ALL) NOPASSWD: /usr/bin/rc-config
-

@@ -1,27 +1,6 @@
-app-vim/command-t
 app-vim/project **
-dev-cpp/cppstaff
 dev-cpp/gmock **
 dev-cpp/gtest **
-dev-libs/shflags
-dev-libs/tinyxml2
-dev-qt/qt-creator
-dev-util/android-ndk
-dev-util/cppcheck
-dev-util/geany
-dev-util/gource
 dev-util/kdevelop-python **
 dev-util/kdevelop:4 **
 dev-util/kdevplatform:4 **
-dev-util/lcov
-dev-util/mutrace
-dev-util/patchelf
-dev-util/uncrustify
-dev-util/valgrind
-dev-vcs/git
-dev-vcs/git-flow-completion
-dev-vcs/git-review
-dev-vcs/gitflow
-sys-devel/gcc:4.8
-sys-devel/gdb
-vayerx/develop
