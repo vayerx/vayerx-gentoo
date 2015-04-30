@@ -7,7 +7,7 @@ CMAKE_REQUIRED="never"
 KDE_REQUIRED="optional"
 AT_M4DIR="cygnal"
 # won't build with python-3, bug #392969
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit autotools eutils kde4-base multilib nsplugins python-any-r1 flag-o-matic
 
@@ -43,7 +43,7 @@ RDEPEND=">=dev-libs/boost-1.41.0
 	dev-libs/libxml2
 	virtual/jpeg
 	media-libs/libpng
-	net-misc/curl
+	net-misc/curl[rtmp]
 	x11-libs/libX11
 	x11-libs/libXi
 	x11-libs/libXmu

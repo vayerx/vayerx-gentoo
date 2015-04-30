@@ -43,6 +43,7 @@ net-fs/samba client
 net-im/psi -crypt extras -jingle spell xscreensaver
 net-im/skype apulse
 net-misc/ciscovpn openssl
+net-misc/curl idn rtmp
 sci-geosciences/gpsd usb
 sci-geosciences/qlandkartegt gps
 sci-libs/gdal -python
