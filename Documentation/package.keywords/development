@@ -4,3 +4,4 @@ dev-cpp/gtest **
 dev-util/kdevelop-python **
 dev-util/kdevelop:4 **
 dev-util/kdevplatform:4 **
+kde-base/kdelibs:4 **

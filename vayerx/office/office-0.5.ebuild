@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="burn kde +lxde mate +rich excessive"
+IUSE="burn gtk kde mate +rich +excessive abi_x86_32"
 
 PDEPEND="
 	burn? (
@@ -35,15 +35,15 @@ PDEPEND="
 		kde-base/okular
 	)
 
+	gtk? (
+		dev-util/geany
+	)
+	!gtk? (
+		app-editors/leafpad
+	)
+
 	mate? (
 		x11-themes/mate-icon-theme
-		|| (
-			dev-util/geany
-			app-editors/leafpad
-		)
-	)
-	!mate? (
-		app-editors/leafpad
 	)
 
 	rich? (
@@ -63,9 +63,10 @@ PDEPEND="
 	)
 
 	rich? (
-		app-emulation/q4wine
-		app-emulation/winetricks
-		app-text/chm2pdf
+		excessive? (
+			app-text/chm2pdf
+			www-plugins/gnash
+		)
 		app-text/djview
 		app-text/mupdf
 		app-office/dia
@@ -73,7 +74,10 @@ PDEPEND="
 		media-gfx/exiftags
 		media-sound/picard
 		media-video/vlc
-		www-client/links
-		www-plugins/gnash
+
+		abi_x86_32? (
+			app-emulation/wine
+			app-emulation/winetricks
+		)
 	)
 "
