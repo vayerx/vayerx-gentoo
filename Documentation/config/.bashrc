@@ -48,6 +48,7 @@ export UNCRUSTIFY_CONFIG=".uncrustify"
 
 function ghead() {
     git lv ${1:-} | head -n ${2:-5}
+}
 
 function glast() {
     local wday

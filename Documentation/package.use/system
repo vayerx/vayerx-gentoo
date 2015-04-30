@@ -12,8 +12,8 @@ dev-db/sqlite secure-delete
 dev-libs/glib xattr
 dev-libs/openssl gmp -tls-heartbeat
 dev-libs/xmlsec gcrypt
-dev-python/PyQt4 webkit declarative
 dev-python/pycairo -xcb
+dev-python/PyQt4 webkit declarative
 dev-qt/qt3support accessibility kde
 dev-qt/qtdeclarative accessibility webkit
 dev-qt/qtgui accessibility dbus
@@ -53,6 +53,7 @@ sys-apps/lm_sensors sensord
 sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-boot/grub -ncurses
 sys-libs/ncurses -gpm
+>=www-client/firefox-36 -system-cairo
 x11-libs/cairo -lto xlib-xcb
-x11-libs/libSM -uuid
 x11-libs/libdrm -valgrind
+x11-libs/libSM -uuid

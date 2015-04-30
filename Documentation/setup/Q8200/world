@@ -2,7 +2,6 @@ app-emulation/playonlinux
 app-misc/gramps
 app-office/gnucash
 dev-db/sqlitebrowser
-dev-lang/ruby:2.0::vayerx
 dev-ruby/ruby-sdl
 dev-util/aptana
 games-util/qjoypad
@@ -22,7 +21,8 @@ net-misc/tor
 net-print/splix
 sys-apps/usb_modeswitch
 sys-boot/unetbootin
+sys-fs/mtpfs
 sys-fs/simple-mtpfs
-sys-kernel/gentoo-sources:3.18.10
+sys-kernel/gentoo-sources:3.19.3
 vayerx/lxde
 x11-drivers/radeon-ucode

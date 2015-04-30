@@ -30,7 +30,7 @@ sys-devel/gcc gcj
 vayerx/develop kde math
 vayerx/office burn excessive mate kde rich
 vayerx/systaff -rich
-www-client/firefox system-cairo system-icu system-jpeg system-sqlite
+www-client/firefox system-icu system-jpeg system-sqlite
 www-plugins/gnash -nsplugin -vaapi
 www-plugins/lightspark -ffmpeg -nsplugin
 x11-base/xorg-server xvfb
