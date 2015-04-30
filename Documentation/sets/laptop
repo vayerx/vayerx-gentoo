@@ -1,0 +1,11 @@
+app-admin/mcelog
+app-portage/mirrorselect
+net-dialup/ppp
+net-dialup/pppconfig
+net-dialup/rp-pppoe
+net-misc/proxychains
+sys-power/acpid
+sys-power/cpupower
+sys-power/pm-utils
+sys-power/powertop
+x11-misc/xsensors

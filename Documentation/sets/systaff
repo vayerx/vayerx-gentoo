@@ -1,6 +1,7 @@
 app-admin/logrotate
 app-admin/mcelog
 app-admin/pwgen
+app-admin/sudo
 app-admin/syslog-ng
 app-antivirus/clamav
 app-editors/vim
@@ -22,16 +23,12 @@ net-analyzer/netcat
 net-analyzer/nmap
 net-analyzer/tcpdump
 net-analyzer/traceroute
-net-dialup/ppp
-net-dialup/pppconfig
-net-dialup/rp-pppoe
 net-dns/bind-tools
 net-firewall/shorewall
 net-firewall/shorewall6
 net-misc/dhcpcd
 net-misc/netkit-telnetd
 net-misc/ntp
-net-misc/proxychains
 net-misc/whois
 sys-apps/attr
 sys-apps/dstat
@@ -44,7 +41,7 @@ sys-apps/smartmontools
 sys-apps/usbutils
 sys-block/gparted
 sys-boot/grub:0
-sys-devel/gcc:4.8
+sys-devel/gcc:4.9
 sys-fs/ddrescue
 sys-fs/inotify-tools
 sys-kernel/genkernel
@@ -52,7 +49,6 @@ sys-kernel/gentoo-sources
 sys-power/acpid
 sys-power/cpupower
 sys-power/pm-utils
-sys-power/powertop
 sys-process/htop
 sys-process/iotop
 sys-process/lsof
