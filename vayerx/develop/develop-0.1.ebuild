@@ -17,9 +17,9 @@ PDEPEND="
 	dev-util/meld
 
 	kde? (
-		kde-base/kdebase-runtime-meta
-		kde-base/kompare
-		kde-base/umbrello
+		kde-apps/kdebase-runtime-meta
+		kde-apps/kompare
+		kde-apps/umbrello
 		kde-misc/kdiff3
 	)
 
