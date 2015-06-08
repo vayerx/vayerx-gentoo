@@ -1,0 +1,8 @@
+<kpartgui version="1" name="kdevcontextbrowser">
+  <ActionProperties>
+    <Action shortcut="Meta+Left" name="previous_context"/>
+    <Action shortcut="Meta+Right" name="next_context"/>
+    <Action shortcut="Meta+Shift+Left" name="previous_use"/>
+    <Action shortcut="Meta+Shift+Right" name="next_use"/>
+  </ActionProperties>
+</kpartgui>

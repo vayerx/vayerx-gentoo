@@ -1,0 +1,14 @@
+<kpartgui version="1" name="kdevquickopen">
+  <ActionProperties>
+    <Action shortcut="Ctrl+Alt+Q" name="quick_open"/>
+    <Action shortcut="Ctrl+Alt+O" name="quick_open_file"/>
+    <Action shortcut="Ctrl+Alt+C" name="quick_open_class"/>
+    <Action shortcut="Ctrl+Alt+M" name="quick_open_function"/>
+    <Action shortcut="Ctrl+Alt+D" name="quick_open_documentation"/>
+    <Action shortcut="Ctrl+." name="quick_open_jump_declaration"/>
+    <Action shortcut="Ctrl+," name="quick_open_jump_definition"/>
+    <Action shortcut="Ctrl+Alt+PgDown" name="quick_open_next_function"/>
+    <Action shortcut="Ctrl+Alt+PgUp" name="quick_open_prev_function"/>
+    <Action shortcut="Ctrl+Alt+N" name="quick_open_outline"/>
+  </ActionProperties>
+</kpartgui>

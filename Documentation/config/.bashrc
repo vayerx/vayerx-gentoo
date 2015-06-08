@@ -43,6 +43,7 @@ alias ll='ls -l'
 
 alias calg="valgrind --tool=callgrind"
 alias valg="valgrind --track-origins=yes"
+alias helg="valgrind --tool=helgrind --free-is-write=yes"
 
 export UNCRUSTIFY_CONFIG=".uncrustify"
 
@@ -51,9 +52,11 @@ function ghead() {
 }
 
 function glast() {
-    local wday
-    [ $(date '+%w') -eq 1 ] && wday=3 || wday=1
-    git lvf | grep "$(git config user.name).*$(date --date "${wday} days ago" '+%a, %d %b %Y')"
+    local wday="$1"
+    [ -z "$wday" ] && { [ $(date '+%w') -eq 1 ] && wday=3 || wday=1; }
+    local date=$(date --date "${wday} days ago" '+%a, %e %b %Y' | sed 's/  / /')
+    echo "Commits of $date"
+    git lvf | grep "$(git config user.name).*$date"
 }
 
 function gcherry() {

@@ -34,7 +34,7 @@ media-libs/sdl-mixer mod modplug
 media-plugins/audacious-plugins cue
 media-sound/asunder -aac
 media-sound/audacity id3tag twolame
-media-sound/clementine mtp
+media-sound/clementine lastfm mtp
 media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska postproc freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live lua
 net-analyzer/rrdtool graph
 net-analyzer/tcpdump -samba

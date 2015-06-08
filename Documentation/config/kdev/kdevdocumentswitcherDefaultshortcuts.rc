@@ -1,0 +1,6 @@
+<kpartgui version="1" name="kdevdocumentswitcher">
+  <ActionProperties>
+    <Action shortcut="Ctrl+Tab" name="last_used_views_forward"/>
+    <Action shortcut="Ctrl+Shift+Tab" name="last_used_views_backward"/>
+  </ActionProperties>
+</kpartgui>

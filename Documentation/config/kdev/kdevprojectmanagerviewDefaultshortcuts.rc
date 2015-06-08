@@ -1,0 +1,7 @@
+<kpartgui version="1" name="kdevprojectmanagerview">
+  <ActionProperties>
+    <Action shortcut="F8" name="project_build"/>
+    <Action shortcut="Shift+F8" name="project_install"/>
+    <Action shortcut="Ctrl+&lt;" name="locate_document"/>
+  </ActionProperties>
+</kpartgui>

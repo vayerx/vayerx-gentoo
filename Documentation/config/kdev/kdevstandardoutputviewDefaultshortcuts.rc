@@ -1,0 +1,6 @@
+<kpartgui version="1" name="kdevstandardoutputview">
+  <ActionProperties>
+    <Action shortcut="F4" name="next_error"/>
+    <Action shortcut="Shift+F4" name="prev_error"/>
+  </ActionProperties>
+</kpartgui>
