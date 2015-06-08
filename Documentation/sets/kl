@@ -9,7 +9,9 @@ dev-db/pgbadger
 dev-db/pguint
 dev-db/postgresql:9.4
 dev-java/oracle-jre-bin:1.7
+dev-python/dnspython
 gnome-base/nautilus
+net-dns/rbldnsd
 net-misc/bridge-utils
 sys-devel/gcc:4.7
 www-client/chromium

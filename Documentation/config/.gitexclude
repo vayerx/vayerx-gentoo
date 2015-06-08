@@ -3,3 +3,4 @@
 *.core
 *.kate-swp
 *.kdev4
+*.pyc

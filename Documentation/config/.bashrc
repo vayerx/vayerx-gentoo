@@ -41,14 +41,30 @@ alias nlp="netstat -nltup"
 
 alias ll='ls -l'
 
+# Valgrind
 alias calg="valgrind --tool=callgrind"
 alias valg="valgrind --track-origins=yes"
 alias helg="valgrind --tool=helgrind --free-is-write=yes"
 
+# Docker
+for cmd in cp help info kill load ps save rm rmi run stop; do
+    alias d${cmd}="docker $cmd"
+done
+alias dimg="docker images"
+alias dbuild="docker build --force-rm=true --rm=true"
+for cmd in stop kill; do
+    alias d${cmd}all="docker ps -q | xargs --no-run-if-empty docker ${cmd}"
+done
+
 export UNCRUSTIFY_CONFIG=".uncrustify"
 
+# Git
 function ghead() {
     git lv ${1:-} | head -n ${2:-5}
+}
+
+function gheadn() {
+    git lv | head -n ${1:-7}
 }
 
 function glast() {
@@ -117,7 +133,8 @@ function xme() {
     xinit "${binary}" -- :1
 }
 
-alias blya="xrandr --fb 3360x1080 --output VGA-1 --mode 1920x1080 --pos 0x0 --output DVI-I-1 --mode 1440x900 --pos 1920x156"
+alias nunah="echo -e \\033c"
+alias blya="xrandr --fb 3840x1080 --output DVI-0 --mode 1920x1080 --pos 0x0 --output DisplayPort-0 --mode 1920x1080 --pos 1920x0"
 
 function fciv() {
     local file="${1:+--file $1}"
