@@ -20,7 +20,7 @@ dev-qt/qtgui accessibility dbus
 dev-qt/qtsvg accessibility
 dev-ruby/rrdtool-bindings graph
 gnome-base/gvfs mtp
-kde-base/ark lzma
+kde-apps/ark lzma
 kde-base/gwenview -handbook kipi
 kde-base/kdelibs semantic-desktop
 mail-client/thunderbird -minimal system-icu system-sqlite

@@ -10,7 +10,7 @@ dev-python/pystaff rich
 dev-python/spyder pylint sphinx
 dev-qt/qt-creator android -linguas_ru
 dev-ruby/rbstaff gui datamining
-kde-base/okular chm
+kde-apps/okular chm
 media-gfx/blender -openmp
 media-gfx/graphicsmagick -imagemagick
 media-gfx/hugin sift

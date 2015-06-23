@@ -30,9 +30,9 @@ PDEPEND="
 	)
 
 	kde? (
-		kde-base/gwenview
-		kde-base/kolourpaint
-		kde-base/okular
+		kde-apps/gwenview
+		kde-apps/kolourpaint
+		kde-apps/okular
 	)
 
 	gtk? (
