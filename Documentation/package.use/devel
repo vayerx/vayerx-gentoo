@@ -1,5 +1,5 @@
 app-crypt/heimdal -ssl
-app-editors/vim -X cscope
+app-editors/vim cscope ruby -X
 dev-java/swing-layout source
 dev-lang/perl ithreads
 dev-lang/python sqlite tk

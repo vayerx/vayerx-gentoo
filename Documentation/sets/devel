@@ -1,7 +1,10 @@
+app-admin/lsyncd
 app-arch/makeself
 app-arch/unmakeself
 app-doc/doxygen
 app-i18n/enca
+app-vim/command-t
+app-vim/nerdtree
 dev-libs/boost:1.55
 dev-libs/boost:1.56
 dev-libs/jsoncpp
