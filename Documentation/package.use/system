@@ -1,7 +1,7 @@
 app-admin/conky iostats portmon
 app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
-app-crypt/heimdal -ssl
+app-crypt/heimdal -ssl -threads
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions
 app-emulation/wine mono odbc s3tc samba staging
@@ -23,6 +23,7 @@ gnome-base/gvfs mtp
 kde-base/ark lzma
 kde-base/gwenview -handbook kipi
 kde-base/kdelibs semantic-desktop
+mail-client/thunderbird -minimal system-icu system-sqlite
 mate-base/mate-applets networkmanager
 mate-base/mate-panel networkmanager
 mate-extra/mate-utils applet
