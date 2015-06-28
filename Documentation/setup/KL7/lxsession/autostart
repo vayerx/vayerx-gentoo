@@ -1,0 +1,5 @@
+@lxpanel --profile LXDE
+@pcmanfm --desktop --profile LXDE
+@xscreensaver -no-splash
+@xrandr --fb 3840x1080 --output DVI-0 --mode 1920x1080 --pos 0x0 --output DisplayPort-0 --mode 1920x1080 --pos 1920x0
+@setxkbmap -model pc105 -layout "us,ru" -option "grp:shifts_toggle"
