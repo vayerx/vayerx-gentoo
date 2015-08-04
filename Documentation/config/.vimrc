@@ -39,8 +39,8 @@ nmap <F3> :NERDTreeToggle<CR>
 nmap <C-o> :CommandT<CR>
 imap <C-o> <Esc> :CommandT<CR>
 
-nmap <C-Right> :bnext<CR>
-nmap <C-Left> :bprev<CR>
+nmap <M-Right> :bnext<CR>
+nmap <M-Left> :bprev<CR>
 nmap <C-w> :bd<CR>
 
 " search and replace

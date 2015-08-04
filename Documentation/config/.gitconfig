@@ -3,8 +3,7 @@
 	ch = cherry-pick
 	ci = commit
 	co = checkout
-	df = diff
-	d  = diff --word-diff-regex=. --word-diff=color
+	df = diff --word-diff-regex=. --word-diff=color
 	fe = fetch --prune
 	lg = log --pretty=vay --first-parent
 	lv = log --pretty=vaylong --first-parent
@@ -35,7 +34,6 @@
 
 [core]
 	eol = native
-	excludesfile = /home/vayerx/.gitexclude
 	excludesfile = ~/.gitexclude
 	pager = cat
 	whitespace = trailing-space,space-before-tab

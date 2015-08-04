@@ -30,6 +30,7 @@ mate-extra/mate-utils applet
 media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
 media-libs/gst-plugins-bad -gles2
+media-libs/libvpx postproc
 media-libs/mlt melt kdenlive -python
 media-libs/sdl-mixer mod modplug
 media-plugins/audacious-plugins cue

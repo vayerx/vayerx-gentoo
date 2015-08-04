@@ -1,5 +1,7 @@
 media-gfx/gnome-screenshot
+net-misc/rdesktop
 net-proxy/cntlm
+sys-fs/cryptsetup
 sys-fs/simple-mtpfs
 vayerx/lxde
 x11-drivers/radeon-ucode

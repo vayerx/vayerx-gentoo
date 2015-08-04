@@ -16,4 +16,5 @@ dev-vcs/git -gtk perl tk webdav -xinetd
 dev-vcs/subversion -dso perl -ruby
 media-libs/mlt -ruby
 sys-devel/gcc awt graphite
+sys-devel/llvm clang
 sys-libs/zlib minizip

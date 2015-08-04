@@ -2,6 +2,8 @@ app-admin/ansible
 app-arch/rpm
 app-emulation/docker
 app-emulation/virtualbox
+app-emulation/virtualbox-additions
+app-emulation/virtualbox-extpack-oracle
 app-text/asciidoc
 dev-cpp/yaml-cpp
 dev-db/apgdiff
@@ -18,6 +20,7 @@ dev-python/psycopg:2
 gnome-base/nautilus
 net-dns/rbldnsd
 net-misc/bridge-utils
+sys-devel/clang
 sys-devel/gcc:4.7
 www-client/chromium
 www-client/fetch
