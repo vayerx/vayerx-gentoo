@@ -33,6 +33,7 @@ media-libs/gst-plugins-bad -gles2
 media-libs/libvpx postproc
 media-libs/mlt melt kdenlive -python
 media-libs/sdl-mixer mod modplug
+media-libs/vigra openexr
 media-plugins/audacious-plugins cue
 media-sound/asunder -aac
 media-sound/audacity id3tag twolame
@@ -48,7 +49,7 @@ net-misc/ciscovpn openssl
 net-misc/curl idn rtmp
 sci-geosciences/gpsd usb
 sci-geosciences/qlandkartegt gps
-sci-libs/gdal -python
+sci-libs/gdal -python -ruby
 sci-libs/hdf5 -cxx -fortran
 sci-mathematics/octave curl gnuplot
 sys-apps/lm_sensors sensord
@@ -57,5 +58,6 @@ sys-boot/grub -ncurses
 sys-libs/ncurses -gpm
 >=www-client/firefox-36 -system-cairo
 x11-libs/cairo -lto xlib-xcb
+x11-libs/fltk xft
 x11-libs/libdrm -valgrind
 x11-libs/libSM -uuid

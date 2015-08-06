@@ -5,6 +5,7 @@ dev-db/sqlitebrowser
 dev-ruby/ruby-sdl
 dev-util/aptana
 games-util/qjoypad
+games-util/steam-meta
 kde-base/kdm
 mate-base/mate
 media-gfx/bconv
@@ -16,13 +17,12 @@ media-sound/audacity
 media-sound/mp3unicode
 media-video/guvcview
 net-im/skype
-net-misc/ciscovpn
 net-misc/tor
 net-print/splix
 sys-apps/usb_modeswitch
 sys-boot/unetbootin
 sys-fs/mtpfs
 sys-fs/simple-mtpfs
-sys-kernel/gentoo-sources:3.19.3
+sys-kernel/gentoo-sources:3.19.8
 vayerx/lxde
 x11-drivers/radeon-ucode
