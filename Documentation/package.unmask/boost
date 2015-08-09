@@ -1,4 +1,8 @@
 dev-libs/boost:1.55
 dev-libs/boost:1.56
+dev-libs/boost:1.57
+dev-libs/boost:1.58
 dev-util/boost-build:1.55
 dev-util/boost-build:1.56
+dev-util/boost-build:1.57
+dev-util/boost-build:1.58

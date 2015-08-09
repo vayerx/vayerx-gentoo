@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="5"
-PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_4} )
 
 inherit eutils flag-o-matic multilib multiprocessing python-r1 toolchain-funcs versionator multilib-minimal
 
@@ -114,6 +114,11 @@ __EOF__
 }
 
 pkg_setup() {
+	if use context && [[ $(gcc-major-version) -lt 5 && $(gcc-minor-version) -lt 9 ]]; then
+		eerror "Boost.context requires GCC 4.9"
+		die
+	fi
+
 	# Bail out on unsupported build configuration, bug #456792
 	if [[ -f "${EROOT}etc/site-config.jam" ]]; then
 		grep -q gentoorelease "${EROOT}etc/site-config.jam" && grep -q gentoodebug "${EROOT}etc/site-config.jam" ||
@@ -274,6 +279,7 @@ multilib_src_install_all() {
 	if ! use context; then
 		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/context || die
 		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/coroutine || die
+		rm    "${ED}"/usr/include/boost-${MAJOR_V}/asio/spawn.hpp || die
 	fi
 
 	if use doc; then
