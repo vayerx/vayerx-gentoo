@@ -21,6 +21,9 @@ set autoindent
 set smartindent
 set pastetoggle=<F5>
 
+nmap <C-t> :set noexpandtab<CR>
+imap <C-t> <Esc> :set noexpandtab<CR>i
+
 vnoremap < <gv
 vnoremap > >gv
 

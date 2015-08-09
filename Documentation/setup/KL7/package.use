@@ -1,5 +1,5 @@
 app-crypt/heimdal static-libs
-dev-db/postgresql kerberos static-libs
+dev-db/postgresql kerberos perl static-libs
 dev-python/pystaff rich
 dev-qt/qtsql mysql
 vayerx/office excessive
