@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
+EAPI=5
 inherit eutils games waf-utils git-2
 
 DESCRIPTION="Tongue-in-cheek dungeon crawl game. Client and Server"
@@ -35,9 +35,14 @@ DEPEND="dev-db/sqlite:3
 "
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	epatch "${FILESDIR}/${PN}-0.8.0_ogre_overlay.patch"
+}
+
 src_configure() {
 	waf-utils_src_configure \
-		--relpath=false --optimize=true \
+		--disable-relpath \
+		--enable-optimization \
 		--bindir="${GAMES_BINDIR}" \
 		--datadir="${GAMES_DATADIR}"
 }
