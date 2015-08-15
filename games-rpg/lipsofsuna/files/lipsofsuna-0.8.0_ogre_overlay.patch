@@ -1,0 +1,12 @@
+diff --git a/wscript b/wscript
+index 649e85a..595adc7 100644
+--- a/lipsofsuna-0.8.0/wscript
++++ b/lipsofsuna-0.8.0/wscript
+@@ -94,6 +94,7 @@ def configure(conf):
+	conf.check_ogre_terrain()
+	conf.check_ois()
+	conf.check_xlib()
++		conf.env.append_value('INCLUDES', ['/usr/include/OGRE/Overlay'])
+    if Options.options.sound:
+	conf.check_openal()
+	conf.check_ogg()
