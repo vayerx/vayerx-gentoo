@@ -3,7 +3,8 @@
 	ch = cherry-pick
 	ci = commit
 	co = checkout
-	df = diff --word-diff-regex=. --word-diff=color
+	df = diff --word-diff=color
+	dff = diff --color-words=[^[:space:]]
 	fe = fetch --prune
 	lg = log --pretty=vay --first-parent
 	lv = log --pretty=vaylong --first-parent
@@ -11,6 +12,8 @@
 	pu = pull --ff-only
 	rb = rebase
 	rl = rev-list
+	sh = show --word-diff=color
+	shf = show --color-words=[^[:space:]]
 	st = status
 	rup = remote update
 

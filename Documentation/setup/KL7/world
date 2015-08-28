@@ -5,4 +5,5 @@ sys-fs/cryptsetup
 sys-fs/simple-mtpfs
 vayerx/lxde
 x11-drivers/radeon-ucode
+x11-misc/notify-osd
 x11-misc/xtrlock::vayerx

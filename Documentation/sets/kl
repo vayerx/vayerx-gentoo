@@ -13,8 +13,10 @@ dev-db/pg_top
 dev-db/pguint
 dev-db/postgresql:9.4
 dev-db/Pyrseas
+dev-db/slony1
 dev-db/yoyo-migrations
 dev-java/oracle-jre-bin:1.7
+dev-libs/boost:1.55
 dev-libs/geoip
 dev-perl/Switch
 dev-python/dnspython
