@@ -26,7 +26,6 @@ net-analyzer/tcpdump
 net-analyzer/traceroute
 net-dns/bind-tools
 net-firewall/shorewall
-net-firewall/shorewall6
 net-misc/dhcpcd
 net-misc/netkit-telnetd
 net-misc/ntp

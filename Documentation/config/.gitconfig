@@ -5,7 +5,7 @@
 	co = checkout
 	df = diff --word-diff=color
 	dff = diff --color-words=[^[:space:]]
-	fe = fetch --prune
+	fe = fetch --prune --all
 	lg = log --pretty=vay --first-parent
 	lv = log --pretty=vaylong --first-parent
 	lvf = log --pretty=vaylong
