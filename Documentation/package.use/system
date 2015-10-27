@@ -31,7 +31,7 @@ media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
 media-libs/gst-plugins-bad -gles2
 media-libs/libvpx postproc
-media-libs/mlt melt kdenlive -python
+media-libs/mlt kdenlive melt -python qt4
 media-libs/sdl-mixer mod modplug
 media-libs/vigra openexr
 media-plugins/audacious-plugins cue
@@ -48,7 +48,7 @@ net-im/skype apulse
 net-misc/ciscovpn openssl
 net-misc/curl idn rtmp
 sci-geosciences/gpsd usb
-sci-geosciences/qlandkartegt gps
+sci-geosciences/qlandkartegt gps -qt5
 sci-libs/gdal -python -ruby
 sci-libs/hdf5 -cxx -fortran
 sci-mathematics/octave curl gnuplot

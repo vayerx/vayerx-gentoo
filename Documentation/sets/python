@@ -3,5 +3,6 @@ dev-python/ipython
 dev-python/jsonpath
 dev-python/lxml
 dev-python/pystaff
+dev-python/pyyaml
 dev-python/setuptools
 dev-python/spyder

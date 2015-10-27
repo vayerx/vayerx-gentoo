@@ -1,5 +1,6 @@
 app-crypt/heimdal -ssl
 app-editors/vim cscope ruby -X
+dev-db/postgresql perl
 dev-db/slony1 doc perl
 dev-java/swing-layout source
 dev-lang/perl ithreads

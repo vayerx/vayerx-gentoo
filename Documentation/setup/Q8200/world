@@ -1,8 +1,13 @@
 app-emulation/playonlinux
+app-emulation/q4wine
 app-misc/gramps
+app-mobilephone/heimdall
+app-mobilephone/qtadb
 app-office/gnucash
+dev-db/postgresql:9.4
 dev-db/sqlitebrowser
 dev-ruby/ruby-sdl
+dev-ruby/sqlite3
 dev-util/aptana
 games-util/qjoypad
 games-util/steam-meta
@@ -21,8 +26,9 @@ net-misc/tor
 net-print/splix
 sys-apps/usb_modeswitch
 sys-boot/unetbootin
+sys-firmware/radeon-ucode
+sys-fs/fuseiso
 sys-fs/mtpfs
 sys-fs/simple-mtpfs
 sys-kernel/gentoo-sources:3.19.8
 vayerx/lxde
-x11-drivers/radeon-ucode
