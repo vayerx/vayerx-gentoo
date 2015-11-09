@@ -1,9 +1,10 @@
+dev-db/mdbx
+dev-vcs/git-lfs
 media-gfx/gnome-screenshot
 net-misc/rdesktop
 net-proxy/cntlm
+sys-firmware/radeon-ucode
 sys-fs/cryptsetup
 sys-fs/simple-mtpfs
 vayerx/lxde
-x11-drivers/radeon-ucode
-x11-misc/notify-osd
 x11-misc/xtrlock::vayerx

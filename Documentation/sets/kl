@@ -1,5 +1,6 @@
 app-admin/ansible
 app-arch/rpm
+app-crypt/mit-krb5
 app-emulation/docker
 app-emulation/virtualbox
 app-emulation/virtualbox-additions
@@ -19,6 +20,7 @@ dev-java/oracle-jdk-bin:1.7
 dev-libs/boost:1.55
 dev-libs/geoip
 dev-libs/libpqxx
+dev-libs/marisa
 dev-perl/Switch
 dev-python/dnspython
 dev-python/psycopg:2
@@ -26,7 +28,6 @@ gnome-base/nautilus
 net-dns/rbldnsd
 net-misc/bridge-utils
 sys-devel/clang
-sys-devel/gcc:4.7
 www-client/chromium
 www-client/fetch
 www-plugins/chrome-binary-plugins

@@ -62,3 +62,4 @@ x11-libs/cairo -lto xlib-xcb
 x11-libs/fltk xft
 x11-libs/libdrm -valgrind
 x11-libs/libSM -uuid
+www-client/chromium -hangouts -kerberos
