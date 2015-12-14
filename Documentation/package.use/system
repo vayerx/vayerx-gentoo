@@ -2,6 +2,7 @@ app-admin/conky iostats portmon
 app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
 app-crypt/heimdal -ssl -threads
+app-crypt/pinentry gnome-keyring
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions
 app-emulation/wine mono odbc s3tc samba staging
@@ -10,6 +11,8 @@ app-office/akonadi-server sqlite
 app-text/yagf scanner
 dev-db/sqlite secure-delete
 dev-libs/glib xattr
+dev-libs/libdbusmenu-qt qt5
+dev-libs/libgdata gnome
 dev-libs/openssl gmp -tls-heartbeat
 dev-libs/xmlsec gcrypt
 dev-python/pycairo -xcb
@@ -29,9 +32,12 @@ mate-base/mate-panel networkmanager
 mate-extra/mate-utils applet
 media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
+media-libs/gexiv2 introspection
 media-libs/gst-plugins-bad -gles2
 media-libs/libvpx postproc
 media-libs/mlt kdenlive melt -python qt4
+media-libs/phonon qt4 qt5
+media-libs/phonon-vlc qt5
 media-libs/sdl-mixer mod modplug
 media-libs/vigra openexr
 media-plugins/audacious-plugins cue
@@ -53,13 +59,14 @@ sci-libs/gdal -python -ruby
 sci-libs/hdf5 -cxx -fortran
 sci-mathematics/octave curl gnuplot
 sys-apps/lm_sensors sensord
+sys-auth/polkit-qt qt5
 sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-boot/grub -ncurses
 sys-kernel/gentoo-sources experimental symlink
 sys-libs/ncurses -gpm
+www-client/chromium -hangouts kerberos
 >=www-client/firefox-36 -system-cairo
 x11-libs/cairo -lto xlib-xcb
 x11-libs/fltk xft
 x11-libs/libdrm -valgrind
 x11-libs/libSM -uuid
-www-client/chromium -hangouts -kerberos

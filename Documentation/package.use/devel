@@ -1,5 +1,6 @@
 app-crypt/heimdal -ssl
 app-editors/vim cscope ruby -X
+app-text/texlive-core xetex
 dev-db/postgresql perl
 dev-db/slony1 doc perl
 dev-java/swing-layout source
@@ -17,6 +18,6 @@ dev-util/kdevplatform -linguas_ru
 dev-vcs/git -gtk perl tk webdav -xinetd
 dev-vcs/subversion -dso perl -ruby
 media-libs/mlt -ruby
-sys-devel/gcc awt graphite
+sys-devel/gcc awt go graphite
 sys-devel/llvm clang
 sys-libs/zlib minizip

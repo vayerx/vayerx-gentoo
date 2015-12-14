@@ -40,7 +40,7 @@ sys-apps/pciutils
 sys-apps/smartmontools
 sys-apps/usbutils
 sys-block/gparted
-sys-boot/grub:0
+sys-boot/grub-static
 sys-devel/gcc:4.9
 sys-fs/ddrescue
 sys-fs/inotify-tools
