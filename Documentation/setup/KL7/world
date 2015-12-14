@@ -1,8 +1,10 @@
 dev-db/mdbx
 dev-vcs/git-lfs
 media-gfx/gnome-screenshot
+net-im/skype
 net-misc/rdesktop
 net-proxy/cntlm
+sci-mathematics/octave
 sys-firmware/radeon-ucode
 sys-fs/cryptsetup
 sys-fs/simple-mtpfs

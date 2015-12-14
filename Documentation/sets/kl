@@ -27,6 +27,7 @@ dev-python/psycopg:2
 gnome-base/nautilus
 net-dns/rbldnsd
 net-misc/bridge-utils
+net-misc/openvpn
 sys-devel/clang
 www-client/chromium
 www-client/fetch

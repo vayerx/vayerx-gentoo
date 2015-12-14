@@ -9,6 +9,7 @@
 	lg = log --pretty=vay --first-parent
 	lv = log --pretty=vaylong --first-parent
 	lvf = log --pretty=vaylong
+	me = merge --no-ff --no-commit --strategy=recursive --strategy-option=patience
 	mt = mergetool
 	pu = pull --ff-only
 	rb = rebase
@@ -44,6 +45,7 @@
 
 [diff]
 	renames = copies
+	external = git-meld
 
 [log]
 	date = iso

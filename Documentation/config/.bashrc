@@ -43,7 +43,8 @@ alias ll='ls -l'
 
 # Valgrind
 alias calg="valgrind --tool=callgrind"
-alias valg="valgrind --track-origins=yes"
+alias valg="valgrind --track-origins=yes --num-callers=30"
+alias valm="valgrind --track-origins=yes --leak-check=full --show-leak-kinds=definite --num-callers=30"
 alias helg="valgrind --tool=helgrind --free-is-write=yes"
 
 # Docker
@@ -96,6 +97,12 @@ function grebase() {
     local target="origin/${1:-devel}"
     git stash
     git rebase $target
+    git stash pop
+}
+
+function gpull() {
+    git stash
+    git pull $@
     git stash pop
 }
 

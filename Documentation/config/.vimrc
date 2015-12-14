@@ -24,8 +24,11 @@ set pastetoggle=<F5>
 nmap <C-t> :set noexpandtab<CR>
 imap <C-t> <Esc> :set noexpandtab<CR>i
 
-vnoremap < <gv
-vnoremap > >gv
+vmap S :sort<CR>
+
+" change indenting
+vnoremap <S-Tab> <gv
+vnoremap <Tab> >gv
 
 " line numbering
 set number
