@@ -1,9 +1,8 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI="5"
-PYTHON_COMPAT=( python{2_7,3_4} )
 
 inherit eutils flag-o-matic multilib multiprocessing python-r1 toolchain-funcs versionator multilib-minimal
 
@@ -16,9 +15,9 @@ HOMEPAGE="http://www.boost.org/"
 SRC_URI="mirror://sourceforge/boost/${MY_P}.tar.bz2"
 
 LICENSE="Boost-1.0"
-SLOT="${MAJOR_V}/${MAJOR_V}"
+SLOT="${MAJOR_V}/${PV}"
 KEYWORDS="~x86 ~amd64"
-IUSE="+context debug doc +eselect icu +nls mpi python static-libs +std-cxx11 +threads tools"
+IUSE="+context debug doc +eselect icu +nls mpi python static-libs std-cxx11 +threads tools"
 
 RDEPEND="abi_x86_32? ( !app-emulation/emul-linux-x86-cpplibs[-abi_x86_32(-)] )
 	icu? ( >=dev-libs/icu-3.6:=[${MULTILIB_USEDEP}] )
@@ -103,7 +102,20 @@ create_user-config.jam() {
 	fi
 
 	if python_bindings_needed; then
-		python_configuration="using python : : ${PYTHON} ;"
+		# boost expects libpython$(pyver) and doesn't allow overrides
+		# and the build system is so creepy that it's easier just to
+		# provide a symlink (linker's going to use SONAME anyway)
+		# TODO: replace it with proper override one day
+		ln -f -s "$(python_get_library_path)" "${T}/lib${EPYTHON}$(get_libname)" || die
+
+		if tc-is-cross-compiler; then
+			python_configuration="using python : ${EPYTHON#python} : : ${SYSROOT:-${EROOT}}/usr/include/${EPYTHON} : ${SYSROOT:-${EROOT}}/usr/$(get_libdir) ;"
+		else
+			# note: we need to provide version explicitly because of
+			# a bug in the build system:
+			# https://github.com/boostorg/build/pull/104
+			python_configuration="using python : ${EPYTHON#python} : ${PYTHON} : $(python_get_includedir) : ${T} ;"
+		fi
 	fi
 
 	cat > "${BOOST_ROOT}/user-config.jam" << __EOF__
@@ -183,7 +195,7 @@ src_configure() {
 
 	OPTIONS+=" pch=off"
 	OPTIONS+=" --boost-build=${EPREFIX}/usr/share/boost-build-${MAJOR_V}"
-	OPTIONS+=" --prefix=${ED}usr"
+	OPTIONS+=" --prefix=\"${ED}usr\""
 	OPTIONS+=" --layout=system"
 	OPTIONS+=" threading=$(usex threads multi single)"
 	OPTIONS+=" link=$(usex static-libs shared,static shared)"
@@ -567,13 +579,6 @@ pkg_preinst() {
 		[[ -L ${symlink} ]] && rm -f "${symlink}"
 	done
 }
-
-# the tests will never fail because these are not intended as sanity
-# tests at all. They are more a way for upstream to check their own code
-# on new compilers. Since they would either be completely unreliable
-# (failing for no good reason) or completely useless (never failing)
-# there is no point in having them in the ebuild to begin with.
-src_test() { :; }
 
 pkg_postinst() {
 	if use eselect; then

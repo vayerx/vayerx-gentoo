@@ -1,8 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI="5"
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 
 inherit slotted-boost
 
@@ -20,4 +21,6 @@ BOOST_PATCHES=(
 	"1.56.0-shared_ptr_helper.patch"
 	"1.56.0-tools_wave.patch"
 	"1.56.0-build-auto_index-tool.patch"
+	"1.55.0-variadic-templates.patch"
+	"1.56.0-atomic.patch"
 )

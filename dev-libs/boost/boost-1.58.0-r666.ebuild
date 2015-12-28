@@ -1,8 +1,9 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI="5"
+PYTHON_COMPAT=( python{2_7,3_4} )
 
 inherit slotted-boost-r58
 
@@ -16,5 +17,6 @@ BOOST_PATCHES=(
 	"1.52.0-threads.patch"
 	"1.55.0-time_facet.patch"
 	"1.55.0-context-x32.patch"
+	"1.56.0-build-auto_index-tool.patch"
 	"1.58.0-fix-non-constexpr-types-regression.patch"
 )
