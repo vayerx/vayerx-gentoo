@@ -1,9 +1,11 @@
-Title: Default USE-flags of slotted dev-libs/boost were changed
+Title: Default USE-flags and subslots of slotted dev-libs/boost were changed
 Author: Vasiliy Yeremeyev <vayerx@gmail.com>
 Content-Type: text/plain
 Posted: 2015-12-28
-Revision: 1
+Revision: 2
 News-Item-Format: 1.0
 Display-If-Installed: dev-libs/boost
 
 dev-libs/boost requires 'std-cxx11' USE-flag to be explicitly specified.
+
+Subslots IDs have been changed too. You may need to add '--with-bdeps=y' to your 'emerge' command line.
