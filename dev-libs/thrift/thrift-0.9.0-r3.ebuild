@@ -1,6 +1,6 @@
-# Copyright 2012 W-Mark Kubacki
+# Copyright 2012 W-Mark Kubacki; modified by Vasiliy Yeremeyev, 2012-2014
 # Distributed under the terms of the OSI Reciprocal Public License
-# $Header: $
+# $Id$
 
 EAPI="5"
 inherit flag-o-matic

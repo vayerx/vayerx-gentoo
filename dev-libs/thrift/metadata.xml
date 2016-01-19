@@ -4,13 +4,14 @@
 <use>
 	<flag name='c_glib'>c_glib</flag>
 	<flag name='cpp'>cpp</flag>
+	<flag name='std-cxx11'>Enable std::thread support.</flag>
 	<flag name='csharp'>csharp</flag>
 	<flag name='csharp'>csharp</flag>
 	<flag name='erlang'>erlang</flag>
 	<flag name='go'>go</flag>
 	<flag name='haskell'>haskell</flag>
 	<flag name='php_extension'>php_extension</flag>
-	<flag name='pic'>php_extension</flag>
+	<flag name='pic'>Position-Independent Code</flag>
 	<flag name='xmsg_patch'>apply 'exception' patch -- add message to what()</flag>
 </use>
 </pkgmetadata>
