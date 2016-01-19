@@ -4,4 +4,5 @@ dev-libs/elfutils static-libs
 dev-python/pystaff rich
 dev-qt/qtsql mysql
 media-video/ffmpeg -samba opus vpx
+net-misc/wget -gnutls ntlm
 vayerx/office excessive kde

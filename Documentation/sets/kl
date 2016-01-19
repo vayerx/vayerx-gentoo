@@ -21,13 +21,17 @@ dev-libs/boost:1.55
 dev-libs/geoip
 dev-libs/libpqxx
 dev-libs/marisa
+dev-libs/thrift
 dev-perl/Switch
 dev-python/dnspython
+dev-python/pika
 dev-python/psycopg:2
 gnome-base/nautilus
 net-dns/rbldnsd
+net-libs/rabbitmq-c
 net-misc/bridge-utils
 net-misc/openvpn
+net-misc/rabbitmq-server
 sys-devel/clang
 www-client/chromium
 www-client/fetch
