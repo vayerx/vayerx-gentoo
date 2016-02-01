@@ -1,6 +1,7 @@
 dev-db/postgresql perl static-libs
 dev-libs/boost static-libs
 dev-libs/elfutils static-libs
+dev-libs/thrift c_glib cpp python
 dev-python/pystaff rich
 dev-qt/qtsql mysql
 media-video/ffmpeg -samba opus vpx

@@ -1,6 +1,7 @@
 dev-db/mdbx
 dev-vcs/git-lfs
 media-gfx/gnome-screenshot
+media-sound/mp3unicode
 net-im/skype
 net-misc/rdesktop
 net-proxy/cntlm

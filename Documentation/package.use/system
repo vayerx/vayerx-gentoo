@@ -65,7 +65,7 @@ sys-boot/grub -ncurses
 sys-kernel/gentoo-sources experimental symlink
 sys-libs/ncurses -gpm
 www-client/chromium -hangouts kerberos
->=www-client/firefox-36 -system-cairo
+www-client/firefox -system-cairo -gmp-autoupdate hardened
 x11-libs/cairo -lto xlib-xcb
 x11-libs/fltk xft
 x11-libs/libdrm -valgrind

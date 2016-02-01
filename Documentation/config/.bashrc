@@ -180,5 +180,6 @@ function enforce_boost() {
 alias emerge-preserved="emerge -q --keep-going @preserved-rebuild"
 alias emerge-modules="emerge -q --keep-going @module-rebuild"
 alias emerge-x11-modules="emerge -q --keep-going @x11-module-rebuild"
+alias emerge-update-world="emerge -avquDN --keep-going --with-bdeps=y --verbose-conflicts world"
 
 umask 0002
