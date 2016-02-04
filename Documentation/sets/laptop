@@ -4,6 +4,11 @@ net-dialup/ppp
 net-dialup/pppconfig
 net-dialup/rp-pppoe
 net-misc/proxychains
+net-wireless/bluez
+net-wireless/rfkill
+net-wireless/wireless-tools
+net-wireless/wpa_supplicant
+sys-apps/netplug
 sys-power/acpid
 sys-power/cpupower
 sys-power/pm-utils
