@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=3
+EAPI=5
 
 DESCRIPTION="Miscellaneous Ruby staff, vayerx edition"
 HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
@@ -15,10 +15,10 @@ IUSE="database datamining gui"
 
 PDEPEND="
 	database? (
-		dev-ruby/sqlite-ruby
+		dev-ruby/sqlite3
 	)
 	gui? (
-		dev-ruby/ruby-libglade2
+		dev-ruby/ruby-gtk3
 	)
 	datamining? (
 		dev-ruby/mechanize
