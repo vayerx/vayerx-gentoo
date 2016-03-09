@@ -65,7 +65,6 @@ PDEPEND="
 	rich? (
 		excessive? (
 			app-text/chm2pdf
-			www-plugins/gnash
 		)
 		app-text/djview
 		app-text/mupdf
