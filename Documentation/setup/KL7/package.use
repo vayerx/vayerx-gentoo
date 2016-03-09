@@ -1,3 +1,4 @@
+app-emulation/docker aufs -device-mapper
 dev-db/postgresql perl static-libs
 dev-libs/boost static-libs
 dev-libs/elfutils static-libs
@@ -6,4 +7,5 @@ dev-python/pystaff rich
 dev-qt/qtsql mysql
 media-video/ffmpeg -samba opus vpx
 net-misc/wget -gnutls ntlm
+sys-libs/libseccomp static-libs
 vayerx/office excessive kde

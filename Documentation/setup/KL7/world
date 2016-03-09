@@ -1,7 +1,11 @@
 dev-db/mdbx
+dev-python/mechanize
+dev-util/gource
 dev-vcs/git-lfs
+dev-vcs/gitstats
 media-gfx/gnome-screenshot
 media-sound/mp3unicode
+media-sound/vorbis-tools
 net-im/skype
 net-misc/rdesktop
 net-proxy/cntlm
