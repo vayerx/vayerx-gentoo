@@ -1,0 +1,10 @@
+Title: Default version of installed Boost will NOT be updated
+Author: Vasiliy Yeremeyev <vayerx@gmail.com>
+Content-Type: text/plain
+Posted: 2016-03-09
+Revision: 1
+News-Item-Format: 1.0
+Display-If-Installed: dev-libs/boost
+
+Previous versions of slotted dev-libs/boost always updated slot to the latest version.
+Run `eselect boost update` to update boost version manualy.

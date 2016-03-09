@@ -80,7 +80,7 @@ _add_line() {
 	else
 		profile="${2}"
 	fi
-    echo "${1}" >> "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/${profile}"
+	echo "${1}" >> "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/${profile}"
 }
 
 create_user-config.jam() {
@@ -513,7 +513,6 @@ EOF
 	fi
 
 	_add_line "includes=\"/usr/include/boost-${MAJOR_V}/boost\"" default
-	# dosym /usr/include/boost-${MAJOR_V}/boost /usr/include/boost
 
 	popd > /dev/null || die
 
@@ -570,22 +569,8 @@ EOF
 	fi
 }
 
-pkg_preinst() {
-	# Yai for having symlinks that are nigh-impossible to remove without
-	# resorting to dirty hacks like these. Removes lingering symlinks
-	# from the slotted versions.
-	local symlink
-	for symlink in "${EROOT}usr/include/boost" "${EROOT}usr/share/boostbook"; do
-		[[ -L ${symlink} ]] && rm -f "${symlink}"
-	done
-}
-
 pkg_postinst() {
-	if use eselect; then
-		eselect boost update || ewarn "eselect boost update failed."
-	fi
-
-	if [[ ! -h "${ROOT}etc/eselect/boost/active" ]]; then
+	if use eselect && [[ ! -h "${ROOT}etc/eselect/boost/active" || ! -f $(readlink -f "${ROOT}etc/eselect/boost/active") ]]; then
 		elog "No active boost version found. Calling eselect to select one..."
 		eselect boost update || ewarn "eselect boost update failed."
 	fi
