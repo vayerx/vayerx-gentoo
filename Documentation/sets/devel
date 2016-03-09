@@ -5,8 +5,8 @@ app-doc/doxygen
 app-i18n/enca
 app-vim/command-t
 app-vim/nerdtree
-dev-libs/boost:1.55
 dev-libs/boost:1.56
+dev-libs/boost:1.58
 dev-libs/jsoncpp
 dev-libs/libxml2
 dev-util/cmake
@@ -21,6 +21,7 @@ dev-vcs/git[tk]
 dev-vcs/gitflow
 sci-calculators/galculator
 sci-visualization/gnuplot
-sys-devel/gcc:4.8
+sys-devel/gcc:4.9
+sys-devel/gcc:5
 sys-fs/inotify-tools
 vayerx/develop

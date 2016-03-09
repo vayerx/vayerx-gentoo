@@ -10,8 +10,9 @@ dev-libs/boost:1.55 -std-cxx11
 dev-libs/boost:1.56 std-cxx11 tools
 dev-libs/libpcre pcre16
 dev-libs/thrift cpp -ruby
-dev-python/ipython -qt4 -wxwidgets
-dev-python/spyder pep8 pylint sphinx
+dev-python/ipython qt4 -wxwidgets
+dev-python/numpy lapack
+dev-python/spyder ipython matplotlib pep8 pylint sphinx
 dev-qt/qt-creator autotools cmake qtscript valgrind
 dev-util/kdevelop -linguas_ru
 dev-util/kdevplatform -linguas_ru
