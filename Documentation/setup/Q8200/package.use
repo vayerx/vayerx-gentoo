@@ -1,6 +1,6 @@
 >=media-libs/mesa-10 -opencl llvm
 app-emulation/wine -gstreamer
-app-office/libreoffice -abi_x86_32 -gnome -gtk gtk3 -vba -webdav
+app-office/libreoffice -abi_x86_32 -gnome -vba -webdav
 app-text/gocr tk
 dev-cpp/cppstaff kde
 dev-libs/boost doc eselect tools
