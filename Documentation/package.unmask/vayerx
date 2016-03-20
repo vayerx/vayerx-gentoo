@@ -3,3 +3,4 @@
 app-text/cuneiform
 media-gfx/gimp
 x11-libs/libtxc_dxtn
+=gnome-extra/yelp-xsl-3.18.1

@@ -15,9 +15,7 @@ games-fps/quake3-data
 games-fps/sauerbraten
 games-fps/tremulous
 games-misc/everlasting-summer
-games-roguelike/adom
 games-rpg/lipsofsuna
-games-simulation/gl117
 games-simulation/lincity-ng
 games-simulation/openttd
 games-simulation/simutrans
@@ -25,8 +23,6 @@ games-strategy/0ad
 games-strategy/boswars
 games-strategy/freeciv
 games-strategy/hedgewars
-games-strategy/megaglest
-games-strategy/megaglest-data
 games-strategy/naev
 games-strategy/ufo-ai
 games-strategy/warmux

@@ -2,7 +2,7 @@ app-admin/conky iostats portmon
 app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
 app-crypt/heimdal -ssl -threads
-app-crypt/pinentry gnome-keyring
+app-crypt/pinentry -gnome-keyring
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions
 app-emulation/wine mono odbc s3tc samba staging

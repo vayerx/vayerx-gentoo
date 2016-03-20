@@ -6,3 +6,4 @@ dev-python/pystaff
 dev-python/pyyaml
 dev-python/setuptools
 dev-python/spyder
+sci-libs/scipy
