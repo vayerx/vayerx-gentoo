@@ -8,7 +8,7 @@ app-emulation/virtualbox extensions
 app-emulation/wine mono odbc s3tc samba staging
 app-misc/mc edit samba slang
 app-office/akonadi-server sqlite
-app-office/libreoffice python_single_target_python3_4
+app-office/libreoffice -python_single_target_python2_7 python_single_target_python3_4
 app-text/yagf scanner
 dev-db/sqlite secure-delete
 dev-libs/glib xattr

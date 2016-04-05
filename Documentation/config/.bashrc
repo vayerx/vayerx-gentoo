@@ -46,6 +46,7 @@ alias calg="valgrind --tool=callgrind"
 alias valg="valgrind --track-origins=yes --num-callers=30"
 alias valm="valgrind --track-origins=yes --leak-check=full --show-leak-kinds=definite --num-callers=30"
 alias helg="valgrind --tool=helgrind --free-is-write=yes"
+alias masf="valgrind --tool=massif --heap=yes --stacks=no --depth=50 --max-snapshots=1000"
 
 # Docker
 for cmd in cp help info kill load ps save rm rmi run stop; do
