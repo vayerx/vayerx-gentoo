@@ -1,5 +1,5 @@
 #
-# Shorewall version 4 - Policy File
+# Shorewall -- /etc/shorewall/policy
 #
 # For information about entries in this file, type "man shorewall-policy"
 #
@@ -7,10 +7,11 @@
 # http://www.shorewall.net/manpages/shorewall-policy.html
 #
 ###############################################################################
-#SOURCE	DEST	POLICY		LOG	LIMIT:		CONNLIMIT:
-#				LEVEL	BURST		MASK
+#SOURCE		DEST		POLICY	LOGLEVEL	LIMIT	CONNLIMIT
 
 net	fw	DROP		info
 fw	net	ACCEPT
+dock	all	ACCEPT
+fw	dock	ACCEPT
+fw	vpn	ACCEPT
 all	all	DROP
-

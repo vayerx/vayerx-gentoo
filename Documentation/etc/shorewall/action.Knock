@@ -1,0 +1,12 @@
+#
+# Shorewall -- Action
+#
+?format 2
+###############################################################################
+#ACTION               SOURCE         DEST      PROTO      DEST
+#                                                         PORT(S)
+IfEvent(SSHK,ACCEPT:info,60,1,src,reset)\
+			-		-	tcp	3655
+SetEvent(SSHK,ACCEPT)	-		-	tcp	36563
+ResetEvent(SSHK,DROP:info)
+
