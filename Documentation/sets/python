@@ -2,6 +2,7 @@ dev-python/coverage
 dev-python/ipython
 dev-python/jsonpath
 dev-python/lxml
+dev-python/profilehooks
 dev-python/pystaff
 dev-python/pyyaml
 dev-python/setuptools
