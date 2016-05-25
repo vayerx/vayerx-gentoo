@@ -17,6 +17,4 @@ BOOST_PATCHES=(
 	"1.55.0-time_facet.patch"
 	"1.55.0-context-x32.patch"
 	"1.56.0-build-auto_index-tool.patch"
-	"1.60.0-deprecated-header-ice_not.patch"
-	"1.60.0-auto-pointer-python.patch"
 )
