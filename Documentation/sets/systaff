@@ -15,6 +15,7 @@ app-portage/eix
 app-portage/gentoolkit
 app-portage/layman
 app-portage/mirrorselect
+app-portage/repoman
 app-portage/ufed
 app-shells/gentoo-bashcomp
 dev-util/ccache

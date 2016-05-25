@@ -4,7 +4,7 @@ app-misc/gramps
 app-mobilephone/heimdall
 app-mobilephone/qtadb
 app-office/gnucash
-dev-db/postgresql:9.4
+dev-db/postgresql
 dev-db/sqlitebrowser
 dev-ruby/ruby-sdl
 dev-ruby/sqlite3
@@ -12,16 +12,18 @@ dev-util/aptana
 games-util/qjoypad
 games-util/steam-meta
 kde-base/kdm
-mate-base/mate
 media-gfx/bconv
 media-gfx/gnome-screenshot
 media-gfx/imgsrc
+media-libs/exiftool
 media-libs/hal-flash
 media-libs/libtxc_dxtn
 media-sound/audacity
 media-sound/mp3unicode
+media-sound/vorbis-tools
 media-video/guvcview
 net-im/skype
+net-misc/knock
 net-misc/tor
 net-print/splix
 sys-apps/usb_modeswitch
@@ -30,5 +32,4 @@ sys-firmware/radeon-ucode
 sys-fs/fuseiso
 sys-fs/mtpfs
 sys-fs/simple-mtpfs
-sys-kernel/gentoo-sources:3.19.8
 vayerx/lxde

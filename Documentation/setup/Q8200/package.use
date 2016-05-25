@@ -39,3 +39,4 @@ x11-libs/glamor -gles
 x11-libs/libSM -uuid
 x11-libs/libdrm libkms
 x11-misc/xscreensaver new-login
+media-libs/phonon-gstreamer qt5
