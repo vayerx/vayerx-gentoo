@@ -1,6 +1,6 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/gnash/gnash-0.8.10_p20150316.ebuild,v 1.1 2015/03/26 14:59:41 chithanh Exp $
+# $Id$
 
 EAPI=5
 CMAKE_REQUIRED="never"
@@ -12,7 +12,7 @@ PYTHON_COMPAT=( python2_7 )
 inherit autotools eutils kde4-base multilib nsplugins python-any-r1 flag-o-matic
 
 DESCRIPTION="GNU Flash movie player that supports many SWF v7,8,9 features"
-HOMEPAGE="http://www.gnu.org/software/gnash/"
+HOMEPAGE="https://www.gnu.org/software/gnash/"
 
 if [[ ${PV} = 9999* ]]; then
 	SRC_URI=""
@@ -41,9 +41,9 @@ REQUIRED_USE="dump? ( agg ffmpeg )
 RDEPEND=">=dev-libs/boost-1.41.0
 	dev-libs/expat
 	dev-libs/libxml2
-	virtual/jpeg
-	media-libs/libpng
-	net-misc/curl[rtmp]
+	virtual/jpeg:0
+	media-libs/libpng:0
+	net-misc/curl
 	x11-libs/libX11
 	x11-libs/libXi
 	x11-libs/libXmu
@@ -72,9 +72,9 @@ RDEPEND=">=dev-libs/boost-1.41.0
 		gnome-base/gconf
 	)
 	gstreamer? (
-		media-plugins/gst-plugins-ffmpeg
-		media-plugins/gst-plugins-mad
-		media-plugins/gst-plugins-meta
+		media-plugins/gst-plugins-ffmpeg:*
+		media-plugins/gst-plugins-mad:*
+		media-plugins/gst-plugins-meta:*
 	)
 	gtk? (
 		x11-libs/gtk+:2
@@ -99,7 +99,7 @@ RDEPEND=">=dev-libs/boost-1.41.0
 	lirc? ( app-misc/lirc )
 	dbus? ( sys-apps/dbus )
 	ssh?  ( >=net-libs/libssh-0.4[server] )
-	ssl? ( dev-libs/openssl )
+	ssl? ( dev-libs/openssl:0 )
 	vaapi? ( x11-libs/libva[opengl?] )
 	"
 DEPEND="${RDEPEND}
@@ -142,6 +142,10 @@ src_prepare() {
 
 	# Fix libamf includes
 	epatch "${FILESDIR}"/${PN}-0.8.10-amf-include.patch
+
+	# Fix new adjacent_tokens_only() in >=boost-1.59 (bug 579142)
+	# See https://savannah.gnu.org/bugs/?46148
+	epatch "${FILESDIR}"/${PN}-0.8.10_p20150316-boost-1.60.patch
 
 	eautoreconf
 }
