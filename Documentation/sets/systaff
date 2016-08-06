@@ -9,7 +9,7 @@ app-forensics/magicrescue
 app-misc/mc
 app-misc/screen
 app-misc/vlock
-app-portage/cpuinfo2cpuflags
+app-portage/cpuid2cpuflags
 app-portage/eclass-manpages
 app-portage/eix
 app-portage/gentoolkit
