@@ -17,6 +17,7 @@
 	sh = show --word-diff=color
 	shf = show --color-words=[^[:space:]]
 	st = status
+	stu = status --untracked-files=no
 	sta = stash save
 	rup = remote update
 

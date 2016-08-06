@@ -16,7 +16,6 @@ dev-db/postgresql:9.4
 dev-db/Pyrseas
 dev-db/slony1
 dev-db/yoyo-migrations
-dev-java/oracle-jdk-bin:1.7
 dev-libs/boost:1.55
 dev-libs/geoip
 dev-libs/libpqxx
@@ -24,10 +23,13 @@ dev-libs/marisa
 dev-libs/thrift
 dev-perl/Switch
 dev-python/dnspython
+dev-python/lockfile
 dev-python/numpy
 dev-python/pika
 dev-python/pip
 dev-python/psycopg:2
+dev-python/pymssql:0
+dev-python/python-daemon
 dev-util/pycharm-professional
 gnome-base/nautilus
 net-dns/rbldnsd

@@ -22,6 +22,6 @@ dev-vcs/gitflow
 sci-calculators/galculator
 sci-visualization/gnuplot
 sys-devel/gcc:4.9.3
-sys-devel/gcc:5.3.0
+sys-devel/gcc
 sys-fs/inotify-tools
 vayerx/develop

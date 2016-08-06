@@ -1,7 +1,8 @@
 app-misc/elasticsearch
 app-misc/sphinx
 dev-db/mdbx
-dev-java/lucene
+dev-python/backports-shutil_get_terminal_size
+dev-python/elasticsearch-py
 dev-python/mechanize
 dev-python/pysolr
 dev-util/clion

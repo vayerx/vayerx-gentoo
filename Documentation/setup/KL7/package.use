@@ -4,6 +4,7 @@ dev-db/freetds mssql
 dev-db/postgresql perl static-libs
 dev-libs/boost static-libs
 dev-libs/elfutils static-libs
+dev-libs/libdbusmenu gtk3
 dev-libs/protobuf java
 dev-libs/thrift c_glib cpp python
 dev-python/pystaff rich
