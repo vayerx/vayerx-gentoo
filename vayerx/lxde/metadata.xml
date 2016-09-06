@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>lxde</herd>
 <use>
-	<flag name='xfce'>Use terminal, task manager and other staff from XFCE</flag>
+	<flag name='mate'>Use terminal, task manager and other staff from MATE DE</flag>
+	<flag name='xfce'>Use terminal, task manager and other staff from XFCE DE</flag>
 </use>
 </pkgmetadata>

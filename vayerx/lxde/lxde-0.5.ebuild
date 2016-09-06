@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI="5"
 
@@ -46,13 +46,11 @@ RDEPEND="
 	lxde-base/lxde-icon-theme
 	lxde-base/lxinput
 	lxde-base/lxmenu-data
-	>=lxde-base/lxpanel-0.5.10
+	lxde-base/lxpanel
 	lxde-base/lxrandr
-	|| ( ( <=lxde-base/lxsession-0.4.6.1
-		=lxde-base/lxsession-edit-0.2* )
-		>lxde-base/lxsession-0.4.6.1 )
-	|| ( >=x11-libs/libfm-1.2.0 =lxde-base/lxshortcut-0.1* )
-	>=lxde-base/menu-cache-0.3.3
+	>=lxde-base/lxsession-0.5
+	>=x11-libs/libfm-1.2.4
+	lxde-base/menu-cache
 	x11-misc/obmenu
 	x11-misc/pcmanfm
 	x11-wm/openbox
@@ -60,5 +58,5 @@ RDEPEND="
 
 pkg_postinst() {
 	elog "For your convenience you can review the LXDE Configuration HOWTO at"
-	elog "http://www.gentoo.org/proj/en/desktop/lxde/lxde-howto.xml"
+	elog "https://www.gentoo.org/proj/en/desktop/lxde/lxde-howto.xml"
 }
