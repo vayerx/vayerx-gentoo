@@ -14,8 +14,9 @@ dev-python/ipython qt4 -wxwidgets
 dev-python/numpy lapack
 dev-python/spyder ipython numpy matplotlib pep8 pylint qtconsole scipy sphinx
 dev-qt/qt-creator autotools cmake qtscript valgrind
-dev-util/kdevelop -linguas_ru
-dev-util/kdevplatform -linguas_ru
+dev-qt/qtscript scripttools
+dev-util/kdevelop -linguas_ru -handbook -ninja okteta -plasma
+dev-util/kdevplatform -linguas_ru -cvs -welcomepage
 dev-vcs/git -gtk perl tk webdav -xinetd
 dev-vcs/subversion -dso perl -ruby
 media-libs/mlt -ruby

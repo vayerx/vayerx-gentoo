@@ -10,10 +10,11 @@ games-board/cockatrice
 games-fps/alienarena-ng
 games-fps/nexuiz
 games-fps/openarena
+games-fps/quake2-data
+games-fps/quake2-icculus
 games-fps/quake3
 games-fps/quake3-data
 games-fps/sauerbraten
-games-fps/tremulous
 games-misc/everlasting-summer
 games-rpg/lipsofsuna
 games-simulation/lincity-ng
