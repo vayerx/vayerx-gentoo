@@ -36,7 +36,6 @@ PDEPEND="
 	ruby? (
 		dev-lang/ruby
 		dev-ruby/rbstaff[database?]
-		rich? ( dev-ruby/rbstaff[datamining,gui] )
 	)
 
 	python? (
