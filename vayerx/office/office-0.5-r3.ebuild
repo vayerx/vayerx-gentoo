@@ -45,6 +45,9 @@ PDEPEND="
 	mate? (
 		x11-themes/mate-icon-theme
 	)
+	!mate? (
+		x11-themes/gnome-icon-theme
+	)
 
 	rich? (
 		excessive? (
