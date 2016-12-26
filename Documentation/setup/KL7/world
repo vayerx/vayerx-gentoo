@@ -1,6 +1,7 @@
 app-misc/elasticsearch
 app-misc/sphinx
 dev-db/mdbx
+dev-db/mysql
 dev-python/backports-shutil_get_terminal_size
 dev-python/elasticsearch-py
 dev-python/mechanize
@@ -12,10 +13,12 @@ dev-vcs/gitstats
 media-gfx/gnome-screenshot
 media-sound/mp3unicode
 media-sound/vorbis-tools
+net-ftp/lftp
 net-im/skype
 net-misc/rdesktop
 net-proxy/cntlm
 sci-mathematics/octave
+sys-boot/unetbootin
 sys-firmware/radeon-ucode
 sys-fs/cryptsetup
 sys-fs/simple-mtpfs

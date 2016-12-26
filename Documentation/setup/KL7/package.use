@@ -9,7 +9,9 @@ dev-libs/protobuf java
 dev-libs/thrift c_glib cpp python
 dev-python/pystaff rich
 dev-qt/qtsql mysql
+dev-ruby/rbstaff gui datamining database
 media-video/ffmpeg -samba opus vpx
 net-misc/wget -gnutls ntlm
 sys-libs/libseccomp static-libs
+sys-process/tini static
 vayerx/office excessive kde
