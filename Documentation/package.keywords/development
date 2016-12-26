@@ -2,7 +2,7 @@ app-vim/project **
 dev-cpp/gmock **
 dev-cpp/gtest **
 dev-db/Pyrseas **
-dev-util/kdevelop-python **
 dev-util/kdevelop:4 **
+dev-util/kdevelop-python **
 dev-util/kdevplatform:4 **
-kde-base/kdelibs:4 **
+kde-frameworks/kdelibs:4 **

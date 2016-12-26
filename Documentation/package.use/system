@@ -10,12 +10,16 @@ app-emulation/virtualbox extensions
 app-emulation/wine mono odbc s3tc samba staging
 app-misc/mc edit samba slang
 app-office/akonadi-server sqlite
+app-portage/layman mercurial squashfs
 app-text/asciidoc python_single_target_python2_7
-app-text/poppler qt4
+app-text/hunspell l10n_en l10n_ru
+app-text/poppler qt5
 app-text/yagf scanner
 dev-db/sqlite secure-delete
 dev-libs/glib xattr
 dev-libs/libgdata gnome
+dev-libs/libixion python_single_target_python3_4
+dev-libs/liborcus python_single_target_python3_4
 dev-libs/openssl gmp -tls-heartbeat
 dev-libs/xmlsec gcrypt
 dev-python/pycairo -xcb
@@ -30,7 +34,7 @@ gnome-base/gvfs mtp
 kde-apps/ark lzma
 kde-apps/gwenview -handbook kipi
 kde-apps/kde4-l10n minimal
-kde-base/kdelibs semantic-desktop
+kde-frameworks/kdelibs semantic-desktop
 mail-client/thunderbird -minimal system-icu system-sqlite
 mate-base/mate-applets networkmanager
 mate-base/mate-panel networkmanager
@@ -41,10 +45,10 @@ media-libs/chromaprint tools
 media-libs/gexiv2 introspection
 media-libs/gst-plugins-bad -gles2
 media-libs/libmypaint gegl
-media-libs/libvpx postproc
-media-libs/mlt kdenlive melt
-media-libs/phonon qt4
-media-libs/phonon-vlc
+media-libs/libvpx postproc svc
+media-libs/mlt kdenlive melt qt4 -qt5
+media-libs/phonon qt4 qt5
+media-libs/phonon-vlc qt5
 media-libs/sdl-mixer mod modplug
 media-libs/vigra openexr
 media-plugins/audacious-plugins cue
@@ -56,7 +60,7 @@ media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis mat
 net-analyzer/rrdtool graph
 net-analyzer/tcpdump -samba
 net-dns/avahi autoipd -gtk gtk3 mdnsresponder-compat
-net-fs/samba client
+net-fs/samba client winbind
 net-im/psi -crypt extras -jingle spell xscreensaver
 net-im/skype apulse
 net-misc/ciscovpn openssl
@@ -72,6 +76,7 @@ sys-boot/grub -ncurses
 sys-kernel/genkernel -firmware
 sys-kernel/gentoo-sources experimental symlink
 sys-libs/ncurses -gpm
+virtual/ffmpeg opus
 www-client/chromium -hangouts kerberos
 www-client/firefox -system-cairo -gmp-autoupdate hardened
 x11-libs/cairo -lto -xlib-xcb

@@ -1,4 +1,5 @@
 app-crypt/heimdal -ssl
+app-crypt/qca qt5
 app-editors/vim cscope ruby -X
 app-text/texlive-core xetex
 dev-db/postgresql perl
@@ -15,6 +16,8 @@ dev-python/numpy lapack
 dev-python/spyder ipython numpy matplotlib pep8 pylint qtconsole scipy sphinx
 dev-qt/qt-creator autotools cmake qtscript valgrind
 dev-qt/qtscript scripttools
+dev-qt/qtwebchannel qml
+dev-qt/qtwebengine widgets
 dev-util/kdevelop -linguas_ru -handbook -ninja okteta -plasma
 dev-util/kdevplatform -linguas_ru -cvs -welcomepage
 dev-vcs/git -gtk perl tk webdav -xinetd
