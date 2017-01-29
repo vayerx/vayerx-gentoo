@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=3
+EAPI=5
 inherit games cmake-utils git-2
 
 EGIT_REPO_URI="git://github.com/vayerx/shadowgrounds.git"
