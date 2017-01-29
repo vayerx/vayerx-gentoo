@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=3
+EAPI=5
 
 PYTHON_DEPEND="*"
 SUPPORT_PYTHON_ABIS="1"
@@ -10,8 +10,9 @@ RESTRICT_PYTHON_ABIS="2.4 2.5 3.* *-jython"
 inherit distutils python
 
 DESCRIPTION="Openbox Key Editor, written in Python + PyGTK"
-HOMEPAGE="http://code.google.com/p/obkey/"
-SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
+HOMEPAGE="https://github.com/nsf/${PN}"
+SRC_URI="mirror://github/nsf/${PN}/${P}.tar.gz"
+RESTRICT="mirror"
 
 LICENSE="MIT"
 SLOT="0"
