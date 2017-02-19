@@ -11,23 +11,26 @@ DESCRIPTION="SafeNet (Aladdin) eTokens Middleware (PRO, NG OTP, Flash, Java)"
 MY_PN="SafenetAuthenticationClient"
 MY_PV="${PV/_p/-}"
 
-MY_P_CORE="${MY_PN}-core-${MY_PV}"
-SRC_URI="${MY_P_CORE}.x86_64.rpm"
+MY_P_STD="${MY_PN}-${MY_PV}"
+MY_P_COMPAT="SAC-32-CompatibilityPack-${MY_PV}"
+SRC_URI="${MY_P_STD}.x86_64.rpm ${MY_P_COMPAT}.x86_64.rpm"
 
 HOMEPAGE="http://aladdin-rd.ru"
 LICENSE="EULA"
 RESTRICT="fetch"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+ssl multilib"
-
-REQUIRED_USE="amd64? ( multilib )"
+IUSE="+ssl"
 
 RDEPEND="
 	>=sys-apps/pcsc-lite-1.4.99
 	virtual/libusb:0
 	sys-apps/dbus
+	media-libs/libpng:0
+	media-libs/fontconfig
 	ssl? ( dev-libs/engine_pkcs11 )
+	media-libs/hal-flash
+	!app-crypt/pkiclient
 "
 DEPEND="${RDEPEND}"
 
@@ -36,7 +39,8 @@ S="${WORKDIR}"
 src_unpack() {
 	default
 
-	rpm_unpack "${MY_P_CORE}.x86_64.rpm"
+	rpm_unpack "${MY_P_STD}.x86_64.rpm"
+	rpm_unpack "${MY_P_COMPAT}.x86_64.rpm"
 }
 
 src_prepare() {
@@ -46,6 +50,30 @@ src_prepare() {
 }
 
 src_install() {
+	local usb_readers_dir="usr/$(get_libdir)/readers/usb"
+
+	mv lib lib32
+	mkdir lib
+	mv lib32/udev lib/udev
+	mv usr/lib usr/lib32
+
+	find usr/lib32 -type l | while read lib; do
+		nlib=$(readlink -f ${lib})
+		ln -sf "${nlib/\/lib\//\/lib32\/}" "${lib}"
+	done
+
+	mkdir -p "${usb_readers_dir}"
+	ln -s "../../../share/eToken/drivers/aks-ifdh.bundle" "${usb_readers_dir}/aks-ifdh.bundle"
+
+	pushd usr/share/eToken/drivers/aks-ifdh.bundle/Contents/Linux
+	ln -s libAksIfdh.so{.9.1,}	# TODO glob
+	popd
+
+	mkdir -p etc/conf.d/
+	touch etc/conf.d/SACSrv
+
+	mv usr/share/doc/eToken usr/share/doc/${P}
+
 	mv * "${D}/"
 }
 
