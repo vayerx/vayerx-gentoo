@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit eutils multilib rpm
+inherit eutils multilib rpm versionator
 
 DESCRIPTION="SafeNet (Aladdin) eTokens Middleware (PRO, NG OTP, Flash, Java)"
 
@@ -28,7 +28,7 @@ RDEPEND="
 	sys-apps/dbus
 	media-libs/libpng:0
 	media-libs/fontconfig
-	ssl? ( dev-libs/engine_pkcs11 )
+	ssl? ( dev-libs/libp11 )
 	media-libs/hal-flash
 	!app-crypt/pkiclient
 "
@@ -66,7 +66,8 @@ src_install() {
 	ln -s "../../../share/eToken/drivers/aks-ifdh.bundle" "${usb_readers_dir}/aks-ifdh.bundle"
 
 	pushd usr/share/eToken/drivers/aks-ifdh.bundle/Contents/Linux
-	ln -s libAksIfdh.so{.9.1,}	# TODO glob
+		# TODO glob
+		ln -s libAksIfdh.so{.$(get_version_component_range 1-2),}
 	popd
 
 	mkdir -p etc/conf.d/
