@@ -336,6 +336,10 @@ src_prepare() {
 		epatch "${FILESDIR}/kernel-4.6-page_cache_release-put_page.patch"
 	fi
 
+	if kernel_is ge 4 10 0; then
+		epatch "${FILESDIR}/kernel-4.10-virtual_address-acpi_get_table_with_size.patch"
+	fi
+
 	epatch_user
 
 	cd "${MODULE_DIR}"
