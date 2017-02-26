@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI="5"
+EAPI=6
 
 DESCRIPTION="System staff meta"
 HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
@@ -26,9 +26,8 @@ PDEPEND="
 	)
 
 	|| (
-		kde? ( kde-base/kdm )
 		lxde? ( lxde-base/lxdm )
-		kde? ( kde-base/kdm )
+		x11-misc/sddm
 		x11-misc/slim
 	)
 "
