@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
 DESCRIPTION="Miscellaneous C++ staff, vayerx edition"
 HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
@@ -27,7 +27,7 @@ PDEPEND="
 	)
 
 	testing? (
-		dev-cpp/gmock
+		dev-cpp/gtest
 		dev-util/cppcheck
 		dev-util/cppunit
 		dev-util/flawfinder
