@@ -1,3 +1,4 @@
+app-crypt/etoken-sac
 app-emulation/playonlinux
 app-emulation/q4wine
 app-misc/gramps
@@ -22,6 +23,7 @@ media-sound/audacity
 media-sound/mp3unicode
 media-sound/vorbis-tools
 media-video/guvcview
+net-dialup/pptpclient
 net-im/skype
 net-misc/knock
 net-misc/tor
@@ -33,3 +35,4 @@ sys-fs/fuseiso
 sys-fs/mtpfs
 sys-fs/simple-mtpfs
 vayerx/lxde
+x11-misc/sddm

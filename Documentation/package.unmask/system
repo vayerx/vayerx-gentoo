@@ -1,0 +1,4 @@
+=gnome-base/gconf-3.2.6-r3
+=gnome-base/gvfs-1.20.2
+=app-crypt/gcr-3.12.2
+kde-frameworks/extra-cmake-modules

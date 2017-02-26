@@ -53,20 +53,21 @@
 	date = iso
 
 [merge]
+	ff = false
 	tool = meld
 
 [pretty]
 	vay = %Cgreen%h %Creset%s%Creset
 	vaylong = %Cgreen%h %Cred%an %Cgreen%aD %Creset%s
 
-[merge]
-	ff = false
-
 [pull]
 	ff = only
 
 [push]
 	default = tracking
+
+[rebase]
+	autoStash = yes
 
 [status]
 	color = auto

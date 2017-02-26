@@ -18,9 +18,7 @@ app-text/yagf scanner
 dev-db/sqlite secure-delete
 dev-libs/glib xattr
 dev-libs/libgdata gnome
-dev-libs/libixion python_single_target_python3_4
-dev-libs/liborcus python_single_target_python3_4
-dev-libs/openssl gmp -tls-heartbeat
+dev-libs/openssl gmp rfc3779 -tls-heartbeat
 dev-libs/xmlsec gcrypt
 dev-python/pycairo -xcb
 dev-python/PyQt4 webkit declarative
@@ -46,7 +44,7 @@ media-libs/gexiv2 introspection
 media-libs/gst-plugins-bad -gles2
 media-libs/libmypaint gegl
 media-libs/libvpx postproc svc
-media-libs/mlt kdenlive melt qt4 -qt5
+media-libs/mlt kdenlive melt qt4 qt5
 media-libs/phonon qt4 qt5
 media-libs/phonon-vlc qt5
 media-libs/sdl-mixer mod modplug
@@ -55,10 +53,11 @@ media-plugins/audacious-plugins cue
 media-sound/asunder -aac
 media-sound/audacity id3tag twolame
 media-sound/clementine lastfm mtp
-media-video/ffmpeg -network theora webp
+media-video/ffmpeg -network opus theora webp
 media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska postproc freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live lua
 net-analyzer/rrdtool graph
 net-analyzer/tcpdump -samba
+net-dialup/ppp atm eap-tls
 net-dns/avahi autoipd -gtk gtk3 mdnsresponder-compat
 net-fs/samba client winbind
 net-im/psi -crypt extras -jingle spell xscreensaver
@@ -81,5 +80,6 @@ www-client/chromium -hangouts kerberos
 www-client/firefox -system-cairo -gmp-autoupdate hardened
 x11-libs/cairo -lto -xlib-xcb
 x11-libs/fltk xft
+x11-libs/goffice gnome
 x11-libs/libdrm -valgrind
 x11-libs/libSM -uuid
