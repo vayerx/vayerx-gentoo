@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>matsuu@gentoo.org</email>
+	<maintainer type="person">
+		<email>vayerx@gmail.com</email>
 	</maintainer>
 	<upstream>
-		<doc lang="en">http://code.google.com/p/googletest/w/list</doc>
-		<remote-id type="google-code">googletest</remote-id>
+		<remote-id type="github">google/googletest</remote-id>
 	</upstream>
+	<use>
+		<flag name="threads">Enable pthread.</flag>
+		<flag name="gmock">Build also Google C++ mocking framework.</flag>
+	</use>
 </pkgmetadata>
