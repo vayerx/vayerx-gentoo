@@ -1,8 +1,8 @@
-# 1999-2017 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 DESCRIPTION="Development meta package"
 HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
@@ -41,7 +41,7 @@ PDEPEND="
 	python? (
 		dev-lang/python
 		dev-python/pystaff[database?,rich?,testing?]
-		dev-python/spyder
+		dev-python/spyder[pylint]
 
 		rich? (
 			dev-util/ninja-ide
