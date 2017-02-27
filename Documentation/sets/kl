@@ -22,6 +22,7 @@ dev-libs/libpqxx
 dev-libs/marisa
 dev-libs/thrift
 dev-perl/Switch
+dev-python/cherrypy
 dev-python/django
 dev-python/dnspython
 dev-python/lockfile
@@ -30,6 +31,7 @@ dev-python/pika
 dev-python/pip
 dev-python/psycopg:2
 dev-python/pymssql:0
+dev-python/pytest
 dev-python/python-daemon
 dev-util/pycharm-professional
 gnome-base/nautilus

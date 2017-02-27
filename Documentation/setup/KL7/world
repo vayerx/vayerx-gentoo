@@ -1,7 +1,9 @@
+app-crypt/etoken-sac::vayerx
 app-misc/elasticsearch
 app-misc/sphinx
 dev-db/mdbx
 dev-db/mysql
+dev-lang/elixir
 dev-python/backports-shutil_get_terminal_size
 dev-python/elasticsearch-py
 dev-python/mechanize
@@ -16,6 +18,7 @@ media-sound/vorbis-tools
 net-ftp/lftp
 net-im/skype
 net-misc/rdesktop
+net-print/foomatic-db
 net-proxy/cntlm
 sci-mathematics/octave
 sys-boot/unetbootin
@@ -24,3 +27,4 @@ sys-fs/cryptsetup
 sys-fs/simple-mtpfs
 vayerx/lxde
 x11-misc/xtrlock::vayerx
+x11-themes/gnome-icon-theme

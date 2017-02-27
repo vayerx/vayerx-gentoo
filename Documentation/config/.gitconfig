@@ -47,6 +47,7 @@
 
 [diff]
 	renames = copies
+	algorithm = patience
 	external = git-meld
 
 [log]
@@ -67,7 +68,7 @@
 	default = tracking
 
 [rebase]
-	autoStash = yes
+	autoStash = true
 
 [status]
 	color = auto

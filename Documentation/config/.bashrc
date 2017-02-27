@@ -62,7 +62,7 @@ export UNCRUSTIFY_CONFIG=".uncrustify"
 
 # Git
 function ghead() {
-    git lv ${1:-} | head -n ${2:-5}
+    git lv ${1:-} | head -n ${2:-7}
 }
 
 function gheadn() {
@@ -98,12 +98,6 @@ function grebase() {
     local target="origin/${1:-devel}"
     git stash
     git rebase $target
-    git stash pop
-}
-
-function gpull() {
-    git stash
-    git pull $@
     git stash pop
 }
 
@@ -177,5 +171,7 @@ alias emerge-x11-modules="emerge -q --keep-going @x11-module-rebuild"
 alias emerge-update-world="emerge -avquDN --keep-going --with-bdeps=y --verbose-conflicts world"
 
 alias wget="wget --no-use-server-timestamps"
+alias quickpkg="quickpkg --include-unmodified-config=y"
+
 
 umask 0002

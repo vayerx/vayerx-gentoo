@@ -1,4 +1,5 @@
 app-crypt/heimdal -ssl
+app-crypt/pinentry gnome-keyring
 app-crypt/qca qt5
 app-editors/vim cscope ruby -X
 app-text/texlive-core xetex
@@ -9,6 +10,7 @@ dev-lang/perl ithreads
 dev-lang/python sqlite tk
 dev-libs/boost:1.55 -std-cxx11
 dev-libs/boost:1.56 std-cxx11 tools
+dev-libs/libgit2 ssh
 dev-libs/libpcre pcre16
 dev-libs/thrift cpp -ruby
 dev-python/ipython qt4 -wxwidgets

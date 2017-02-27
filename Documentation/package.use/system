@@ -2,7 +2,6 @@ app-admin/conky iostats portmon
 app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
 app-crypt/heimdal -ssl -threads
-app-crypt/pinentry -gnome-keyring
 app-crypt/qca qt4
 app-editors/vim -python_targets_python3_4
 app-emulation/q4wine icoutils
@@ -29,6 +28,7 @@ dev-qt/qtsvg accessibility
 dev-qt/qtwebkit -exceptions
 dev-ruby/rrdtool-bindings graph
 gnome-base/gvfs mtp
+gnome-base/nautilus tracker
 kde-apps/ark lzma
 kde-apps/gwenview -handbook kipi
 kde-apps/kde4-l10n minimal
