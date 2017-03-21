@@ -79,7 +79,8 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "rc-update add pcscd default"
+	einfo "usermod -aG usb pcscd"
+	einfo ""
 	einfo "rc-update add SACSrv default"
 	einfo ""
 	einfo "If you need some help, you can ask the help in that article:"
