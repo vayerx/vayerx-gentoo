@@ -18,7 +18,7 @@ PDEPEND="
 	dev-util/ccache
 
 	kde? (
-		dev-util/kdevelop[cxx]
+		dev-util/kdevelop
 		kde-apps/kcachegrind
 		kde-apps/kdebase-runtime-meta
 	)
