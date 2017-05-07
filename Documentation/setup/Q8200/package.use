@@ -22,7 +22,7 @@ net-fs/samba winbind
 net-libs/webkit-gtk -geoloc -opengl -webgl
 net-misc/batman-adv bla dat
 net-misc/networkmanager -wext -zeroconf
-net-misc/tor nat-pmp stats transparent-proxy upnp web
+net-vpn/tor nat-pmp stats transparent-proxy upnp web
 net-print/cups -zeroconf
 sci-geosciences/gpsd garmin
 sys-apps/util-linux static-libs
@@ -39,4 +39,4 @@ x11-libs/glamor -gles
 x11-libs/libSM -uuid
 x11-libs/libdrm libkms
 x11-misc/xscreensaver new-login
-media-libs/phonon-gstreamer qt5
+media-libs/phonon-gstreamer qt4 qt5

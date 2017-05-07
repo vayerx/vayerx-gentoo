@@ -169,6 +169,8 @@ alias emerge-preserved="emerge -q --keep-going @preserved-rebuild"
 alias emerge-modules="emerge -q --keep-going @module-rebuild"
 alias emerge-x11-modules="emerge -q --keep-going @x11-module-rebuild"
 alias emerge-update-world="emerge -avquDN --keep-going --with-bdeps=y --verbose-conflicts world"
+alias emerge="emerge --verbose-conflicts"
+alias quickpkg="quickpkg --include-config=y"
 
 alias wget="wget --no-use-server-timestamps"
 alias quickpkg="quickpkg --include-unmodified-config=y"

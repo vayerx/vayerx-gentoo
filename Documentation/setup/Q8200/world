@@ -12,8 +12,8 @@ dev-ruby/sqlite3
 dev-util/aptana
 games-util/qjoypad
 games-util/steam-meta
-kde-base/kdm
 media-gfx/bconv
+media-gfx/blender
 media-gfx/gnome-screenshot
 media-gfx/imgsrc
 media-libs/exiftool
@@ -26,13 +26,14 @@ media-video/guvcview
 net-dialup/pptpclient
 net-im/skype
 net-misc/knock
-net-misc/tor
 net-print/splix
+net-vpn/openvpn
+net-vpn/tor
 sys-apps/usb_modeswitch
 sys-boot/unetbootin
-sys-firmware/radeon-ucode
 sys-fs/fuseiso
 sys-fs/mtpfs
 sys-fs/simple-mtpfs
+sys-kernel/linux-firmware
 vayerx/lxde
 x11-misc/sddm
