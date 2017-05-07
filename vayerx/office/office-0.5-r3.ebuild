@@ -22,7 +22,7 @@ PDEPEND="
 		app-cdr/cuetools
 
 		kde? (
-			app-cdr/k3b
+			kde-apps/k3b
 		)
 		!kde? (
 			app-cdr/xfburn
