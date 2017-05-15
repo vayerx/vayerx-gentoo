@@ -19,6 +19,7 @@ PDEPEND="
 
 	kde? (
 		dev-util/kdevelop
+		kde-apps/konsole
 		kde-apps/kcachegrind
 		kde-apps/kdebase-runtime-meta
 	)
