@@ -4,7 +4,7 @@ games-engines/renpy development
 games-fps/alienarena-ng -dga
 games-fps/nexuiz maps
 games-fps/quake2-icculus -joystick qmax
-games-simulation/openttd -timidity
+games-simulation/openttd timidity
 games-strategy/freeciv auth modpack sqlite
 games-strategy/warzone2100 videos
 games-util/steam-client-meta flash steamfonts trayicon

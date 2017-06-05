@@ -25,7 +25,7 @@ dev-qt/qt3support accessibility kde
 dev-qt/qtdeclarative accessibility webkit
 dev-qt/qtgui accessibility dbus
 dev-qt/qtsvg accessibility
-dev-qt/qtwebkit -exceptions
+dev-qt/qtwebkit -exceptions -gstreamer
 dev-ruby/rrdtool-bindings graph
 gnome-base/gvfs mtp
 gnome-base/nautilus tracker
@@ -46,7 +46,7 @@ media-libs/libmypaint gegl
 media-libs/libvpx postproc svc
 media-libs/mlt kdenlive melt qt4 qt5
 media-libs/phonon qt4 qt5
-media-libs/phonon-vlc qt5
+media-libs/phonon-vlc qt4 qt5
 media-libs/sdl-mixer mod modplug
 media-libs/vigra openexr
 media-plugins/audacious-plugins cue
@@ -64,12 +64,14 @@ net-im/psi -crypt extras -jingle spell xscreensaver
 net-im/skype apulse
 net-misc/ciscovpn openssl
 net-misc/curl idn rtmp
+sci-geosciences/gpsbabel -gui
 sci-geosciences/gpsd usb
 sci-geosciences/qlandkartegt gps -qt5
 sci-libs/gdal -python -ruby
 sci-libs/hdf5 -cxx -fortran
 sci-mathematics/octave curl gnuplot
 sys-apps/lm_sensors sensord
+sys-apps/pcsc-lite python_single_target_python3_4
 sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-boot/grub -ncurses
 sys-kernel/genkernel -firmware
