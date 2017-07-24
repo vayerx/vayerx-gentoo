@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="5"
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python2_7 python3_4 python3_5 python3_6 )
 inherit cmake-utils python-r1
 
 DESCRIPTION="Software framework for scalable cross-language services development"
