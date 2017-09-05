@@ -41,7 +41,7 @@ PDEPEND="
 	python? (
 		dev-lang/python
 		dev-python/pystaff[database?,rich?,testing?]
-		dev-python/spyder[pylint]
+		dev-python/spyder
 
 		rich? (
 			dev-util/ninja-ide
