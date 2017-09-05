@@ -22,14 +22,20 @@ export LC_COLLATE="POSIX"
 export LC_MESSAGES="POSIX"
 export LC_NUMERIC="POSIX"
 
+function print_ecode() {
+    local ecode="$1"; shift
+    if [ $ecode -eq 0 ]; then
+        echo -e "$@${@:+ }\033[01;32mSUCCEEDED\033[00m"
+    else
+        echo -e "$@${@:+ }\033[01;31mFAILED\033[00m (code $ecode)"
+    fi
+    return ${ecode}
+}
+
 function m() {
-    make -j$NJOBS "$@"
-    local res="$?"
-    case "$res" in
-        0) echo -e "\033[01;32mOK\033[00m"  ;;
-        *) echo -e "\033[01;31mFAILED\033[00m: code $res" ;;
-    esac
-    return $res
+    CLICOLOR_FORCE=1 make -j$NJOBS "$@"
+    print_ecode $?
+    return $?
 }
 
 alias CM="cmake -DCMAKE_BUILD_TYPE=Debug .. && gmake -j$NJOBS"
@@ -123,10 +129,9 @@ function sortitru() {
 
 # Oh, Dear God, You can't imagine how much do I hate autotools (c) gtest.ebuild
 function autofuck() {
-    autoconf
-    autoheader
-    aclocal
-    automake --add-missing
+    for op in autoconf autoheader aclocal automake; do
+        ${op}; print_ecode $? ${op} || return $?
+    done
 }
 
 function xme() {

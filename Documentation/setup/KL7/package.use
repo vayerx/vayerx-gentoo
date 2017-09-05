@@ -1,4 +1,4 @@
-app-emulation/docker -aufs btrfs -device-mapper -overlay seccomp
+app-emulation/docker -aufs btrfs -device-mapper -overlay -seccomp
 app-misc/sphinx odbc stemmer
 dev-cpp/gtest gmock
 dev-db/freetds mssql
@@ -13,7 +13,7 @@ dev-python/pystaff rich
 dev-qt/qtsql mysql
 dev-ruby/rbstaff gui datamining database
 media-video/ffmpeg -samba opus vpx
-net-misc/openvpn pkcs11
+net-vpn/openvpn pkcs11
 net-misc/wget -gnutls ntlm
 net-nds/openldap sasl kerberos kinit
 sys-libs/libseccomp static-libs

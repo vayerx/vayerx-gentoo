@@ -85,3 +85,6 @@ else
 endif
 
 nmap <F8> :colorscheme vayerx<CR>
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$\| \+\ze\t/
