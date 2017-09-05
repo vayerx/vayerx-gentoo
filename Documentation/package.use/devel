@@ -10,19 +10,22 @@ dev-lang/perl ithreads
 dev-lang/python sqlite tk
 dev-libs/boost:1.55 -std-cxx11
 dev-libs/boost:1.56 std-cxx11 tools
+dev-libs/libdbusmenu-qt qt4
 dev-libs/libgit2 ssh
 dev-libs/libpcre pcre16
 dev-libs/thrift cpp -ruby
 dev-python/ipython qt4 -wxwidgets
 dev-python/numpy lapack
+dev-python/PyQt5 webkit
 dev-python/QtPy webkit
 dev-python/spyder ipython numpy matplotlib pep8 pylint qtconsole scipy sphinx
 dev-qt/qt-creator autotools cmake qtscript valgrind
 dev-qt/qtscript scripttools
 dev-qt/qtwebchannel qml
 dev-qt/qtwebengine widgets
+dev-qt/qtwebkit printsupport
 dev-util/cmake server
-dev-util/kdevelop -linguas_ru -handbook -ninja okteta -plasma
+dev-util/kdevelop -linguas_ru -handbook -ninja okteta -plasma -qmake
 dev-util/kdevplatform -linguas_ru -cvs -welcomepage
 dev-vcs/git -gtk perl tk webdav -xinetd
 dev-vcs/subversion -dso perl -ruby

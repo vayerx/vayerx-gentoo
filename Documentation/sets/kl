@@ -27,6 +27,7 @@ dev-python/django
 dev-python/dnspython
 dev-python/lockfile
 dev-python/numpy
+dev-python/peewee
 dev-python/pika
 dev-python/pip
 dev-python/psycopg:2
@@ -35,13 +36,14 @@ dev-python/pytest
 dev-python/python-daemon
 dev-util/pycharm-professional
 gnome-base/nautilus
+gnome-extra/libgsf
 net-dns/rbldnsd
+net-libs/libgsasl
 net-libs/rabbitmq-c
 net-misc/bridge-utils
-net-misc/openvpn
 net-misc/rabbitmq-server
+net-vpn/openvpn
 sci-libs/scipy
 sys-devel/clang
-www-client/chromium
 www-client/fetch
 www-plugins/chrome-binary-plugins

@@ -7,14 +7,12 @@ dev-lang/elixir
 dev-python/backports-shutil_get_terminal_size
 dev-python/elasticsearch-py
 dev-python/hdfs
-dev-python/ipdb
 dev-python/mechanize
 dev-python/pysolr
 dev-util/clion
 dev-util/gource
 dev-vcs/git-lfs
 dev-vcs/gitstats
-gnome-extra/libgsf
 media-gfx/gnome-screenshot
 media-sound/mp3unicode
 media-sound/vorbis-tools

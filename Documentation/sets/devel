@@ -5,8 +5,7 @@ app-doc/doxygen
 app-i18n/enca
 app-vim/command-t
 app-vim/nerdtree
-dev-libs/boost:1.56
-dev-libs/boost:1.60
+dev-libs/boost
 dev-libs/jsoncpp
 dev-libs/libxml2
 dev-util/cmake
