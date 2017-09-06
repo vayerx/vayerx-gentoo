@@ -1,10 +1,9 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit eutils readme.gentoo
+inherit eutils readme.gentoo-r1
 
 DESCRIPTION="Intelligent Python IDE with unique code assistance and analysis"
 HOMEPAGE="http://www.jetbrains.com/pycharm/"
@@ -23,11 +22,18 @@ RESTRICT="mirror strip"
 
 QA_PREBUILT="opt/${PN}/bin/fsnotifier
 	opt/${PN}/bin/fsnotifier64
+	opt/${PN}/bin/fsnotifier-arm
 	opt/${PN}/bin/libyjpagent-linux.so
 	opt/${PN}/bin/libyjpagent-linux64.so"
 
 MY_PN=${PN/-professional/}
 S="${WORKDIR}/${MY_PN}-${PV}"
+
+src_prepare() {
+	default
+
+	rm -rf jre || die
+}
 
 src_install() {
 	insinto /opt/${PN}
@@ -39,5 +45,5 @@ src_install() {
 	newicon "bin/${MY_PN}.png" ${PN}.png
 	make_desktop_entry ${PN} "${PN}" "${PN}"
 
-	readme.gentoo_src_install
+	readme.gentoo_create_doc
 }
