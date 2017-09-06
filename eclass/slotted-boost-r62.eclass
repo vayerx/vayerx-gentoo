@@ -17,7 +17,7 @@ SRC_URI="mirror://sourceforge/boost/${MY_P}.tar.bz2"
 LICENSE="Boost-1.0"
 SLOT="${MAJOR_V}/${PV}"
 KEYWORDS="~x86 ~amd64"
-IUSE="+context debug doc +eselect icu +nls mpi python static-libs std-cxx11 +threads tools"
+IUSE="+context debug doc +eselect icu +nls mpi python static-libs +threads tools"
 
 RDEPEND="abi_x86_32? ( !app-emulation/emul-linux-x86-cpplibs[-abi_x86_32(-)] )
 	icu? ( >=dev-libs/icu-3.6:=[${MULTILIB_USEDEP}] )
