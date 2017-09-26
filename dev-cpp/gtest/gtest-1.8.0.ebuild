@@ -1,11 +1,10 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 )
-inherit python-r1 cmake-utils
+PYTHON_COMPAT=( python2_7 python3_{4,5,6} pypy )
+inherit python-any-r1 cmake-multilib
 
 DESCRIPTION="Google C++ Testing Framework"
 HOMEPAGE="https://github.com/google/googletest"
@@ -21,19 +20,25 @@ else
 	S="${WORKDIR}/googletest-release-${PV}"
 fi
 
-LICENSE="googletest"
+LICENSE="BSD"
 SLOT="0"
-IUSE="examples +threads static-libs gmock"
+IUSE="examples +threads +static-libs gmock"
 
-RDEPEND=""
+RDEPEND="gmock? ( !dev-cpp/gmock )"
 
-src_configure() {
+PATCHES=(
+	"${FILESDIR}"/${P}-fix-py-tests.patch
+	"${FILESDIR}"/${P}-fix-gcc6-undefined-behavior.patch
+)
+
+multilib_src_configure() {
 	local mycmakeargs=(
 		-DBUILD_GTEST="ON"
 		-DBUILD_GMOCK="$(usex gmock)"
 		-DBUILD_SHARED_LIBS="$(usex static-libs OFF ON)"
 		-Dgtest_disable_pthreads="$(usex threads OFF ON)"
 		-Dgtest_build_samples="$(usex examples)"
+                -DPYTHON_EXECUTABLE="${PYTHON}"
 	)
 
 	cmake-utils_src_configure
