@@ -1,7 +1,7 @@
 # Copyright 2015-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI=6
 PYTHON_COMPAT=( python2_7 python3_4 python3_5 python3_6 )
 inherit cmake-utils python-r1
 
@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 
 # Thrift 0.9.3 cmake build doesn't support other generator libraries
 # TODO: as3 c_glib cocoa cpp csharp d delphi erl go haxe hs java javame js lua nodejs ocaml perl php py rb st ts
-IUSE="cpp c_glib python qt4 qt5 std-cxx11"
+IUSE="cpp c_glib python qt4 qt5"
 
 RDEPEND="
 	dev-libs/boost:=
@@ -44,10 +44,13 @@ REQUIRED_USE="
 
 src_configure() {
 	local mycmakeargs=(
-		$(cmake-utils_use_with std-cxx11 STDTHREADS)
+		-DWITH_STDTHREADS=ON
 	)
+
+	append-cxxflags -std=c++14
+
 	for flag in ${IUSE}; do
-		mycmakeargs+=($(cmake-utils_use_with ${flag/+/}))
+		mycmakeargs+=(-DWITH_${flag}="$(usex ${flag})")
 	done
 
 	cmake-utils_src_configure
