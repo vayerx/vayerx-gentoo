@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -29,7 +28,6 @@ RDEPEND="
 	media-libs/libpng:0
 	media-libs/fontconfig
 	ssl? ( dev-libs/libp11 )
-	media-libs/hal-flash
 	!app-crypt/pkiclient
 "
 DEPEND="${RDEPEND}"
