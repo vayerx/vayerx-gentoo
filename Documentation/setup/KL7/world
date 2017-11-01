@@ -1,7 +1,7 @@
 app-crypt/etoken-sac::vayerx
 app-misc/elasticsearch
 app-misc/sphinx
-dev-db/mdbx
+dev-cpp/gtest::vayerx
 dev-db/mysql
 dev-lang/elixir
 dev-python/backports-shutil_get_terminal_size
@@ -25,9 +25,11 @@ net-vpn/openvpn
 sci-mathematics/octave
 sys-apps/usb_modeswitch
 sys-boot/unetbootin
+sys-devel/gcc:5.4.0
 sys-fs/cryptsetup
 sys-fs/simple-mtpfs
 sys-kernel/linux-firmware
+sys-power/powertop
 sys-process/tiptop
 vayerx/lxde
 x11-misc/xtrlock::vayerx

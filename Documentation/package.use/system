@@ -41,6 +41,8 @@ media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
 media-libs/gexiv2 introspection
 media-libs/gst-plugins-bad -gles2
+media-libs/liblastfm qt4
+media-libs/libmygpo-qt qt4
 media-libs/libmypaint gegl
 media-libs/libvpx postproc svc
 media-libs/mlt kdenlive melt qt4 qt5

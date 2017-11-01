@@ -68,7 +68,7 @@ export UNCRUSTIFY_CONFIG=".uncrustify"
 
 # Git
 function ghead() {
-    git lv ${1:-} | head -n ${2:-7}
+    git lv --color=always ${1:-} | head -n ${2:-7}
 }
 
 function gheadn() {

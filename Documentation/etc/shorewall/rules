@@ -18,6 +18,9 @@ SECTION NEW
 
 Broadcast(DROP)		net	fw
 
+# netbios-ns,netbios-ssn,microsoft-ds
+DROP			net	fw		tcp	137,139,445
+
 # $event, $interval, $count, $successive, $bltime, $disposition, $level
 AutoBL(PSCAN,60,10,5,3600,DROP,warn)\
 			net	fw

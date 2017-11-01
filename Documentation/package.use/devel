@@ -12,8 +12,9 @@ dev-libs/boost:1.55 -std-cxx11
 dev-libs/boost:1.56 std-cxx11 tools
 dev-libs/libdbusmenu-qt qt4
 dev-libs/libgit2 ssh
+dev-libs/libpcre2 pcre16
 dev-libs/libpcre pcre16
-dev-libs/thrift cpp -ruby
+dev-libs/thrift cpp std-cxx11 -ruby
 dev-python/ipython qt4 -wxwidgets
 dev-python/numpy lapack
 dev-python/PyQt5 webkit
