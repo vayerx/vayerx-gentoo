@@ -1,1 +1,3 @@
+media-sound/pulseaudio
+sys-apps/systemd
 >=www-client/firefox-57

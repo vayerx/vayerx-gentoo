@@ -1,0 +1,11 @@
+app-arch/dpkg
+app-arch/rpm
+app-cdr/cdrtools
+app-emulation/q4wine
+app-laptop/radeontool
+app-portage/layman
+games-util/steam-meta
+net-p2p/amule
+sci-mathematics/qtoctave
+vayerx/lxde
+x11-misc/sddm

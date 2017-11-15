@@ -1,0 +1,52 @@
+00:00.0 Host bridge [0600]: Intel Corporation Haswell-ULT DRAM Controller [8086:0a04] (rev 09)
+	Subsystem: Acer Incorporated [ALI] Haswell-ULT DRAM Controller [1025:081e]
+	Kernel driver in use: hsw_uncore
+00:02.0 VGA compatible controller [0300]: Intel Corporation Haswell-ULT Integrated Graphics Controller [8086:0a16] (rev 09)
+	Subsystem: Acer Incorporated [ALI] Haswell-ULT Integrated Graphics Controller [1025:081e]
+	Kernel driver in use: i915
+	Kernel modules: i915
+00:03.0 Audio device [0403]: Intel Corporation Haswell-ULT HD Audio Controller [8086:0a0c] (rev 09)
+	Subsystem: Acer Incorporated [ALI] Haswell-ULT HD Audio Controller [1025:081e]
+	Kernel driver in use: snd_hda_intel
+00:14.0 USB controller [0c03]: Intel Corporation 8 Series USB xHCI HC [8086:9c31] (rev 04)
+	Subsystem: Acer Incorporated [ALI] 8 Series USB xHCI HC [1025:081e]
+	Kernel driver in use: xhci_hcd
+	Kernel modules: xhci_pci
+00:16.0 Communication controller [0780]: Intel Corporation 8 Series HECI #0 [8086:9c3a] (rev 04)
+	Subsystem: Acer Incorporated [ALI] 8 Series HECI [1025:081e]
+00:19.0 Ethernet controller [0200]: Intel Corporation Ethernet Connection I218-LM [8086:155a] (rev 04)
+	Subsystem: Acer Incorporated [ALI] Ethernet Connection I218-LM [1025:081e]
+	Kernel driver in use: e1000e
+	Kernel modules: e1000e
+00:1b.0 Audio device [0403]: Intel Corporation 8 Series HD Audio Controller [8086:9c20] (rev 04)
+	Subsystem: Acer Incorporated [ALI] 8 Series HD Audio Controller [1025:081e]
+	Kernel driver in use: snd_hda_intel
+00:1c.0 PCI bridge [0604]: Intel Corporation 8 Series PCI Express Root Port 4 [8086:9c16] (rev e4)
+	Kernel driver in use: pcieport
+00:1c.4 PCI bridge [0604]: Intel Corporation 8 Series PCI Express Root Port 5 [8086:9c18] (rev e4)
+	Kernel driver in use: pcieport
+00:1c.5 PCI bridge [0604]: Intel Corporation 8 Series PCI Express Root Port 6 [8086:9c1a] (rev e4)
+00:1d.0 USB controller [0c03]: Intel Corporation 8 Series USB EHCI #1 [8086:9c26] (rev 04)
+	Subsystem: Acer Incorporated [ALI] 8 Series USB EHCI [1025:081e]
+	Kernel driver in use: ehci-pci
+00:1f.0 ISA bridge [0601]: Intel Corporation 8 Series LPC Controller [8086:9c43] (rev 04)
+	Subsystem: Acer Incorporated [ALI] 8 Series LPC Controller [1025:081e]
+	Kernel driver in use: lpc_ich
+	Kernel modules: lpc_ich
+00:1f.2 SATA controller [0106]: Intel Corporation 8 Series SATA Controller 1 [AHCI mode] [8086:9c03] (rev 04)
+	Subsystem: Acer Incorporated [ALI] 8 Series SATA Controller 1 [AHCI mode] [1025:081e]
+	Kernel driver in use: ahci
+	Kernel modules: ahci
+00:1f.3 SMBus [0c05]: Intel Corporation 8 Series SMBus Controller [8086:9c22] (rev 04)
+	Subsystem: Acer Incorporated [ALI] 8 Series SMBus Controller [1025:081e]
+	Kernel driver in use: i801_smbus
+	Kernel modules: i2c_i801
+01:00.0 Network controller [0280]: Intel Corporation Wireless 7260 [8086:08b1] (rev 73)
+	Subsystem: Intel Corporation Dual Band Wireless-N 7260 [8086:4060]
+	Kernel modules: iwlwifi
+02:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Mars [Radeon HD 8670A/8670M/8750M] [1002:6600]
+	Subsystem: Acer Incorporated [ALI] Mars [Radeon HD 8670A/8670M/8750M] [1025:082b]
+	Kernel driver in use: amdgpu
+	Kernel modules: amdgpu
+03:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. RTS5229 PCI Express Card Reader [10ec:5229] (rev 01)
+	Subsystem: Acer Incorporated [ALI] RTS5229 PCI Express Card Reader [1025:081e]

@@ -2,16 +2,14 @@ app-admin/conky iostats portmon
 app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
 app-crypt/heimdal -ssl -threads
-app-crypt/qca qt4
+app-crypt/qca gpg qt4
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions
 app-emulation/wine mono odbc s3tc samba staging
 app-misc/mc edit samba slang
 app-office/akonadi-server sqlite
 app-portage/layman mercurial squashfs
-app-text/asciidoc python_single_target_python2_7
 app-text/hunspell l10n_en l10n_ru
-app-text/poppler qt5
 app-text/yagf scanner
 dev-db/sqlite secure-delete
 dev-libs/glib xattr
@@ -22,7 +20,7 @@ dev-python/pycairo -xcb
 dev-python/PyQt4 webkit declarative
 dev-qt/qt3support accessibility kde
 dev-qt/qtdeclarative accessibility webkit
-dev-qt/qtgui accessibility dbus
+dev-qt/qtgui accessibility dbus evdev
 dev-qt/qtsvg accessibility
 dev-qt/qtwebkit -exceptions -gstreamer
 dev-ruby/rrdtool-bindings graph
@@ -45,7 +43,7 @@ media-libs/liblastfm qt4
 media-libs/libmygpo-qt qt4
 media-libs/libmypaint gegl
 media-libs/libvpx postproc svc
-media-libs/mlt kdenlive melt qt4 qt5
+media-libs/mlt kdenlive melt
 media-libs/phonon qt4 qt5
 media-libs/phonon-vlc qt4 qt5
 media-libs/sdl-mixer mod modplug
@@ -63,21 +61,23 @@ net-dns/avahi autoipd -gtk gtk3 mdnsresponder-compat
 net-fs/samba client winbind
 net-im/psi -crypt extras -jingle spell xscreensaver
 net-im/skype apulse
+net-libs/libssh server
 net-misc/ciscovpn openssl
 net-misc/curl idn rtmp
 sci-geosciences/gpsbabel -gui
 sci-geosciences/gpsd usb
-sci-geosciences/qlandkartegt gps -qt5
+sci-geosciences/qlandkartegt gps
 sci-libs/gdal -python -ruby
 sci-libs/hdf5 -cxx -fortran
 sci-mathematics/octave curl gnuplot
 sys-apps/lm_sensors sensord
-sys-apps/pcsc-lite python_single_target_python3_4
 sys-apps/util-linux static-libs
 sys-auth/polkit-qt qt4
 sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-boot/grub -ncurses
 sys-devel/qconf qt4 -qt5
+sys-fs/eudev static-libs
+sys-fs/udev static-libs
 sys-kernel/genkernel -firmware
 sys-kernel/gentoo-sources experimental symlink
 sys-libs/ncurses -gpm

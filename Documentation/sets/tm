@@ -36,7 +36,7 @@ net-libs/libpcap
 sci-libs/libsvm
 sys-cluster/gearmand
 sys-devel/autogen
-sys-devel/gcc:4.8
+sys-devel/gcc:4.8.5
 sys-devel/gcc:4.9.3
 www-apache/mod_perl
 www-client/chromium
