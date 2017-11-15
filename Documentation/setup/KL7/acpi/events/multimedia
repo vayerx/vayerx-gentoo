@@ -1,0 +1,4 @@
+# /etc/acpi/events/default
+
+event=cd/.*
+action=/etc/acpi/actions/multimedia.sh %e

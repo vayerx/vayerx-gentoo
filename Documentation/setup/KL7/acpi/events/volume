@@ -1,0 +1,4 @@
+# /etc/acpi/events/default
+
+event=button/.*
+action=/etc/acpi/actions/multimedia.sh %e
