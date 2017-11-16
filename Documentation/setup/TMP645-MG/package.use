@@ -20,6 +20,8 @@ dev-qt/qtsvq accessibility
 dev-ruby/rbstaff datamining gui
 dev-vcs/git tk
 dev-vcs/subversion -dso perl
+games-util/steam-client-meta flash steamfonts trayicon
+games-util/steam-games-meta mono s3tc
 kde-apps/gwenview kipi
 kde-apps/kdebase-runtime-meta -crash-reporter
 media-libs/chromaprint tools
