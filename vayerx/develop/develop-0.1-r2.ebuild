@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="+cpp java ruby +python database postgres sqlite exotic +kde math +network +rich +testing"
+IUSE="+cpp java ruby +python database postgres sqlite exotic +kde math +network +rich +testing qt4"
 
 PDEPEND="
 	dev-util/meld
@@ -43,7 +43,7 @@ PDEPEND="
 		dev-python/pystaff[database?,rich?,testing?]
 		dev-python/spyder
 
-		rich? (
+		qt4? (
 			dev-util/ninja-ide
 		)
 	)

@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="burn gtk kde mate +rich +excessive abi_x86_32"
+IUSE="burn gtk kde mate +rich +excessive abi_x86_32 qt4"
 
 PDEPEND="
 	burn? (
@@ -74,7 +74,9 @@ PDEPEND="
 		app-office/dia
 		media-gfx/exif
 		media-gfx/exiftags
-		media-sound/picard
+		qt4? (
+			media-sound/picard
+		)
 		media-video/vlc
 
 		abi_x86_32? (
