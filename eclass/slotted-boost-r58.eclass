@@ -1,10 +1,9 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="5"
+EAPI=6
 
-inherit eutils flag-o-matic multilib multiprocessing python-r1 toolchain-funcs versionator multilib-minimal
+inherit eutils flag-o-matic multilib multiprocessing python-r1 toolchain-funcs versionator multilib-minimal multilib-build
 
 MY_P="${PN}_$(replace_all_version_separators _)"
 MAJOR_V="$(get_version_component_range 1-2)"
@@ -17,7 +16,7 @@ SRC_URI="mirror://sourceforge/boost/${MY_P}.tar.bz2"
 LICENSE="Boost-1.0"
 SLOT="${MAJOR_V}/${PV}"
 KEYWORDS="~x86 ~amd64"
-IUSE="+context debug doc +eselect icu +nls mpi python static-libs std-cxx11 +threads tools"
+IUSE="+context debug doc +eselect icu +nls mpi python static-libs +threads tools"
 
 RDEPEND="abi_x86_32? ( !app-emulation/emul-linux-x86-cpplibs[-abi_x86_32(-)] )
 	icu? ( >=dev-libs/icu-3.6:=[${MULTILIB_USEDEP}] )
@@ -26,7 +25,7 @@ RDEPEND="abi_x86_32? ( !app-emulation/emul-linux-x86-cpplibs[-abi_x86_32(-)] )
 	python? ( ${PYTHON_DEPS} )
 	app-arch/bzip2[${MULTILIB_USEDEP}]
 	sys-libs/zlib[${MULTILIB_USEDEP}]
-	eselect? ( >=app-admin/eselect-boost-0.4-r1 )
+	eselect? ( >=app-admin/eselect-boost-0.5 )
 	!eselect? ( !app-admin/eselect-boost )"
 DEPEND="${RDEPEND}
 	dev-util/boost-build:${MAJOR_V}"
@@ -67,11 +66,6 @@ LIBEXT="$(get_libname)"
 # ... to add to all profiles for which the use flag set
 
 _add_line() {
-	# TODO multilib support
-	if ! multilib_is_native_abi; then
-		return
-	fi
-
 	local profile="default"
 	if [[ -z "$2" ]]; then
 		if use debug; then
@@ -80,7 +74,7 @@ _add_line() {
 	else
 		profile="${2}"
 	fi
-	echo "${1}" >> "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/${profile}"
+	echo "${1}" >> "${D%/}/usr/share/boost-eselect/profiles/${MAJOR_V}/${profile}/${MULTILIB_ABI_FLAG:-native}"
 }
 
 create_user-config.jam() {
@@ -118,7 +112,7 @@ create_user-config.jam() {
 		fi
 	fi
 
-	cat > "${BOOST_ROOT}/user-config.jam" << __EOF__
+	cat > "${BOOST_ROOT}/user-config.jam" << __EOF__ || die
 using ${compiler} : ${compiler_version} : ${compiler_executable} : <cflags>"${CFLAGS}" <cxxflags>"${CXXFLAGS}" <linkflags>"${LDFLAGS}" ;
 ${mpi_configuration}
 ${python_configuration}
@@ -132,23 +126,23 @@ pkg_setup() {
 	fi
 
 	# Bail out on unsupported build configuration, bug #456792
-	if [[ -f "${EROOT}etc/site-config.jam" ]]; then
-		grep -q gentoorelease "${EROOT}etc/site-config.jam" && grep -q gentoodebug "${EROOT}etc/site-config.jam" ||
+	if [[ -f "${EROOT%/}/etc/site-config.jam" ]]; then
+		grep -q gentoorelease "${EROOT%/}/etc/site-config.jam" && grep -q gentoodebug "${EROOT%/}/etc/site-config.jam" ||
 		(
-			eerror "You are using custom ${EROOT}etc/site-config.jam without defined gentoorelease/gentoodebug targets."
+			eerror "You are using custom ${EROOT%/}/etc/site-config.jam without defined gentoorelease/gentoodebug targets."
 			eerror "Boost can not be built in such configuration."
-			eerror "Please, either remove this file or add targets from ${EROOT}usr/share/boost-build/site-config.jam to it."
+			eerror "Please, either remove this file or add targets from ${EROOT%/}/usr/share/boost-build/site-config.jam to it."
 			die
 		)
 	fi
 }
 
 src_prepare() {
-	for patch in "${BOOST_PATCHES[@]}"; do
-		epatch "${FILESDIR}/${PN}-${patch}"
-	done
+	default
 
-	epatch_user
+	for patch in "${BOOST_PATCHES[@]}"; do
+		epatch "${FILESDIR%/}/${PN}-${patch}"
+	done
 
 	multilib_copy_sources
 }
@@ -161,9 +155,14 @@ ejam() {
 
 src_configure() {
 	# Workaround for too many parallel processes requested, bug #506064
-	[ "$(makeopts_jobs)" -gt 64 ] && MAKEOPTS="${MAKEOPTS} -j64"
+	[[ "$(makeopts_jobs)" -gt 64 ]] && MAKEOPTS="${MAKEOPTS} -j64"
 
-	OPTIONS="$(usex debug gentoodebug gentoorelease) -j$(makeopts_jobs) -q -d+2"
+	OPTIONS=(
+		$(usex debug gentoodebug gentoorelease)
+		"-j$(makeopts_jobs)"
+		-q
+		-d+2
+	)
 
 	if [[ ${CHOST} == *-darwin* ]]; then
 		# We need to add the prefix, and in two cases this exceeds, so prepare
@@ -185,20 +184,35 @@ src_configure() {
 		[[ $(gcc-version) > 4.3 ]] && append-flags -mno-altivec
 	fi
 
-	append-cxxflags -std=$(usex std-cxx11 c++11 gnu++98)
+	# Use C++14 globally
+	append-cxxflags -std=c++14
 
-	use icu && OPTIONS+=" -sICU_PATH=${EPREFIX}/usr"
-	use icu || OPTIONS+=" --disable-icu boost.locale.icu=off"
-	mpi_needed || OPTIONS+=" --without-mpi"
-	use nls || OPTIONS+=" --without-locale"
-	use context || OPTIONS+=" --without-context --without-coroutine"
+	use icu && OPTIONS+=(
+		"-sICU_PATH=${EPREFIX%/}/usr"
+	)
+	use icu || OPTIONS+=(
+		--disable-icu
+		boost.locale.icu=off
+	)
+	mpi_needed || OPTIONS+=(
+		--without-mpi
+	)
+	use nls || OPTIONS+=(
+		--without-locale
+	)
+	use context || OPTIONS+=(
+		--without-context
+		--without-coroutine
+	)
 
-	OPTIONS+=" pch=off"
-	OPTIONS+=" --boost-build=${EPREFIX}/usr/share/boost-build-${MAJOR_V}"
-	OPTIONS+=" --prefix=\"${ED}usr\""
-	OPTIONS+=" --layout=system"
-	OPTIONS+=" threading=$(usex threads multi single)"
-	OPTIONS+=" link=$(usex static-libs shared,static shared)"
+	OPTIONS+=(
+		pch=off
+		--boost-build="${EPREFIX}/usr/share/boost-build-${MAJOR_V}"
+		--prefix="${ED%/}/usr"
+		--layout=system
+		threading=$(usex threads multi single)
+		link=$(usex static-libs shared,static shared)
+	)
 
 	if use static-libs; then
 		LIBRARY_TARGETS="*.a.${PV} *$(get_libname ${PV})"
@@ -207,7 +221,9 @@ src_configure() {
 		LIBRARY_TARGETS="libboost_test_exec_monitor.a.${PV} libboost_exception.a.${PV} *$(get_libname ${PV})"
 	fi
 
-	[[ ${CHOST} == *-winnt* ]] && OPTIONS+=" -sNO_BZIP2=1"
+	[[ ${CHOST} == *-winnt* ]] && OPTIONS+=(
+		-sNO_BZIP2=1
+	)
 }
 
 multilib_src_compile() {
@@ -226,7 +242,7 @@ multilib_src_compile() {
 		fi
 
 		ejam \
-			${OPTIONS} \
+			"${OPTIONS[@]}" \
 			${PYTHON_OPTIONS} \
 			|| die "Building of Boost libraries failed"
 
@@ -281,17 +297,17 @@ multilib_src_compile() {
 
 multilib_src_install_all() {
 	if ! use python; then
-		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/python* || die
+		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/python* || die
 	fi
 
 	if ! use nls; then
-		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/locale || die
+		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/locale || die
 	fi
 
 	if ! use context; then
-		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/context || die
-		rm -r "${ED}"/usr/include/boost-${MAJOR_V}/coroutine || die
-		rm    "${ED}"/usr/include/boost-${MAJOR_V}/asio/spawn.hpp || die
+		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/context || die
+		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/coroutine || die
+		rm    "${ED%/}"/usr/include/boost-${MAJOR_V}/asio/spawn.hpp || die
 	fi
 
 	if use doc; then
@@ -301,12 +317,12 @@ multilib_src_install_all() {
 			*.{htm,html,png,css} \
 			-r doc
 		dohtml -A pdf,txt -r tools
-		insinto /usr/share/doc/${PF}/html
+		insinto /usr/share/doc/${PF%/}/html
 		doins -r libs
 		doins -r more
 
 		# To avoid broken links
-		insinto /usr/share/doc/${PF}/html
+		insinto /usr/share/doc/${PF%/}/html
 		doins LICENSE_1_0.txt
 
 		dosym /usr/include/boost-${MAJOR_V} /usr/share/doc/${PF}/html/boost
@@ -338,10 +354,10 @@ multilib_src_install() {
 		fi
 
 		ejam \
-			${OPTIONS} \
+			"${OPTIONS[@]}" \
 			${PYTHON_OPTIONS} \
-			--includedir="${ED}usr/include/boost-${MAJOR_V}" \
-			--libdir="${ED}usr/$(get_libdir)" \
+			--includedir="${ED%/}/usr/include/boost-${MAJOR_V}" \
+			--libdir="${ED%/}/usr/$(get_libdir)" \
 			install || die "Installation of Boost libraries failed"
 
 		if python_bindings_needed; then
@@ -353,7 +369,7 @@ multilib_src_install() {
 				local moddir=$(python_get_sitedir)/boost_${MAJOR_V}
 				# moddir already includes eprefix
 				mkdir -p "${D}${moddir}" || die
-				mv "${ED}usr/$(get_libdir)/mpi.so" "${D}${moddir}" || die
+				mv "${ED%/}/usr/$(get_libdir)/mpi.so" "${D}${moddir}" || die
 				cat << EOF > "${D}${moddir}/__init__.py" || die
 import sys
 if sys.platform.startswith('linux'):
@@ -374,10 +390,15 @@ EOF
 		fi
 	}
 
-	dodir /usr/share/boost-eselect/profiles/${MAJOR_V}
-	touch "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/default" || die
+	touch_profile() {
+		local profile="${1:?no profile was specified}"
+		dodir "/usr/share/boost-eselect/profiles/${MAJOR_V}/${profile}" || die
+		touch "${D%/}/usr/share/boost-eselect/profiles/${MAJOR_V}/${profile}/${MULTILIB_ABI_FLAG:-native}" || die
+	}
+
+	multilib_foreach_abi touch_profile default
 	if use debug; then
-		touch "${D}usr/share/boost-eselect/profiles/${MAJOR_V}/debug" || die
+		multilib_foreach_abi touch_profile debug
 	fi
 
 	if python_bindings_needed; then
@@ -405,10 +426,10 @@ EOF
 		insinto /usr/share/doc/${PF}/html
 		doins LICENSE_1_0.txt
 
-		dosym /usr/include/boost-${MAJOR_V}/boost /usr/share/doc/${PF}/html/boost
+		dosym /usr/include/boost-${MAJOR_V}/boost /usr/share/doc/${PF%/}/html/boost
 	fi
 
-	pushd "${ED}"usr/$(get_libdir) > /dev/null || die
+	pushd "${ED%/}/usr/$(get_libdir)" > /dev/null || die
 
 	# Remove (unversioned) symlinks
 	# And check for what we remove to catch bugs
@@ -469,7 +490,6 @@ EOF
 		done
 		_add_line "\"" debug
 
-		_add_line "includes=\"/usr/include/boost-${MAJOR_V}/boost\"" debug
 		_add_line "suffix=\"-debug\"" debug
 	fi
 
@@ -512,7 +532,9 @@ EOF
 		fi
 	fi
 
-	_add_line "includes=\"/usr/include/boost-${MAJOR_V}/boost\"" default
+	if is_final_abi; then
+		_add_line "includes=\"/usr/include/boost-${MAJOR_V}/boost\"" default
+	fi
 
 	popd > /dev/null || die
 
@@ -544,7 +566,7 @@ EOF
 	if [[ ${CHOST} == *-darwin* ]]; then
 		einfo "Working around completely broken build-system(tm)"
 		local d
-		for d in "${ED}"usr/lib/*.dylib; do
+		for d in "${ED%/}"/usr/lib/*.dylib; do
 			if [[ -f ${d} ]]; then
 				# fix the "soname"
 				ebegin "  correcting install_name of ${d#${ED}}"

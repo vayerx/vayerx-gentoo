@@ -1,10 +1,9 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit eutils flag-o-matic multilib multiprocessing python-r1 toolchain-funcs versionator multilib-minimal
+inherit eutils flag-o-matic multilib multiprocessing python-r1 toolchain-funcs versionator multilib-minimal multilib-build
 
 MY_P="${PN}_$(replace_all_version_separators _)"
 MAJOR_V="$(get_version_component_range 1-2)"
@@ -26,7 +25,7 @@ RDEPEND="abi_x86_32? ( !app-emulation/emul-linux-x86-cpplibs[-abi_x86_32(-)] )
 	python? ( ${PYTHON_DEPS} )
 	app-arch/bzip2[${MULTILIB_USEDEP}]
 	sys-libs/zlib[${MULTILIB_USEDEP}]
-	eselect? ( >=app-admin/eselect-boost-0.4-r1 )
+	eselect? ( >=app-admin/eselect-boost-0.5 )
 	!eselect? ( !app-admin/eselect-boost )"
 DEPEND="${RDEPEND}
 	dev-util/boost-build:${MAJOR_V}"
@@ -67,11 +66,6 @@ LIBEXT="$(get_libname)"
 # ... to add to all profiles for which the use flag set
 
 _add_line() {
-	# TODO multilib support
-	if ! multilib_is_native_abi; then
-		return
-	fi
-
 	local profile="default"
 	if [[ -z "$2" ]]; then
 		if use debug; then
@@ -80,7 +74,7 @@ _add_line() {
 	else
 		profile="${2}"
 	fi
-	echo "${1}" >> "${D%/}/usr/share/boost-eselect/profiles/${MAJOR_V}/${profile}"
+	echo "${1}" >> "${D%/}/usr/share/boost-eselect/profiles/${MAJOR_V}/${profile}/${MULTILIB_ABI_FLAG:-native}"
 }
 
 create_user-config.jam() {
@@ -190,7 +184,7 @@ src_configure() {
 		[[ $(gcc-version) > 4.3 ]] && append-flags -mno-altivec
 	fi
 
-	# Use C++14 globally as of 1.62
+	# Use C++14 globally
 	append-cxxflags -std=c++14
 
 	use icu && OPTIONS+=(
@@ -400,10 +394,15 @@ EOF
 		fi
 	}
 
-	dodir /usr/share/boost-eselect/profiles/${MAJOR_V}
-	touch "${D%/}/usr/share/boost-eselect/profiles/${MAJOR_V}/default" || die
+	touch_profile() {
+		local profile="${1:?no profile was specified}"
+		dodir "/usr/share/boost-eselect/profiles/${MAJOR_V}/${profile}" || die
+		touch "${D%/}/usr/share/boost-eselect/profiles/${MAJOR_V}/${profile}/${MULTILIB_ABI_FLAG:-native}" || die
+	}
+
+	multilib_foreach_abi touch_profile default
 	if use debug; then
-		touch "${D%/}/usr/share/boost-eselect/profiles/${MAJOR_V}/debug" || die
+		multilib_foreach_abi touch_profile debug
 	fi
 
 	if python_bindings_needed; then
@@ -495,7 +494,6 @@ EOF
 		done
 		_add_line "\"" debug
 
-		_add_line "includes=\"/usr/include/boost-${MAJOR_V}/boost\"" debug
 		_add_line "suffix=\"-debug\"" debug
 	fi
 
@@ -538,7 +536,9 @@ EOF
 		fi
 	fi
 
-	_add_line "includes=\"/usr/include/boost-${MAJOR_V}/boost\"" default
+	if is_final_abi; then
+		_add_line "includes=\"/usr/include/boost-${MAJOR_V}/boost\"" default
+	fi
 
 	popd > /dev/null || die
 

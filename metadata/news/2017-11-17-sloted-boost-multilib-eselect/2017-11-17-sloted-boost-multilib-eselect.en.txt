@@ -1,0 +1,18 @@
+Title: Multilib support for slotted Boost
+Author: Vasiliy Yeremeyev <vayerx@gmail.com>
+Content-Type: text/plain
+Posted: 2017-11-17
+Revision: 1
+News-Item-Format: 1.0
+Display-If-Installed: app-admin/eselect-boost
+
+Slotted boost now supports multilib build. However this change is incompatilbe with previous versions.
+All installed versions of slotted boost should be re-emerged before new eselect will be able to operate.
+
+You may encounter the following message:
+ * Installation of a directory is blocked by a file:
+ *   '/usr/share/boost-eselect/profiles/X.YY/default'
+ * This file will be renamed to a different name:
+ *   '/usr/share/boost-eselect/profiles/X.YY/default.backup.0000'
+
+It is OK. You will need to remove backuped file manually.
