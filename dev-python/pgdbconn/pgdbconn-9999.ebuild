@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=5
 
@@ -8,12 +7,12 @@ PYTHON_COMPAT=( python2_7 python3_{3,4,5,6} )
 
 inherit distutils-r1
 
-DESCRIPTION="Framework and utilities to upgrade and maintain databases"
-HOMEPAGE="http://pyrseas.readthedocs.org"
+DESCRIPTION="Object-oriented layer over Psycopg2 to connect and interact with Postgres databases"
+HOMEPAGE="https://github.com/perseas/pgdbconn"
 
 if [[ "${PV}" = 9999* ]]; then
 	inherit git-2
-	EGIT_REPO_URI="git://github.com/perseas/Pyrseas.git"
+	EGIT_REPO_URI="git://github.com/perseas/${PN}.git"
 	KEYWORDS=""
 else
 	SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
@@ -24,11 +23,8 @@ LICENSE="BSD"
 SLOT="0"
 IUSE=""
 
-DEPEND="
-	dev-python/setuptools
-	dev-python/pgdbconn"
+DEPEND="dev-python/setuptools"
 
 RDEPEND="${DEPEND}
-	dev-db/postgresql
-	dev-python/pyyaml
+	>=dev-python/psycopg-2.5
 "

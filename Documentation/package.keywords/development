@@ -1,6 +1,7 @@
 app-vim/project **
 dev-cpp/gtest **
 dev-db/Pyrseas **
+dev-python/pgdbconn **
 dev-util/kdevelop:4 **
 dev-util/kdevelop-python **
 dev-util/kdevplatform:4 **
