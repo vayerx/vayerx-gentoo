@@ -1,8 +1,6 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-
 inherit eutils flag-o-matic multilib multiprocessing python-r1 toolchain-funcs versionator multilib-minimal multilib-build
 
 MY_P="${PN}_$(replace_all_version_separators _)"

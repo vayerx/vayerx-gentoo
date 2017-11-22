@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <herd>cpp</herd>
+  <maintainer type="person">
+    <name>Vasiliy Yereyemev</name>
+    <email>vayerx@gmail.com</email>
+  </maintainer>
   <use>
     <flag name='context'>
       Build and install the Boost.Context library and all other 
@@ -36,9 +39,6 @@
     </flag>
     <flag name='eselect'>
       Enable eselect support -- multi-slot installation.
-    </flag>
-    <flag name='std-cxx11'>
-      Enable C++11 standard. GNU dialect of C++98 standard is used otherwise.
     </flag>
   </use>
 </pkgmetadata>
