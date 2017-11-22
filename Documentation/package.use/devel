@@ -36,4 +36,4 @@ media-libs/phonon qt4
 media-libs/phonon-vlc qt4
 sys-devel/gcc awt go graphite
 sys-devel/llvm clang
-sys-libs/zlib minizip
+sys-libs/zlib minizip static-libs

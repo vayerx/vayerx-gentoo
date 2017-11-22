@@ -11,8 +11,7 @@
 	lvf = log --pretty=vaylong
 	me = merge --no-ff --no-commit --strategy=recursive --strategy-option=patience
 	mt = mergetool
-	pu = pull --ff-only
-	rb = rebase
+	pnh = push --force-with-lease
 	rl = rev-list
 	sh = show --word-diff=color
 	shf = show --color-words=[^[:space:]]
@@ -56,6 +55,7 @@
 [merge]
 	ff = false
 	tool = meld
+	conflictStyle = diff3
 
 [pretty]
 	vay = %Cgreen%h %Creset%s%Creset
@@ -63,6 +63,7 @@
 
 [pull]
 	ff = only
+	rebase = preserve
 
 [push]
 	default = tracking
