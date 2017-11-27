@@ -6,7 +6,7 @@ PYTHON_COMPAT=( python2_7 )
 inherit cmake-utils python-r1
 
 DESCRIPTION="Software framework for scalable cross-language services development"
-HOMEPAGE="http://thrift.apache.org"
+HOMEPAGE="https://thrift.apache.org"
 SRC_URI="mirror://apache/${PN}/${PV}/${P}.tar.gz"
 RESTRICT="mirror"
 

@@ -6,7 +6,7 @@ PYTHON_COMPAT=( python2_7 python3_4 python3_5 python3_6 )
 inherit cmake-utils python-r1
 
 DESCRIPTION="Software framework for scalable cross-language services development"
-HOMEPAGE="http://thrift.apache.org"
+HOMEPAGE="https://thrift.apache.org"
 SRC_URI="mirror://apache/${PN}/${PV}/${P}.tar.gz"
 RESTRICT="mirror"
 
@@ -14,19 +14,31 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 
-# Thrift 0.9.3 cmake build doesn't support other generator libraries
-# TODO: as3 c_glib cocoa cpp csharp d delphi erl go haxe hs java javame js lua nodejs ocaml perl php py rb st ts
-IUSE="cpp c_glib python qt4 qt5"
+# Thrift 0.10.0 cmake build doesn't support other generator libraries
+# TODO: as3 cocoa cpp csharp d delphi erl go hs javame js lua nodejs ocaml perl php py rb st ts
+# TODO: haskell (dev-lang/ghc) support
+IUSE="c_glib cpp java +libevent +openssl python qt4 qt5 static-libs +stdthreads +zlib"
 
 RDEPEND="
 	dev-libs/boost:=
-	dev-libs/openssl:=
+
+	java? (
+		virtual/jre:=
+	)
+
 	qt4? ( dev-qt/qtcore:4 )
 	qt5? ( dev-qt/qtcore:5 )
 
-	cpp? (
+	libevent? (
 		dev-libs/libevent
+	)
+
+	zlib? (
 		sys-libs/zlib
+	)
+
+	openssl? (
+		dev-libs/openssl:=
 	)
 
 	python? ( ${PYTHON_DEPS} )
@@ -44,13 +56,21 @@ REQUIRED_USE="
 
 src_configure() {
 	local mycmakeargs=(
-		-DWITH_STDTHREADS=ON
+		-DWITH_SHARED_LIB=ON
 	)
 
 	append-cxxflags -std=c++14
 
+	if usex static-libs; then
+		mycmakeargs+=(-DWITH_STATIC_LIB=ON)
+	else
+		mycmakeargs+=(-DWITH_STATIC_LIB=OFF)
+	fi
+
 	for flag in ${IUSE}; do
-		mycmakeargs+=(-DWITH_${flag}="$(usex ${flag})")
+		if [ "${flag}" != "static-libs"]; then
+			mycmakeargs+=(-DWITH_${flag}="$(usex ${flag})")
+		fi
 	done
 
 	cmake-utils_src_configure
