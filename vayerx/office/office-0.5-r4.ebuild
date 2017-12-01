@@ -80,8 +80,7 @@ PDEPEND="
 		media-video/vlc
 
 		abi_x86_32? (
-			app-emulation/wine
-			app-emulation/winetricks
+			app-emulation/wine-vanilla
 		)
 	)
 "
