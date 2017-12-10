@@ -5,7 +5,7 @@ app-crypt/heimdal -ssl -threads
 app-crypt/qca gpg qt4
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions
-app-emulation/wine mono odbc s3tc samba staging
+app-emulation/wine-vanilla mono odbc s3tc samba staging
 app-misc/mc edit samba slang
 app-office/akonadi-server sqlite
 app-portage/layman mercurial squashfs
@@ -14,6 +14,7 @@ app-text/yagf scanner
 dev-db/sqlite secure-delete
 dev-libs/glib xattr
 dev-libs/libgdata gnome
+dev-libs/libpcre2 pcre16
 dev-libs/openssl gmp rfc3779 -tls-heartbeat
 dev-libs/xmlsec gcrypt nss
 dev-python/pycairo -xcb
@@ -22,7 +23,7 @@ dev-qt/qt3support accessibility kde
 dev-qt/qtdeclarative accessibility webkit
 dev-qt/qtgui accessibility dbus evdev
 dev-qt/qtsvg accessibility
-dev-qt/qtwebkit -exceptions -gstreamer
+dev-qt/qtwebkit -exceptions -gstreamer printsupport
 dev-ruby/rrdtool-bindings graph
 gnome-base/gvfs mtp
 gnome-base/nautilus tracker
@@ -30,7 +31,7 @@ kde-apps/ark lzma
 kde-apps/gwenview -handbook kipi
 kde-apps/kde4-l10n minimal
 kde-frameworks/kdelibs -opengl semantic-desktop
-mail-client/thunderbird -minimal
+mail-client/thunderbird -minimal system-icu
 mate-base/mate-applets networkmanager
 mate-base/mate-panel networkmanager
 mate-extra/mate-utils applet
@@ -56,7 +57,7 @@ media-video/ffmpeg -network opus theora webp
 media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska postproc freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live lua
 net-analyzer/rrdtool graph
 net-analyzer/tcpdump -samba
-net-dialup/ppp atm eap-tls
+net-dialup/ppp dhcp eap-tls
 net-dns/avahi autoipd -gtk gtk3 mdnsresponder-compat
 net-fs/samba client winbind
 net-im/psi -crypt extras -jingle spell xscreensaver
@@ -78,10 +79,12 @@ sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-boot/grub -ncurses
 sys-devel/qconf qt4 -qt5
 sys-fs/eudev static-libs
+sys-fs/mdadm static
 sys-fs/udev static-libs
 sys-kernel/genkernel -firmware
 sys-kernel/gentoo-sources experimental symlink
 sys-libs/ncurses -gpm
+sys-libs/zlib static-libs
 virtual/ffmpeg opus
 www-client/chromium -hangouts kerberos
 www-client/firefox -gmp-autoupdate hardened

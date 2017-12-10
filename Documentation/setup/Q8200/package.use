@@ -1,5 +1,5 @@
 >=media-libs/mesa-10 -opencl llvm
-app-emulation/wine -gstreamer
+app-emulation/wine-vanilla -gstreamer
 app-office/libreoffice -abi_x86_32 -gnome -vba -webdav
 app-text/gocr tk
 dev-cpp/cppstaff kde
@@ -40,3 +40,4 @@ x11-libs/libSM -uuid
 x11-libs/libdrm libkms
 x11-misc/xscreensaver new-login
 media-libs/phonon-gstreamer qt4 qt5
+www-plugins/gnash -gstreamer

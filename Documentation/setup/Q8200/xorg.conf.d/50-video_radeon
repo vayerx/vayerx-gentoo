@@ -4,7 +4,7 @@ Section "Device"
     BoardName  "Cape Verde XT [Radeon HD 7770 GHz Edition]"
 
     BusID      "PCI:1:0:0"
-    Driver     "radeon"
+    Driver     "amdgpu"
 
     Option     "SWcursor"        "false"
     Option     "EnablePageFlip"  "true"
