@@ -22,15 +22,11 @@ net-print/foomatic-db
 net-proxy/cntlm
 net-vpn/openvpn
 sys-apps/microcode-ctl
-sci-mathematics/octave
-sys-apps/usb_modeswitch
 sys-boot/unetbootin
 sys-firmware/intel-microcode
 sys-fs/cryptsetup
 sys-fs/simple-mtpfs
-sys-kernel/linux-firmware
 sys-power/powertop
-sys-process/tiptop
 vayerx/lxde
 x11-misc/xtrlock::vayerx
 x11-themes/gnome-icon-theme

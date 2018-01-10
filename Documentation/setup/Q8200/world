@@ -29,12 +29,10 @@ net-misc/knock
 net-print/splix
 net-vpn/openvpn
 net-vpn/tor
-sys-apps/usb_modeswitch
 sys-boot/unetbootin
 sys-fs/fuseiso
 sys-fs/mtpfs
 sys-fs/simple-mtpfs
-sys-kernel/linux-firmware
 vayerx/lxde
 www-plugins/gnash
 x11-misc/sddm
