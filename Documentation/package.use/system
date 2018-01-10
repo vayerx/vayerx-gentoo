@@ -73,7 +73,6 @@ sys-apps/util-linux static-libs
 sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-boot/grub -ncurses
 sys-devel/qconf -qt5
-sys-firmware/intel-microcode initramfs
 sys-fs/eudev static-libs
 sys-fs/mdadm static
 sys-fs/udev static-libs

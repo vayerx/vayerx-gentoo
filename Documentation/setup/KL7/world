@@ -25,6 +25,7 @@ sys-apps/microcode-ctl
 sci-mathematics/octave
 sys-apps/usb_modeswitch
 sys-boot/unetbootin
+sys-firmware/intel-microcode
 sys-fs/cryptsetup
 sys-fs/simple-mtpfs
 sys-kernel/linux-firmware
