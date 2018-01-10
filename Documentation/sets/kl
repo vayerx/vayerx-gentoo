@@ -17,7 +17,7 @@ dev-db/postgresql:10
 dev-db/Pyrseas
 dev-db/slony1
 dev-db/yoyo-migrations
-dev-libs/boost:1.62
+dev-libs/boost
 dev-libs/geoip
 dev-libs/libpqxx
 dev-libs/marisa

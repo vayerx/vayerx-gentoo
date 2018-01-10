@@ -10,13 +10,12 @@ dev-lang/perl ithreads
 dev-lang/python sqlite tk
 dev-libs/boost:1.56 std-cxx11 tools
 dev-libs/gmp static-libs
-dev-libs/libdbusmenu-qt qt4
 dev-libs/libgit2 ssh
 dev-libs/libpcre2 pcre16
 dev-libs/libpcre pcre16
 dev-libs/openssl static-libs
 dev-libs/thrift cpp std-cxx11 -ruby
-dev-python/ipython qt4 -wxwidgets
+dev-python/ipython -wxwidgets
 dev-python/numpy lapack
 dev-python/PyQt5 webkit
 dev-python/QtPy webkit
@@ -32,8 +31,6 @@ dev-util/kdevplatform -linguas_ru -cvs -welcomepage
 dev-vcs/git -gtk perl tk webdav -xinetd
 dev-vcs/subversion -dso perl -ruby
 media-libs/mlt -ruby
-media-libs/phonon qt4
-media-libs/phonon-vlc qt4
 sys-devel/gcc awt go graphite
 sys-devel/llvm clang
 sys-libs/zlib minizip static-libs

@@ -2,7 +2,7 @@ app-admin/conky iostats portmon
 app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
 app-crypt/heimdal -ssl -threads
-app-crypt/qca gpg qt4
+app-crypt/qca gpg
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions
 app-emulation/wine-vanilla mono odbc s3tc samba staging
@@ -40,13 +40,9 @@ media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
 media-libs/gexiv2 introspection
 media-libs/gst-plugins-bad -gles2
-media-libs/liblastfm qt4
-media-libs/libmygpo-qt qt4
 media-libs/libmypaint gegl
 media-libs/libvpx postproc svc
 media-libs/mlt kdenlive melt
-media-libs/phonon qt4 qt5
-media-libs/phonon-vlc qt4 qt5
 media-libs/sdl-mixer mod modplug
 media-libs/vigra openexr
 media-plugins/audacious-plugins cue
@@ -54,7 +50,7 @@ media-sound/asunder -aac
 media-sound/audacity id3tag twolame
 media-sound/clementine lastfm mtp
 media-video/ffmpeg -network opus theora webp
-media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska postproc freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live lua
+media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska postproc freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio lua
 net-analyzer/rrdtool graph
 net-analyzer/tcpdump -samba
 net-dialup/ppp dhcp eap-tls
@@ -74,10 +70,10 @@ sci-libs/hdf5 -cxx -fortran
 sci-mathematics/octave curl gnuplot
 sys-apps/lm_sensors sensord
 sys-apps/util-linux static-libs
-sys-auth/polkit-qt qt4
 sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-boot/grub -ncurses
-sys-devel/qconf qt4 -qt5
+sys-devel/qconf -qt5
+sys-firmware/intel-microcode initramfs
 sys-fs/eudev static-libs
 sys-fs/mdadm static
 sys-fs/udev static-libs

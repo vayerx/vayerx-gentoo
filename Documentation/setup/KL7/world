@@ -17,15 +17,14 @@ media-gfx/gnome-screenshot
 media-sound/mp3unicode
 media-sound/vorbis-tools
 net-ftp/lftp
-net-im/skype
 net-misc/rdesktop
 net-print/foomatic-db
 net-proxy/cntlm
 net-vpn/openvpn
+sys-apps/microcode-ctl
 sci-mathematics/octave
 sys-apps/usb_modeswitch
 sys-boot/unetbootin
-sys-devel/gcc:5.4.0
 sys-fs/cryptsetup
 sys-fs/simple-mtpfs
 sys-kernel/linux-firmware
