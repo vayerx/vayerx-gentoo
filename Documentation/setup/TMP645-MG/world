@@ -7,5 +7,6 @@ app-portage/layman
 games-util/steam-meta
 net-p2p/amule
 sci-mathematics/qtoctave
+sys-firmware/intel-microcode
 vayerx/lxde
 x11-misc/sddm

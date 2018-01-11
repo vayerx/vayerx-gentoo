@@ -1,6 +1,7 @@
 app-admin/conky iostats portmon
 app-admin/sudo -ldap -sendmail
 app-antivirus/clamav clamdtop
+app-crypt/argon2 static-libs
 app-crypt/heimdal -ssl -threads
 app-crypt/qca gpg
 app-emulation/q4wine icoutils
@@ -13,6 +14,7 @@ app-text/hunspell l10n_en l10n_ru
 app-text/yagf scanner
 dev-db/sqlite secure-delete
 dev-libs/glib xattr
+dev-libs/json-c static-libs
 dev-libs/libgdata gnome
 dev-libs/libpcre2 pcre16
 dev-libs/openssl gmp rfc3779 -tls-heartbeat
