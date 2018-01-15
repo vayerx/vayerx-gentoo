@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit eutils readme.gentoo-r1
+inherit gnome2-utils readme.gentoo-r1 xdg
 
 DESCRIPTION="Intelligent Python IDE with unique code assistance and analysis"
 HOMEPAGE="http://www.jetbrains.com/pycharm/"
@@ -41,9 +41,9 @@ src_install() {
 
 	fperms a+x /opt/${PN}/bin/{pycharm.sh,fsnotifier{,64},inspect.sh}
 
-	dosym /opt/${PN}/bin/pycharm.sh /usr/bin/${PN}
-	newicon "bin/${MY_PN}.png" ${PN}.png
-	make_desktop_entry ${PN} "${PN}" "${PN}"
+	dosym ../../opt/${PN}/bin/pycharm.sh /usr/bin/${PN}
+	newicon bin/${MY_PN}.png ${PN}.png
+	make_desktop_entry ${PN} ${PN} ${PN}
 
 	readme.gentoo_create_doc
 }
