@@ -47,7 +47,7 @@
 [diff]
 	renames = copies
 	algorithm = patience
-	external = git-meld
+#	external = git-meld
 
 [log]
 	date = iso

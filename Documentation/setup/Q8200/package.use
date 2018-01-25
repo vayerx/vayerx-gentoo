@@ -1,8 +1,8 @@
->=media-libs/mesa-10 -opencl llvm
+app-emulation/wine-staging s3tc
 app-emulation/wine-vanilla -gstreamer
 app-office/libreoffice -abi_x86_32 -gnome -vba -webdav
 app-text/gocr tk
-dev-cpp/cppstaff kde
+dev-cpp/cppstaff kde -rich
 dev-libs/boost doc eselect tools
 dev-libs/botan -python
 dev-libs/elfutils static-libs
@@ -15,29 +15,28 @@ media-gfx/blender -openmp
 media-gfx/graphicsmagick -imagemagick
 media-gfx/hugin sift
 media-libs/freeimage -raw
-media-libs/mesa d3d9 gbm xa xorg xvmc
+media-libs/mesa d3d9 gbm -opencl llvm xa xorg xvmc
 media-libs/opencv doc -openmp
 net-fs/cifs-utils -acl
 net-fs/samba winbind
 net-libs/webkit-gtk -geoloc -opengl -webgl
 net-misc/batman-adv bla dat
 net-misc/networkmanager -wext -zeroconf
-net-vpn/tor nat-pmp stats transparent-proxy upnp web
 net-print/cups -zeroconf
+net-vpn/tor nat-pmp stats transparent-proxy upnp web
 sci-geosciences/gpsd garmin
 sys-apps/util-linux static-libs
-sys-devel/gcc gcj
 vayerx/develop kde math
 vayerx/office burn excessive mate kde rich
 vayerx/systaff -rich
+virtual/wine d3d9 staging
 www-client/firefox system-icu system-jpeg system-sqlite
+www-plugins/gnash -gstreamer
 www-plugins/gnash -nsplugin -vaapi
 www-plugins/lightspark -ffmpeg -nsplugin
 x11-base/xorg-server xvfb
 x11-drivers/xf86-video-ati glamor
 x11-libs/glamor -gles
-x11-libs/libSM -uuid
 x11-libs/libdrm libkms
+x11-libs/libSM -uuid
 x11-misc/xscreensaver new-login
-media-libs/phonon-gstreamer qt4 qt5
-www-plugins/gnash -gstreamer

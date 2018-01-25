@@ -9,7 +9,6 @@ app-text/asciidoc
 dev-cpp/yaml-cpp
 dev-db/pgadmin3
 dev-db/pgbadger
-dev-db/pgpool2
 dev-db/pg_top
 dev-db/pguint
 dev-db/postgresql:9.4
@@ -21,13 +20,13 @@ dev-libs/boost
 dev-libs/geoip
 dev-libs/libpqxx
 dev-libs/marisa
+dev-libs/rapidjson
 dev-libs/thrift
 dev-perl/Switch
 dev-python/cherrypy
 dev-python/django
 dev-python/dnspython
 dev-python/lockfile
-dev-python/numpy
 dev-python/peewee
 dev-python/pika
 dev-python/pip
@@ -36,7 +35,6 @@ dev-python/pymssql:0
 dev-python/pytest
 dev-python/python-daemon
 dev-util/pycharm-professional
-gnome-base/nautilus
 gnome-extra/libgsf
 net-dns/rbldnsd
 net-libs/libgsasl
@@ -45,6 +43,5 @@ net-misc/bridge-utils
 net-misc/rabbitmq-server
 net-vpn/openvpn
 sci-libs/scipy
-sys-devel/clang
 www-client/fetch
 www-plugins/chrome-binary-plugins

@@ -3,11 +3,13 @@ app-crypt/pinentry -gnome-keyring
 app-crypt/qca qt5
 app-editors/vim cscope ruby -X
 app-text/texlive-core xetex
+dev-db/freetds mssql odbc
 dev-db/postgresql perl
 dev-db/slony1 doc perl
 dev-java/swing-layout source
 dev-lang/perl ithreads
 dev-lang/python sqlite tk
+dev-lang/ruby tk
 dev-libs/boost:1.56 std-cxx11 tools
 dev-libs/gmp static-libs
 dev-libs/libgit2 ssh

@@ -10,6 +10,8 @@ source /etc/profile
 
 export PATH="$HOME/bin:$PATH"
 
+export HISTFILESIZE=5000
+
 NJOBS=4
 
 if [ "$TERM" = screen ]; then
@@ -175,10 +177,9 @@ alias emerge-modules="emerge -q --keep-going @module-rebuild"
 alias emerge-x11-modules="emerge -q --keep-going @x11-module-rebuild"
 alias emerge-update-world="emerge -avquDN --keep-going --with-bdeps=y --verbose-conflicts world"
 alias emerge="emerge --verbose-conflicts"
-alias quickpkg="quickpkg --include-config=y"
 
+alias quickpkg="quickpkg --include-config=y"
 alias wget="wget --no-use-server-timestamps"
-alias quickpkg="quickpkg --include-unmodified-config=y"
 
 
 umask 0002
