@@ -1,6 +1,5 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -21,7 +20,6 @@ PDEPEND="
 		dev-util/kdevelop
 		kde-apps/konsole
 		kde-apps/kcachegrind
-		kde-apps/kdebase-runtime-meta
 	)
 	!kde? (
 		dev-qt/qt-creator[cmake,git,valgrind]

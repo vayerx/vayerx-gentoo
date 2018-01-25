@@ -1,6 +1,5 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -17,14 +16,13 @@ PDEPEND="
 	dev-util/meld
 
 	kde? (
-		kde-apps/kdebase-runtime-meta
 		kde-apps/kompare
 		kde-apps/umbrello
 		kde-misc/kdiff3
 	)
 
 	cpp? (
-		dev-cpp/cppstaff[rich?,exotic?,testing?,kde?]
+		dev-cpp/cppstaff
 		sys-devel/gcc[cxx]
 	)
 
@@ -40,7 +38,7 @@ PDEPEND="
 
 	python? (
 		dev-lang/python
-		dev-python/pystaff[database?,rich?,testing?]
+		dev-python/pystaff
 		dev-python/spyder
 
 		qt4? (
