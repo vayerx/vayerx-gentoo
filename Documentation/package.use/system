@@ -21,6 +21,7 @@ dev-libs/openssl gmp rfc3779 -tls-heartbeat
 dev-libs/xmlsec gcrypt nss
 dev-python/pycairo -xcb
 dev-python/PyQt4 webkit declarative
+dev-python/PyQt5 declarative
 dev-qt/qt3support accessibility kde
 dev-qt/qtdeclarative accessibility webkit
 dev-qt/qtgui accessibility dbus evdev
@@ -40,6 +41,7 @@ mate-extra/mate-utils applet
 media-gfx/graphicsmagick imagemagick
 media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
+media-libs/freetype harfbuzz
 media-libs/gexiv2 introspection
 media-libs/gst-plugins-bad -gles2
 media-libs/libmypaint gegl
@@ -71,6 +73,7 @@ sci-libs/gdal -python -ruby
 sci-libs/hdf5 -cxx -fortran
 sci-mathematics/octave curl gnuplot
 sys-apps/lm_sensors sensord
+sys-apps/portage rsync-verify
 sys-apps/util-linux static-libs
 sys-block/gparted fat ntfs reiserfs xfs -xfce
 sys-boot/grub -ncurses
@@ -80,7 +83,7 @@ sys-fs/mdadm static
 sys-fs/udev static-libs
 sys-kernel/genkernel -firmware
 sys-kernel/gentoo-sources experimental symlink
-sys-libs/ncurses -gpm
+sys-libs/ncurses gpm
 sys-libs/zlib static-libs
 virtual/ffmpeg opus
 www-client/chromium -hangouts kerberos

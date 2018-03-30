@@ -9,11 +9,14 @@ dev-python/elasticsearch-py
 dev-python/hdfs
 dev-python/mechanize
 dev-python/pysolr
+dev-ruby/mechanize
+dev-ruby/sqlite3
 dev-util/clion
 dev-util/gource
 dev-vcs/git-lfs
 dev-vcs/gitstats
 media-gfx/gnome-screenshot
+media-plugins/alsaequal
 media-sound/mp3unicode
 media-sound/vorbis-tools
 net-ftp/lftp

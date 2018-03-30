@@ -14,7 +14,6 @@ dev-db/pguint
 dev-db/postgresql:9.4
 dev-db/postgresql:10
 dev-db/Pyrseas
-dev-db/slony1
 dev-db/yoyo-migrations
 dev-libs/boost
 dev-libs/geoip

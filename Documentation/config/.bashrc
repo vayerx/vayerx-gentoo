@@ -54,7 +54,7 @@ alias calg="valgrind --tool=callgrind"
 alias valg="valgrind --track-origins=yes --num-callers=30"
 alias valm="valgrind --track-origins=yes --leak-check=full --show-leak-kinds=definite --num-callers=30"
 alias helg="valgrind --tool=helgrind --free-is-write=yes"
-alias masf="valgrind --tool=massif --heap=yes --stacks=no --depth=50 --max-snapshots=1000"
+alias masf="valgrind --tool=massif --heap=yes --stacks=no --depth=50 --max-snapshots=1000 --time-unit=ms"
 
 # Docker
 for cmd in cp help info kill load ps save rm rmi run stop; do
@@ -78,11 +78,12 @@ function gheadn() {
 }
 
 function glast() {
-    local wday="$1"
+    local head="${1:-HEAD}"
+    local wday="$2"
     [ -z "$wday" ] && { [ $(date '+%w') -eq 1 ] && wday=3 || wday=1; }
     local date=$(date --date "${wday} days ago" '+%a, %e %b %Y' | sed 's/  / /')
     echo "Commits of $date"
-    git lvf | grep "$(git config user.name).*$date"
+    git lvf ${head} | grep "$(git config user.name).*$date"
 }
 
 function gcherry() {
@@ -109,11 +110,17 @@ function grebase() {
     git stash pop
 }
 
+function git_branch() {
+    git br 2>/dev/null | sed -n 's/* \(.*\)/(\1) /p'
+}
+
+
 function backtrace() {
     local exe="${1:?no exe file}"
     local core="${2:?no core file}"
+    local opts="${3}"
     gdb ${exe} --core ${core} --batch --quiet \
-        -ex "thread apply all bt full" \
+        -ex "thread apply all bt ${opts}" \
         -ex "quit"
 }
 
@@ -181,5 +188,24 @@ alias emerge="emerge --verbose-conflicts"
 alias quickpkg="quickpkg --include-config=y"
 alias wget="wget --no-use-server-timestamps"
 
+
+# Change the window title of X terminals
+case ${TERM} in
+    [kx]term*|gnome*|konsole*)
+        PS1='\[\033]0;\u@\h:\w\007\]'
+        ;;
+    screen*)
+        PS1='\[\033k\u@\h:\w\033\\\]'
+        ;;
+    *)
+    unset PS1
+        ;;
+esac
+
+if [[ ${EUID} == 0 ]] ; then
+    PS1+='\[\033[01;31m\]\h\[\033[01;34m\] \w \$\[\033[00m\] '
+else
+    PS1+='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[33m\]`git_branch`\[\033[01;34m\]\$\[\033[00m\] '
+fi
 
 umask 0002
