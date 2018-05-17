@@ -12,11 +12,9 @@ SRC_URI="https://download.jetbrains.com/python/${P}.tar.gz"
 LICENSE="PyCharm_Academic PyCharm_Classroom PyCharm PyCharm_OpenSource PyCharm_Preview"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=virtual/jre-1.8
 	 dev-python/pip"
-DEPEND=""
 
 RESTRICT="mirror strip"
 
@@ -46,4 +44,14 @@ src_install() {
 	make_desktop_entry ${PN} ${PN} ${PN}
 
 	readme.gentoo_create_doc
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	xdg_pkg_postrm
+	gnome2_icon_cache_update
 }
