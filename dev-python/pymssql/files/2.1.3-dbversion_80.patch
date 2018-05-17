@@ -1,0 +1,28 @@
+diff --git a/_mssql.pyx b/_mssql.pyx
+index 4d8d083..7a1dafa 100644
+--- a/_mssql.pyx
++++ b/_mssql.pyx
+@@ -1697,10 +1697,8 @@ cdef int _tds_ver_str_to_constant(verstr) except -1:
+         return DBVERSION_70
+     if verstr == u'7.1':
+         return DBVERSION_71
+-    if verstr == u'7.2':
++    if verstr in (u'7.2', u'8.0'):
+         return DBVERSION_72
+-    if verstr == u'8.0':
+-        return DBVERSION_80
+     raise MSSQLException('unrecognized tds version: %s' % verstr)
+ 
+ #######################
+diff --git a/sqlfront.pxd b/sqlfront.pxd
+index d0ef691..91ab005 100644
+--- a/sqlfront.pxd
++++ b/sqlfront.pxd
+@@ -106,7 +106,6 @@ cdef extern from "sqlfront.h":
+     int DBVERSION_70
+     int DBVERSION_71
+     int DBVERSION_72
+-    int DBVERSION_80
+ 
+     ## Type Constants ##
+     cdef enum:
