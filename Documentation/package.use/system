@@ -12,6 +12,7 @@ app-office/akonadi-server sqlite
 app-portage/layman mercurial squashfs
 app-text/hunspell l10n_en l10n_ru
 app-text/yagf scanner
+dev-cpp/gtest gmock
 dev-db/sqlite secure-delete
 dev-libs/glib xattr
 dev-libs/json-c static-libs
@@ -43,9 +44,10 @@ media-gfx/ufraw contrast timezone
 media-libs/chromaprint tools
 media-libs/freetype harfbuzz
 media-libs/gexiv2 introspection
-media-libs/gst-plugins-bad -gles2
 media-libs/libmypaint gegl
+media-libs/libsdl2 haptic
 media-libs/libvpx postproc svc
+media-libs/mesa egl
 media-libs/mlt kdenlive melt
 media-libs/sdl-mixer mod modplug
 media-libs/vigra openexr
@@ -59,7 +61,7 @@ net-analyzer/rrdtool graph
 net-analyzer/tcpdump -samba
 net-dialup/ppp dhcp eap-tls
 net-dns/avahi autoipd -gtk gtk3 mdnsresponder-compat
-net-fs/samba client winbind
+net-fs/samba client ldap winbind
 net-im/psi -crypt extras -jingle spell xscreensaver
 net-im/skype apulse
 net-libs/libssh server
@@ -83,6 +85,7 @@ sys-fs/mdadm static
 sys-fs/udev static-libs
 sys-kernel/genkernel -firmware
 sys-kernel/gentoo-sources experimental symlink
+sys-libs/ldb ldap
 sys-libs/ncurses gpm
 sys-libs/zlib static-libs
 virtual/ffmpeg opus

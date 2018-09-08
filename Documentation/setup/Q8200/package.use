@@ -15,10 +15,9 @@ media-gfx/blender -openmp
 media-gfx/graphicsmagick -imagemagick
 media-gfx/hugin sift
 media-libs/freeimage -raw
-media-libs/mesa d3d9 gbm -opencl llvm xa xorg xvmc
+media-libs/mesa d3d9 gbm -opencl llvm xorg
 media-libs/opencv doc -openmp
 net-fs/cifs-utils -acl
-net-fs/samba winbind
 net-libs/webkit-gtk -geoloc -opengl -webgl
 net-misc/batman-adv bla dat
 net-misc/networkmanager -wext -zeroconf
@@ -31,8 +30,7 @@ vayerx/office burn excessive mate kde rich
 vayerx/systaff -rich
 virtual/wine d3d9 staging
 www-client/firefox system-icu system-jpeg system-sqlite
-www-plugins/gnash -gstreamer
-www-plugins/gnash -nsplugin -vaapi
+www-plugins/gnash -gstreamer -nsplugin -vaapi
 www-plugins/lightspark -ffmpeg -nsplugin
 x11-base/xorg-server xvfb
 x11-drivers/xf86-video-ati glamor

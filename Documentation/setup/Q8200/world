@@ -1,3 +1,4 @@
+app-arch/xarchiver
 app-crypt/etoken-sac
 app-emulation/q4wine
 app-misc/gramps
@@ -26,6 +27,8 @@ media-sound/vorbis-tools
 media-video/guvcview
 net-dialup/pptpclient
 net-fs/davfs2
+net-im/skypeforlinux
+net-im/telegram-desktop-bin
 net-misc/knock
 net-print/splix
 net-proxy/cntlm
@@ -36,6 +39,8 @@ sys-fs/fuseiso
 sys-fs/mtpfs
 sys-fs/simple-mtpfs
 vayerx/lxde
+www-client/chromium
+www-plugins/chrome-binary-plugins
 www-plugins/gnash
 x11-misc/sddm
 x11-misc/xdg-user-dirs-gtk

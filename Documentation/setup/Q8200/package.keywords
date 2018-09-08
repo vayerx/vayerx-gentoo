@@ -1,0 +1,3 @@
+app-office/libreoffice -~amd64
+app-office/libreoffice-l10n -~amd64
+www-client/chromium -~amd64

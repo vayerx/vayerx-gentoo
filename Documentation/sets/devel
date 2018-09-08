@@ -20,7 +20,6 @@ dev-vcs/git[tk]
 dev-vcs/gitflow
 sci-calculators/galculator
 sci-visualization/gnuplot
-sys-devel/gcc:6.4.0
 sys-devel/gcc # latest
 sys-fs/inotify-tools
 sys-process/tiptop

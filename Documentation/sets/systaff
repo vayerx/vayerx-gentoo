@@ -4,6 +4,7 @@ app-admin/pwgen
 app-admin/sudo
 app-admin/syslog-ng
 app-antivirus/clamav
+app-arch/tarsync
 app-editors/vim
 app-forensics/magicrescue
 app-misc/mc

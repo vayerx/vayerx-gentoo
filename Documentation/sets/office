@@ -13,6 +13,7 @@ media-gfx/geeqie
 media-gfx/gimp
 media-gfx/imagemagick
 media-libs/libtxc_dxtn
+media-sound/apulse
 media-sound/clementine
 media-sound/mpg123
 media-video/mplayer

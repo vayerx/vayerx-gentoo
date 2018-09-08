@@ -2,6 +2,7 @@ dev-python/coverage
 dev-python/ipdb
 dev-python/ipython
 dev-python/lxml
+dev-python/overrides
 dev-python/profilehooks
 dev-python/pystaff
 dev-python/pyyaml

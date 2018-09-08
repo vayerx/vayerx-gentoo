@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc">
   <resistance>
     <strength>10</strength>
@@ -35,7 +36,7 @@
   </placement>
   <theme>
     <name>Clearlooks</name>
-    <titleLayout>NLIMC</titleLayout>
+    <titleLayout>NLIMDC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -163,12 +164,22 @@
     <chainQuitKey>C-g</chainQuitKey>
     <keybind key="W-Up">
       <action name="Execute">
-        <command>amixer set -c 0 Master 2dB+</command>
+        <command>amixer set PCM 2dB+</command>
       </action>
     </keybind>
     <keybind key="W-Down">
       <action name="Execute">
-        <command>amixer set -c 0 Master 2dB-</command>
+        <command>amixer set PCM 2dB-</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-s">
+      <action name="Execute">
+        <command>gnome-screenshot --window --remove-border</command>
+      </action>
+    </keybind>
+    <keybind key="W-s">
+      <action name="Execute">
+        <command>gnome-screenshot --window --remove-border</command>
       </action>
     </keybind>
     <keybind key="S-W-Left">

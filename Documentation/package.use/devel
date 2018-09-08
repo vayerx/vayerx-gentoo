@@ -1,5 +1,4 @@
 app-crypt/heimdal -ssl
-app-crypt/pinentry -gnome-keyring
 app-crypt/qca qt5
 app-editors/vim cscope ruby -X
 app-text/texlive-core xetex
@@ -33,6 +32,7 @@ dev-util/kdevplatform -linguas_ru -cvs -welcomepage
 dev-vcs/git -gtk perl tk webdav -xinetd
 dev-vcs/subversion -dso perl -ruby
 media-libs/mlt -ruby
+net-libs/zeromq drafts
 sys-devel/gcc awt go graphite
 sys-devel/llvm clang
 sys-libs/zlib minizip static-libs
