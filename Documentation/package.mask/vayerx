@@ -1,3 +1,4 @@
+>=mail-client/thunderbird-60
 media-sound/pulseaudio
 sys-apps/systemd
 >=www-client/firefox-57
