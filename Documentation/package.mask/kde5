@@ -8,6 +8,7 @@ kde-apps/kapptemplate:5
 kde-apps/kcachegrind:5
 kde-apps/kcmshell:5
 kde-apps/kcontrol:5
+>=kde-apps/kde4-l10n-16
 kde-apps/kde4-l10n:5
 kde-apps/kdebase-data:5
 kde-apps/kdebase-desktoptheme:5
@@ -117,4 +118,3 @@ kde-frameworks/sonnet:5
 kde-misc/kdiff3:5
 kde-plasma/kde-cli-tools:5
 kde-plasma/polkit-kde-agent:5
->=kde-apps/kde4-l10n-16

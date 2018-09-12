@@ -2,6 +2,7 @@ app-admin/ansible
 app-arch/rpm
 app-crypt/mit-krb5
 app-emulation/docker
+app-emulation/docker-compose
 app-emulation/virtualbox
 app-emulation/virtualbox-additions
 app-emulation/virtualbox-extpack-oracle
@@ -26,13 +27,18 @@ dev-python/cherrypy
 dev-python/django
 dev-python/dnspython
 dev-python/lockfile
+dev-python/marshmallow
 dev-python/peewee
 dev-python/pika
 dev-python/pip
+dev-python/portalocker
 dev-python/psycopg:2
 dev-python/pymssql:0
+dev-python/pyodbc
 dev-python/pytest
 dev-python/python-daemon
+dev-python/python-json-logger
+dev-python/redis-py
 dev-util/pycharm-professional
 gnome-extra/libgsf
 net-dns/rbldnsd

@@ -42,7 +42,7 @@
 	eol = native
 	excludesfile = ~/.gitexclude
 	pager = cat
-	whitespace = trailing-space,space-before-tab
+	whitespace = trailing-space,space-before-tab,cr-at-eol
 
 [diff]
 	renames = copies

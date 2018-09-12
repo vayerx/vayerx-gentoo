@@ -1,0 +1,19 @@
+include "%L"
+
+<Multi_key> <Cyrillic_BE> <Cyrillic_BE>: "«"
+<Multi_key> <Cyrillic_YU> <Cyrillic_YU>: "»"
+
+<Multi_key> <Cyrillic_SOFTSIGN> <minus>	: "Ҍ" U0462 #CYRILLIC CAPITAL LETTER YAT
+<Multi_key> <Cyrillic_softsign> <minus> : "ѣ" U0463 #CYRILLIC SMALL LETTER YAT
+<Multi_key> <Cyrillic_O> <minus> : "Ѳ" U0472 # CYRILLIC CAPITAL LETTER FITA
+<Multi_key> <Cyrillic_o> <minus> : "ѳ" U0473 # CYRILLIC SMALL LETTER FITA
+
+<Multi_key> <b> <h> : "☣" U2623 # biohazard
+<Multi_key> <r> <a> : "☢" U2622 # radiation
+
+<Multi_key> <question> <exclam> : "⁈" U2048
+
+<Multi_key> <equal> <parenright> : "¯\\_(ツ)_/¯"
+<Multi_key> <o> <underscore> <o> : "ಠ_ಠ" # LOOK OF DISAPPROVAL
+<Multi_key> <i> <d> <k> : "¯\\_(ツ)_/¯" # SHRUG
+

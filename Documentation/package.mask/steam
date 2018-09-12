@@ -1,4 +1,4 @@
 >=media-libs/alsa-lib-1.1
->=media-sound/alsa-utils-1.1
 >=media-plugins/alsa-plugins-1.1
 >=media-sound/alsa-tools-1.1
+>=media-sound/alsa-utils-1.1

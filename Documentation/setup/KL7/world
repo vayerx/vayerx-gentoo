@@ -18,12 +18,16 @@ dev-vcs/gitstats
 media-gfx/gnome-screenshot
 media-plugins/alsaequal
 media-sound/mp3unicode
+media-sound/picard
 media-sound/vorbis-tools
 net-ftp/lftp
+net-im/telegram-desktop-bin
+net-misc/iperf
 net-misc/rdesktop
 net-print/foomatic-db
 net-proxy/cntlm
 net-vpn/openvpn
+sec-policy/selinux-base-policy
 sys-apps/microcode-ctl
 sys-boot/unetbootin
 sys-firmware/intel-microcode
@@ -33,3 +37,4 @@ sys-power/powertop
 vayerx/lxde
 x11-misc/xtrlock::vayerx
 x11-themes/gnome-icon-theme
+x11-misc/lightdm

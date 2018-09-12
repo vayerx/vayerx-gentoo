@@ -3,6 +3,7 @@ app-misc/sphinx odbc stemmer
 dev-cpp/gtest gmock
 dev-db/freetds mssql
 dev-db/postgresql perl static-libs
+dev-lang/erlang hipe kpoll sctp
 dev-libs/boost static-libs
 dev-libs/elfutils static-libs
 dev-libs/libdbusmenu gtk3
@@ -12,9 +13,9 @@ dev-libs/thrift c_glib cpp python
 dev-python/pystaff rich
 dev-ruby/rbstaff gui datamining database
 media-video/ffmpeg -samba opus vpx
-net-vpn/openvpn pkcs11
 net-misc/wget -gnutls ntlm
 net-nds/openldap sasl kerberos kinit
+net-vpn/openvpn pkcs11
 sys-libs/libseccomp static-libs
 sys-process/tini static
 vayerx/office excessive kde

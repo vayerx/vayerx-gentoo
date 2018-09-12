@@ -126,14 +126,18 @@ function backtrace() {
 
 function sortit() {
     local src="${1:?no file}"
-    local dest="$(mktemp)"
-    LC_COLLATE="POSIX" sort -u $src > $dest && mv $dest $src || rm $dest
+    for src in "$@"; do
+        local dest="$(mktemp)"
+        LC_COLLATE="POSIX" sort -u $src > $dest && mv $dest $src || rm $dest
+    done
 }
 
 function sortitru() {
     local src="${1:?no file}"
-    local dest="$(mktemp)"
-    LC_COLLATE="ru_RU.utf8" sort -u $src > $dest && mv $dest $src || rm $dest
+    for src in "$@"; do
+        local dest="$(mktemp)"
+        LC_COLLATE="ru_RU.utf8" sort -u $src > $dest && mv $dest $src || rm $dest
+    done
 }
 
 # Oh, Dear God, You can't imagine how much do I hate autotools (c) gtest.ebuild

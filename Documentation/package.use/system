@@ -5,7 +5,7 @@ app-crypt/argon2 static-libs
 app-crypt/heimdal -ssl -threads
 app-crypt/qca gpg
 app-emulation/q4wine icoutils
-app-emulation/virtualbox extensions
+app-emulation/virtualbox extensions -python
 app-emulation/wine-vanilla mono odbc s3tc samba staging
 app-misc/mc edit samba slang
 app-office/akonadi-server sqlite
