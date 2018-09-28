@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>vayex@gmail.com</email>
+    <name>Vasiliy Yeremeyev</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">ko-zu/psl</remote-id>
+  </upstream>
+<use>
+  <flag name='update'>Support fetching of public_suffix_list.dat from publicsuffix.org</flag>
+</use>
+</pkgmetadata>
