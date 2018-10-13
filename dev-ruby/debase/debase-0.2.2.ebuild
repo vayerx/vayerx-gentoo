@@ -25,8 +25,8 @@ each_ruby_configure() {
 
 each_ruby_compile() {
 	emake V=1 -Cext
-	cp ext/${PN}_internals$(get_modname) lib/${PN}/ || die
+	cp ext/${PN}_internals$(get_modname) lib/ || die
 
 	emake V=1 -Cext/attach
-	cp ext/attach/attach$(get_modname) lib/${PN}/ || die
+	cp ext/attach/attach$(get_modname) lib/ || die
 }
