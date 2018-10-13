@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit eutils
+inherit eutils desktop
 
 MY_PN="RubyMine"
 MY_PV="$(ver_cut 1-3)"
@@ -13,7 +13,7 @@ HOMEPAGE="http://jetbrains.com/ruby/"
 SRC_URI="http://download.jetbrains.com/ruby/${MY_PN}-${MY_PV}.tar.gz"
 LICENSE="JetBrains-EULA"
 
-IUSE="+debugger"
+IUSE="+debugger rubocop"
 KEYWORDS="~amd64 ~x86"
 SLOT="$(ver_cut 1)"
 
@@ -22,7 +22,9 @@ RDEPEND="
 	debugger? (
 		dev-ruby/ruby-debug-ide
 	)
-	dev-ruby/rubocop
+	rubocop? (
+		dev-ruby/rubocop
+	)
 "
 
 RESTRICT="strip"
