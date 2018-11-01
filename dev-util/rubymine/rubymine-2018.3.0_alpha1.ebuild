@@ -6,7 +6,7 @@ EAPI=7
 inherit eutils desktop
 
 MY_PN="RubyMine"
-MY_PV="$(ver_cut 1-3)"
+MY_PV="183.3975.22"	# Early Access Program
 
 DESCRIPTION="The most intelligent Ruby and Rails IDE"
 HOMEPAGE="http://jetbrains.com/ruby/"
@@ -14,11 +14,14 @@ SRC_URI="http://download.jetbrains.com/ruby/${MY_PN}-${MY_PV}.tar.gz"
 LICENSE="JetBrains-EULA"
 
 IUSE="+debugger rubocop"
-KEYWORDS="~amd64"
-SLOT="$(ver_cut 1)"
+KEYWORDS=""
+SLOT="$(ver_cut 1)-eap"
 
 RDEPEND="
 	>=virtual/jdk-1.7
+	dev-libs/libdbusmenu
+	app-crypt/libsecret
+	dev-java/netbeans-javafx
 	debugger? (
 		dev-ruby/ruby-debug-ide
 	)
