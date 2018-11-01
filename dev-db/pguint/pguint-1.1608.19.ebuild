@@ -1,21 +1,22 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
-inherit eutils git-2
+EAPI=7
+
+EGIT_REPO_URI="https://github.com/petere/pguint.git"
+EGIT_COMMIT="$(ver_cut 1).20$(ver_cut 2)$(ver_cut 3)"
+
+inherit eutils git-r3
 
 DESCRIPTION="Unsigned and other extra integer types for PostgreSQL"
 HOMEPAGE="https://github.com/petere/pguint"
 SRC_URL=""
-EGIT_REPO_URI="https://github.com/petere/pguint.git"
-EGIT_BRANCH="master"
 
 SLOT="0"
 KEYWORDS="amd64"
 IUSE=""
 
-DEPEND=">=dev-db/postgresql-9.0:*"
+DEPEND=">=dev-db/postgresql-9.1"
 
 RDEPEND="${DEPEND}"
 
@@ -24,16 +25,14 @@ src_prepare() {
 		mkdir -p "${WORKDIR}/${pgslot}"
 		cp -R "${S}" "${WORKDIR}/${pgslot}"
 	done
-}
 
-src_configure() {
-	:
+	eapply_user
 }
 
 src_compile() {
 	for pgslot in $(eselect --brief postgresql list); do
 		cd "${WORKDIR}/${pgslot}/${P}"
-		PG_CONFIG="pg_config${pgslot//.}" emake
+		PG_CONFIG="pg_config${pgslot//.}" emake -j1
 	done
 }
 
