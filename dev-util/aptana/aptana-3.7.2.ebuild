@@ -1,20 +1,16 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="5"
+EAPI="7"
 inherit eutils
 
 DESCRIPTION="Eclipse IDE for building, editing and debugging HTML/CSS/JavaScript/PHP/Ruby on Rails."
 HOMEPAGE="http://www.aptana.com"
-SRC_URI="
-	x86? ( https://github.com/aptana/studio3/releases/download/v${PV}/Aptana_Studio_3_Setup_Linux_x86_${PV}.zip )
-	amd64? ( https://github.com/aptana/studio3/releases/download/v${PV}/Aptana_Studio_3_Setup_Linux_x86_64_${PV}.zip )
-"
+SRC_URI="https://github.com/aptana/studio3/releases/download/${PV}.201807301111/aptana.studio-linux.gtk.x86_64.zip"
 
-LICENSE="EPL-1.0"
+LICENSE="GPL-3"
 SLOT="3"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 RESTRICT="mirror"
 IUSE=""
 
@@ -25,14 +21,14 @@ RDEPEND="media-libs/libjpeg-turbo
 	 sys-apps/net-tools
 "
 
-S="${WORKDIR}/Aptana_Studio_3"
+S="${WORKDIR}"
 
 src_install() {
 	dodir "/opt/${PN}"
 	local dest="${D}/opt/${PN}"
 	cp -pPR configuration/ features/ plugins/ "${dest}" || die "Failed to install Files"
 	insinto "/opt/${PN}"
-	doins icon.xpm about.html AptanaStudio3.ini full_uninstall.txt version.txt
+	doins icon.xpm AptanaStudio3.ini full_uninstall.txt version.txt
 	exeinto "/opt/${PN}"
 	doexe AptanaStudio3
 
