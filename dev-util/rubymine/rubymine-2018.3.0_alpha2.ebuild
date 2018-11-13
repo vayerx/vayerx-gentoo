@@ -6,7 +6,7 @@ EAPI=7
 inherit eutils desktop
 
 MY_PN="RubyMine"
-MY_PV="183.3975.22"	# Early Access Program
+MY_PV="183.4284.57"	# Early Access Program
 
 DESCRIPTION="The most intelligent Ruby and Rails IDE"
 HOMEPAGE="http://jetbrains.com/ruby/"
