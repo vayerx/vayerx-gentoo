@@ -48,7 +48,7 @@ PDEPEND="
 
 	database? (
 		postgres? (
-			dev-db/pgadmin3
+			dev-db/pgadmin4
 			dev-db/postgresql-server
 		)
 

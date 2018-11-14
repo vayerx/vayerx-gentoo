@@ -8,7 +8,7 @@ app-emulation/virtualbox-additions
 app-emulation/virtualbox-extpack-oracle
 app-text/asciidoc
 dev-cpp/yaml-cpp
-dev-db/pgadmin3
+dev-db/pgadmin4
 dev-db/pgbadger
 dev-db/pg_top
 dev-db/pguint
