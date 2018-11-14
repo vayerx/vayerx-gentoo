@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
+PYTHON_COMPAT=( python2_7 python3_{4,5,6,7} )
 inherit cmake-utils python-r1
 
 DESCRIPTION="Software framework for scalable cross-language services development"
@@ -14,10 +14,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 
-# Thrift 0.10.0 cmake build doesn't support other generator libraries
-# TODO: as3 cocoa cpp csharp d delphi erl go hs javame js lua nodejs ocaml perl php py rb st ts
 # TODO: haskell (dev-lang/ghc) support
-IUSE="c_glib cpp java +libevent +openssl python qt4 qt5 static-libs +stdthreads +zlib"
+IUSE="c_glib cpp examples java +libevent +openssl python qt5 static-libs +stdthreads +zlib"
 
 RDEPEND="
 	dev-libs/boost:=
@@ -26,7 +24,6 @@ RDEPEND="
 		virtual/jre:=
 	)
 
-	qt4? ( dev-qt/qtcore:4 )
 	qt5? ( dev-qt/qtcore:5 )
 
 	libevent? (
@@ -57,19 +54,18 @@ REQUIRED_USE="
 src_configure() {
 	local mycmakeargs=(
 		-DWITH_SHARED_LIB=ON
+		-DWITH_STATIC_LIB=$(usex static-libs)
+		-DBUILD_PYTHON=$(used python)
+		-DBUILD_EXAMPLES=$(usex examples)
+		-DBUILD_TUTORIALS=$(usex examples)
 	)
 
 	append-cxxflags -std=c++14
 
-	if usex static-libs; then
-		mycmakeargs+=(-DWITH_STATIC_LIB=ON)
-	else
-		mycmakeargs+=(-DWITH_STATIC_LIB=OFF)
-	fi
-
 	for flag in ${IUSE}; do
-		if [ "${flag}" != "static-libs"]; then
-			mycmakeargs+=(-DWITH_${flag}="$(usex ${flag})")
+		if [[ ! "${flag}" =~ static-libs|python_targets|examples ]]; then
+			flag=${flag#+}
+			mycmakeargs+=(-DWITH_${flag^^}=$(usex ${flag}))
 		fi
 	done
 

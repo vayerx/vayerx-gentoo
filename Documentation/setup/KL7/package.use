@@ -10,7 +10,7 @@ dev-libs/elfutils static-libs
 dev-libs/libdbusmenu gtk3
 dev-libs/opensc -openct pcsc-lite
 dev-libs/protobuf java
-dev-libs/thrift c_glib cpp python
+dev-libs/thrift cpp python static-libs
 dev-python/pystaff rich
 dev-ruby/rbstaff gui datamining database
 dev-vcs/subversion -http

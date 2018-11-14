@@ -18,7 +18,7 @@ dev-libs/libgit2 ssh
 dev-libs/libpcre2 pcre16
 dev-libs/libpcre pcre16
 dev-libs/openssl static-libs
-dev-libs/thrift cpp std-cxx11 -ruby
+dev-libs/thrift cpp -qt5
 dev-python/ipython -wxwidgets
 dev-python/numpy lapack
 dev-python/PyQt5 webengine webchannel webkit
