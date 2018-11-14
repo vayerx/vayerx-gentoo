@@ -18,6 +18,7 @@ dev-db/Pyrseas
 dev-db/yoyo-migrations
 dev-libs/boost
 dev-libs/geoip
+dev-libs/gmime:3.0
 dev-libs/libpqxx
 dev-libs/marisa
 dev-libs/rapidjson
@@ -26,6 +27,7 @@ dev-perl/Switch
 dev-python/cherrypy
 dev-python/django
 dev-python/dnspython
+dev-python/flask
 dev-python/lockfile
 dev-python/marshmallow
 dev-python/peewee
@@ -33,6 +35,7 @@ dev-python/pika
 dev-python/pip
 dev-python/portalocker
 dev-python/psycopg:2
+dev-python/publicsuffixlist
 dev-python/pymssql:0
 dev-python/pyodbc
 dev-python/pytest

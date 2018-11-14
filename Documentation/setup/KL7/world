@@ -13,6 +13,7 @@ dev-ruby/mechanize
 dev-ruby/sqlite3
 dev-util/clion
 dev-util/gource
+dev-util/rubymine
 dev-vcs/git-lfs
 dev-vcs/gitstats
 media-gfx/gnome-screenshot
@@ -21,6 +22,7 @@ media-sound/mp3unicode
 media-sound/picard
 media-sound/vorbis-tools
 net-ftp/lftp
+net-im/skypeforlinux
 net-im/telegram-desktop-bin
 net-misc/iperf
 net-misc/rdesktop
@@ -28,13 +30,11 @@ net-print/foomatic-db
 net-proxy/cntlm
 net-vpn/openvpn
 sec-policy/selinux-base-policy
-sys-apps/microcode-ctl
 sys-boot/unetbootin
 sys-firmware/intel-microcode
 sys-fs/cryptsetup
 sys-fs/simple-mtpfs
 sys-power/powertop
 vayerx/lxde
+x11-misc/sddm
 x11-misc/xtrlock::vayerx
-x11-themes/gnome-icon-theme
-x11-misc/lightdm

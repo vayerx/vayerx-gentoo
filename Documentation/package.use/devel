@@ -1,10 +1,13 @@
 app-crypt/heimdal -ssl
+app-crypt/pinentry gnome-keyring
 app-crypt/qca qt5
 app-editors/vim cscope ruby -X
 app-text/texlive-core xetex
 dev-db/freetds mssql odbc
 dev-db/postgresql perl
 dev-db/slony1 doc perl
+dev-java/junit source
+dev-java/oracle-jdk-bin javafx
 dev-java/swing-layout source
 dev-lang/perl ithreads
 dev-lang/python sqlite tk

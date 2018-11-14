@@ -1,5 +1,6 @@
 app-emulation/docker -aufs btrfs -device-mapper -overlay -seccomp
 app-misc/sphinx odbc stemmer
+app-portage/layman -subversion
 dev-cpp/gtest gmock
 dev-db/freetds mssql
 dev-db/postgresql perl static-libs
@@ -12,6 +13,7 @@ dev-libs/protobuf java
 dev-libs/thrift c_glib cpp python
 dev-python/pystaff rich
 dev-ruby/rbstaff gui datamining database
+dev-vcs/subversion -http
 media-video/ffmpeg -samba opus vpx
 net-misc/wget -gnutls ntlm
 net-nds/openldap sasl kerberos kinit

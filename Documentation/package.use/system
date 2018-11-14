@@ -65,6 +65,7 @@ net-fs/samba client ldap winbind
 net-im/psi -crypt extras -jingle spell xscreensaver
 net-im/skype apulse
 net-libs/libssh server
+net-libs/nodejs inspector
 net-misc/ciscovpn openssl
 net-misc/curl idn rtmp
 net-vpn/openvpn lz4
