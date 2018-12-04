@@ -21,10 +21,10 @@ DEPEND="
 "
 
 each_ruby_configure() {
-        ${RUBY} -Cext/${PN} extconf.rb || die
+	${RUBY} -Cext/${PN} extconf.rb || die
 }
 
 each_ruby_compile() {
-        emake V=1 -Cext/${PN}
-        cp ext/${PN}/${PN}_ext$(get_modname) lib/${PN}/ || die
+	emake V=1 -Cext/${PN}
+	cp ext/${PN}/${PN}_ext$(get_modname) lib/${PN}/ || die
 }

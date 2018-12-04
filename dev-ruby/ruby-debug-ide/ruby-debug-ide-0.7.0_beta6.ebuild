@@ -8,7 +8,7 @@ RUBY_FAKEGEM_VERSION="${PV/_beta/.beta}"
 
 inherit ruby-fakegem
 
-DESCRIPTION="An interface which glues ruby-debug to IDEs like Eclipse (RDT), NetBeans and RubyMine."
+DESCRIPTION="An interface which glues ruby-debug to IDEs"
 HOMEPAGE="https://github.com/ruby-debug/ruby-debug-ide"
 RDEPEND="
 	dev-ruby/rake

@@ -10,7 +10,7 @@ RUBY_FAKEGEM_EXTRAINSTALL="config"
 
 inherit ruby-fakegem
 
-DESCRIPTION="Automatic Ruby code style checking tool. Aims to enforce the community-driven Ruby Style Guide"
+DESCRIPTION="Automatic Ruby code style checking tool"
 HOMEPAGE="http://www.rubocop.org/"
 RDEPEND="
 	>=dev-ruby/parser-2.5
@@ -24,5 +24,5 @@ RDEPEND="
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""

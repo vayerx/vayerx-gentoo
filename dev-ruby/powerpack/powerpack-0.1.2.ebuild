@@ -4,7 +4,6 @@
 EAPI=6
 USE_RUBY="ruby22 ruby23 ruby24 ruby25"
 
-
 inherit ruby-fakegem
 
 DESCRIPTION="A few useful extensions to core Ruby classes"

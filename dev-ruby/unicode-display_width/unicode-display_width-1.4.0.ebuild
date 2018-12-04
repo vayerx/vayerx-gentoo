@@ -8,8 +8,8 @@ RUBY_FAKEGEM_EXTRAINSTALL="data"
 
 inherit ruby-fakegem
 
-DESCRIPTION="Determines the monospace display width of a string using EastAsianWidth.txt, Unicode general category, and other data"
-HOMEPAGE="http://github.com/janlelis/unicode-display_width"
+DESCRIPTION="Determines the monospace display width of a string"
+HOMEPAGE="https://github.com/janlelis/unicode-display_width"
 
 LICENSE="MIT"
 KEYWORDS="~amd64"
