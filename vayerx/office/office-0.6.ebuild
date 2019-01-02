@@ -66,9 +66,6 @@ PDEPEND="
 	)
 
 	rich? (
-		excessive? (
-			app-text/chm2pdf
-		)
 		app-text/djview
 		app-text/mupdf
 		app-office/dia
