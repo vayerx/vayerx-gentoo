@@ -1,6 +1,8 @@
+app-admin/ansible
 app-arch/xarchiver
 app-crypt/etoken-sac
 app-emulation/q4wine
+app-emulation/winetricks
 app-misc/gramps
 app-mobilephone/heimdall
 app-mobilephone/qtadb
@@ -12,6 +14,8 @@ dev-ruby/ruby-progressbar
 dev-ruby/ruby-sdl
 dev-ruby/sqlite3
 dev-util/aptana
+dev-util/pycharm-community
+dev-util/rubymine
 games-util/qjoypad
 games-util/steam-meta
 media-gfx/bconv
@@ -23,6 +27,7 @@ media-libs/hal-flash
 media-libs/libtxc_dxtn
 media-sound/audacity
 media-sound/mp3unicode
+media-sound/picard
 media-sound/vorbis-tools
 media-video/guvcview
 net-dialup/pptpclient
@@ -41,6 +46,5 @@ sys-fs/simple-mtpfs
 vayerx/lxde
 www-client/chromium
 www-plugins/chrome-binary-plugins
-www-plugins/gnash
 x11-misc/sddm
 x11-misc/xdg-user-dirs-gtk

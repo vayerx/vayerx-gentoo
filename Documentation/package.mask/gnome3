@@ -2,12 +2,9 @@
 >=app-text/evince-3
 >=gnome-base/dconf-3
 >=gnome-base/gdm-3
->=gnome-base/gnome-common-3.8
 >=gnome-base/gnome-desktop-3
->=gnome-base/gnome-keyring-3
 >=gnome-base/gnome-mime-data-3
 >=gnome-base/gnome-vfs-3
->=gnome-base/gsettings-desktop-schemas-3.8
 >=gnome-base/gvfs-3
 >=gnome-base/libbonobo-3
 >=gnome-base/libbonoboui-3
@@ -28,6 +25,4 @@
 >=gnome-extra/gnome-utils-3
 >=gnome-extra/libgsf-3
 >=gnome-extra/polkit-gnome-3
->=gnome-extra/yelp-xsl-3
->=gnome-extra/zenity-3
 >=x11-terms/gnome-terminal-3

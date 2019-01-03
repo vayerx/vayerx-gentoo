@@ -4,5 +4,6 @@
 >=mail-client/thunderbird-60
 media-sound/pulseaudio
 sys-apps/systemd
+=sys-fs/udev-240*
 >=www-client/firefox-57
->=x11-misc/sddm-0.16
+=x11-misc/sddm-0.16*

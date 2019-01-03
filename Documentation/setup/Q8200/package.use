@@ -1,5 +1,5 @@
-app-emulation/wine-staging s3tc
-app-emulation/wine-vanilla -gstreamer
+app-emulation/wine-staging gsm netapi odbc
+app-emulation/wine-vanilla gsm netapi odbc
 app-office/libreoffice -abi_x86_32 -gnome -vba -webdav
 app-text/gocr tk
 dev-cpp/cppstaff kde -rich
@@ -7,7 +7,6 @@ dev-libs/boost doc eselect tools
 dev-libs/botan -python
 dev-libs/elfutils static-libs
 dev-python/pystaff rich
-dev-python/spyder pylint sphinx
 dev-qt/qt-creator android -linguas_ru
 dev-ruby/rbstaff gui datamining
 kde-apps/okular chm
@@ -15,22 +14,24 @@ media-gfx/blender -openmp
 media-gfx/graphicsmagick -imagemagick
 media-gfx/hugin sift
 media-libs/freeimage -raw
+media-libs/gst-plugins-base egl
 media-libs/mesa d3d9 gbm -opencl llvm xorg
 media-libs/opencv doc -openmp
+media-plugins/gst-plugins-gtk egl
 net-fs/cifs-utils -acl
-net-libs/webkit-gtk -geoloc -opengl -webgl
+net-libs/webkit-gtk -geoloc egl gstreamer introspection opengl -webgl
 net-misc/batman-adv bla dat
 net-misc/networkmanager -wext -zeroconf
 net-print/cups -zeroconf
 net-vpn/tor nat-pmp stats transparent-proxy upnp web
 sci-geosciences/gpsd garmin
 sys-apps/util-linux static-libs
-vayerx/develop kde math
+vayerx/develop kde -math
 vayerx/office burn excessive mate kde rich
 vayerx/systaff -rich
-virtual/wine d3d9 staging
+virtual/wine staging #d3d9
 www-client/firefox system-icu system-jpeg system-sqlite
-www-plugins/gnash -gstreamer -nsplugin -vaapi
+www-plugins/gnash -gstreamer -nsplugin -openvg -vaapi
 www-plugins/lightspark -ffmpeg -nsplugin
 x11-base/xorg-server xvfb
 x11-drivers/xf86-video-ati glamor

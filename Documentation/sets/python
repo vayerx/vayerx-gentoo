@@ -7,6 +7,5 @@ dev-python/profilehooks
 dev-python/pystaff
 dev-python/pyyaml
 dev-python/setuptools
-dev-python/spyder
 dev-python/theano
 sci-libs/scipy
