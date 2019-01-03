@@ -3,7 +3,7 @@
 
 EAPI=6
 PYTHON_COMPAT=( python2_7 python3_{4,5,6,7} )
-inherit cmake-utils python-r1
+inherit cmake-utils python-r1 perl-module
 
 DESCRIPTION="Software framework for scalable cross-language services development"
 HOMEPAGE="https://thrift.apache.org"
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 
 # TODO: haskell (dev-lang/ghc) support
-IUSE="c_glib cpp examples java +libevent +openssl python qt5 static-libs +stdthreads +zlib"
+IUSE="c_glib cpp examples java +libevent +openssl perl python qt5 static-libs +stdthreads +zlib"
 
 RDEPEND="
 	dev-libs/boost:=
@@ -28,6 +28,11 @@ RDEPEND="
 
 	libevent? (
 		dev-libs/libevent
+	)
+
+	perl? (
+		dev-lang/perl
+		dev-perl/Bit-Vector
 	)
 
 	zlib? (
@@ -69,11 +74,21 @@ src_configure() {
 		fi
 	done
 
+	if use perl ; then
+		cd "${S}/lib/perl"
+		perl-module_src_configure
+	fi
+
 	cmake-utils_src_configure
 }
 
 src_install() {
 	cmake-utils_src_install
+
+	if use perl ; then
+		cd "${S}/lib/perl"
+		perl-module_src_install
+	fi
 
 	# Thrift 0.9.3 doesn't install python libs
 	install_python() {
