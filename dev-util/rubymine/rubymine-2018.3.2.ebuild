@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -6,22 +6,19 @@ EAPI=7
 inherit eutils desktop
 
 MY_PN="RubyMine"
-MY_PV="183.4284.57"	# Early Access Program
+MY_PV="$(ver_cut 1-3)"
 
 DESCRIPTION="The most intelligent Ruby and Rails IDE"
 HOMEPAGE="http://jetbrains.com/ruby/"
 SRC_URI="http://download.jetbrains.com/ruby/${MY_PN}-${MY_PV}.tar.gz"
 LICENSE="JetBrains-EULA"
 
-IUSE="+debugger rubocop"
-KEYWORDS=""
-SLOT="$(ver_cut 1)-eap"
+IUSE="+debugger +rubocop"
+KEYWORDS="~amd64"
+SLOT="$(ver_cut 1)"
 
 RDEPEND="
 	>=virtual/jdk-1.7
-	dev-libs/libdbusmenu
-	app-crypt/libsecret
-	dev-java/netbeans-javafx
 	debugger? (
 		dev-ruby/ruby-debug-ide
 	)
