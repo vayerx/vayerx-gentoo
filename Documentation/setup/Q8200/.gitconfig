@@ -1,0 +1,81 @@
+[alias]
+	br = branch
+	ch = cherry-pick
+	ci = commit
+	co = checkout
+	df = diff --word-diff=color
+	dff = diff --color-words=[^[:space:]]
+	fe = fetch --prune --all
+	lg = log --pretty=vay --first-parent --color=always
+	lv = log --pretty=vaylong --first-parent --color=always
+	lvf = log --pretty=vaylong --color=always
+	me = merge --no-ff --no-commit --strategy=recursive --strategy-option=patience
+	mt = mergetool
+	pnh = push --force-with-lease
+	rl = rev-list
+	sh = show --word-diff=color
+	shf = show --color-words=[^[:space:]]
+	st = status
+	stu = status --untracked-files=no
+	sta = stash save
+	rup = remote update
+
+[branch]
+	autosetuprebase = remote
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+
+[color "diff"]
+	frag = magenta bold
+	meta = yellow bold
+	new = green bold
+	old = red bold
+	whitespace = red reverse
+
+[commit]
+	status = false
+	gpgsign = true
+
+[core]
+	eol = native
+	excludesfile = ~/.gitexclude
+	pager = cat
+	whitespace = trailing-space,space-before-tab,cr-at-eol
+
+[diff]
+	renames = copies
+	algorithm = patience
+#	external = git-meld
+
+[log]
+	date = iso
+
+[merge]
+	ff = false
+	tool = meld
+	conflictStyle = diff3
+
+[pretty]
+	vay = %Cgreen%h %Creset%s%Creset
+	vaylong = %Cgreen%h %Cred%an %Cgreen%aD %Creset%s
+
+[pull]
+	ff = only
+	rebase = preserve
+
+[push]
+	default = tracking
+
+[rebase]
+	autoStash = true
+
+[status]
+	color = auto
+
+[user]
+	name = Vasiliy Yeremeyev
+	email = vayerx@gmail.com
+	signingkey = B389C7C2C7876F84
