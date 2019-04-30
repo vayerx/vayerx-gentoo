@@ -13,7 +13,6 @@ dev-lang/perl ithreads
 dev-lang/python sqlite tk
 dev-lang/ruby tk
 dev-libs/boost:1.56 std-cxx11 tools
-dev-libs/gmp static-libs
 dev-libs/libgit2 ssh
 dev-libs/libpcre2 pcre16
 dev-libs/libpcre pcre16
@@ -37,5 +36,6 @@ dev-vcs/subversion -dso perl -ruby
 media-libs/mlt -ruby
 net-libs/zeromq drafts
 sys-devel/gcc awt go graphite
+sys-devel/gdb lzma
 sys-devel/llvm clang
 sys-libs/zlib minizip static-libs

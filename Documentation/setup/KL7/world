@@ -1,12 +1,10 @@
+app-admin/keepassxc
 app-crypt/etoken-sac::vayerx
 app-misc/elasticsearch
 app-misc/sphinx
 dev-cpp/gtest::vayerx
 dev-db/mysql
-dev-lang/elixir
 dev-python/backports-shutil_get_terminal_size
-dev-python/elasticsearch-py
-dev-python/hdfs
 dev-python/mechanize
 dev-python/pysolr
 dev-ruby/mechanize
@@ -17,10 +15,11 @@ dev-util/rubymine
 dev-vcs/git-lfs
 dev-vcs/gitstats
 media-gfx/gnome-screenshot
-media-plugins/alsaequal
+media-sound/apulse
 media-sound/mp3unicode
 media-sound/picard
 media-sound/vorbis-tools
+net-analyzer/tcpflow
 net-ftp/lftp
 net-im/skypeforlinux
 net-im/telegram-desktop-bin
@@ -36,5 +35,7 @@ sys-fs/cryptsetup
 sys-fs/simple-mtpfs
 sys-power/powertop
 vayerx/lxde
+www-client/chromium
+www-client/firefox
 x11-misc/sddm
 x11-misc/xtrlock::vayerx

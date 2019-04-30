@@ -4,13 +4,12 @@ app-portage/layman -subversion
 dev-cpp/gtest gmock
 dev-db/freetds mssql
 dev-db/postgresql perl static-libs
-dev-lang/erlang hipe kpoll sctp
 dev-libs/boost static-libs
 dev-libs/elfutils static-libs
 dev-libs/libdbusmenu gtk3
 dev-libs/opensc -openct pcsc-lite
 dev-libs/protobuf java
-dev-libs/thrift cpp python static-libs
+dev-libs/thrift cpp python static-libs -stdthreads
 dev-python/pystaff rich
 dev-ruby/rbstaff gui datamining database
 dev-vcs/subversion -http

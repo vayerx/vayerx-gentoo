@@ -8,7 +8,6 @@ app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions -python
 app-emulation/wine-vanilla mono odbc s3tc samba staging
 app-misc/mc edit samba slang
-app-office/akonadi-server sqlite
 app-portage/layman mercurial squashfs
 app-text/hunspell l10n_en l10n_ru
 app-text/yagf scanner
@@ -26,15 +25,19 @@ dev-python/PyQt5 declarative
 dev-qt/qt3support accessibility kde
 dev-qt/qtdeclarative accessibility webkit
 dev-qt/qtgui accessibility dbus evdev
+dev-qt/qtsql mysql
 dev-qt/qtsvg accessibility
 dev-qt/qtwebkit -exceptions -gstreamer printsupport
 dev-ruby/rrdtool-bindings graph
 gnome-base/gvfs mtp
 gnome-base/nautilus tracker
+kde-apps/akonadi sqlite
 kde-apps/ark lzma
 kde-apps/gwenview -handbook kipi
 kde-apps/kde4-l10n minimal
 kde-frameworks/kdelibs -opengl semantic-desktop
+mail-client/claws-mail clamav smime xface
+mail-client/evolution highlight -weather ytnef
 mail-client/thunderbird -minimal system-icu
 mate-base/mate-applets networkmanager
 mate-base/mate-panel networkmanager
@@ -51,6 +54,7 @@ media-libs/mesa egl
 media-libs/mlt frei0r kdenlive melt
 media-libs/sdl-mixer mod modplug
 media-libs/vigra openexr
+media-plugins/alsa-plugins speex
 media-plugins/audacious-plugins cue
 media-sound/asunder -aac
 media-sound/audacity id3tag twolame
@@ -79,6 +83,7 @@ sys-apps/lm_sensors sensord
 sys-apps/portage rsync-verify
 sys-apps/util-linux static-libs
 sys-block/gparted fat ntfs reiserfs xfs -xfce
+sys-boot/grub device-mapper mount
 sys-boot/grub -ncurses
 sys-devel/qconf -qt5
 sys-fs/eudev static-libs

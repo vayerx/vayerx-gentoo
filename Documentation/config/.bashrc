@@ -142,9 +142,14 @@ function sortitru() {
 
 # Oh, Dear God, You can't imagine how much do I hate autotools (c) gtest.ebuild
 function autofuck() {
-    for op in autoconf autoheader aclocal automake; do
-        ${op}; print_ecode $? ${op} || return $?
+    for op in "autoconf -i" autoheader aclocal "automake --add-missing"; do
+        ${op}
+        print_ecode $? ${op} || return $?
     done
+}
+
+function autorefuck() {
+    autoreconf --install
 }
 
 function xme() {
