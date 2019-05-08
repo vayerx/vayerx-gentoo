@@ -40,6 +40,7 @@ dev-python/pip
 dev-python/portalocker
 dev-python/psycopg:2
 dev-python/publicsuffixlist
+dev-python/pycares
 dev-python/pymssql:0
 dev-python/pyodbc
 <dev-python/pytest-3.3

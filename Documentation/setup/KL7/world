@@ -4,12 +4,12 @@ app-misc/elasticsearch
 app-misc/sphinx
 dev-cpp/gtest::vayerx
 dev-db/mysql
+dev-python/awscli
 dev-python/backports-shutil_get_terminal_size
 dev-python/mechanize
 dev-python/pysolr
 dev-ruby/mechanize
 dev-ruby/sqlite3
-dev-util/clion
 dev-util/gource
 dev-util/rubymine
 dev-vcs/git-lfs

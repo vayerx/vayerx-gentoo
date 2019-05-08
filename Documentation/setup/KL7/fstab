@@ -14,15 +14,18 @@
 # <fs>                                      <mountpoint>    <type>  <opts>                          <dump/pass>
 
 # NOTE: If your BOOT partition is ReiserFS, add the notail option to opts.
-UUID=4a9176f7-fb38-4b61-8dbd-50571a174acc   /boot           ext2    noauto,noatime                  1 2
-UUID=751b43e2-04f4-4d5c-9f36-42ef22593c7b   /               ext4    noatime,nodiratime              0 1
-UUID=deeda20f-113b-47ce-8f23-f23a75939d5b   /home           ext4    noatime,nodiratime              0 0
-UUID=6145ea6e-f8be-4184-85e1-4baa0c4cd4cb   /mnt/temp       ext4    noatime,nodiratime,nobarrier    0 0
-UUID=eeda664d-ba31-4e54-8c8e-fa57f56e729e   /usr/portage    ext4    noatime,nodiratime,nobarrier    0 0
-UUID=3ff2dfe0-29a3-4266-9911-a2ec757583f8   /mnt/data       ext4    noatime,nodiratime              0 0
+UUID=751b43e2-04f4-4d5c-9f36-42ef22593c7b   /               ext4    noatime,async                                             0 1
+UUID=deeda20f-113b-47ce-8f23-f23a75939d5b   /home           ext4    noatime,async                                             0 0
+UUID=4a9176f7-fb38-4b61-8dbd-50571a174acc   /boot           ext2    noatime,async,noauto                                      1 2
+UUID=6145ea6e-f8be-4184-85e1-4baa0c4cd4cb   /mnt/temp       ext4    noatime,async,data=writeback,commit=60                    0 0
+UUID=eeda664d-ba31-4e54-8c8e-fa57f56e729e   /usr/portage    ext4    noatime,async,data=writeback,commit=60                    0 0
+UUID=3ff2dfe0-29a3-4266-9911-a2ec757583f8   /mnt/data       ext4    noatime,async,data=writeback,commit=60                    0 0
+UUID=8c70fcb9-b349-4244-9a2b-c4c4a81a19d3   /mnt/cow        btrfs   noatime,async,data=writeback,commit=60,autodefrag,datacow 0 0
 
-//avp.ru/global /mnt/avp-global cifs    credentials=/home/vayerx/.ssh/kl.cred,uid=vayerx,forceuid,gid=vayerx,forcegid,file_mode=0664,dir_mode=0775,ro   0 0
+//avp.ru/global /mnt/avp-global cifs    credentials=/home/vayerx/.ssh/kl.cred,uid=vayerx,forceuid,gid=vayerx,forcegid,file_mode=0664,dir_mode=0775,rw,vers=3.0,sec=ntlmv2   0 0
+
 
 /mnt/temp/tmp           /tmp                        none    bind    0 0
 /mnt/temp/var/tmp       /var/tmp                    none    bind    0 0
+/mnt/temp/portage       /usr/portage                none    bind    0 0
 /mnt/temp/distfiles     /usr/portage/distfiles      none    bind    0 0

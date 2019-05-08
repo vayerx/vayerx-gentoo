@@ -48,6 +48,7 @@ sys-apps/usb_modeswitch
 sys-apps/usbutils
 sys-block/gparted
 sys-boot/grub
+sys-boot/os-prober
 sys-boot/unetbootin
 sys-fs/ddrescue
 sys-fs/inotify-tools
