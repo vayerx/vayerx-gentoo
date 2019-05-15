@@ -1,0 +1,39 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f8f0c755..a81c1e6b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -26,14 +26,6 @@ GET_PROPERTY(cached_type CACHE CMAKE_BUILD_TYPE PROPERTY TYPE)
+ IF("${cached_type}" STREQUAL "UNINITIALIZED")
+   SET(CMAKE_BUILD_TYPE "${CMAKE_BUILD_TYPE}" CACHE STRING "Build Type" FORCE)
+ ENDIF("${cached_type}" STREQUAL "UNINITIALIZED")
+-# Check the Build Type.
+-IF(NOT "${CMAKE_BUILD_TYPE}"
+-       MATCHES "^(Debug|Release|RelWithDebInfo|MinSizeRel)\$")
+-  MESSAGE(FATAL_ERROR
+-          "Unknown keyword for CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}\n"
+-          "Acceptable keywords: Debug,Release,RelWithDebInfo,MinSizeRel")
+-ENDIF(NOT "${CMAKE_BUILD_TYPE}"
+-          MATCHES "^(Debug|Release|RelWithDebInfo|MinSizeRel)\$")
+ 
+ # On MacOS, prefer MacPorts libraries to system libraries.
+ # I haven't come up with a compelling argument for this to be conditional.
+diff --git a/libarchive/CMakeLists.txt b/libarchive/CMakeLists.txt
+index ec775bb4..8e2ffcd4 100644
+--- a/libarchive/CMakeLists.txt
++++ b/libarchive/CMakeLists.txt
+@@ -250,12 +250,13 @@ IF(NOT WIN32 OR CYGWIN)
+   SET_TARGET_PROPERTIES(archive_static PROPERTIES OUTPUT_NAME archive)
+ ENDIF(NOT WIN32 OR CYGWIN)
+ 
++include(GNUInstallDirs)
+ IF(ENABLE_INSTALL)
+   # How to install the libraries
+   INSTALL(TARGETS archive archive_static
+           RUNTIME DESTINATION bin
+-          LIBRARY DESTINATION lib
+-          ARCHIVE DESTINATION lib)
++          LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++          ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+   INSTALL_MAN(${libarchive_MANS})
+   INSTALL(FILES ${include_HEADERS} DESTINATION include)
+ ENDIF()
