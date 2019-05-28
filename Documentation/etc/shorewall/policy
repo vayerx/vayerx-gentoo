@@ -7,11 +7,13 @@
 # http://www.shorewall.net/manpages/shorewall-policy.html
 #
 ###############################################################################
-#SOURCE		DEST		POLICY	LOGLEVEL	LIMIT	CONNLIMIT
+#SOURCE     DEST        POLICY  LOGLEVEL        LIMIT   CONNLIMIT
 
-net	fw	DROP		info
-fw	net	ACCEPT
-dock	all	ACCEPT
-fw	dock	ACCEPT
-fw	vpn	ACCEPT
-all	all	DROP
+dock        all         ACCEPT
+fw          all         ACCEPT
+net         dock        ACCEPT
+net         fw          DROP    info
+net         vpn         DROP    info
+vpn         dock        ACCEPT
+vpn         fw          ACCEPT
+vpn         net         ACCEPT

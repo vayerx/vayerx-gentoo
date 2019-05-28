@@ -7,9 +7,9 @@
 # http://www.shorewall.net/manpages/shorewall-zones.html
 #
 ###############################################################################
-#ZONE		TYPE		OPTIONS		IN_OPTIONS	OUT_OPTIONS
+#ZONE   TYPE    OPTIONS         IN_OPTIONS      OUT_OPTIONS
 
-net	ipv4
-dock	ipv4
-vpn	ipv4
-fw	firewall
+net     ipv4
+dock    ipv4
+vpn     ipv4
+fw      firewall

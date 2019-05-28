@@ -10,13 +10,14 @@ app-text/asciidoc
 dev-cpp/yaml-cpp
 dev-db/pgadmin4
 dev-db/pgbadger
+dev-db/pgtap
 dev-db/pg_top
 dev-db/pguint
 dev-db/postgresql:9.4
-dev-db/postgresql:10
+dev-db/postgresql:11
 dev-db/Pyrseas
 dev-db/yoyo-migrations
-dev-libs/boost
+dev-libs/boost:1.70
 dev-libs/geoip
 dev-libs/gmime:3.0
 dev-libs/hdfs3

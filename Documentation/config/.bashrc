@@ -194,6 +194,12 @@ alias emerge-x11-modules="emerge -q --keep-going @x11-module-rebuild"
 alias emerge-update-world="emerge -avquDN --keep-going --with-bdeps=y --verbose-conflicts world"
 alias emerge="emerge --verbose-conflicts"
 
+function upkernel() {
+    genkernel --kernel-config=/etc/kernels/kernel-config-$(arch)-$(uname -r) all
+    emerge-modules
+    grub-mkconfig -o /boot/grub/grub.cfg
+}
+
 alias quickpkg="quickpkg --include-config=y"
 alias wget="wget --no-use-server-timestamps"
 

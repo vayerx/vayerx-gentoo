@@ -8,7 +8,9 @@
 #
 ?FORMAT 2
 ###############################################################################
-#ZONE		INTERFACE		OPTIONS
-net		eth0			dhcp,nosmurfs,tcpflags
-dock		docker0
-vpn		tun0
+#ZONE   INTERFACE   OPTIONS
+net     eth0        dhcp,nosmurfs,tcpflags
+dock    docker0     physical=docker+,routeback=1
+dock    br          physical=br-+,routeback=1
+dock    veth        physical=veth+,routeback=1
+vpn     tun+
