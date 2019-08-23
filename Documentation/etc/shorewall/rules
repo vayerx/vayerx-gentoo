@@ -27,7 +27,6 @@ AutoBL(PSCAN,60,10,5,3600,DROP,warn)\
 # ICMP
 DROP			net	fw	icmp	8
 #Ping(DROP):info:ping	net	fw
-
 AllowICMPs:info		net	fw
 
 # SSH

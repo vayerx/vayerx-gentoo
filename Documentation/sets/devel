@@ -17,7 +17,6 @@ dev-util/strace
 dev-util/uncrustify
 dev-util/valgrind
 dev-vcs/git[tk]
-dev-vcs/gitflow
 sci-calculators/galculator
 sci-visualization/gnuplot
 sys-devel/gcc # latest

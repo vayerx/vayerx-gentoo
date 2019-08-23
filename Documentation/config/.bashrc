@@ -9,10 +9,12 @@ fi
 source /etc/profile
 
 export PATH="$HOME/bin:$PATH"
+export PYTHONPATH="${HOME}/python:${PYTHONPATH}"
 
 export HISTFILESIZE=5000
 
 NJOBS=4
+export CTEST_OUTPUT_ON_FAILURE=1
 
 if [ "$TERM" = screen ]; then
     export TERM="xterm"
@@ -34,10 +36,15 @@ function print_ecode() {
     return ${ecode}
 }
 
+function chk() {
+    CLICOLOR_FORCE=1 "$@"
+    local ecode=$?
+    print_ecode $ecode
+    return $ecode
+}
+
 function m() {
-    CLICOLOR_FORCE=1 make -j$NJOBS "$@"
-    print_ecode $?
-    return $?
+    chk make -j$NJOBS "$@"
 }
 
 alias CM="cmake -DCMAKE_BUILD_TYPE=Debug .. && gmake -j$NJOBS"

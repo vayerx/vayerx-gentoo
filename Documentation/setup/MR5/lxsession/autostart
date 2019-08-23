@@ -1,0 +1,12 @@
+@lxpanel --profile LXDE
+@pcmanfm --desktop --profile LXDE
+@xscreensaver -no-splash
+@xbacklight -set 50
+@setxkbmap -model pc105 -layout us,ru -option grp:shifts_toggle -option compose:ralt
+@telegram-desktop
+@icq
+@thunderbird
+@keepassxc
+@firefox
+@kdevelop
+

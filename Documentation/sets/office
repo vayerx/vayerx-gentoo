@@ -11,6 +11,7 @@ app-crypt/gpgme
 app-text/aspell
 media-gfx/geeqie
 media-gfx/gimp
+media-gfx/gnome-screenshot
 media-gfx/imagemagick
 media-libs/libtxc_dxtn
 media-plugins/alsa-plugins
@@ -27,6 +28,7 @@ vayerx/office
 www-plugins/adobe-flash
 x11-apps/mesa-progs
 x11-base/xorg-x11
+x11-misc/arandr
 x11-misc/notify-osd
 x11-misc/xscreensaver
 x11-terms/xfce4-terminal

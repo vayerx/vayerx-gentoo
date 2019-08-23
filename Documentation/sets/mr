@@ -1,0 +1,17 @@
+app-arch/lzma
+app-arch/rpm
+app-arch/zstd
+app-emulation/docker
+dev-db/clickhouse
+dev-db/tarantool
+dev-libs/judy
+dev-libs/rapidjson
+dev-python/msgpack
+dev-python/mysql-python
+dev-python/protobuf-python
+dev-python/virtualenv
+dev-util/conan
+net-vpn/openvpn
+sys-devel/gcc:8.3.0
+www-servers/nginx
+dev-python/sqlalchemy

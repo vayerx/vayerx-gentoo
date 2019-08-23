@@ -5,10 +5,10 @@
 #
 # Please see http://shorewall.net/Actions.html for additional information.
 #
-########################################################################################
 # Place '# ' below the 'C' in COMMENT followed by a comment describing
 # the action.
 #
+###############################################################################
 #ACTION		OPTIONS		COMMENT
 Knock                           #Port Knocking
 ###############################################################################

@@ -7,8 +7,7 @@
 # http://www.shorewall.net/manpages/shorewall-policy.html
 #
 ###############################################################################
-#SOURCE     DEST        POLICY  LOGLEVEL        LIMIT   CONNLIMIT
-
+#SOURCE     DEST        POLICY  LOGLEVEL        RATE     CONNLIMIT
 dock        all         ACCEPT
 fw          all         ACCEPT
 net         dock        ACCEPT

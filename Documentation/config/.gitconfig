@@ -37,6 +37,7 @@
 
 [commit]
 	status = false
+	gpgSign = true
 
 [core]
 	eol = native

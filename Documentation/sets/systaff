@@ -8,12 +8,12 @@ app-antivirus/clamav
 app-arch/tarsync
 app-crypt/gentoo-keys
 app-crypt/gkeys
+app-crypt/sbsigntools
 app-doc/eclass-manpages
 app-editors/vim
 app-forensics/magicrescue
 app-misc/mc
 app-misc/screen
-app-misc/vlock
 app-portage/cpuid2cpuflags
 app-portage/eix
 app-portage/gentoolkit
