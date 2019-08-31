@@ -1,13 +1,13 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.2.8-gentoo Kernel Configuration
+# Linux/x86 5.2.11-gentoo Kernel Configuration
 #
 
 #
-# Compiler: gcc (Gentoo 9.1.0-r1 p1.1) 9.1.0
+# Compiler: gcc (Gentoo 9.2.0 p1) 9.2.0
 #
 CONFIG_CC_IS_GCC=y
-CONFIG_GCC_VERSION=90100
+CONFIG_GCC_VERSION=90200
 CONFIG_CLANG_VERSION=0
 CONFIG_CC_HAS_ASM_GOTO=y
 CONFIG_CC_HAS_WARN_MAYBE_UNINITIALIZED=y
@@ -573,7 +573,7 @@ CONFIG_FIRMWARE_MEMMAP=y
 CONFIG_DMIID=y
 CONFIG_DMI_SYSFS=m
 CONFIG_DMI_SCAN_MACHINE_NON_EFI_FALLBACK=y
-# CONFIG_ISCSI_IBFT_FIND is not set
+# CONFIG_ISCSI_IBFT is not set
 # CONFIG_FW_CFG_SYSFS is not set
 # CONFIG_GOOGLE_FIRMWARE is not set
 

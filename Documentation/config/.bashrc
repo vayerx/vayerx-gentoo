@@ -202,7 +202,7 @@ alias emerge-update-world="emerge -avquDN --keep-going --with-bdeps=y --verbose-
 alias emerge="emerge --verbose-conflicts"
 
 function upkernel() {
-    genkernel --kernel-config=/etc/kernels/kernel-config-$(arch)-$(uname -r) all
+    genkernel --kernel-config=/etc/kernels/kernel-config-$(uname -r) all
     emerge-modules
     grub-mkconfig -o /boot/grub/grub.cfg
 }

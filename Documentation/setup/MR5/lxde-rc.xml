@@ -288,10 +288,10 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>pcmanfm</command>
+        <command>thunar</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>PCManFM</name>
+          <name>Thunar</name>
         </startupnotify>
       </action>
     </keybind>
