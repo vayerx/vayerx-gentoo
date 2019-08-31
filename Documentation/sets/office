@@ -9,6 +9,7 @@ app-arch/zip
 app-crypt/gpa
 app-crypt/gpgme
 app-text/aspell
+media-gfx/exif
 media-gfx/geeqie
 media-gfx/gimp
 media-gfx/gnome-screenshot

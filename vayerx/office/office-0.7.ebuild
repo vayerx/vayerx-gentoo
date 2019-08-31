@@ -1,17 +1,16 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="Office staff meta"
-HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
+HOMEPAGE="https://github.com/vayerx/vayerx-gentoo"
 SRC_URI=""
 
 LICENSE="GPL-3"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64"
 SLOT="0"
-IUSE="burn gtk kde mate +rich +excessive abi_x86_32 qt4"
+IUSE="abi_x86_32 burn +excessive gtk kde mate +rich"
 
 PDEPEND="
 	burn? (
@@ -46,7 +45,9 @@ PDEPEND="
 		x11-themes/mate-icon-theme
 	)
 	!mate? (
-		x11-themes/gnome-icon-theme
+		x11-themes/adwaita-icon-theme
+		x11-themes/gnome-icon-theme-extras
+		x11-themes/gnome-icon-theme-symbolic
 	)
 
 	rich? (
@@ -67,17 +68,16 @@ PDEPEND="
 
 	rich? (
 		app-text/djview
-		app-text/mupdf
 		app-office/dia
-		media-gfx/exif
 		media-gfx/exiftags
-		qt4? (
-			media-sound/picard
-		)
+		media-sound/picard
 		media-video/vlc
 
 		abi_x86_32? (
 			virtual/wine
 		)
+	)
+	!rich? (
+		app-text/mupdf
 	)
 "
