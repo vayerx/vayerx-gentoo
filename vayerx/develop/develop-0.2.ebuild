@@ -1,20 +1,18 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Development meta package"
-HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
+HOMEPAGE="https://github.com/vayerx/vayerx-gentoo"
 SRC_URI=""
 
 LICENSE="GPL-3"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64"
 SLOT="0"
-IUSE="+cpp java ruby +python database postgres sqlite exotic +kde math +network +rich +testing qt4"
+IUSE="+cpp java ruby +python database postgres sqlite exotic +kde math +network +rich +testing"
 
 PDEPEND="
-	dev-util/meld
-
 	kde? (
 		kde-apps/kompare
 		kde-apps/umbrello
@@ -39,17 +37,13 @@ PDEPEND="
 	python? (
 		dev-lang/python
 		dev-python/pystaff
-		dev-python/spyder
-
-		qt4? (
-			dev-util/ninja-ide
-		)
+		dev-util/pycharm-community
 	)
 
 	database? (
 		postgres? (
 			dev-db/pgadmin4
-			dev-db/postgresql-server
+			dev-db/postgresql[server]
 		)
 
 		sqlite? (
@@ -59,6 +53,6 @@ PDEPEND="
 	)
 
 	math? (
-		sci-mathematics/qtoctave
+		sci-mathematics/octave
 	)
 "

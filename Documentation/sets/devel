@@ -12,6 +12,7 @@ dev-util/cmake
 dev-util/debugedit
 dev-util/geany
 dev-util/google-perftools
+dev-util/meld
 dev-util/ragel
 dev-util/strace
 dev-util/uncrustify
