@@ -10,7 +10,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~amd64"
 SLOT="0"
-IUSE="+cpp java ruby +python database postgres sqlite exotic +kde math +network +rich +testing"
+IUSE="+cpp java ruby +python database postgres sqlite +kde math +network +rich +testing"
 
 PDEPEND="
 	kde? (
@@ -36,8 +36,13 @@ PDEPEND="
 
 	python? (
 		dev-lang/python
+		dev-python/pylint
 		dev-python/pystaff
 		dev-util/pycharm-community
+
+		database? (
+			dev-python/sqlalchemy
+		)
 	)
 
 	database? (
