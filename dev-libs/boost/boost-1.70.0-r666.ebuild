@@ -9,6 +9,5 @@ inherit slotted-boost-r70
 BOOST_PATCHES=(
 	"1.48.0-disable_icu_rpath.patch"
 	"1.56.0-build-auto_index-tool.patch"
-	"1.67.0-fix-python.patch"
 	"1.69.0-context-x32.patch"
 )

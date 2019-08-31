@@ -1,9 +1,7 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-
-RESTRICT="test"
 
 PYTHON_COMPAT=( python2_7 )
 inherit eutils flag-o-matic python-single-r1 toolchain-funcs
@@ -18,6 +16,7 @@ LICENSE="Boost-1.0"
 SLOT="$(ver_cut 1-2)"
 KEYWORDS="~x86 ~amd64"
 IUSE="examples python test"
+RESTRICT="test"
 
 RDEPEND="python? ( ${PYTHON_DEPS} )"
 DEPEND="${RDEPEND}
@@ -27,7 +26,8 @@ DEPEND="${RDEPEND}
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )
 	test? ( ${PYTHON_REQUIRED_USE} )"
 
-S="${WORKDIR}/boost_${MY_PV}/tools/build/src"
+SR="${WORKDIR}/boost_${MY_PV}/tools/build"
+S="${SR}/src"
 
 MAJOR_PV="$(ver_rs 1- _ ${SLOT})"
 
@@ -42,10 +42,12 @@ src_unpack() {
 }
 
 src_prepare() {
+	cd "${SR}"
+
 	default
 
 	for patch in "${BOOST_BUILD_PATCHES[@]}"; do
-		epatch "${FILESDIR}/${PN}-${patch}"
+		eapply "${FILESDIR}/${PN}-${patch}"
 	done
 
 	# Remove stripping option

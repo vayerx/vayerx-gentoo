@@ -30,7 +30,8 @@ REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
 	test? ( ${PYTHON_REQUIRED_USE} )"
 
-S="${WORKDIR}/boost_${MY_PV}/tools/build/src"
+SR="${WORKDIR}/boost_${MY_PV}/tools/build"
+S="${SR}/src"
 
 MAJOR_PV="$(ver_rs 1- _ ${SLOT})"
 
@@ -45,10 +46,12 @@ src_unpack() {
 }
 
 src_prepare() {
+	cd "${SR}"
+
 	default
 
 	for patch in "${BOOST_BUILD_PATCHES[@]}"; do
-		epatch "${FILESDIR}/${PN}-${patch}"
+		eapply "${FILESDIR}/${PN}-${patch}"
 	done
 
 	# Remove stripping option

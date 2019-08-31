@@ -153,7 +153,7 @@ src_prepare() {
 	default
 
 	for patch in "${BOOST_PATCHES[@]}"; do
-		epatch "${FILESDIR%/}/${PN}-${patch}"
+		eapply "${FILESDIR%/}/${PN}-${patch}"
 	done
 
 	# Do not try to build missing 'wave' tool, bug #522682
