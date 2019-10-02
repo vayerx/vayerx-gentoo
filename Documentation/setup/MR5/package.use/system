@@ -4,6 +4,8 @@ app-misc/mc edit -samba sftp slang
 dev-db/sqlite secure-delete
 dev-lang/python sqlite
 dev-libs/openssl rfc3779 sctp
+dev-python/PyQt5 declarative
+media-libs/chromaprint tools
 media-libs/freetype harfbuzz
 media-libs/gd fontconfig
 media-libs/libsdl2 haptic

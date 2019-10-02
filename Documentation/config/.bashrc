@@ -13,6 +13,8 @@ export PYTHONPATH="${HOME}/python:${PYTHONPATH}"
 
 export HISTFILESIZE=5000
 
+export GPG_TTY=$(tty)
+
 NJOBS=4
 export CTEST_OUTPUT_ON_FAILURE=1
 
@@ -62,6 +64,13 @@ alias valg="valgrind --track-origins=yes --num-callers=30"
 alias valm="valgrind --track-origins=yes --leak-check=full --show-leak-kinds=definite --num-callers=30"
 alias helg="valgrind --tool=helgrind --free-is-write=yes"
 alias masf="valgrind --tool=massif --heap=yes --stacks=no --depth=50 --max-snapshots=1000 --time-unit=ms"
+
+function masf_dump() {
+    local pid=${1:?No pid specified}
+    local dump_base="${2:-massif}-$(date +%Y-%m-%d_%H-%M)"
+    vgdb --pid=${pid} all_snapshots "${dump_base}.dump"
+    ms_print "${dump_base}.dump" > "${dump_base}.txt"
+}
 
 # Docker
 for cmd in cp help info kill load ps save rm rmi run stop; do
