@@ -5,20 +5,23 @@
 	co = checkout
 	df = diff --word-diff=color
 	dff = diff --color-words=[^[:space:]]
+	dt = difftool --tool=git-meld
 	fe = fetch --prune --tags --all
 	lg = log --pretty=vay --first-parent --color=always
+	lm = log --pretty=vaymed --color=always
 	lv = log --pretty=vaylong --first-parent --color=always
 	lvf = log --pretty=vaylong --color=always
 	me = merge --no-ff --no-commit --strategy=recursive --strategy-option=patience
 	mt = mergetool
 	pnh = push --force-with-lease
+	re = rebase --rebase-merges
 	rl = rev-list
-	sh = show --word-diff=color
+	rup = remote update
 	shf = show --color-words=[^[:space:]]
+	sh = show --word-diff=color
+	sta = stash save
 	st = status
 	stu = status --untracked-files=no
-	sta = stash save
-	rup = remote update
 
 [branch]
 	autosetuprebase = remote
@@ -60,6 +63,7 @@
 
 [pretty]
 	vay = %Cgreen%h %Creset%s%Creset
+	vaymed = %Cgreen%h %Cred%ad %Creset%s
 	vaylong = %Cgreen%h %Cred%an %Cgreen%aD %Creset%s
 
 [pull]

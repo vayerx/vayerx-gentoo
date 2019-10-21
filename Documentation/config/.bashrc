@@ -15,7 +15,7 @@ export HISTFILESIZE=5000
 
 export GPG_TTY=$(tty)
 
-NJOBS=4
+NJOBS=$(nproc)
 export CTEST_OUTPUT_ON_FAILURE=1
 
 if [ "$TERM" = screen ]; then
@@ -62,15 +62,19 @@ alias ll='ls -l'
 alias calg="valgrind --tool=callgrind"
 alias valg="valgrind --track-origins=yes --num-callers=30"
 alias valm="valgrind --track-origins=yes --leak-check=full --show-leak-kinds=definite --num-callers=30"
+alias valf="valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all --num-callers=30"
 alias helg="valgrind --tool=helgrind --free-is-write=yes"
 alias masf="valgrind --tool=massif --heap=yes --stacks=no --depth=50 --max-snapshots=1000 --time-unit=ms"
 
 function masf_dump() {
-    local pid=${1:?No pid specified}
-    local dump_base="${2:-massif}-$(date +%Y-%m-%d_%H-%M)"
-    vgdb --pid=${pid} all_snapshots "${dump_base}.dump"
-    ms_print "${dump_base}.dump" > "${dump_base}.txt"
+    local pids=${1:-$(pgrep massif)}
+    for pid in ${pids}; do
+        local dump_base="${2:-massif-${pid}}-$(date +%Y-%m-%d_%H-%M)"
+        vgdb --pid=${pid} all_snapshots "${dump_base}.dump"
+        ms_print "${dump_base}.dump" > "${dump_base}.txt"
+    done
 }
+
 
 # Docker
 for cmd in cp help info kill load ps save rm rmi run stop; do
@@ -203,7 +207,7 @@ function e2d_dir() {
 
 }
 
-alias emerge-update="emerge -quDN --keep-going --verbose-conflicts --with-bdeps\=y world"
+alias emerge-update="emerge -quDN --keep-going --verbose-conflicts --with-bdeps\=y --changed-deps world"
 alias emerge-preserved="emerge -q --keep-going @preserved-rebuild"
 alias emerge-modules="emerge -q --keep-going @module-rebuild"
 alias emerge-x11-modules="emerge -q --keep-going @x11-module-rebuild"
@@ -211,7 +215,7 @@ alias emerge-update-world="emerge -avquDN --keep-going --with-bdeps=y --verbose-
 alias emerge="emerge --verbose-conflicts"
 
 function upkernel() {
-    genkernel --kernel-config=/etc/kernels/kernel-config-$(uname -r) all
+    genkernel --kernel-config=/etc/kernels/kernel-config-$(uname -r) "$@" all
     emerge-modules
     grub-mkconfig -o /boot/grub/grub.cfg
 }

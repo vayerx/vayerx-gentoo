@@ -24,6 +24,7 @@ app-portage/ufed
 app-shells/gentoo-bashcomp
 dev-util/ccache
 dev-util/strace
+dev-util/vmtouch
 dev-vcs/mercurial
 net-analyzer/netcat
 net-analyzer/nmap

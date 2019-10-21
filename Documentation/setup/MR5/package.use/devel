@@ -1,4 +1,5 @@
 app-editors/vim ruby
+dev-db/postgresql llvm
 dev-python/PyQt5 webchannel webengine
 dev-python/QtPy webengine
 dev-qt/qt-creator cmake valgrind git

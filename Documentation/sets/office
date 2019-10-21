@@ -9,12 +9,12 @@ app-arch/zip
 app-crypt/gpa
 app-crypt/gpgme
 app-text/aspell
+app-text/gv
 media-gfx/exif
 media-gfx/geeqie
 media-gfx/gimp
 media-gfx/gnome-screenshot
 media-gfx/imagemagick
-media-libs/libtxc_dxtn
 media-plugins/alsa-plugins
 media-sound/apulse
 media-sound/clementine
