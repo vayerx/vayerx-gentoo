@@ -1,6 +1,6 @@
->=dev-libs/boost-1.67
+>dev-libs/boost-1.72
 >=dev-python/prompt_toolkit-2
->=dev-util/boost-build-1.67
+>dev-util/boost-build-1.72
 <mail-client/thunderbird-68
 >=media-libs/libvpx-1.8
 media-sound/pulseaudio

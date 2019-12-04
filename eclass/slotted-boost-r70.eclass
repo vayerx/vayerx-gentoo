@@ -17,10 +17,17 @@ SRC_URI="mirror://sourceforge/boost/${MY_P}.tar.bz2"
 LICENSE="Boost-1.0"
 SLOT="${MAJOR_V}/${PV}"
 KEYWORDS="~x86 ~amd64"
-IUSE="+bzip2 +context debug doc +eselect icu +lzma +nls mpi +numpy python static-libs +threads tools zlib zstd"
+IUSE="+bzip2 +context debug doc +eselect icu +lzma +nls mpi numpy python static-libs +threads tools +zlib zstd"
 REQUIRED_USE="
 	mpi? ( threads )
 	python? ( ${PYTHON_REQUIRED_USE} )"
+
+# the tests will never fail because these are not intended as sanity
+# tests at all. They are more a way for upstream to check their own code
+# on new compilers. Since they would either be completely unreliable
+# (failing for no good reason) or completely useless (never failing)
+# there is no point in having them in the ebuild to begin with.
+RESTRICT="test"
 
 RDEPEND="
 	bzip2? ( app-arch/bzip2:=[${MULTILIB_USEDEP}] )
@@ -38,13 +45,6 @@ RDEPEND="
 	zstd? ( app-arch/zstd:=[${MULTILIB_USEDEP}] )
 "
 DEPEND="${RDEPEND}"
-
-# the tests will never fail because these are not intended as sanity
-# tests at all. They are more a way for upstream to check their own code
-# on new compilers. Since they would either be completely unreliable
-# (failing for no good reason) or completely useless (never failing)
-# there is no point in having them in the ebuild to begin with.
-RESTRICT="test"
 
 BDEPEND="dev-util/boost-build:${MAJOR_V}"
 
@@ -197,8 +197,8 @@ src_configure() {
 		$(usex context '' '--without-context --without-coroutine --without-fiber')
 		$(usex threads '' '--without-thread')
 		# --without-stacktrace
-		--boost-build="${BROOT}"/usr/share/boost-build-${MAJOR_V}
-		--prefix="${ED}/usr"
+		--boost-build="${BROOT}"/usr/share/boost-build-${MAJOR_PV}
+		--prefix="${ED%/}/usr"
 		--layout=system
 		# CMake has issues working with multiple python impls,
 		# disable cmake config generation for the time being
@@ -222,19 +222,13 @@ src_configure() {
 		append-ldflags -Wl,-headerpad_max_install_names
 	fi
 
-	# bug 298489
-	if use ppc || use ppc64; then
-		[[ $(gcc-version) > 4.3 ]] && append-flags -mno-altivec
-	fi
-
 	# Use C++14 globally as of 1.62
 	append-cxxflags -std=c++14
 
 	if use static-libs; then
 		LIBRARY_TARGETS="*.a.${PV} *$(get_libname ${PV})"
 	else
-		# There is no dynamically linked version of libboost_test_exec_monitor and libboost_exception.
-		LIBRARY_TARGETS="libboost_test_exec_monitor.a.${PV} libboost_exception.a.${PV} *$(get_libname ${PV})"
+		LIBRARY_TARGETS="*$(get_libname ${PV})"
 	fi
 }
 
@@ -252,21 +246,21 @@ multilib_src_compile() {
 
 multilib_src_install_all() {
 	if ! use numpy; then
-		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/python/numpy* || die
+		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/boost/python/numpy* || die
 	fi
 
 	if ! use python; then
-		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/{python*,mpi/python*,parameter/aux_/python,parameter/python*} || die
+		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/boost/{python*,mpi/python*,parameter/aux_/python,parameter/python*} || die
 	fi
 
 	if ! use nls; then
-		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/locale || die
+		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/boost/locale || die
 	fi
 
 	if ! use context; then
-		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/context || die
-		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/coroutine{,2} || die
-		rm    "${ED%/}"/usr/include/boost-${MAJOR_V}/asio/spawn.hpp || die
+		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/boost/context || die
+		rm -r "${ED%/}"/usr/include/boost-${MAJOR_V}/boost/coroutine{,2} || die
+		rm    "${ED%/}"/usr/include/boost-${MAJOR_V}/boost/asio/spawn.hpp || die
 	fi
 
 	if use doc; then
