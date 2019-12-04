@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -170,12 +170,12 @@ src_configure() {
 		-q
 		-d+2
 		pch=off
-		$(usex icu "-sICU_PATH=${EPREFIX}/usr" '--disable-icu boost.locale.icu=off')
+		$(usex icu "-sICU_PATH=${ESYSROOT}/usr" '--disable-icu boost.locale.icu=off')
 		$(usex mpi '' '--without-mpi')
 		$(usex nls '' '--without-locale')
 		$(usex context '' '--without-context --without-coroutine --without-fiber')
 		$(usex threads '' '--without-thread')
-		--boost-build="${EPREFIX}/usr/share/boost-build-${MAJOR_V}"
+		--boost-build="${BROOT}"/usr/share/boost-build-${MAJOR_PV}
 		--prefix="${ED%/}/usr"
 		--layout=system
 		# building with threading=single is currently not possible

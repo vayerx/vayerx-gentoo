@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 inherit eutils flag-o-matic multilib multiprocessing python-r1 toolchain-funcs versionator multilib-minimal multilib-build
@@ -139,7 +139,7 @@ src_prepare() {
 	default
 
 	for patch in "${BOOST_PATCHES[@]}"; do
-		epatch "${FILESDIR%/}/${PN}-${patch}"
+		eapply "${FILESDIR%/}/${PN}-${patch}"
 	done
 
 	multilib_copy_sources
@@ -172,7 +172,7 @@ src_configure() {
 			compilerVersion=trunk
 		else
 			compilerVersion=$($(tc-getCXX) -v | sed '1q' \
-				| sed -e 's,\([a-z]*\) \([0-9]\.[0-9]\.[0-9][^ \t]*\) .*,\2,')
+				| sed -e 's,\([a-z]*\) \([0-9]\.[0-9]\.[0-9][^ \t]*\) .*,\2,') || die "sed failed"
 		fi
 		compilerExecutable=$(tc-getCXX)
 	fi
@@ -182,7 +182,7 @@ src_configure() {
 		[[ $(gcc-version) > 4.3 ]] && append-flags -mno-altivec
 	fi
 
-	# Use C++14 globally
+	# Use C++14 globally as of 1.62
 	append-cxxflags -std=c++14
 
 	use icu && OPTIONS+=(
@@ -209,7 +209,7 @@ src_configure() {
 
 	OPTIONS+=(
 		pch=off
-		--boost-build="${EPREFIX}/usr/share/boost-build-${MAJOR_V}"
+		--boost-build="${EPREFIX}/usr/share/boost-build-${MAJOR_PV}"
 		--prefix="${ED%/}/usr"
 		--layout=system
 		threading=$(usex threads multi single)
@@ -222,10 +222,6 @@ src_configure() {
 		# There is no dynamically linked version of libboost_test_exec_monitor and libboost_exception.
 		LIBRARY_TARGETS="libboost_test_exec_monitor.a.${PV} libboost_exception.a.${PV} *$(get_libname ${PV})"
 	fi
-
-	[[ ${CHOST} == *-winnt* ]] && OPTIONS+=(
-		-sNO_BZIP2=1
-	)
 }
 
 multilib_src_compile() {

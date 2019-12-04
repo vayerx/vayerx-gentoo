@@ -10,5 +10,4 @@ BOOST_PATCHES=(
 	"1.48.0-disable_icu_rpath.patch"
 	"1.55.0-context-x32.patch"
 	"1.56.0-build-auto_index-tool.patch"
-	"1.67.0-fix-python.patch"
 )

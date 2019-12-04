@@ -59,7 +59,7 @@ src_prepare() {
 	cd "${S}/engine" || die
 	sed -i \
 		-e 's|-s\b||' \
-		-e "/libpython/s/lib ]/$(get_libdir) ]/" \
+		-e "/libpython/s;lib ];$(get_libdir) ];" \
 		build.jam || die "sed failed"
 
 	# Force regeneration
@@ -77,6 +77,8 @@ src_prepare() {
 }
 
 src_configure() {
+	hprefixify engine/Jambase
+
 	if use python; then
 		# replace versions by user-selected one (TODO: fix this when slot-op
 		# deps are available to always match the best version available)
