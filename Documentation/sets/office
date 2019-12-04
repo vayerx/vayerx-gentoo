@@ -18,6 +18,7 @@ media-gfx/imagemagick
 media-plugins/alsa-plugins
 media-sound/apulse
 media-sound/clementine
+media-sound/mp3unicode
 media-sound/mpg123
 media-video/mplayer
 net-im/psi

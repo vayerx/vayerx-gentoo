@@ -3,8 +3,7 @@ app-arch/zstd lz4
 app-arch/zstd static-libs
 dev-db/mysql-connector-c static-libs
 dev-db/mysql static-libs
-dev-libs/boost static-libs
-dev-libs/boost zstd
+dev-libs/boost static-libs zstd
 dev-libs/expat static-libs
 dev-libs/judy static-libs
 dev-libs/openssl static-libs
@@ -13,4 +12,5 @@ dev-libs/protobuf static-libs
 net-dns/libidn static-libs
 net-libs/zeromq static-libs
 net-misc/curl static-libs
+sys-devel/llvm gold
 sys-libs/zlib static-libs

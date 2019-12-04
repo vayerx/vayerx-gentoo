@@ -207,12 +207,14 @@ function e2d_dir() {
 
 }
 
-alias emerge-update="emerge -quDN --keep-going --verbose-conflicts --with-bdeps\=y --changed-deps world"
+alias emerge-min-update="emerge -quDN --keep-going --verbose-conflicts"
+alias emerge-update="emerge-min-update --with-bdeps\=y --changed-deps"
 alias emerge-preserved="emerge -q --keep-going @preserved-rebuild"
 alias emerge-modules="emerge -q --keep-going @module-rebuild"
 alias emerge-x11-modules="emerge -q --keep-going @x11-module-rebuild"
-alias emerge-update-world="emerge -avquDN --keep-going --with-bdeps=y --verbose-conflicts world"
 alias emerge="emerge --verbose-conflicts"
+
+alias pretty_json="python -c 'import sys, json; json.dump(json.load(sys.stdin), sys.stdout, indent=4, sort_keys=True)'"
 
 function upkernel() {
     genkernel --kernel-config=/etc/kernels/kernel-config-$(uname -r) "$@" all
