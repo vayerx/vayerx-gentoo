@@ -69,7 +69,7 @@ PDEPEND="
 	rich? (
 		app-text/djview
 		app-office/dia
-		media-gfx/exiftags
+		media-gfx/exiv2
 		media-sound/picard
 		media-video/vlc
 
