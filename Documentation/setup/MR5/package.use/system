@@ -5,6 +5,7 @@ dev-db/sqlite secure-delete
 dev-lang/python sqlite
 dev-libs/openssl rfc3779 sctp
 dev-python/PyQt5 declarative
+media-libs/babl introspection
 media-libs/chromaprint tools
 media-libs/freetype harfbuzz
 media-libs/gd fontconfig
