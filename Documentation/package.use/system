@@ -1,104 +1,59 @@
 app-admin/conky iostats portmon
 app-admin/sudo -ldap -sendmail
-app-antivirus/clamav clamdtop
 app-crypt/argon2 static-libs
 app-crypt/heimdal -ssl -threads
 app-crypt/qca gpg
-app-emulation/q4wine icoutils
-app-emulation/virtualbox extensions -python
-app-emulation/wine-vanilla mono odbc s3tc samba staging
-app-misc/mc edit samba slang
+app-misc/mc edit samba sftp slang
 app-portage/layman mercurial squashfs
 app-text/hunspell l10n_en l10n_ru
-app-text/yagf scanner
-dev-cpp/gtest gmock
-dev-db/sqlite secure-delete
-dev-libs/glib xattr
-dev-libs/json-c static-libs
-dev-libs/libgdata gnome
-dev-libs/libpcre2 pcre16
-dev-libs/openssl gmp rfc3779 -tls-heartbeat
-dev-libs/xmlsec gcrypt nss
-dev-python/pycairo -xcb
-dev-python/PyQt4 webkit declarative
-dev-python/PyQt5 declarative
-dev-qt/qt3support accessibility kde
+dev-libs/openssl rfc3779 sctp -tls-heartbeat
+dev-python/PyQt5 declarative webchannel webengine
+dev-python/QtPy webengine
 dev-qt/qtdeclarative accessibility webkit
 dev-qt/qtgui accessibility dbus evdev
 dev-qt/qtsql mysql
 dev-qt/qtsvg accessibility
-dev-qt/qtwebkit -exceptions -gstreamer printsupport
+dev-qt/qtwebchannel qml
+dev-qt/qtwebengine widgets
+dev-qt/qtwebkit printsupport
 dev-ruby/rrdtool-bindings graph
-gnome-base/gvfs mtp
 gnome-base/nautilus tracker
-kde-apps/akonadi sqlite
-kde-apps/ark lzma
-kde-apps/gwenview -handbook kipi
-kde-apps/kde4-l10n minimal
-kde-frameworks/kdelibs -opengl semantic-desktop
-mail-client/claws-mail clamav smime xface
-mail-client/evolution highlight -weather ytnef
-mail-client/thunderbird -minimal system-icu
-mate-base/mate-applets networkmanager
-mate-base/mate-panel networkmanager
-mate-extra/mate-utils applet
-media-gfx/graphicsmagick imagemagick
-media-gfx/ufraw contrast timezone
+media-libs/babl introspection
 media-libs/chromaprint tools
 media-libs/freetype harfbuzz
 media-libs/gexiv2 introspection
 media-libs/libmypaint gegl
 media-libs/libsdl2 haptic
 media-libs/libvpx postproc svc
-media-libs/mesa egl
-media-libs/mlt frei0r kdenlive melt
-media-libs/sdl-mixer mod modplug
-media-libs/vigra openexr
 media-plugins/alsa-plugins speex
-media-plugins/audacious-plugins cue
-media-sound/asunder -aac
-media-sound/audacity id3tag twolame
-media-sound/clementine lastfm mtp
-media-video/ffmpeg -network opus theora webp
-media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska postproc freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio lua
 net-analyzer/rrdtool graph
 net-analyzer/tcpdump -samba
 net-dialup/ppp dhcp eap-tls
-net-dns/avahi autoipd -gtk gtk3 mdnsresponder-compat
+net-dns/libidn2 static-libs
 net-fs/samba client ldap winbind
-net-im/psi -crypt extras -jingle spell xscreensaver
-net-im/skype apulse
 net-libs/libssh server
-net-libs/nodejs inspector
 net-misc/ciscovpn openssl
 net-misc/curl idn rtmp
+net-misc/dhcp -server
 net-vpn/openvpn lz4
-sci-geosciences/gpsbabel -gui
 sci-geosciences/gpsd usb
-sci-geosciences/qlandkartegt gps
 sci-libs/gdal -python -ruby
 sci-libs/hdf5 -cxx -fortran
-sci-mathematics/octave curl gnuplot
 sys-apps/lm_sensors sensord
-sys-apps/portage rsync-verify
+sys-apps/portage gentoo-dev rsync-verify
 sys-apps/util-linux static-libs
-sys-block/gparted fat ntfs reiserfs xfs -xfce
-sys-boot/grub device-mapper mount
-sys-boot/grub -ncurses
+sys-block/gparted fat
+sys-boot/grub -fonts mount -sdl -themes -truetype
 sys-devel/qconf -qt5
-sys-fs/eudev static-libs
+sys-fs/eudev -introspection static-libs
 sys-fs/mdadm static
 sys-fs/udev static-libs
-sys-kernel/genkernel -firmware
 sys-kernel/gentoo-sources experimental symlink
 sys-libs/ldb ldap
 sys-libs/ncurses gpm
-sys-libs/zlib static-libs
-virtual/ffmpeg opus
-www-client/chromium -hangouts kerberos
-www-client/firefox -gmp-autoupdate hardened
+sys-libs/zlib minizip static-libs
+virtual/libudev static-libs
 x11-libs/cairo -lto -xlib-xcb
 x11-libs/fltk xft
 x11-libs/goffice gnome
 x11-libs/libdrm -valgrind
-x11-libs/libSM -uuid

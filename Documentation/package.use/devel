@@ -1,41 +1,27 @@
 app-crypt/heimdal -ssl
-app-crypt/pinentry gnome-keyring
 app-crypt/qca qt5
 app-editors/vim cscope ruby -X
 app-text/texlive-core xetex
-dev-db/freetds mssql odbc
-dev-db/postgresql perl
-dev-db/slony1 doc perl
-dev-java/junit source
-dev-java/oracle-jdk-bin javafx
-dev-java/swing-layout source
+dev-cpp/gtest gmock
+dev-db/postgresql llvm perl
+dev-db/sqlite secure-delete
 dev-lang/perl ithreads
 dev-lang/python sqlite tk
 dev-lang/ruby tk
-dev-libs/boost:1.56 std-cxx11 tools
-dev-libs/libgit2 ssh
-dev-libs/libpcre2 pcre16
-dev-libs/libpcre pcre16
+dev-libs/json-c static-libs
 dev-libs/openssl static-libs
 dev-libs/thrift cpp -qt5
-dev-python/ipython -wxwidgets
 dev-python/numpy lapack
-dev-python/PyQt5 webengine webchannel webkit
-dev-python/QtPy webengine webkit
 dev-python/spyder ipython numpy matplotlib pep8 pylint qtconsole scipy sphinx
-dev-qt/qt-creator autotools cmake qtscript valgrind
-dev-qt/qtscript scripttools
-dev-qt/qtwebchannel qml
-dev-qt/qtwebengine widgets
-dev-qt/qtwebkit printsupport
+dev-qt/qt-creator cmake valgrind git
 dev-util/cmake server -qt5
-dev-util/kdevelop -linguas_ru -handbook -ninja okteta -plasma -qmake
-dev-util/kdevplatform -linguas_ru -cvs -welcomepage
-dev-vcs/git -gtk perl tk webdav -xinetd
+dev-util/kdevelop -hex ninja -plasma -qmake
+dev-vcs/git perl tk webdav -xinetd
 dev-vcs/subversion -dso perl -ruby
 media-libs/mlt -ruby
 net-libs/zeromq drafts
-sys-devel/gcc awt go graphite
+sci-mathematics/octave curl gnuplot gui
+sys-devel/gcc go graphite
 sys-devel/gdb lzma
 sys-devel/llvm clang
 sys-libs/zlib minizip static-libs

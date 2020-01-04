@@ -197,12 +197,12 @@
     </keybind>
     <keybind key="W-Up">
       <action name="Execute">
-        <command>amixer set PCM 3dB+</command>
+        <command>amixer set Master 3dB+</command>
       </action>
     </keybind>
     <keybind key="W-Down">
       <action name="Execute">
-        <command>amixer set PCM 3dB-</command>
+        <command>amixer set Master 3dB-</command>
       </action>
     </keybind>
     <keybind key="S-A-Left">

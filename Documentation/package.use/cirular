@@ -1,0 +1,2 @@
+sys-libs/ncurses -gpm
+sys-libs/pam -filecaps

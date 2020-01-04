@@ -18,5 +18,5 @@ dev-util/conan
 net-misc/kafka-bin
 net-vpn/openvpn
 sys-auth/pam_u2f
-sys-devel/gcc:8.3.0
+sys-devel/gcc:9.2.0
 www-servers/nginx

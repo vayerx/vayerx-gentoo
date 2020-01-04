@@ -219,7 +219,9 @@ alias pretty_json="python -c 'import sys, json; json.dump(json.load(sys.stdin), 
 function upkernel() {
     genkernel --kernel-config=/etc/kernels/kernel-config-$(uname -r) "$@" all
     emerge-modules
-    grub-mkconfig -o /boot/grub/grub.cfg
+    echo ""
+    echo "Set BOOTLOADER=\"grub2\" in /etc/genkernel.conf or:"
+    echo "grub-mkconfig -o /boot/grub/grub.cfg"
 }
 
 alias quickpkg="quickpkg --include-config=y"

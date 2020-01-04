@@ -8,6 +8,8 @@ set list
 
 set ruler
 
+set colorcolumn=110
+
 " tabs
 set expandtab
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
