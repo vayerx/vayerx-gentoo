@@ -1,0 +1,17 @@
+UUID=f69f6194-0b2f-4ad3-ad01-45a0c691a8da   /boot       ext4    noatime,nodiratime,discard,noauto       1 2
+UUID=599D-CA38                              /boot/efi   vfat    noatime,nodiratime,noauto               0 0
+UUID=775e7314-a140-43d9-86e7-e3eec41ec0ec   /           ext4    noatime,nodiratime,discard              0 1
+UUID=caf87565-cdf6-41cf-a9f8-1e706dd9cd62   /home       ext4    noatime,nodiratime,nosuid               0 0
+UUID=2e7b879f-eaa1-4fce-be14-fd0893d1cc82   /mnt/data   ext4    noatime,nodiratime,nosuid               0 0
+UUID=ae77896f-f422-4396-986a-14acf92a5135   /mnt/fast   ext4    noatime,nodiratime,discard              0 1
+UUID=cf4ad241-b300-4550-b7a3-815b421453cf   /mnt/sysvar ext4    noatime,nodiratime,nobarrier,discard    0 0
+
+/mnt/sysvar/var         /var    none    bind    0 0
+/mnt/sysvar/tmp         /tmp    none    bind    0 0
+
+
+# glibc 2.2 and above expects tmpfs to be mounted at /dev/shm for
+# POSIX shared memory (shm_open, shm_unlink).
+# (tmpfs is a dynamically expandable/shrinkable ramdisk, and will
+#  use almost no memory if not populated with files)
+shm     /dev/shm    tmpfs   nodev,nosuid,noexec     0 0

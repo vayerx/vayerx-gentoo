@@ -17,6 +17,7 @@ dev-util/ragel
 dev-util/strace
 dev-util/uncrustify
 dev-util/valgrind
+dev-vcs/git-lfs
 dev-vcs/git[tk]
 sci-calculators/galculator
 sci-visualization/gnuplot

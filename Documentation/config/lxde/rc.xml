@@ -253,11 +253,7 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>pcmanfm</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>PCManFM</name>
-        </startupnotify>
+        <command>thunar</command>
       </action>
     </keybind>
     <keybind key="W-r">

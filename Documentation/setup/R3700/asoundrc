@@ -1,0 +1,80 @@
+# Defaults
+pcm.!default {
+    type plug
+    slave.pcm combined
+}
+
+ctl.!default {
+    type hw
+    card S51
+}
+
+
+# Creative Sound Blaster Omni Surround 5.1
+pcm.external {
+    type hw
+    card S51
+    format S24_3LE
+    rate 96000
+}
+
+
+# Equalizer
+pcm.equal_output {
+    type plug
+    slave.pcm equal
+}
+
+pcm.equal {
+    type equal
+    slave.pcm output_plug
+}
+
+ctl.equal {
+    type equal
+}
+
+
+# Output
+pcm.output_plug {
+    type plug
+    slave.pcm output
+}
+
+pcm.output {
+    type dmix
+
+    ipc_key 142831
+    ipc_perm 0666
+    ipc_gid audio
+
+    slave {
+        pcm external
+        channels 2
+
+        period_size 1024
+        buffer_size 65536
+    }
+}
+
+
+# Input
+pcm.input {
+    type dsnoop
+
+    ipc_key 142832
+    ipc_perm 0666
+    ipc_gid audio
+
+    # slave.pcm S51
+    slave.pcm U0x46d0x81b
+}
+
+
+# Full-duplex device
+pcm.combined {
+    type asym
+
+    playback.pcm equal_output
+    capture.pcm input
+}

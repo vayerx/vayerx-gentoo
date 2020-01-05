@@ -227,6 +227,13 @@ function upkernel() {
 alias quickpkg="quickpkg --include-config=y"
 alias wget="wget --no-use-server-timestamps"
 
+function webp2png() {
+    echo dwebp "${1:?no argument}" -o dwebp ${1%%.webp}.png
+}
+
+function unwebp() {
+    find . -maxdepth 1 -name '*.webp' -type f | xargs -I @ bash -c "dwebp @ -o \$(echo @ | sed 's/.webp//').png"
+}
 
 # Change the window title of X terminals
 case ${TERM} in
