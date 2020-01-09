@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-	<longdescription lang="en">The Completion System for the gitflowsystem.</longdescription>
-	<use>
-		<flag name="bash">Completion for bash</flag>
-		<flag name="zsh">Completion for zsh</flag>
-	</use>
-</pkgmetadata>
