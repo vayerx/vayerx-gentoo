@@ -39,7 +39,7 @@ net-vpn/openvpn lz4
 sci-geosciences/gpsd usb
 sci-libs/gdal -python -ruby
 sci-libs/hdf5 -cxx -fortran
-sys-apps/lm_sensors sensord
+sys-apps/lm-sensors sensord
 sys-apps/portage gentoo-dev rsync-verify
 sys-apps/util-linux static-libs
 sys-block/gparted fat
