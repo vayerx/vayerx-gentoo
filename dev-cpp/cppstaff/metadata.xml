@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>cpp</herd>
-<use>
-	<flag name='database'>Database-related staff</flag>
-	<flag name='exotic'>Rarely used staff</flag>
-	<flag name='rich'>Don't mind installing excessive staff</flag>
-	<flag name='testing'>Modules for testing</flag>
-</use>
+	<use>
+		<flag name='database'>Database-related staff</flag>
+		<flag name='exotic'>Rarely used staff</flag>
+		<flag name='rich'>Don't mind installing excessive staff</flag>
+		<flag name='testing'>Modules for testing</flag>
+	</use>
+	<maintainer type="person">
+		<email>vayerx@gmail.com</email>
+		<name>Vasiliy Yeremeyev</name>
+	</maintainer>
 </pkgmetadata>

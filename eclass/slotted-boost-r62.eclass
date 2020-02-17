@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 inherit eutils flag-o-matic multilib multiprocessing python-r1 toolchain-funcs versionator multilib-minimal multilib-build
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/boost/${MY_P}.tar.bz2"
 
 LICENSE="Boost-1.0"
 SLOT="${MAJOR_V}/${PV}"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64"
 IUSE="+context debug doc +eselect icu +nls mpi python static-libs +threads tools"
 
 RDEPEND="abi_x86_32? ( !app-emulation/emul-linux-x86-cpplibs[-abi_x86_32(-)] )

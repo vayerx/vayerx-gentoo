@@ -32,4 +32,8 @@
 			Enable support for zstd compression using <pkg>app-arch/zstd</pkg>
 		</flag>
 	</use>
+	<maintainer type="person">
+		<email>vayerx@gmail.com</email>
+		<name>Vasiliy Yeremeyev</name>
+	</maintainer>
 </pkgmetadata>

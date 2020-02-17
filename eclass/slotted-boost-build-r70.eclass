@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/boost/boost_${MY_PV}.tar.bz2"
 
 LICENSE="Boost-1.0"
 SLOT="$(ver_cut 1-2)"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64"
 IUSE="examples python test"
 RESTRICT="test"
 

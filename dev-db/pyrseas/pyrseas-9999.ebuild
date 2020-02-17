@@ -1,10 +1,9 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=7
 
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_{6,7,8} )
 
 inherit distutils-r1
 
@@ -12,7 +11,7 @@ DESCRIPTION="Framework and utilities to upgrade and maintain databases"
 HOMEPAGE="http://pyrseas.readthedocs.org"
 
 if [[ "${PV}" = 9999* ]]; then
-	inherit git-2
+	inherit git-r3
 	EGIT_REPO_URI="git://github.com/perseas/Pyrseas.git"
 	KEYWORDS=""
 else
@@ -24,12 +23,11 @@ LICENSE="BSD"
 SLOT="0"
 IUSE=""
 
-DEPEND="dev-python/setuptools"
+DEPEND="
+	dev-python/setuptools
+	dev-python/pgdbconn"
 
 RDEPEND="${DEPEND}
 	dev-db/postgresql
 	dev-python/pyyaml
 "
-# planned:
-#	dev-python/werkzeug
-#	dev-python/jinja

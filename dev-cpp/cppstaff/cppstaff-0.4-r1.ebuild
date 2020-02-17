@@ -1,16 +1,16 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Miscellaneous C++ staff, vayerx edition"
-HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
+HOMEPAGE="https://github.com/vayerx/vayerx-gentoo"
 SRC_URI=""
 
 LICENSE="GPL-3"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64"
 SLOT="0"
-IUSE="database exotic +rich +testing +kde"
+IUSE="database exotic +kde +rich +testing"
 
 PDEPEND="
 	dev-libs/boost
