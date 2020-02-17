@@ -6,6 +6,7 @@ app-crypt/qca gpg
 app-misc/mc edit samba sftp slang
 app-portage/layman mercurial squashfs
 app-text/hunspell l10n_en l10n_ru
+dev-lang/rust system-llvm
 dev-libs/openssl rfc3779 sctp -tls-heartbeat
 dev-python/PyQt5 declarative webchannel webengine
 dev-python/QtPy webengine

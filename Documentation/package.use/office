@@ -2,6 +2,7 @@ app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions -python
 app-emulation/wine-vanilla mono odbc s3tc samba staging
 app-text/yagf scanner
+dev-qt/qtmultimedia widgets
 kde-apps/gwenview -handbook kipi
 mail-client/claws-mail clamav smime xface
 mail-client/evolution highlight -weather ytnef
