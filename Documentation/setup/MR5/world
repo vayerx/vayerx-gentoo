@@ -1,0 +1,9 @@
+app-admin/lsyncd
+dev-db/mysqltuner
+dev-java/openjdk-bin
+dev-python/clickhouse-driver
+dev-python/pytest
+sci-mathematics/octave
+sys-cluster/hadoop-bin
+sys-firmware/intel-microcode
+vayerx/lxde

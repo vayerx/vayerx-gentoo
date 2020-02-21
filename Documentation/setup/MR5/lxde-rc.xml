@@ -170,6 +170,16 @@
         <command>xbacklight -inc 10</command>
       </action>
     </keybind>
+    <keybind key="S-A-F1">
+      <action name="Execute">
+        <command>single</command>
+      </action>
+    </keybind>
+    <keybind key="S-A-F2">
+      <action name="Execute">
+        <command>dual</command>
+      </action>
+    </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
         <command>xbacklight -dec 10</command>

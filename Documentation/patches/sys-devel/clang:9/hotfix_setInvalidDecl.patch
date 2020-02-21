@@ -1,0 +1,13 @@
+--- a/lib/AST/DeclBase.cpp	2019-12-11 22:15:30.000000000 +0300
++++ b/lib/AST/DeclBase.cpp	2020-02-21 22:15:30.000000000 +0300
+@@ -146,7 +146,9 @@
+   // are invalid too.
+   if (auto *DD = dyn_cast<DecompositionDecl>(this)) {
+     for (auto *Binding : DD->bindings()) {
+-      Binding->setInvalidDecl();
++      if (Binding) {
++        Binding->setInvalidDecl();
++      }
+     }
+   }
+ }
