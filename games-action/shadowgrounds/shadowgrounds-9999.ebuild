@@ -1,9 +1,8 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
-inherit games cmake-utils git-2
+inherit games cmake-utils git-r3
 
 EGIT_REPO_URI="git://github.com/vayerx/shadowgrounds.git"
 EGIT_BRANCH="linux"
@@ -16,7 +15,7 @@ else
 fi
 
 DESCRIPTION="Shadowgrounds is 3rd-person alien-shooter."
-HOMEPAGE="http://github.com/vayerx/shadowgrounds"
+HOMEPAGE="https://github.com/vayerx/shadowgrounds"
 SRC_URI=""
 
 LICENSE="shadowgrounds"

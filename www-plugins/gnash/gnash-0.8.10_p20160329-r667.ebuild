@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -14,7 +14,7 @@ HOMEPAGE="https://www.gnu.org/software/gnash/"
 if [[ ${PV} = 9999* ]]; then
 	SRC_URI=""
 	EGIT_REPO_URI="git://git.savannah.gnu.org/gnash.git"
-	inherit git-2
+	inherit git-r3
 else
 # Release tarball is b0rked, upstream #35612
 #	SRC_URI="mirror://gnu/${PN}/${PV}/${P}.tar.bz2"
