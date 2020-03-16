@@ -10,15 +10,17 @@ SRC_URI=""
 LICENSE="GPL-3"
 KEYWORDS="~amd64"
 SLOT="0"
-IUSE="database exotic +kde +rich +testing"
+IUSE="+kde +testing"
 
 PDEPEND="
 	dev-libs/boost
 	dev-util/ccache
+	dev-util/cppcheck
+	dev-util/flawfinder
+	dev-util/lcov
 
 	kde? (
 		dev-util/kdevelop
-		kde-apps/konsole
 		kde-apps/kcachegrind
 	)
 	!kde? (
@@ -27,15 +29,5 @@ PDEPEND="
 
 	testing? (
 		dev-cpp/gtest
-		dev-util/cppcheck
-		dev-util/cppunit
-		dev-util/flawfinder
-		dev-util/lcov
-	)
-
-	rich? (
-		dev-cpp/tbb
-		dev-libs/oniguruma
-		dev-qt/qt-creator[cmake,git,valgrind]
 	)
 "

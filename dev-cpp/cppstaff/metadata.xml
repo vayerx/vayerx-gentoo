@@ -3,8 +3,6 @@
 <pkgmetadata>
 	<use>
 		<flag name='database'>Database-related staff</flag>
-		<flag name='exotic'>Rarely used staff</flag>
-		<flag name='rich'>Don't mind installing excessive staff</flag>
 		<flag name='testing'>Modules for testing</flag>
 	</use>
 	<maintainer type="person">
