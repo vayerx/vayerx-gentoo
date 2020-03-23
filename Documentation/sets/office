@@ -15,6 +15,7 @@ media-gfx/geeqie
 media-gfx/gimp
 media-gfx/gnome-screenshot
 media-gfx/imagemagick
+media-plugins/alsaequal
 media-plugins/alsa-plugins
 media-sound/apulse
 media-sound/clementine
@@ -35,6 +36,7 @@ x11-base/xorg-x11
 x11-misc/arandr
 x11-misc/notify-osd
 x11-misc/xscreensaver
+x11-misc/xtrlock
 x11-terms/xfce4-terminal
 x11-themes/gentoo-artwork
 x11-themes/tango-icon-theme

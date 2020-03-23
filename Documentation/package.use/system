@@ -36,7 +36,7 @@ net-libs/libssh server
 net-misc/ciscovpn openssl
 net-misc/curl idn rtmp
 net-misc/dhcp -server
-net-vpn/openvpn lz4
+net-vpn/openvpn iproute2 lz4
 sci-geosciences/gpsd usb
 sci-libs/gdal -python -ruby
 sci-libs/hdf5 -cxx -fortran

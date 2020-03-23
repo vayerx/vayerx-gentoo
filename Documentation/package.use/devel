@@ -18,6 +18,7 @@ dev-util/cmake server -qt5
 dev-util/kdevelop -hex ninja -plasma -qmake
 dev-vcs/git perl tk webdav -xinetd
 dev-vcs/subversion -dso perl -ruby
+media-gfx/imagemagick cxx
 media-libs/mlt -ruby
 net-libs/zeromq drafts
 sci-mathematics/octave curl gnuplot gui

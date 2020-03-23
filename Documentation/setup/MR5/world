@@ -2,8 +2,10 @@ app-admin/lsyncd
 dev-db/mysqltuner
 dev-java/openjdk-bin
 dev-python/clickhouse-driver
-dev-python/pytest
+net-im/skypeforlinux
+net-im/zoom-bin
 sci-mathematics/octave
 sys-cluster/hadoop-bin
 sys-firmware/intel-microcode
 vayerx/lxde
+www-client/google-chrome

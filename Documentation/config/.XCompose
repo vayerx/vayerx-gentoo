@@ -17,3 +17,5 @@ include "%L"
 <Multi_key> <o> <underscore> <o> : "ಠ_ಠ" # LOOK OF DISAPPROVAL
 <Multi_key> <i> <d> <k> : "¯\\_(ツ)_/¯" # SHRUG
 
+<Multi_key> <apostrophe> <apostrophe> : "́" U0301 # ACCENT
+<Multi_key> <Cyrillic_e> <Cyrillic_e> : "́" U0301 # ACCENT

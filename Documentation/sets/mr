@@ -12,6 +12,7 @@ dev-python/msgpack
 dev-python/mysqlclient
 dev-python/protobuf-python
 dev-python/psutil
+dev-python/pytest
 dev-python/sqlalchemy
 dev-python/virtualenv
 dev-util/conan
