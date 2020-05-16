@@ -1,7 +1,0 @@
-<kpartgui version="1" name="kdevcppsupport">
-  <ActionProperties>
-    <Action shortcut="Ctrl+Shift+C" name="switch_definition_declaration"/>
-    <Action shortcut="Ctrl+Alt+R" name="code_rename_declaration"/>
-    <Action shortcut="Ctrl+Alt+Shift+S" name="code_move_definition"/>
-  </ActionProperties>
-</kpartgui>

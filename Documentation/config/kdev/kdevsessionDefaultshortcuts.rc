@@ -1,5 +1,0 @@
-<kpartgui version="1" name="kdevsession">
-  <ActionProperties>
-    <Action shortcut="Ctrl+Q" name="quit"/>
-  </ActionProperties>
-</kpartgui>

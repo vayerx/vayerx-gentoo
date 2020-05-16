@@ -1,3 +1,4 @@
+app-admin/conky hddtemp vim-syntax
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions -python
 app-emulation/wine-vanilla mono odbc s3tc samba staging
@@ -10,7 +11,7 @@ mail-client/thunderbird hardened -gmp-autoupdate system-icu
 media-gfx/gimp postscript
 media-gfx/graphicsmagick imagemagick postscript
 media-gfx/ufraw contrast timezone
-media-libs/mlt kdenlive
+media-libs/mlt frei0r kdenlive melt
 media-plugins/audacious-plugins cue
 media-sound/asunder -aac
 media-sound/audacity id3tag twolame

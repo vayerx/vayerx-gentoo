@@ -1,6 +1,5 @@
 dev-ruby/addressable
 dev-ruby/bundler
-dev-ruby/libxml
 dev-ruby/mechanize
 dev-ruby/mocha
 dev-ruby/nokogiri

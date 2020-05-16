@@ -10,6 +10,7 @@ dev-lang/rust system-llvm
 dev-libs/openssl rfc3779 sctp -tls-heartbeat
 dev-python/PyQt5 declarative webchannel webengine
 dev-python/QtPy webengine
+dev-python/setuptools python_targets_python3_6
 dev-qt/qtdeclarative accessibility webkit
 dev-qt/qtgui accessibility dbus evdev
 dev-qt/qtsql mysql

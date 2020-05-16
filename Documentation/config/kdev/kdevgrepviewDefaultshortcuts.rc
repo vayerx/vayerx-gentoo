@@ -1,5 +1,0 @@
-<kpartgui version="1" name="kdevgrepview">
-  <ActionProperties>
-    <Action shortcut="Ctrl+Alt+F" name="edit_grep"/>
-  </ActionProperties>
-</kpartgui>

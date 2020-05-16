@@ -1,0 +1,3 @@
+# Saitek PLC Cyborg Gold Joystick: jscal -p
+SUBSYSTEM=="input", ATTRS{idVendor}=="06a3", ATTRS{idProduct}=="0002", ACTION=="add", RUN+="/home/bin/vayerx/jscal.sh"
+
