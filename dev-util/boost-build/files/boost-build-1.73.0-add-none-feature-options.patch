@@ -1,0 +1,22 @@
+--- a/src/tools/features/debug-feature.jam
++++ b/src/tools/features/debug-feature.jam
+@@ -18,7 +18,7 @@
+ |# # end::doc[]
+ 
+ feature.feature debug-symbols
+-    : on off
++    : on off none
+     : propagated ;
+ 
+ #| tag::prof-doc[]
+--- a/src/tools/features/optimization-feature.jam
++++ b/src/tools/features/optimization-feature.jam
+@@ -16,7 +16,7 @@
+ |# # end::doc[]
+ 
+ feature.feature optimization
+-    : off speed space
++    : off none speed space
+     : propagated ;
+ 
+ #| tag::inline-doc[]

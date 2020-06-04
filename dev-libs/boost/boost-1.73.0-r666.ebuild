@@ -10,7 +10,6 @@ BOOST_PATCHES=(
 	"1.48.0-disable_icu_rpath.patch"
 	"1.56.0-build-auto_index-tool.patch"
 	"1.69.0-context-x32.patch"
-	"1.72.0-boost-mpi-python.patch"
-	"1.72.0-missing-serialization-split_member-include.patch"
-	"1.72.0-revert-cease-dependence-on-range.patch"
+	"1.73-boost-python-cleanup.patch"
+	"1.73-boost-mpi-python-PEP-328.patch"
 )
