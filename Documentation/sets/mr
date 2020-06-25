@@ -2,6 +2,7 @@ app-arch/lzma
 app-arch/rpm
 app-arch/zstd
 app-emulation/docker
+app-misc/grc
 dev-db/clickhouse
 dev-db/tarantool
 dev-libs/judy

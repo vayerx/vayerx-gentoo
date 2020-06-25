@@ -3,7 +3,7 @@ dev-db/mysqltuner
 dev-java/openjdk-bin
 dev-python/clickhouse-driver
 net-im/skypeforlinux
-net-im/zoom-bin
+net-im/zoom
 sci-mathematics/octave
 sys-cluster/hadoop-bin
 sys-firmware/intel-microcode

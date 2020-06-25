@@ -15,7 +15,9 @@ include "%L"
 
 <Multi_key> <equal> <parenright> : "¯\\_(ツ)_/¯"
 <Multi_key> <o> <underscore> <o> : "ಠ_ಠ" # LOOK OF DISAPPROVAL
-<Multi_key> <i> <d> <k> : "¯\\_(ツ)_/¯" # SHRUG
+<Multi_key> <i> <d> <k> : "¯\\_(ツ)_/¯"
+<Multi_key> <d> <k> : "¯\\(°_o)/¯"
+<Multi_key> <m> <h> : "ψ(｀∇´)ψ"
 
 <Multi_key> <apostrophe> <apostrophe> : "́" U0301 # ACCENT
 <Multi_key> <Cyrillic_e> <Cyrillic_e> : "́" U0301 # ACCENT
