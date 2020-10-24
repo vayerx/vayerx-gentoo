@@ -181,6 +181,8 @@ function xme() {
 alias nunah="echo -e \\033c"
 alias blya="xrandr --fb 3840x1080 --output DVI-0 --mode 1920x1080 --pos 0x0 --output DisplayPort-0 --mode 1920x1080 --pos 1920x0"
 
+alias rblock="rfkill block all"
+
 function fciv() {
     local file="${1:+--file $1}"
     local fcdb="${HOME}/.freeciv/fcdb.conf"

@@ -35,7 +35,7 @@ net-dns/libidn2 static-libs
 net-fs/samba client ldap winbind
 net-libs/libssh server
 net-misc/ciscovpn openssl
-net-misc/curl idn rtmp
+net-misc/curl http2 idn rtmp
 net-misc/dhcp -server
 net-vpn/openvpn iproute2 lz4
 sci-geosciences/gpsd usb

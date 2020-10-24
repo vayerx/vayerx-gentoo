@@ -185,6 +185,16 @@
         <command>xbacklight -dec 10</command>
       </action>
     </keybind>
+    <keybind key="W-S-s">
+      <action name="Execute">
+        <command>gnome-screenshot --window --remove-border</command>
+      </action>
+    </keybind>
+    <keybind key="W-s">
+      <action name="Execute">
+        <command>gnome-screenshot --window --remove-border</command>
+      </action>
+    </keybind>
     <keybind key="C-A-Left">
       <action name="DesktopLeft">
         <wrap>no</wrap>

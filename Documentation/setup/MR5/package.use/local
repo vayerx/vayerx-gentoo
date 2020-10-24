@@ -1,3 +1,5 @@
+net-misc/kafka-bin internal-zookeeper
+net-misc/openssh kerberos
 vayerx/develop database math
 vayerx/office kde
 x11-drivers/xf86-video-intel sna uxa

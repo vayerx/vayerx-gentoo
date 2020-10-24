@@ -5,7 +5,6 @@
 @setxkbmap -model pc105 -layout us,ru -option grp:shifts_toggle -option compose:ralt
 @telegram-desktop
 @myteam
-@zoom
 @thunderbird
 @keepassxc
 @firefox

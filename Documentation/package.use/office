@@ -3,6 +3,7 @@ app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions -python
 app-emulation/wine-vanilla mono odbc s3tc samba staging
 app-text/yagf scanner
+dev-libs/libdbusmenu gtk3
 dev-qt/qtmultimedia widgets
 kde-apps/gwenview -handbook kipi
 mail-client/claws-mail clamav smime xface
@@ -20,9 +21,11 @@ media-video/ffmpeg -network opus theora webp
 media-video/mplayer bidi theora vcd
 media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska postproc freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio lua
 net-im/psi extras -jingle spell xscreensaver
+net-nds/openldap static-libs
 sci-geosciences/gpsbabel -gui
 sci-geosciences/qlandkartegt gps
 sci-mathematics/octave curl gnuplot
+sys-libs/libseccomp static-libs
 virtual/ffmpeg opus
 www-client/chromium -hangouts kerberos
 www-client/firefox -gmp-autoupdate hardened

@@ -3,9 +3,11 @@ dev-db/mysqltuner
 dev-java/openjdk-bin
 dev-python/clickhouse-driver
 net-im/skypeforlinux
+net-im/telegram-desktop-bin
 net-im/zoom
 sci-mathematics/octave
 sys-cluster/hadoop-bin
 sys-firmware/intel-microcode
 vayerx/lxde
+virtual/resolvconf
 www-client/google-chrome

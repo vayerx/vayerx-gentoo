@@ -1,0 +1,3 @@
+CFLAGS="${CFLAGS} -fno-builtin-strlen"
+FEATURES="${FEATURES} nostrip"
+

@@ -3,6 +3,7 @@ app-arch/makeself
 app-arch/unmakeself
 app-doc/doxygen
 app-i18n/enca
+app-misc/jq
 app-vim/command-t
 app-vim/nerdtree
 dev-libs/boost
