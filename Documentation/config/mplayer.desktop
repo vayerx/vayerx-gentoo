@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=mplayer true loop
+Exec=sh -c "mplayer -loop 0 -fs %F"
+Categories=Other;
+NoDisplay=true
+MimeType=video/mp4
+Terminal=false

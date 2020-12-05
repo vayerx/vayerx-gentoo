@@ -7,12 +7,14 @@ app-misc/mc edit samba sftp slang
 app-portage/layman mercurial squashfs
 app-text/hunspell l10n_en l10n_ru
 dev-lang/rust system-llvm
+dev-libs/libaio static-libs
+dev-libs/libdbusmenu gtk3
 dev-libs/openssl rfc3779 sctp -tls-heartbeat
 dev-python/PyQt5 declarative webchannel webengine
 dev-python/QtPy webengine
-dev-python/setuptools python_targets_python3_6
 dev-qt/qtdeclarative accessibility webkit
-dev-qt/qtgui accessibility dbus evdev
+dev-qt/qtgui accessibility dbus evdev wayland
+dev-qt/qtmultimedia widgets
 dev-qt/qtsql mysql
 dev-qt/qtsvg accessibility
 dev-qt/qtwebchannel qml
@@ -41,6 +43,7 @@ net-vpn/openvpn iproute2 lz4
 sci-geosciences/gpsd usb
 sci-libs/gdal -python -ruby
 sci-libs/hdf5 -cxx -fortran
+sci-mathematics/octave curl gnuplot
 sys-apps/lm-sensors sensord
 sys-apps/portage gentoo-dev rsync-verify
 sys-apps/util-linux static-libs

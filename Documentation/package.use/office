@@ -14,6 +14,7 @@ media-gfx/graphicsmagick imagemagick postscript
 media-gfx/ufraw contrast timezone
 media-libs/mlt frei0r kdenlive melt
 media-plugins/audacious-plugins cue
+media-sound/apulse sdk
 media-sound/asunder -aac
 media-sound/audacity id3tag twolame
 media-sound/clementine lastfm mtp

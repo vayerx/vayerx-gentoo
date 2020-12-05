@@ -218,6 +218,11 @@ alias emerge="emerge --verbose-conflicts"
 
 alias pretty_json="python -c 'import sys, json; json.dump(json.load(sys.stdin), sys.stdout, indent=4, sort_keys=True)'"
 
+function get_stable_keywords() {
+    # TODO args
+    EIX_LIMIT=0 eix -C dev-qt --only-names | awk '{ print $0, "-~amd64"; print "=" $0 "-5.15.2"}'
+}
+
 function upkernel() {
     genkernel --kernel-config=/etc/kernels/kernel-config-$(uname -r) "$@" all
     emerge-modules

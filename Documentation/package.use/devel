@@ -1,6 +1,6 @@
 app-crypt/heimdal -ssl
 app-crypt/qca qt5
-app-editors/vim cscope ruby -X
+app-editors/vim cscope -ruby -X
 app-text/texlive-core xetex
 dev-cpp/gtest gmock
 dev-db/postgresql llvm perl

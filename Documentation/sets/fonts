@@ -5,6 +5,9 @@ media-fonts/corefonts
 media-fonts/cronyx-fonts
 media-fonts/dejavu
 media-fonts/droid
+media-fonts/font-alias
+media-fonts/font-bitstream-100dpi
+media-fonts/font-mutt-misc
 media-fonts/freefonts
 media-fonts/intlfonts
 media-fonts/ja-ipafonts

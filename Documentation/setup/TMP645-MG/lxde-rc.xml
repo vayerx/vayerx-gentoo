@@ -35,8 +35,8 @@
     <primaryMonitor/>
   </placement>
   <theme>
-    <name>Onyx</name>
-    <titleLayout>NLIMC</titleLayout>
+    <name>Clearlooks</name>
+    <titleLayout>NLIMDC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -172,6 +172,16 @@
         <command>amixer set -c 0 Master 2dB-</command>
       </action>
     </keybind>
+    <keybind key="W-S-s">
+      <action name="Execute">
+        <command>gnome-screenshot --window --remove-border</command>
+      </action>
+    </keybind>
+    <keybind key="W-s">
+      <action name="Execute">
+        <command>gnome-screenshot --window --remove-border</command>
+      </action>
+    </keybind>
     <keybind key="S-W-Left">
       <action name="SendToDesktopLeft">
         <wrap>no</wrap>
@@ -243,11 +253,7 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>pcmanfm</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>PCManFM</name>
-        </startupnotify>
+        <command>thunar</command>
       </action>
     </keybind>
     <keybind key="W-r">

@@ -1,2 +1,4 @@
+app-office/libreoffice -~amd64
 =media-libs/hupnp-ng-9999 **
 media-libs/libmtp **
+www-client/chromium -~amd64

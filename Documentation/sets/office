@@ -21,12 +21,12 @@ media-sound/clementine
 media-sound/mp3unicode
 media-sound/mpg123
 media-video/mplayer
-net-im/psi
 net-misc/x11-ssh-askpass
 net-print/cups
 net-print/cups-pdf
 net-print/foomatic-db
 net-print/foomatic-db-ppds
+sci-calculators/galculator
 sys-apps/pv
 vayerx/office
 www-plugins/adobe-flash

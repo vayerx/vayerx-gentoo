@@ -1,7 +1,4 @@
 >=dev-libs/boost-1.74
 >=dev-util/boost-build-1.74
-<mail-client/thunderbird-68
 media-sound/pulseaudio
-=media-video/transcode-1.1.7-r5
 sys-apps/systemd
-<www-client/firefox-69

@@ -7,7 +7,6 @@ app-admin/sysstat
 app-antivirus/clamav
 app-arch/tarsync
 app-crypt/gentoo-keys
-app-crypt/gkeys
 app-crypt/sbsigntools
 app-doc/eclass-manpages
 app-editors/vim
