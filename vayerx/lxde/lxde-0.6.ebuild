@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -13,8 +13,7 @@ IUSE="mate +xfce"
 
 RDEPEND="
 	x11-misc/obconf
-	x11-misc/obkey
-	x11-misc/obmenu
+	x11-misc/obmenu-generator
 
 	mate? (
 		mate-base/caja
