@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -13,7 +13,7 @@ HOMEPAGE="http://jetbrains.com/ruby/"
 SRC_URI="http://download.jetbrains.com/ruby/${MY_PN}-${MY_PV}.tar.gz"
 LICENSE="JetBrains-EULA"
 
-IUSE="+debugger rubocop"
+IUSE="+debugger +rubocop"
 KEYWORDS="~amd64"
 SLOT="$(ver_cut 1)"
 

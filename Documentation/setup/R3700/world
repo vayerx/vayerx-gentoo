@@ -5,6 +5,7 @@ app-emulation/winetricks
 app-misc/fdedup
 app-misc/gramps
 app-office/gnucash
+dev-util/rubymine:2018
 games-util/joystick
 games-util/qjoypad
 games-util/steam-meta
