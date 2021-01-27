@@ -2,8 +2,8 @@ app-arch/lzma
 app-arch/rpm
 app-arch/zstd
 app-emulation/docker
+app-emulation/docker-compose
 app-misc/grc
-dev-db/clickhouse
 dev-db/tarantool
 dev-libs/judy
 dev-libs/librdkafka
@@ -11,6 +11,7 @@ dev-libs/rapidjson
 dev-python/clickhouse-driver
 dev-python/msgpack
 dev-python/mysqlclient
+dev-python/overrides
 dev-python/protobuf-python
 dev-python/psutil
 dev-python/pytest

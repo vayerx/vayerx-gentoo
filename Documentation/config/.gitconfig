@@ -7,6 +7,7 @@
 	dff = diff --color-words=[^[:space:]]
 	dt = difftool --tool=git-meld
 	fe = fetch --prune --tags --all
+	lf = log --pretty=vayfull --color=always
 	lg = log --pretty=vay --first-parent --color=always
 	lm = log --pretty=vaymed --color=always
 	lv = log --pretty=vaylong --first-parent --color=always
@@ -65,6 +66,7 @@
 	vay = %Cgreen%h %Creset%s%Creset
 	vaymed = %Cgreen%h %Cred%ad %Creset%s
 	vaylong = %Cgreen%h %Cred%an %Cgreen%aD %Creset%s
+	vayfull = %Cgreen%h %Cred%an %Cgreen%ad %Cred%cn %Cgreen%cd %Creset%s
 
 [pull]
 	ff = only

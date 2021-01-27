@@ -52,6 +52,13 @@ function m() {
 alias CM="cmake -DCMAKE_BUILD_TYPE=Debug .. && gmake -j$NJOBS"
 alias cm="cmake -DCMAKE_BUILD_TYPE=Release .. && gmake -j$NJOBS"
 
+function sand_gcc() {
+    local name="${1:-sample}"; shift
+    local args="${@:--std=c++17}"
+    echo "Sandbox $name: g++ $args"
+    vim "${name}.cpp" && g++ $args "${name}.cpp" -o "$name" && "./$name"
+}
+
 alias nltp="netstat -nltp"
 alias nlup="netstat -nlup"
 alias nlp="netstat -nltup"

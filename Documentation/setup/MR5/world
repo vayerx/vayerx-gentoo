@@ -1,12 +1,12 @@
 app-admin/lsyncd
 dev-db/mysqltuner
 dev-java/openjdk-bin
-dev-python/clickhouse-driver
 net-im/skypeforlinux
 net-im/telegram-desktop-bin
 net-im/zoom
 sci-mathematics/octave
 sys-cluster/hadoop-bin
+sys-devel/gcc:9.3.0
 sys-firmware/intel-microcode
 vayerx/lxde
 virtual/resolvconf

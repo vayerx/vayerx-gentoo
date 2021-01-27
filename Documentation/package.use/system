@@ -9,6 +9,9 @@ app-text/hunspell l10n_en l10n_ru
 dev-lang/rust system-llvm
 dev-libs/libaio static-libs
 dev-libs/libdbusmenu gtk3
+dev-libs/libgcrypt static-libs
+dev-libs/libgpg-error static-libs
+dev-libs/lzo static-libs
 dev-libs/openssl rfc3779 sctp -tls-heartbeat
 dev-python/PyQt5 declarative webchannel webengine
 dev-python/QtPy webengine
