@@ -17,4 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="dev-python/pytz"
+RDEPEND="
+	dev-python/tzlocal
+	dev-python/pytz
+"
