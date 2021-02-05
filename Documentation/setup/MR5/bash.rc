@@ -1,0 +1,29 @@
+function trgtest() {
+    local target="$1"; shift
+    local mode="${1:-fast}"; shift
+    m ${target} && ../run_tests.py --mode=${mode} --threads=${NJOBS} "$@" ${target}
+}
+alias tt="../setup_system.py"
+
+function trg_build() {
+    tt up
+    tt build
+    tt down
+}
+
+function trg_dock_pull() {
+    time docker images | awk '/corp.mail.ru/ { print $1 }' | xargs -L1 --no-run-if-empty docker pull
+}
+
+# partial "docker image prune"
+function trg_dock_clean() {
+    docker images | \
+        awk '{ if ($1 ~ "registry-gitlab.corp.mail.ru" && $2 != "latest") { print $3 } }' | \
+        xargs --no-run-if-empty docker rmi
+}
+
+function reth() {
+    rmmod r8169
+    modprobe r8169
+    ifconfig eth0 up
+}

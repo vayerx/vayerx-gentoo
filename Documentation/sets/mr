@@ -14,6 +14,7 @@ dev-python/mysqlclient
 dev-python/overrides
 dev-python/protobuf-python
 dev-python/psutil
+dev-python/pymysql
 dev-python/pytest
 dev-python/sqlalchemy
 dev-python/virtualenv

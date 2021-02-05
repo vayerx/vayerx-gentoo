@@ -18,5 +18,6 @@ sci-calculators/galculator
 sci-visualization/gnuplot
 sys-devel/gcc # latest
 sys-fs/inotify-tools
+sys-process/parallel
 sys-process/tiptop
 vayerx/develop

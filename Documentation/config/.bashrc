@@ -269,3 +269,12 @@ else
 fi
 
 umask 0002
+
+
+if [ -d ~/.bashrc.d ]; then
+    IFS='\n'
+    for rcfile in $(find ~/.bashrc.d/ -type f -name '*.rc'); do
+        source "$rcfile"
+    done
+    unset IFS
+fi

@@ -2,7 +2,7 @@ app-admin/lsyncd
 dev-db/mysqltuner
 dev-java/openjdk-bin
 net-im/skypeforlinux
-net-im/telegram-desktop-bin
+net-im/telegram-desktop
 net-im/zoom
 sci-mathematics/octave
 sys-cluster/hadoop-bin

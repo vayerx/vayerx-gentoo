@@ -3,6 +3,10 @@ include "%L"
 <Multi_key> <Cyrillic_BE> <Cyrillic_BE>: "«"
 <Multi_key> <Cyrillic_YU> <Cyrillic_YU>: "»"
 
+<Multi_key> <exclam> <equal> : "≠"
+<Multi_key> <slash> <equal> : "≠"
+<Multi_key> <equal> <slash> : "≠"
+
 <Multi_key> <Cyrillic_SOFTSIGN> <minus>	: "Ҍ" U0462 #CYRILLIC CAPITAL LETTER YAT
 <Multi_key> <Cyrillic_softsign> <minus> : "ѣ" U0463 #CYRILLIC SMALL LETTER YAT
 <Multi_key> <Cyrillic_O> <minus> : "Ѳ" U0472 # CYRILLIC CAPITAL LETTER FITA
@@ -21,3 +25,6 @@ include "%L"
 
 <Multi_key> <apostrophe> <apostrophe> : "́" U0301 # ACCENT
 <Multi_key> <Cyrillic_e> <Cyrillic_e> : "́" U0301 # ACCENT
+
+<Multi_key> <b> <r> : "Best regards"
+<Multi_key> <w> <b> <r> : "With best regards"
