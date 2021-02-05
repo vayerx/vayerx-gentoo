@@ -6,7 +6,7 @@ EAPI=6
 
 RESTRICT="test"
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python{2_7,3_{6,7,8,9}} )
 inherit eutils flag-o-matic multilib python-single-r1 toolchain-funcs versionator
 
 MY_PV="$(replace_all_version_separators _)"

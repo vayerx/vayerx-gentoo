@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python{2_7,3_{6,7,8,9}} )
 inherit eutils flag-o-matic python-single-r1 toolchain-funcs
 
 MY_PV="$(ver_rs 1- _)"
