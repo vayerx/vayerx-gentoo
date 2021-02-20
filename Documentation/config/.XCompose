@@ -28,3 +28,5 @@ include "%L"
 
 <Multi_key> <b> <r> : "Best regards"
 <Multi_key> <w> <b> <r> : "With best regards"
+
+<Multi_key> <f> <p> : "🤦‍♂️" U1F926 U200D U2642  # facepalm

@@ -9,6 +9,7 @@ dev-lang/python sqlite tk
 dev-lang/ruby tk
 dev-libs/json-c static-libs
 dev-libs/openssl static-libs
+dev-libs/poco odbc
 dev-libs/thrift cpp -qt5
 dev-python/numpy lapack
 dev-python/QtPy gui printsupport

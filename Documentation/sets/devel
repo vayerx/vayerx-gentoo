@@ -8,6 +8,7 @@ dev-libs/libxml2
 dev-util/cmake
 dev-util/geany
 dev-util/google-perftools
+dev-util/heaptrack
 dev-util/meld
 dev-util/strace
 dev-util/uncrustify

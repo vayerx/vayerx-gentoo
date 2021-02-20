@@ -17,14 +17,14 @@ media-sound/picard
 media-video/guvcview
 media-video/simplescreenrecorder
 net-im/skypeforlinux
-net-im/telegram-desktop-bin
+net-im/telegram-desktop
 net-print/foomatic-db
 net-print/foomatic-db-ppds
 net-print/hplip
 net-print/hplip-plugin
 net-vpn/openvpn
 sys-fs/simple-mtpfs
+sys-power/powertop
 vayerx/lxde
 www-client/google-chrome
-x11-misc/driconf
 x11-misc/sddm

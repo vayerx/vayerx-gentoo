@@ -1,3 +1,4 @@
 app-vim/project **
 dev-db/pyrseas **
 dev-python/pgdbconn **
+dev-util/heaptrack **

@@ -221,7 +221,7 @@ alias emerge-update="emerge-min-update --with-bdeps\=y --changed-deps"
 alias emerge-preserved="emerge -q --keep-going @preserved-rebuild"
 alias emerge-modules="emerge -q --keep-going @module-rebuild"
 alias emerge-x11-modules="emerge -q --keep-going @x11-module-rebuild"
-alias emerge="emerge --verbose-conflicts"
+alias emerge="emerge --verbose-conflicts --keep-going"
 
 alias pretty_json="python -c 'import sys, json; json.dump(json.load(sys.stdin), sys.stdout, indent=4, sort_keys=True)'"
 
@@ -242,7 +242,7 @@ alias quickpkg="quickpkg --include-config=y"
 alias wget="wget --no-use-server-timestamps --user-agent 'Mozilla/5.0 (X11; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0'"
 
 function webp2png() {
-    echo dwebp "${1:?no argument}" -o dwebp ${1%%.webp}.png
+    dwebp "${1:?no argument}" -o dwebp ${1%%.webp}.png
 }
 
 function unwebp() {
@@ -272,9 +272,10 @@ umask 0002
 
 
 if [ -d ~/.bashrc.d ]; then
+    oldIFS="$IFS"   # preserver IFS: can't use subshell, "var=val for..." doesn't work
     IFS='\n'
-    for rcfile in $(find ~/.bashrc.d/ -type f -name '*.rc'); do
+    for rcfile in $(find ~/.bashrc.d/ -name '*.rc' \( -type f -o -type l \)); do
         source "$rcfile"
     done
-    unset IFS
+    IFS="$oldIFS"
 fi

@@ -22,6 +22,7 @@ media-video/ffmpeg -network opus theora webp
 media-video/mplayer bidi theora vcd
 media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska postproc freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio lua
 net-im/psi extras -jingle spell xscreensaver
+net-misc/curl http2
 net-nds/openldap static-libs
 sci-geosciences/gpsbabel -gui
 sci-geosciences/qlandkartegt gps
