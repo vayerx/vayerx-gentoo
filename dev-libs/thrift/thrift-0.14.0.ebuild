@@ -1,8 +1,8 @@
-# Copyright 2015-2018 Gentoo Foundation
+# Copyright 2015-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-PYTHON_COMPAT=( python2_7 python3_{4,5,6,7} )
+EAPI=7
+PYTHON_COMPAT=( python2_7 python3_{6,7,8,9} )
 inherit cmake-utils python-r1 perl-module
 
 DESCRIPTION="Software framework for scalable cross-language services development"
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 
 # TODO: haskell (dev-lang/ghc) support
-IUSE="c_glib cpp examples java +libevent +openssl perl python qt5 static-libs +stdthreads +zlib"
+IUSE="c_glib cpp examples java js +libevent nodejs +openssl perl python qt5 static-libs +zlib"
 
 RDEPEND="
 	dev-libs/boost:=
@@ -47,7 +47,7 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	sys-devel/flex
-	>=sys-devel/gcc-4.8
+	sys-devel/gcc
 	sys-devel/flex
 	virtual/yacc
 	c_glib? ( dev-libs/glib )
@@ -56,16 +56,35 @@ REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
 "
 
+src_prepare() {
+	cmake-utils_src_prepare
+}
+
 src_configure() {
 	local mycmakeargs=(
+		-DBUILD_CPP=$(usex cpp)
+		-DBUILD_C_GLIB=$(usex c_glib)
+		-DBUILD_JAVA=$(usex java)
+		-DBUILD_JAVASCRIPT=$(usex js)
+		-DBUILD_NODEJS=$(usex nodejs)
+		-DBUILD_PYTHON=$(usex python)
+		-DBUILD_TESTING=OFF
+		-DBUILD_TUTORIALS=$(usex examples)
+		-DWITH_AS3=OFF
+		-DWITH_CPP=$(usex cpp)
+		-DWITH_C_GLIB=$(usex c_glib)
+		-DWITH_HASKELL=OFF
+		-DWITH_JAVA=$(usex java)
+		-DWITH_JAVASCRIPT=$(usex js)
+		-DWITH_LIBEVENT=$(usex libevent)
+		-DWITH_NODEJS=$(usex nodejs)
+		-DWITH_OPENSSL=$(usex openssl)
+		-DWITH_PYTHON=$(usex python)
+		-DWITH_QT5=$(usex qt5)
 		-DWITH_SHARED_LIB=ON
 		-DWITH_STATIC_LIB=$(usex static-libs)
-		-DBUILD_PYTHON=$(used python)
-		-DBUILD_EXAMPLES=$(usex examples)
-		-DBUILD_TUTORIALS=$(usex examples)
+		-DWITH_ZLIB=$(usex zlib)
 	)
-
-	append-cxxflags -std=c++14
 
 	for flag in ${IUSE}; do
 		if [[ ! "${flag}" =~ static-libs|python_targets|examples ]]; then
@@ -100,5 +119,4 @@ src_install() {
 	if use python; then
 		python_foreach_impl install_python
 	fi
-
 }
