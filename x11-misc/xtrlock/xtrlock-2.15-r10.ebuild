@@ -1,12 +1,12 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 inherit toolchain-funcs
 
 DESCRIPTION="A simplistic screen locking program for X"
 HOMEPAGE="http://ftp.debian.org/debian/pool/main/x/xtrlock/"
-SRC_URI="mirror://debian/pool/main/x/${PN}/${P/-/_}.tar.gz"
+SRC_URI="mirror://debian/pool/main/x/${PN}/${P/-/_}.tar.xz"
 
 SLOT="0"
 LICENSE="GPL-3"
@@ -25,12 +25,6 @@ DEPEND="
 PATCHES=(
 	${FILESDIR}/no-cursor-${PV}.patch
 )
-
-#src_prepare() {
-#	sed -i -e 's|".*"|"'"${PV}"'"|g' patchlevel.h || die
-#
-#	eapply_user
-#}
 
 src_compile() {
 	xmkmf || die
