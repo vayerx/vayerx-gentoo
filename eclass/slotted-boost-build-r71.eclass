@@ -1,10 +1,9 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-PYTHON_COMPAT=( python{2_7,3_{6,7,8,9}} )
-inherit eutils flag-o-matic python-single-r1 toolchain-funcs
+inherit eutils flag-o-matic prefix toolchain-funcs
 
 MY_PV="$(ver_rs 1- _)"
 
@@ -15,38 +14,20 @@ SRC_URI="mirror://sourceforge/boost/boost_${MY_PV}.tar.bz2"
 LICENSE="Boost-1.0"
 SLOT="$(ver_cut 1-2)"
 KEYWORDS="~amd64"
-IUSE="examples python test"
+IUSE="examples"
 RESTRICT="test"
-
-RDEPEND="python? ( ${PYTHON_DEPS} )"
-DEPEND="${RDEPEND}
-	test? (
-		sys-apps/diffutils
-		${PYTHON_DEPS}
-	)
-"
-
-REQUIRED_USE="
-	python? ( ${PYTHON_REQUIRED_USE} )
-	test? ( ${PYTHON_REQUIRED_USE} )"
 
 SR="${WORKDIR}/boost_${MY_PV}/tools/build"
 S="${SR}/src"
 
 MAJOR_PV="$(ver_rs 1- _ ${SLOT})"
 
-pkg_setup() {
-	if use python || use test; then
-		python-single-r1_pkg_setup
-	fi
-}
-
 src_unpack() {
 	tar xojf "${DISTDIR}/${A}" boost_${MY_PV%/}/tools/build || die "unpacking tar failed"
 }
 
 src_prepare() {
-	cd "${SR}"
+	pushd "${SR}" >/dev/null || die
 
 	default
 
@@ -63,35 +44,28 @@ src_prepare() {
 		-e '/toolset\.flags\s*gcc\s*OPTIONS/d' \
 		-e "/cpu_flags('gcc',\s*'OPTIONS'/d" \
 		-i tools/gcc.{jam,py} || die "Failed removing -march/-mcpu"
+
+	popd >/dev/null || die
 }
 
 src_configure() {
 	hprefixify engine/Jambase
 	tc-export CXX
-}
-
-src_compile() {
-	cd engine || die
 
 	# For slotting
 	sed -i \
 		-e "s|/usr/share/boost-build|/usr/share/boost-build-${MAJOR_PV}|" \
-		Jambase || die "sed failed"
+		engine/Jambase || die "slotting failed"
+}
 
-	CC=$(tc-getCC) ./build.sh -d+2 $(use_with python python "${ESYSROOT}"/usr) || die "building bjam failed"
+src_compile() {
+	cd engine || die
+	CC=$(tc-getCC) ./build.sh -d+2 --without-python || die "building bjam failed"
 }
 
 src_test() {
-	cd ../test || die
-
-	local -x TMP="${T}"
-
-	DO_DIFF="${EPREFIX}/usr/bin/diff" "${EPYTHON}" test_all.py
-
-	if [[ -s test_results.txt ]]; then
-		eerror "At least one test failed: $(<test_results.txt)"
-		die "tests failed"
-	fi
+	# Forget tests, bjam is a lost cause
+	:
 }
 
 src_install() {
@@ -103,9 +77,7 @@ src_install() {
 		../boost-build.jam bootstrap.jam build-system.jam ../example/user-config.jam *.py \
 		build kernel options tools util
 
-	if ! use python; then
-		find "${ED%/}/usr/share/boost-build-${MAJOR_PV}" -iname "*.py" -delete || die "removing experimental python files failed"
-	fi
+	find "${ED%/}/usr/share/boost-build-${MAJOR_PV}" -iname '*.py' -delete || die "removing of python files failed"
 
 	dodoc ../notes/{changes,release_procedure,build_dir_option,relative_source_paths}.txt
 
@@ -114,6 +86,4 @@ src_install() {
 		dodoc -r ../example/.
 		docompress -x "/usr/share/doc/${PF}/examples"
 	fi
-
-	use python && python_optimize /usr/share/boost-build-${MAJOR_PV}
 }

@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -39,7 +39,7 @@ RDEPEND="
 	mpi? ( >=virtual/mpi-2.0-r4[${MULTILIB_USEDEP},cxx,threads] )
 	python? (
 		${PYTHON_DEPS}
-		numpy? ( >=dev-python/numpy-1.14.5[${PYTHON_USEDEP}] )
+		numpy? ( dev-python/numpy[${PYTHON_USEDEP}] )
 	)
 	zlib? ( sys-libs/zlib:=[${MULTILIB_USEDEP}] )
 	zstd? ( app-arch/zstd:=[${MULTILIB_USEDEP}] )
@@ -155,10 +155,6 @@ src_prepare() {
 	for patch in "${BOOST_PATCHES[@]}"; do
 		eapply "${FILESDIR%/}/${PN}-${patch}"
 	done
-
-	# Do not try to build missing 'wave' tool, bug #522682
-	# Upstream bugreport - https://svn.boost.org/trac/boost/ticket/10507
-	sed -i -e 's:wave/build//wave::' tools/Jamfile.v2 || die
 
 	multilib_copy_sources
 }
