@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>ruby</herd>
 <use>
 	<flag name='database'>Database-related staff</flag>
 	<flag name='datamining'>Packages for datamining</flag>
