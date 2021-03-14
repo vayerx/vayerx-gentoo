@@ -1,8 +1,7 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="Miscellaneous Python staff, vayerx edition"
 HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
