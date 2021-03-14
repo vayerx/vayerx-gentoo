@@ -1,17 +1,16 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="System staff meta"
-HOMEPAGE="http://github.com/vayerx/vayerx-gentoo"
+HOMEPAGE="https://github.com/vayerx/vayerx-gentoo"
 SRC_URI=""
 
 LICENSE="GPL-3"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64"
 SLOT="0"
-IUSE="lxde kde +rich"
+IUSE="kde lxde +rich"
 
 PDEPEND="
 	app-shells/bash-completion
