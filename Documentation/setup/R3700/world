@@ -4,11 +4,11 @@ app-emulation/q4wine
 app-emulation/winetricks
 app-misc/fdedup
 app-misc/gramps
-app-office/gnucash
 dev-util/rubymine:2018
 games-util/joystick
 games-util/qjoypad
 games-util/steam-meta
+lxde-base/lxdm
 media-gfx/bconv
 media-gfx/blender
 media-gfx/xsane
@@ -16,6 +16,7 @@ media-plugins/alsaequal
 media-sound/picard
 media-video/guvcview
 media-video/simplescreenrecorder
+net-im/discord-bin
 net-im/skypeforlinux
 net-im/telegram-desktop
 net-print/foomatic-db
