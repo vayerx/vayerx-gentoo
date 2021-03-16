@@ -1,0 +1,52 @@
+diff --git a/xtrlock.c b/xtrlock.c
+index 7598560..7f2575c 100644
+--- a/xtrlock.c
++++ b/xtrlock.c
+@@ -41,8 +41,6 @@
+ #include <shadow.h>
+ #endif
+ 
+-#include "lock.bitmap"
+-#include "mask.bitmap"
+ #include "patchlevel.h"
+ 
+ Display *display;
+@@ -78,8 +76,6 @@ int main(int argc, char **argv){
+   int clen, rlen=0;
+   long goodwill= INITIALGOODWILL, timeout= 0;
+   XSetWindowAttributes attrib;
+-  Cursor cursor;
+-  Pixmap csr_source,csr_mask;
+   XColor csr_fg, csr_bg, dummy, black;
+   int ret, screen, blank = 0;
+ #ifdef SHADOW_PWD
+@@ -143,9 +139,6 @@ int main(int argc, char **argv){
+                         
+   XSelectInput(display,window,KeyPressMask|KeyReleaseMask);
+ 
+-  csr_source= XCreateBitmapFromData(display,window,lock_bits,lock_width,lock_height);
+-  csr_mask= XCreateBitmapFromData(display,window,mask_bits,mask_width,mask_height);
+-
+   ret = XAllocNamedColor(display,
+                         DefaultColormap(display, DefaultScreen(display)),
+                         "steelblue3",
+@@ -167,10 +160,6 @@ int main(int argc, char **argv){
+                     &dummy, &csr_bg);
+ 
+ 
+-
+-  cursor= XCreatePixmapCursor(display,csr_source,csr_mask,&csr_fg,&csr_bg,
+-                              lock_x_hot,lock_y_hot);
+-
+   XMapWindow(display,window);
+ 
+   /*Sometimes the WM doesn't ungrab the keyboard quickly enough if
+@@ -201,7 +190,7 @@ int main(int argc, char **argv){
+ 
+   if (XGrabPointer(display,window,False,(KeyPressMask|KeyReleaseMask)&0,
+                GrabModeAsync,GrabModeAsync,None,
+-               cursor,CurrentTime)!=GrabSuccess) {
++               None,CurrentTime)!=GrabSuccess) {
+     XUngrabKeyboard(display,CurrentTime);
+     fprintf(stderr,"xtrlock (version %s): cannot grab pointer\n",
+ 	    program_version);
