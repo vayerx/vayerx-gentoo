@@ -1,33 +1,53 @@
-# Defaults
-pcm.!default {
-    type plug
-    slave.pcm combined
-}
-
-ctl.!default {
-    type hw
-    card S51
-}
-
-
 # Creative Sound Blaster Omni Surround 5.1
-pcm.S51_out {
+pcm.S51_card {
     type hw
     card S51
+    channels 2
     format S24_3LE
-    rate 48000  # 96000 and period/buffer sizes has compatibility problems
+    rate 48000      # 96000 and period/buffer sizes has compatibility problems
+}
+
+# Logitech C310 HD
+pcm.C310_card {
+    type hw
+    card U0x46d0x81b
+    rate 16000
+    format S16_LE
+}
+
+
+# Input
+pcm.snooper {
+    type plug
+    slave.pcm {
+        type dsnoop
+
+        ipc_key 142832
+        ipc_key_add_uid false
+        ipc_perm 0666
+        ipc_gid audio
+
+        slave.pcm S51_card
+        #slave.pcm C310_card
+    }
+    hint {
+        show on
+        description "ALSA snooper"
+    }
 }
 
 
 # Equalizer
-pcm.equal_output {
-    type plug
-    slave.pcm equal
-}
-
 pcm.equal {
-    type equal
-    slave.pcm output_plug
+    type plug
+    slave.pcm {
+        type equal
+        slave.pcm mixer
+    }
+    hint {
+        show on
+        description "ALSA equalizer"
+    }
 }
 
 ctl.equal {
@@ -36,58 +56,39 @@ ctl.equal {
 
 
 # Output
-pcm.output_plug {
+pcm.mixer {
     type plug
-    slave.pcm output
-}
+    slave.pcm {
+        type dmix
 
-pcm.output {
-    type dmix
+        ipc_key 142831
+        ipc_key_add_uid false
+        ipc_perm 0666
+        ipc_gid audio
 
-    ipc_key 142831
-    ipc_perm 0666
-    ipc_gid audio
+        slave {
+            pcm S51_card
 
-    slave {
-        pcm S51_out
-        channels 2
-
-        period_size 1024
-        buffer_size 65536
+            period_size 1024
+            buffer_size 16384
+        }
+    }
+    hint {
+        show on
+        description "ALSA mixer"
     }
 }
 
-# Input
-pcm.usb_mic {
-    type hw
-    card U0x46d0x81b
-    rate 16000
-    format S16_LE
-}
 
-pcm.S51_mic {
-    type hw
-    card S51
-    rate 48000
-    format S16_LE
-}
-
-pcm.input {
-    type dsnoop
-
-    ipc_key 142832
-    ipc_perm 0666
-    ipc_gid audio
-
-    slave.pcm S51_mic
-    #slave.pcm usb_mic
-}
-
-
-# Full-duplex device
-pcm.combined {
+# Defaults
+pcm.!default {
     type asym
 
-    playback.pcm equal_output
-    capture.pcm input
+    playback.pcm equal
+    capture.pcm snooper
+}
+
+ctl.!default {
+    type hw
+    card S51
 }
