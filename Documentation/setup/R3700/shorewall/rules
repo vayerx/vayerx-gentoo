@@ -1,0 +1,43 @@
+#
+# Shorewall -- /etc/shorewall/rules
+#
+# For information on the settings in this file, type "man shorewall-rules"
+#
+# The manpage is also online at
+# https://shorewall.org/manpages/shorewall-rules.html
+#
+##############################################################################################################################################################
+#ACTION         SOURCE          DEST            PROTO   DPORT   SPORT   ORIGDEST        RATE    USER    MARK    CONNLIMIT       TIME    HEADERS SWITCH  HELPER
+
+?SECTION ALL
+?SECTION ESTABLISHED
+?SECTION RELATED
+?SECTION INVALID
+?SECTION UNTRACKED
+?SECTION NEW
+
+DNS(DROP)       loc             fw
+Ping(DROP)      loc             fw
+AllowICMPs      loc             fw
+
+DROP            fw              all             -       -       -       -               -       :kids
+
+#SMB(ACCEPT)     loc             fw
+
+#SSH(ACCEPT)    loc             fw
+#ACCEPT         loc             fw              tcp     22      -               -               s:ssh:6/min:5
+
+# Jabber (plain, ssl, file transfer)
+#ACCEPT         loc             fw              tcp     5222,5223
+#ACCEPT          loc             fw              tcp     8010    -               -               s:psi:10/min:5
+
+# Gerrit
+#ACCEPT          loc             fw              tcp     29418,8080
+
+# OpenArena
+#ACCEPT          loc             fw              udp     27960
+
+# AlienArena
+#ACCEPT          loc             fw              udp     27910,37279
+
+#LAST LINE -- ADD YOUR ENTRIES BEFORE THIS ONE -- DO NOT REMOVE

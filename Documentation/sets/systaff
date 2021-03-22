@@ -53,6 +53,7 @@ sys-boot/os-prober
 sys-boot/unetbootin
 sys-fs/ddrescue
 sys-fs/inotify-tools
+sys-fs/mdadm
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
 sys-kernel/linux-firmware

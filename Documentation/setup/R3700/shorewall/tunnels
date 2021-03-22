@@ -1,0 +1,12 @@
+#
+# Shorewall -- /etc/shorewall/tunnels
+#
+# For information about entries in this file, type "man shorewall-tunnels"
+#
+# The manpage is also online at
+# https://shorewall.org/manpages/shorewall-tunnels.html
+#
+###############################################################################
+#TYPE           ZONE    GATEWAY     GATEWAY_ZONE
+
+pptpclient      vpn     0.0.0.0/0

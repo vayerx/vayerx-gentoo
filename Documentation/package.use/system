@@ -50,7 +50,7 @@ sci-mathematics/octave curl gnuplot
 sys-apps/lm-sensors sensord
 sys-apps/portage gentoo-dev rsync-verify
 sys-apps/util-linux static-libs
-sys-block/gparted fat
+sys-block/gparted btrfs fat mdadm
 sys-boot/grub -fonts mount -sdl -themes -truetype
 sys-devel/qconf -qt5
 sys-fs/eudev -introspection static-libs
