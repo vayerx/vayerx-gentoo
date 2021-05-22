@@ -1,0 +1,15 @@
+#
+# Shorewall -- /etc/shorewall/zones
+#
+# For information about this file, type "man shorewall-zones"
+#
+# The manpage is also online at
+# https://shorewall.org/manpages/shorewall-zones.html
+#
+###############################################################################
+#ZONE		TYPE		OPTIONS		IN_OPTIONS	OUT_OPTIONS
+
+net     ipv4
+dock    ipv4
+vpn     ipv4
+fw      firewall

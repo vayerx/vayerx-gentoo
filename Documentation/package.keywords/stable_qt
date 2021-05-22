@@ -1,122 +1,122 @@
-dev-qt/assistant -~amd64
 =dev-qt/assistant-5.15.2
-dev-qt/designer -~amd64
+dev-qt/assistant -~amd64
 =dev-qt/designer-5.15.2
-dev-qt/linguist -~amd64
+dev-qt/designer -~amd64
 =dev-qt/linguist-5.15.2
-dev-qt/linguist-tools -~amd64
+dev-qt/linguist -~amd64
 =dev-qt/linguist-tools-5.15.2
-dev-qt/pixeltool -~amd64
+dev-qt/linguist-tools -~amd64
 =dev-qt/pixeltool-5.15.2
-dev-qt/qdbus -~amd64
+dev-qt/pixeltool -~amd64
 =dev-qt/qdbus-5.15.2
-dev-qt/qdbusviewer -~amd64
+dev-qt/qdbus -~amd64
 =dev-qt/qdbusviewer-5.15.2
-dev-qt/qdoc -~amd64
+dev-qt/qdbusviewer -~amd64
 =dev-qt/qdoc-5.15.2
-dev-qt/qt-creator -~amd64
-=dev-qt/qt-creator-5.15.2
-dev-qt/qt-docs -~amd64
-=dev-qt/qt-docs-5.15.2
-dev-qt/qt3d -~amd64
+dev-qt/qdoc -~amd64
 =dev-qt/qt3d-5.15.2
-dev-qt/qtbluetooth -~amd64
+dev-qt/qt3d -~amd64
 =dev-qt/qtbluetooth-5.15.2
-dev-qt/qtcharts -~amd64
+dev-qt/qtbluetooth -~amd64
 =dev-qt/qtcharts-5.15.2
-dev-qt/qtchooser -~amd64
+dev-qt/qtcharts -~amd64
 =dev-qt/qtchooser-5.15.2
-dev-qt/qtconcurrent -~amd64
+dev-qt/qtchooser -~amd64
 =dev-qt/qtconcurrent-5.15.2
-dev-qt/qtcore -~amd64
+dev-qt/qtconcurrent -~amd64
 =dev-qt/qtcore-5.15.2
-dev-qt/qtdatavis3d -~amd64
+dev-qt/qtcore -~amd64
+=dev-qt/qt-creator-4.12.3
+dev-qt/qt-creator -~amd64
 =dev-qt/qtdatavis3d-5.15.2
-dev-qt/qtdbus -~amd64
+dev-qt/qtdatavis3d -~amd64
 =dev-qt/qtdbus-5.15.2
-dev-qt/qtdeclarative -~amd64
+dev-qt/qtdbus -~amd64
 =dev-qt/qtdeclarative-5.15.2
-dev-qt/qtdiag -~amd64
+dev-qt/qtdeclarative -~amd64
 =dev-qt/qtdiag-5.15.2
-dev-qt/qtgamepad -~amd64
+dev-qt/qtdiag -~amd64
+=dev-qt/qt-docs-5.15.2
+dev-qt/qt-docs -~amd64
 =dev-qt/qtgamepad-5.15.2
-dev-qt/qtgraphicaleffects -~amd64
+dev-qt/qtgamepad -~amd64
 =dev-qt/qtgraphicaleffects-5.15.2
-dev-qt/qtgui -~amd64
+dev-qt/qtgraphicaleffects -~amd64
 =dev-qt/qtgui-5.15.2
-dev-qt/qthelp -~amd64
+dev-qt/qtgui -~amd64
 =dev-qt/qthelp-5.15.2
-dev-qt/qtimageformats -~amd64
+dev-qt/qthelp -~amd64
 =dev-qt/qtimageformats-5.15.2
-dev-qt/qtlocation -~amd64
+dev-qt/qtimageformats -~amd64
 =dev-qt/qtlocation-5.15.2
-dev-qt/qtlockedfile -~amd64
+dev-qt/qtlocation -~amd64
 =dev-qt/qtlockedfile-5.15.2
-dev-qt/qtmultimedia -~amd64
+dev-qt/qtlockedfile -~amd64
 =dev-qt/qtmultimedia-5.15.2
-dev-qt/qtnetwork -~amd64
+dev-qt/qtmultimedia -~amd64
 =dev-qt/qtnetwork-5.15.2
-dev-qt/qtnetworkauth -~amd64
+dev-qt/qtnetwork -~amd64
 =dev-qt/qtnetworkauth-5.15.2
-dev-qt/qtopengl -~amd64
+dev-qt/qtnetworkauth -~amd64
 =dev-qt/qtopengl-5.15.2
-dev-qt/qtpaths -~amd64
+dev-qt/qtopengl -~amd64
 =dev-qt/qtpaths-5.15.2
-dev-qt/qtplugininfo -~amd64
+dev-qt/qtpaths -~amd64
 =dev-qt/qtplugininfo-5.15.2
-dev-qt/qtpositioning -~amd64
+dev-qt/qtplugininfo -~amd64
 =dev-qt/qtpositioning-5.15.2
-dev-qt/qtprintsupport -~amd64
+dev-qt/qtpositioning -~amd64
 =dev-qt/qtprintsupport-5.15.2
-dev-qt/qtquickcontrols -~amd64
-=dev-qt/qtquickcontrols-5.15.2
-dev-qt/qtquickcontrols2 -~amd64
+dev-qt/qtprintsupport -~amd64
 =dev-qt/qtquickcontrols2-5.15.2
-dev-qt/qtquicktimeline -~amd64
+dev-qt/qtquickcontrols2 -~amd64
+=dev-qt/qtquickcontrols-5.15.2
+dev-qt/qtquickcontrols -~amd64
 =dev-qt/qtquicktimeline-5.15.2
-dev-qt/qtscript -~amd64
+dev-qt/qtquicktimeline -~amd64
 =dev-qt/qtscript-5.15.2
-dev-qt/qtscxml -~amd64
+dev-qt/qtscript -~amd64
 =dev-qt/qtscxml-5.15.2
-dev-qt/qtsensors -~amd64
+dev-qt/qtscxml -~amd64
 =dev-qt/qtsensors-5.15.2
-dev-qt/qtserialbus -~amd64
+dev-qt/qtsensors -~amd64
 =dev-qt/qtserialbus-5.15.2
-dev-qt/qtserialport -~amd64
+dev-qt/qtserialbus -~amd64
 =dev-qt/qtserialport-5.15.2
-dev-qt/qtsingleapplication -~amd64
+dev-qt/qtserialport -~amd64
 =dev-qt/qtsingleapplication-5.15.2
-dev-qt/qtspeech -~amd64
+dev-qt/qtsingleapplication -~amd64
 =dev-qt/qtspeech-5.15.2
-dev-qt/qtsql -~amd64
+dev-qt/qtspeech -~amd64
 =dev-qt/qtsql-5.15.2
-dev-qt/qtstyleplugins -~amd64
+dev-qt/qtsql -~amd64
 =dev-qt/qtstyleplugins-5.15.2
-dev-qt/qtsvg -~amd64
+dev-qt/qtstyleplugins -~amd64
 =dev-qt/qtsvg-5.15.2
-dev-qt/qttest -~amd64
+dev-qt/qtsvg -~amd64
 =dev-qt/qttest-5.15.2
-dev-qt/qttranslations -~amd64
+dev-qt/qttest -~amd64
 =dev-qt/qttranslations-5.15.2
-dev-qt/qtvirtualkeyboard -~amd64
+dev-qt/qttranslations -~amd64
 =dev-qt/qtvirtualkeyboard-5.15.2
-dev-qt/qtwayland -~amd64
+dev-qt/qtvirtualkeyboard -~amd64
 =dev-qt/qtwayland-5.15.2
-dev-qt/qtwebchannel -~amd64
+dev-qt/qtwayland -~amd64
 =dev-qt/qtwebchannel-5.15.2
-dev-qt/qtwebengine -~amd64
+dev-qt/qtwebchannel -~amd64
 =dev-qt/qtwebengine-5.15.2
-dev-qt/qtwebkit -~amd64
+dev-qt/qtwebengine -~amd64
 =dev-qt/qtwebkit-5.15.2
-dev-qt/qtwebsockets -~amd64
+dev-qt/qtwebkit -~amd64
 =dev-qt/qtwebsockets-5.15.2
-dev-qt/qtwebview -~amd64
+dev-qt/qtwebsockets -~amd64
 =dev-qt/qtwebview-5.15.2
-dev-qt/qtwidgets -~amd64
+dev-qt/qtwebview -~amd64
 =dev-qt/qtwidgets-5.15.2
-dev-qt/qtx11extras -~amd64
+dev-qt/qtwidgets -~amd64
 =dev-qt/qtx11extras-5.15.2
-dev-qt/qtxml -~amd64
+dev-qt/qtx11extras -~amd64
 =dev-qt/qtxml-5.15.2
-dev-qt/qtxmlpatterns -~amd64
+dev-qt/qtxml -~amd64
 =dev-qt/qtxmlpatterns-5.15.2
+dev-qt/qtxmlpatterns -~amd64

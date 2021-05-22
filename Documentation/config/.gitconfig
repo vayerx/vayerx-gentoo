@@ -70,7 +70,7 @@
 
 [pull]
 	ff = only
-	rebase = preserve
+	rebase = merges
 
 [push]
 	default = tracking

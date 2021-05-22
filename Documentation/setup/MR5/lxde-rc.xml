@@ -217,12 +217,12 @@
     </keybind>
     <keybind key="W-Up">
       <action name="Execute">
-        <command>amixer set Master 3dB+</command>
+        <command>pactl set-sink-volume 0 +5%</command>
       </action>
     </keybind>
     <keybind key="W-Down">
       <action name="Execute">
-        <command>amixer set Master 3dB-</command>
+        <command>pactl set-sink-volume 0 -5%</command>
       </action>
     </keybind>
     <keybind key="S-A-Left">

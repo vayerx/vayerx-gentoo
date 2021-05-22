@@ -25,18 +25,13 @@ ctl.equal {
 }
 
 # ALC236
-pcm.ALC236_out {
+pcm.ALC236 {
     type hw
     card 0
-    format S32_LE
-    rate 48000
 }
-
-pcm.ALC236_mic {
+ctl.ALC236 {
     type hw
     card 0
-    rate 48000
-    format S32_LE
 }
 
 # Output
@@ -53,7 +48,7 @@ pcm.dmixed_output {
     ipc_gid audio
 
     slave {
-        pcm ALC236_out
+        pcm ALC236
         channels 2
 
         period_size 1024
@@ -69,7 +64,7 @@ pcm.dsnooped_input {
     ipc_perm 0666
     ipc_gid audio
 
-    slave.pcm ALC236_mic
+    slave.pcm ALC236
 }
 
 # Full-duplex device

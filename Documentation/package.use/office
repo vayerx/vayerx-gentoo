@@ -2,6 +2,7 @@ app-admin/conky hddtemp vim-syntax
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions -python
 app-emulation/wine-vanilla mono odbc s3tc samba staging
+app-text/poppler nss
 app-text/yagf scanner
 dev-libs/libdbusmenu gtk3
 dev-qt/qtmultimedia widgets

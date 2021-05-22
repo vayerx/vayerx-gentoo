@@ -1,0 +1,18 @@
+#
+# Shorewall -- /etc/shorewall/interfaces
+#
+# For information about entries in this file, type "man shorewall-interfaces"
+#
+# The manpage is also online at
+# https://shorewall.org/manpages/shorewall-interfaces.html
+#
+?FORMAT 2
+###############################################################################
+#ZONE		INTERFACE		OPTIONS
+net     eth+        optional,dhcp,nosmurfs
+net     wlan+       optional,dhcp,nosmurfs
+net     usb+        optional,dhcp
+net     ppp+        optional
+dock    docker+     optional,routeback=1
+dock    veth+       optional,routeback=1
+vpn     tun+        optional

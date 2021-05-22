@@ -1,0 +1,35 @@
+#
+# Shorewall -- /etc/shorewall/rules
+#
+# For information on the settings in this file, type "man shorewall-rules"
+#
+# The manpage is also online at
+# https://shorewall.org/manpages/shorewall-rules.html
+#
+##############################################################################################################################################################
+#ACTION		SOURCE		DEST		PROTO	DPORT	SPORT	ORIGDEST	RATE	USER	MARK	CONNLIMIT	TIME	HEADERS	SWITCH	HELPER
+
+?SECTION ALL
+?SECTION ESTABLISHED
+?SECTION RELATED
+?SECTION INVALID
+?SECTION UNTRACKED
+?SECTION NEW
+
+Broadcast(DROP)		net	fw
+
+# netbios-ns,netbios-ssn,microsoft-ds
+DROP			net	fw		tcp	137,139,445
+
+# $event, $interval, $count, $successive, $bltime, $disposition, $level
+AutoBL(PSCAN,60,100,50,3600,DROP,warn) net fw
+
+# ICMP
+Ping(DROP)		net	fw
+AllowICMPs		net	fw
+
+# SSH
+ACCEPT:info:ssh	net	fw		tcp	22	-	-	s:ssh:6/min:5
+
+# FreeCiv
+ACCEPT			net	fw		tcp	5556
