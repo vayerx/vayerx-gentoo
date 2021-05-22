@@ -1,9 +1,8 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
-inherit eutils games
+EAPI=7
+inherit eutils
 
 DESCRIPTION="Shadowgrounds - data portion"
 HOMEPAGE="http://shadowgroundsgame.com/"
@@ -29,12 +28,10 @@ src_unpack() {
 }
 
 src_install() {
-	local dir="${GAMES_DATADIR}/shadowgrounds"
+	local dir="/usr/share/shadowgrounds"
 
 	ebegin "Copying files from package ..."
 		dodir "${dir}"/data
 		cp -r data1.fbz data "${D}${dir}" || die "cp failed"
 	eend 0
-
-	prepgamesdirs
 }
