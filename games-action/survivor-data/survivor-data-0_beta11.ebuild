@@ -1,9 +1,8 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
-inherit eutils games
+EAPI=7
+inherit eutils
 
 DESCRIPTION="Shadowgrounds Survivor - data portion"
 HOMEPAGE="http://shadowgroundssurvivor.com/"
@@ -29,13 +28,11 @@ src_unpack() {
 }
 
 src_install() {
-	local dir="${GAMES_DATADIR}/survivor"
+	local dir="/usr/share/survivor"
 
 	ebegin "Copying files from package ..."
 		dodir "${dir}"/data
 		dodir "${dir}"/survival
 		cp -r data{1,2,3,4,5}.fbz data survival "${D}${dir}" || die "cp failed"
 	eend 0
-
-	prepgamesdirs
 }
