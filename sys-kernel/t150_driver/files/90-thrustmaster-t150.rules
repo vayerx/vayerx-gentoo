@@ -1,0 +1,1 @@
+SUBSYSTEM=="usb", ATTRS{idVendor}=="044f", ATTRS{idProduct}=="b677", GROUP="input", ATTR{range}="1080", ATTR{gain}="20", ATTR{autocenter}="30", ATTR{enable_autocenter}="y"
