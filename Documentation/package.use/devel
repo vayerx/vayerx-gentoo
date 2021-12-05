@@ -27,3 +27,4 @@ sys-devel/gcc go graphite
 sys-devel/gdb lzma
 sys-devel/llvm clang
 sys-libs/zlib minizip static-libs
+x11-libs/wxGTK gstreamer

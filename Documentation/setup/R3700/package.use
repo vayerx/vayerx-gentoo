@@ -1,3 +1,4 @@
 dev-qt/qtmultimedia widgets
+media-libs/opencolorio -opengl
 net-print/hplip hpcups -hpijs scanner static-ppds
 vayerx/office kde burn

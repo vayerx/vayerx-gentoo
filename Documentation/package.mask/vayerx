@@ -1,4 +1,4 @@
->=dev-libs/boost-1.76
->=dev-util/boost-build-1.76
+>=dev-libs/boost-1.78
+>=dev-util/boost-build-1.78
 media-sound/pulseaudio
 sys-apps/systemd

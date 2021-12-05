@@ -7,17 +7,14 @@ games-action/survivor
 games-action/survivor-data
 games-action/teeworlds
 games-board/cockatrice
-games-fps/nexuiz
 games-fps/openarena
 games-fps/quake2-data
 games-fps/quake2-icculus
 games-fps/quake3
 games-fps/quake3-data
-games-simulation/lincity-ng
 games-simulation/openttd
 games-strategy/boswars
 games-strategy/freeciv
-games-strategy/naev
 games-strategy/ufo-ai
 games-strategy/warzone2100
 games-strategy/wesnoth

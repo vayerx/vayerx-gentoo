@@ -54,7 +54,7 @@ ${color grey}/data $color${fs_free /mnt/data} ${fs_bar 6 /mnt/data}
 ${color grey}sda:  ${diskiograph /dev/sda}
 ${color grey}sdb:  ${diskiograph /dev/sdb}
 ${color grey}sdc:  ${diskiograph /dev/sdc}
-${color grey}nvme: ${diskiograph /dev/nvme0}
+${color grey}nvme: ${diskiograph /dev/nvme0n1}
 $hr
 ${color grey}Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
 $hr

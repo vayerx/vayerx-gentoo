@@ -3,4 +3,4 @@ app-text/gocr
 media-gfx/darktable
 media-gfx/monica
 media-gfx/rawtherapee
-media-gfx/ufraw
+media-libs/exiftool
