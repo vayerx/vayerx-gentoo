@@ -33,7 +33,6 @@ sys-boot/unetbootin
 sys-firmware/intel-microcode
 sys-fs/cryptsetup
 sys-fs/simple-mtpfs
-sys-power/powertop
 vayerx/lxde
 www-client/chromium
 www-client/firefox

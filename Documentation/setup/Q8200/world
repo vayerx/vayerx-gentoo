@@ -41,6 +41,7 @@ net-vpn/openvpn
 net-vpn/tor
 sys-boot/unetbootin
 sys-fs/fuseiso
+sys-fs/mdadm
 sys-fs/mtpfs
 sys-fs/simple-mtpfs
 vayerx/lxde

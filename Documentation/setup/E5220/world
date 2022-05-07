@@ -213,7 +213,6 @@ sys-power/acpid
 sys-power/cpupower
 sys-power/hibernate-script
 sys-power/pm-utils
-sys-power/powertop
 sys-process/htop
 sys-process/iotop
 sys-process/lsof

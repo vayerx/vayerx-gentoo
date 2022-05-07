@@ -38,6 +38,6 @@ sys-libs/ncurses static-libs
 sys-libs/zlib minizip
 sys-libs/zlib static-libs
 vayerx/develop -ruby
-vayerx/office burn excessive kde rich
+vayerx/office burn -excessive -kde -rich
 virtual/libudev static-libs
 x11-drivers/xf86-video-intel -dri3 -sna uxa

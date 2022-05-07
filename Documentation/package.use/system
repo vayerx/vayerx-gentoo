@@ -39,7 +39,7 @@ net-analyzer/tcpdump -samba
 net-dialup/ppp dhcp eap-tls
 net-dns/libidn2 static-libs
 net-fs/samba client ldap winbind
-net-libs/libssh server
+net-libs/libssh server static-libs
 net-misc/ciscovpn openssl
 net-misc/curl http2 idn rtmp
 net-misc/dhcp -server
@@ -55,12 +55,14 @@ sys-block/gparted btrfs fat mdadm
 sys-boot/grub -fonts mount -sdl -themes -truetype
 sys-devel/qconf -qt5
 sys-fs/eudev -introspection static-libs
+sys-fs/lvm2 static
 sys-fs/mdadm static
 sys-fs/udev static-libs
 sys-kernel/gentoo-sources experimental symlink
 sys-libs/glibc -clone3
 sys-libs/ldb ldap
 sys-libs/ncurses gpm
+sys-libs/readline static-libs
 sys-libs/zlib minizip static-libs
 virtual/libudev static-libs
 x11-libs/cairo -lto -xlib-xcb

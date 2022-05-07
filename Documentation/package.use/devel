@@ -7,6 +7,7 @@ dev-db/sqlite secure-delete
 dev-lang/perl ithreads
 dev-lang/python sqlite tk
 dev-lang/ruby tk
+dev-libs/boost context
 dev-libs/json-c static-libs
 dev-libs/openssl static-libs
 dev-libs/poco odbc

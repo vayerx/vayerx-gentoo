@@ -2,3 +2,4 @@
 >=dev-util/boost-build-1.78
 media-sound/pulseaudio
 sys-apps/systemd
+sys-apps/systemd-utils

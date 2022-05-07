@@ -1,4 +1,6 @@
 app-office/libreoffice -~amd64
-=media-libs/hupnp-ng-9999 **
+dev-qt/qtwebengine -~amd64
+media-libs/hupnp-ng **
 media-libs/libmtp **
 www-client/chromium -~amd64
+www-client/google-chrome -~amd64

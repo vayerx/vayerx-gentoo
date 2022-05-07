@@ -3,6 +3,7 @@ app-office/libreoffice-bin
 app-portage/layman
 dev-util/kdevelop
 games-util/steam-meta
+kde-apps/okular
 mail-client/thunderbird-bin
 media-gfx/gimp
 media-sound/picard

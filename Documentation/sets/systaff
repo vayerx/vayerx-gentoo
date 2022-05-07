@@ -12,6 +12,7 @@ app-crypt/sbsigntools
 app-doc/eclass-manpages
 app-editors/vim
 app-forensics/magicrescue
+app-misc/fdedup
 app-misc/mc
 app-misc/screen
 app-portage/cpuid2cpuflags
@@ -53,7 +54,6 @@ sys-boot/os-prober
 sys-boot/unetbootin
 sys-fs/ddrescue
 sys-fs/inotify-tools
-sys-fs/mdadm
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
 sys-kernel/linux-firmware

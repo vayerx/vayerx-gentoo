@@ -25,9 +25,9 @@ net-print/foomatic-db-ppds
 net-print/hplip
 net-print/hplip-plugin
 net-vpn/openvpn
+sys-fs/mdadm
 sys-fs/simple-mtpfs
 sys-kernel/t150_driver
-sys-power/powertop
 vayerx/lxde
 www-client/google-chrome
 x11-misc/sddm
