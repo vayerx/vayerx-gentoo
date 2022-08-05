@@ -8,3 +8,4 @@ games-strategy/freeciv aimodules auth modpack sqlite
 games-strategy/warzone2100 videos
 games-util/steam-client-meta flash steamfonts trayicon
 games-util/steam-games-meta mono
+media-libs/sdl-mixer mod modplug

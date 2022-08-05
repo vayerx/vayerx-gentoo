@@ -1,7 +1,7 @@
 app-arch/lzma
 app-arch/rpm
 app-arch/zstd
-app-emulation/docker
+app-containers/docker
 app-emulation/docker-compose
 app-misc/grc
 dev-db/tarantool

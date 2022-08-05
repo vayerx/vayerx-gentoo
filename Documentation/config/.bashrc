@@ -231,7 +231,7 @@ function get_stable_keywords() {
 }
 
 function upkernel() {
-    genkernel --kernel-config=/etc/kernels/kernel-config-$(uname -r) "$@" all
+    genkernel --mdadm --kernel-config=/etc/kernels/kernel-config-$(uname -r) "$@" all
     emerge-modules
     echo ""
     echo "Set BOOTLOADER=\"grub2\" in /etc/genkernel.conf or:"
@@ -241,12 +241,34 @@ function upkernel() {
 alias quickpkg="quickpkg --include-config=y"
 alias wget="wget --no-use-server-timestamps --user-agent 'Mozilla/5.0 (X11; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0'"
 
+function rec_x11() {
+    local output="${1:-video}.mp4"
+    local device="${2:-/dev/dri/renderD128}"
+    sleep 3
+    nice -15 ffmpeg -y \
+        -video_size 1920x1200 \
+        -framerate 30 \
+        -f x11grab \
+        -hwaccel vaapi -hwaccel_output_format vaapi -vaapi_device "${device}" \
+        -i $DISPLAY \
+        -ac 2 -ar 44100 -f pulse -i 1 -c:a libmp3lame \
+        -vf 'format=nv12|vaapi,hwupload' -c:v h264_vaapi \
+        "$output"
+}
+
 function webp2png() {
     dwebp "${1:?no argument}" -o dwebp ${1%%.webp}.png
 }
 
 function unwebp() {
     find . -maxdepth 1 -name '*.webp' -type f | xargs -I @ bash -c "dwebp @ -o \$(echo @ | sed 's/.webp//').png"
+}
+
+function ret150() {
+    rmmod hid_thrustmaster; sleep 1
+    insmod /lib/modules/$(uname -r)/kernel/drivers/hid/hid-t150.ko; sleep 1
+    udevadm control --reload
+    udevadm trigger
 }
 
 # Change the window title of X terminals

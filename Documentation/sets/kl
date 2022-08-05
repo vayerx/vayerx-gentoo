@@ -1,7 +1,7 @@
 app-admin/ansible
 app-arch/rpm
 app-crypt/mit-krb5
-app-emulation/docker
+app-containers/docker
 app-emulation/docker-compose
 app-emulation/virtualbox
 app-emulation/virtualbox-additions

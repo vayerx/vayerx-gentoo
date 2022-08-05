@@ -55,13 +55,13 @@ sys-block/gparted btrfs fat mdadm
 sys-boot/grub -fonts mount -sdl -themes -truetype
 sys-devel/qconf -qt5
 sys-fs/eudev -introspection static-libs
-sys-fs/lvm2 static
+sys-fs/lvm2 static -udev
 sys-fs/mdadm static
 sys-fs/udev static-libs
 sys-kernel/gentoo-sources experimental symlink
 sys-libs/glibc -clone3
 sys-libs/ldb ldap
-sys-libs/ncurses gpm
+sys-libs/ncurses gpm static-libs
 sys-libs/readline static-libs
 sys-libs/zlib minizip static-libs
 virtual/libudev static-libs

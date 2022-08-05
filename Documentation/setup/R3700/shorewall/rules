@@ -20,7 +20,9 @@ DNS(DROP)       loc             fw
 Ping(DROP)      loc             fw
 AllowICMPs      loc             fw
 
-DROP            fw              all             -       -       -       -               -       :kids
+DNS(ACCEPT)     fw              all
+REJECT:info:kids            fw              all             -       -       -       !18.213.121.197,3.221.116.52,3.224.232.161,3.94.217.247,34.194.227.229,34.237.57.93,54.210.249.12,54.227.123.199,35.170.165.23,52.73.128.163,52.85.114.0/24             -       :kids
+
 
 #SMB(ACCEPT)     loc             fw
 

@@ -164,12 +164,12 @@
     <chainQuitKey>C-g</chainQuitKey>
     <keybind key="W-Up">
       <action name="Execute">
-        <command>amixer set PCM 2dB+</command>
+        <command>pactl set-sink-volume @DEFAULT_SINK@ +2%</command>
       </action>
     </keybind>
     <keybind key="W-Down">
       <action name="Execute">
-        <command>amixer set PCM 2dB-</command>
+        <command>pactl set-sink-volume @DEFAULT_SINK@ -2%</command>
       </action>
     </keybind>
     <keybind key="W-S-s">
