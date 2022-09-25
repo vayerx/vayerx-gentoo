@@ -8,10 +8,11 @@ inherit git-r3 linux-info linux-mod udev
 DESCRIPTION="A linux kernel module for Thrustmaster T150 Force Feedback Wheel"
 HOMEPAGE="https://github.com/scarburato/t150_driver"
 EGIT_REPO_URI="https://github.com/scarburato/t150_driver"
+EGIT_COMMIT="a47b1bcb0e8aeee9af8acd36ee83aee923ecd82b"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 
 BUILD_TARGETS="all"
 MODULE_NAMES="hid-t150(kernel/drivers/hid:${S}/hid-t150)"
