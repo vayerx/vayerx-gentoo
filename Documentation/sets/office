@@ -30,7 +30,6 @@ sci-calculators/galculator
 sys-apps/pv
 vayerx/office
 x11-apps/mesa-progs
-x11-base/xorg-x11
 x11-misc/arandr
 x11-misc/notify-osd
 x11-misc/xscreensaver

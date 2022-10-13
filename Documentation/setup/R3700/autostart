@@ -1,0 +1,5 @@
+@lxpanel --profile LXDE
+@pcmanfm --desktop --profile LXDE
+@xscreensaver -no-splash
+@setxkbmap -model pc105 -layout us,ru -option grp:shifts_toggle -option compose:ralt
+@conky --double-buffer --daemonize --pause=1 --own-window

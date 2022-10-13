@@ -13,6 +13,7 @@ dev-libs/openssl static-libs
 dev-libs/poco odbc
 dev-libs/thrift cpp -qt5
 dev-python/numpy lapack
+dev-python/PyQt5 sql
 dev-python/QtPy gui printsupport
 dev-python/spyder ipython numpy matplotlib pep8 pylint qtconsole scipy sphinx
 dev-qt/qt-creator cmake valgrind git

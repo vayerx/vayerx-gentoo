@@ -20,10 +20,11 @@ app-portage/eix
 app-portage/gentoolkit
 app-portage/layman
 app-portage/mirrorselect
-app-portage/repoman
 app-portage/ufed
 app-shells/gentoo-bashcomp
 dev-util/ccache
+dev-util/pkgcheck
+dev-util/pkgdev
 dev-util/strace
 dev-util/vmtouch
 dev-vcs/mercurial

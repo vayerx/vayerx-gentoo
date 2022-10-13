@@ -7,6 +7,7 @@ app-crypt/qca gpg
 app-misc/mc edit samba sftp slang
 app-portage/layman mercurial squashfs
 app-text/hunspell l10n_en l10n_ru
+app-text/mandoc system-man
 dev-lang/rust system-llvm
 dev-libs/libaio static-libs
 dev-libs/libdbusmenu gtk3
@@ -28,7 +29,7 @@ dev-ruby/rrdtool-bindings graph
 gnome-base/nautilus tracker
 media-libs/babl introspection
 media-libs/chromaprint tools
-media-libs/freetype harfbuzz
+media-libs/freetype brotli harfbuzz
 media-libs/gexiv2 introspection
 media-libs/libmypaint gegl
 media-libs/libsdl2 haptic
@@ -50,6 +51,7 @@ sci-libs/hdf5 -cxx -fortran
 sci-mathematics/octave curl gnuplot
 sys-apps/lm-sensors sensord
 sys-apps/portage gentoo-dev rsync-verify
+sys-apps/systemd-utils -boot -sysusers tmpfiles -udev
 sys-apps/util-linux static-libs
 sys-block/gparted btrfs fat mdadm
 sys-boot/grub -fonts mount -sdl -themes -truetype
