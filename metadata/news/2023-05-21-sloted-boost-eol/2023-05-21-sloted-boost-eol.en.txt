@@ -1,0 +1,9 @@
+Title: Slotted Boost EOL
+Author: Vasiliy Yeremeyev <vayerx@gmail.com>
+Content-Type: text/plain
+Posted: 2023-05-21
+Revision: 1
+News-Item-Format: 1.0
+Display-If-Installed: app-admin/eselect-boost
+
+I don't need slotted boost any more so I'm suspending it, removing from repository tree.
