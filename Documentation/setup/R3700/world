@@ -6,12 +6,10 @@ app-emulation/ruffle
 app-emulation/winetricks
 app-misc/fdedup
 app-misc/gramps
-dev-util/rubymine:2018
 games-util/joystick
 games-util/qjoypad
 games-util/steam-meta
 lxde-base/lxdm
-media-gfx/bconv
 media-gfx/blender
 media-gfx/xsane
 media-plugins/alsaequal
