@@ -1,9 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python2_7 python3_{9,10,11} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
@@ -28,6 +29,5 @@ DEPEND="
 	dev-python/pgdbconn"
 
 RDEPEND="${DEPEND}
-	dev-db/postgresql
 	dev-python/pyyaml
 "
