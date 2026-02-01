@@ -1,1 +1,6 @@
+games-action/shadowgrounds-data
+games-action/survivor-data
+media-libs/glew
 media-libs/libsdl2
+media-libs/sdl-sound
+media-libs/sdl-ttf

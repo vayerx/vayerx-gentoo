@@ -1,35 +1,51 @@
 app-admin/conky hddtemp vim-syntax
+app-crypt/qca qt6
+app-dicts/myspell-en en-GB en-US
 app-emulation/q4wine icoutils
 app-emulation/virtualbox extensions -python
 app-emulation/wine-vanilla mono odbc s3tc samba staging
-app-text/poppler nss
+app-text/poppler nss qt5
 app-text/yagf scanner
 dev-libs/libdbusmenu gtk3
+dev-libs/libpcre2 pcre32
+dev-libs/sexpp static-libs
+dev-qt/qt5compat qml
+dev-qt/qtbase wayland accessibility
 dev-qt/qtmultimedia widgets
+dev-qt/qtwayland accessibility
 kde-apps/gwenview -handbook kipi
+kde-frameworks/kitemmodels qml
+kde-frameworks/kwindowsystem wayland
 mail-client/claws-mail clamav smime xface
 mail-client/evolution highlight -weather ytnef
 mail-client/thunderbird hardened -gmp-autoupdate system-icu
 media-gfx/gimp postscript
 media-gfx/graphicsmagick imagemagick postscript
 media-gfx/ufraw contrast timezone
-media-libs/mlt frei0r kdenlive melt
+media-libs/gegl introspection
+media-libs/mlt frei0r jack kdenlive melt
 media-libs/opencv contribdnn contrib
+media-libs/opencv features2d
+media-libs/opus custom-modes
+media-libs/vigra openexr
 media-plugins/audacious-plugins cue
 media-sound/apulse sdk
 media-sound/asunder -aac
 media-sound/audacity id3tag twolame
 media-sound/clementine lastfm mtp
-media-video/ffmpeg jpeg2k libdrm libv4l -network opus theora webp x265
-media-video/mplayer bidi theora vcd
-media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska postproc freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio lua
+media-video/ffmpeg jpeg2k libass libdrm libv4l -network opus theora webp x265
+media-video/mplayer bidi theora vcd -vdpau
+media-video/vlc dvd mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska postproc freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio lua -vaapi
 net-im/psi extras -jingle spell xscreensaver
 net-misc/curl http2
 net-nds/openldap static-libs
 sci-geosciences/gpsbabel -gui
 sci-geosciences/qlandkartegt gps
+sci-libs/hdf5 -threads -unsupported
 sci-mathematics/octave curl gnuplot
+sys-auth/polkit-qt qt5 qt6
 sys-libs/libseccomp static-libs
+virtual/wine proton staging
 www-client/chromium -hangouts kerberos
 www-client/firefox -gmp-autoupdate hardened
 x11-libs/motif xft

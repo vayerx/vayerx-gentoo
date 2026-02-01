@@ -5,9 +5,9 @@ conky.config = {
     background = true,
     border_width = 1,
     cpu_avg_samples = 2,
-    default_color = 'white',
-    default_outline_color = 'white',
-    default_shade_color = 'white',
+    default_color = 'FF6060',
+    default_outline_color = 'FFFFFF',
+    default_shade_color = 'C0C0C0',
     draw_borders = false,
     draw_graph_borders = true,
     draw_outline = false,
@@ -39,28 +39,32 @@ conky.config = {
 conky.text = [[
 $nodename - $sysname $kernel on $machine
 $hr
-${color grey}RAM Usage:$color $memperc% $mem / $memmax ${membar 4}
-${color grey}CPU Usage:$color $cpu% ${cpubar 4}
-${color grey}Frequency (in MHz):$color $freq
-${color grey}SYS: $color${hwmon 0 temp 1} C°
-${color grey}CPU: $color${hwmon 1 temp 1} C°
-${color grey}GPU: $color${hwmon 2 temp 1} C°
+${color FFFFFF}RAM Usage:$color $memperc% $mem / $memmax ${membar 4}
+${color FFFFFF}CPU Usage:$color $cpu% ${cpubar 4}
+${color FFFFFF}Frequency (in MHz):$color $freq
+${color FFFFFF}SYS: $color${hwmon 0 temp 1} C°
+${color FFFFFF}CPU: $color${hwmon 1 temp 1} C°
+${color FFFFFF}GPU: $color${hwmon 2 temp 1} C°
 $hr
-${color grey}RAID5 $color${execi 3600 awk '/blocks/ { print $NF }' /proc/mdstat}
-${color grey}/     $color${fs_free /} ${fs_bar 6 /}
-${color grey}/home $color${fs_free /home} ${fs_bar 6 /home}
-${color grey}/var  $color${fs_free /var} ${fs_bar 6 /var}
-${color grey}/data $color${fs_free /mnt/data} ${fs_bar 6 /mnt/data}
-${color grey}sda:  ${diskiograph /dev/sda}
-${color grey}sdb:  ${diskiograph /dev/sdb}
-${color grey}sdc:  ${diskiograph /dev/sdc}
-${color grey}nvme: ${diskiograph /dev/nvme0n1}
+${color FFFFFF}RAID5 $color${execi 3600 awk '/blocks/ { print $NF }' /proc/mdstat}
+${color FFFFFF}/     $color${fs_free /} ${fs_bar 6 /}
+${color FFFFFF}/home $color${fs_free /home} ${fs_bar 6 /home}
+${color FFFFFF}/var  $color${fs_free /var} ${fs_bar 6 /var}
+${color FFFFFF}/data $color${fs_free /mnt/data} ${fs_bar 6 /mnt/data}
+${color FFFFFF}/fast $color${fs_free /mnt/fast} ${fs_bar 6 /mnt/fast}
+${color FFFFFF}/256  $color${fs_free /mnt/fast256} ${fs_bar 6 /mnt/fast256}
+${color FFFFFF}/768  $color${fs_free /mnt/fast768} ${fs_bar 6 /mnt/fast768}
+${color FFFFFF}sda:  ${diskiograph /dev/sda}
+${color FFFFFF}sdb:  ${diskiograph /dev/sdb}
+${color FFFFFF}sdc:  ${diskiograph /dev/sdc}
+${color FFFFFF}nv1:  ${diskiograph /dev/nvme0n1}
+${color FFFFFF}nv2:  ${diskiograph /dev/nvme1n1}
 $hr
-${color grey}Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
+${color FFFFFF}Up:$color ${upspeed eth0} ${color FFFFFF} - Down:$color ${downspeed eth0}
 $hr
-${color grey}Name              PID   CPU%   MEM%
-${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
-${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
-${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
-${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${color FFFFFF}Name              PID   CPU%   MEM%
+${color E0E0E0} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color E0E0E0} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color E0E0E0} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color E0E0E0} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
 ]]

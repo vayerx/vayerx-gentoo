@@ -47,7 +47,7 @@ dev-python/pyodbc
 <dev-python/pytest-3.3
 dev-python/python-daemon
 dev-python/python-json-logger
-dev-python/redis-py
+dev-python/redis
 dev-util/pycharm-professional
 gnome-extra/libgsf
 net-libs/libgsasl

@@ -7,6 +7,8 @@ include "%L"
 <Multi_key> <slash> <equal> : "≠"
 <Multi_key> <equal> <slash> : "≠"
 
+<Multi_key> <p> <i> : "π" U03C0
+
 <Multi_key> <Cyrillic_SOFTSIGN> <minus>	: "Ҍ" U0462 #CYRILLIC CAPITAL LETTER YAT
 <Multi_key> <Cyrillic_softsign> <minus> : "ѣ" U0463 #CYRILLIC SMALL LETTER YAT
 <Multi_key> <Cyrillic_O> <minus> : "Ѳ" U0472 # CYRILLIC CAPITAL LETTER FITA
@@ -17,11 +19,14 @@ include "%L"
 
 <Multi_key> <question> <exclam> : "⁈" U2048
 
-<Multi_key> <equal> <parenright> : "¯\\_(ツ)_/¯"
-<Multi_key> <o> <underscore> <o> : "ಠ_ಠ" # LOOK OF DISAPPROVAL
-<Multi_key> <i> <d> <k> : "¯\\_(ツ)_/¯"
-<Multi_key> <d> <k> : "¯\\(°_o)/¯"
-<Multi_key> <m> <h> : "ψ(｀∇´)ψ"
+<Multi_key> <o> <underscore> <o> : "ಠ_ಠ"    # what?? (look of disapproval)
+<Multi_key> <c> <r> : "( >︹<)"              # cringe
+<Multi_key> <d> <k> : "¯\\_(ツ)_/¯"          # don't know
+<Multi_key> <i> <d> <k> : "¯\\(°_o)/¯"      # I don't know
+<Multi_key> <d> <t> : "(╯°□°）╯︵ ┻━┻"        # drop table
+<Multi_key> <t> <b> : "┬─┬ノ(ಠ_ಠノ)"          # put table back
+<Multi_key> <m> <h> : "ψ(｀∇´)ψ"             # pure evil
+<Multi_key> <d> <n> <d> : "🏰&🐉"             # D&D
 
 <Multi_key> <apostrophe> <apostrophe> : "́" U0301 # ACCENT
 <Multi_key> <Cyrillic_e> <Cyrillic_e> : "́" U0301 # ACCENT
@@ -29,4 +34,11 @@ include "%L"
 <Multi_key> <b> <r> : "Best regards"
 <Multi_key> <w> <b> <r> : "With best regards"
 
+<Multi_key> <f> <r> <s> : "For Rock and Stone!"
+<Multi_key> <n> <d> <b> : "Leave no dwarf behind!"
+
+<Multi_key> <n> <e> : "No exceptions!"
+
 <Multi_key> <f> <p> : "🤦‍♂️" U1F926 U200D U2642  # facepalm
+<Multi_key> <o> <7> : "🫡"      #  salute
+<Multi_key> <d> <b> : "ѢѢ"      # double Ѣ

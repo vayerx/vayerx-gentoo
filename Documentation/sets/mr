@@ -12,7 +12,7 @@ dev-python/clickhouse-driver
 dev-python/msgpack
 dev-python/mysqlclient
 dev-python/overrides
-dev-python/protobuf-python
+dev-python/protobuf
 dev-python/psutil
 dev-python/pymysql
 dev-python/pytest

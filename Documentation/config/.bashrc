@@ -223,8 +223,6 @@ alias emerge-modules="emerge -q --keep-going @module-rebuild"
 alias emerge-x11-modules="emerge -q --keep-going @x11-module-rebuild"
 alias emerge="emerge --verbose-conflicts --keep-going"
 
-alias pretty_json="python -c 'import sys, json; json.dump(json.load(sys.stdin), sys.stdout, indent=4, sort_keys=True)'"
-
 function get_stable_keywords() {
     # TODO args
     EIX_LIMIT=0 eix -C dev-qt --only-names | awk '{ print $0, "-~amd64"; print "=" $0 "-5.15.2"}'
@@ -238,21 +236,26 @@ function upkernel() {
     echo "grub-mkconfig -o /boot/grub/grub.cfg"
 }
 
+alias inv_mouse="xinput set-prop 'pointer:COMPANY USB Device' 'Coordinate Transformation Matrix'  1 0 0  0 -1 0  0 0 1"
+alias inv_mouse_back="xinput set-prop 'pointer:COMPANY USB Device' 'Coordinate Transformation Matrix'  1 0 0  0 1 0  0 0 1"
+
 alias quickpkg="quickpkg --include-config=y"
 alias wget="wget --no-use-server-timestamps --user-agent 'Mozilla/5.0 (X11; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0'"
 
 function rec_x11() {
     local output="${1:-video}.mp4"
     local device="${2:-/dev/dri/renderD128}"
+    local pulse_src=$(pactl list short sources | awk '/output.*Omni_Surround/ { print $1 }')
+
     sleep 3
     nice -15 ffmpeg -y \
         -video_size 1920x1200 \
         -framerate 30 \
-        -f x11grab \
-        -hwaccel vaapi -hwaccel_output_format vaapi -vaapi_device "${device}" \
-        -i $DISPLAY \
-        -ac 2 -ar 44100 -f pulse -i 1 -c:a libmp3lame \
-        -vf 'format=nv12|vaapi,hwupload' -c:v h264_vaapi \
+        -f x11grab -hwaccel vaapi -hwaccel_output_format vaapi -vaapi_device "${device}" \
+        -thread_queue_size 1024 -i $DISPLAY \
+        -f pulse -ac 2 -thread_queue_size 1024 -i ${pulse_src} \
+        -vf 'format=nv12|vaapi,hwupload' -c:v h264_vaapi -preset medium -qp 16 \
+        -c:a libmp3lame -ar 44100 -b:a 128k \
         "$output"
 }
 

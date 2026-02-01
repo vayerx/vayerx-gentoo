@@ -14,11 +14,12 @@ media-gfx/exif
 media-gfx/geeqie
 media-gfx/gimp
 media-gfx/gnome-screenshot
+media-gfx/gpicview
 media-gfx/imagemagick
-media-sound/clementine
 media-sound/mp3info
 media-sound/mp3unicode
 media-sound/mpg123
+media-sound/strawberry
 media-sound/vorbis-tools
 media-video/mplayer
 net-misc/x11-ssh-askpass

@@ -1,7 +1,6 @@
 app-eselect/eselect-python
 dev-python/black
 dev-python/coverage
-dev-python/ipdb
 dev-python/ipython
 dev-python/overrides
 dev-python/pystaff

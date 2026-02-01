@@ -15,15 +15,15 @@ dev-libs/libgcrypt static-libs
 dev-libs/libgpg-error static-libs
 dev-libs/lzo static-libs
 dev-libs/openssl rfc3779 sctp -tls-heartbeat
-dev-python/PyQt5 declarative webchannel webengine
-dev-python/QtPy webengine
+dev-python/pyqt5 declarative webchannel webengine
+dev-python/qtpy webengine
 dev-qt/qtdeclarative accessibility webkit
 dev-qt/qtgui accessibility dbus evdev -wayland
 dev-qt/qtmultimedia widgets
 dev-qt/qtsql mysql
 dev-qt/qtsvg accessibility
 dev-qt/qtwebchannel qml
-dev-qt/qtwebengine widgets
+dev-qt/qtwebengine widgets accessibility
 dev-qt/qtwebkit printsupport
 dev-ruby/rrdtool-bindings graph
 gnome-base/nautilus tracker
@@ -35,6 +35,8 @@ media-libs/libmypaint gegl
 media-libs/libsdl2 haptic
 media-libs/libvpx postproc svc
 media-plugins/alsa-plugins speex
+media-sound/pulseaudio-daemon equalizer -tcpd
+media-video/amdgpu-pro-amf pro radv
 net-analyzer/rrdtool graph
 net-analyzer/tcpdump -samba
 net-dialup/ppp dhcp eap-tls
@@ -51,21 +53,23 @@ sci-libs/hdf5 -cxx -fortran
 sci-mathematics/octave curl gnuplot
 sys-apps/lm-sensors sensord
 sys-apps/portage gentoo-dev rsync-verify
-sys-apps/systemd-utils -boot -sysusers tmpfiles -udev
+sys-apps/systemd-utils -boot -sysusers tmpfiles udev
 sys-apps/util-linux static-libs
 sys-block/gparted btrfs fat mdadm
 sys-boot/grub -fonts mount -sdl -themes -truetype
 sys-devel/qconf -qt5
 sys-fs/eudev -introspection static-libs
 sys-fs/lvm2 static -udev
-sys-fs/mdadm static
+sys-fs/mdadm static -udev
 sys-fs/udev static-libs
 sys-kernel/gentoo-sources experimental symlink
+sys-kernel/linux-firmware deduplicate initramfs
 sys-libs/glibc -clone3
 sys-libs/ldb ldap
 sys-libs/ncurses gpm static-libs
 sys-libs/readline static-libs
 sys-libs/zlib minizip static-libs
+sys-power/suspend -crypt
 virtual/libudev static-libs
 x11-libs/cairo -lto -xlib-xcb
 x11-libs/fltk xft
