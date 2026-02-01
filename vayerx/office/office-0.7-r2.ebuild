@@ -1,7 +1,7 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Office staff meta"
 HOMEPAGE="https://github.com/vayerx/vayerx-gentoo"
@@ -15,7 +15,6 @@ IUSE="abi_x86_32 burn +excessive gtk kde mate +rich"
 PDEPEND="
 	burn? (
 		app-cdr/bin2iso
-		app-cdr/cdw
 		app-cdr/iat
 		app-cdr/nrg2iso
 		app-cdr/cuetools
@@ -68,7 +67,6 @@ PDEPEND="
 
 	rich? (
 		app-text/djview
-		app-office/dia
 		media-gfx/exiv2
 		media-sound/picard
 		media-video/vlc
